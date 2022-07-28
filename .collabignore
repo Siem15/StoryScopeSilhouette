@@ -1,0 +1,45 @@
+# ===========================
+# Default Collab Ignore Rules
+# ===========================
+
+# OS Generated
+# ============
+.DS_Store
+._*
+.Spotlight-V100
+.Trashes
+Icon?
+ehthumbs.db
+[Tt]humbs.db
+[Dd]esktop.ini
+
+# Visual Studio / MonoDevelop generated
+# =====================================
+[Ee]xported[Oo]bj/
+*.userprefs
+*.csproj
+*.pidb
+*.suo
+*.sln
+*.user
+*.unityproj
+*.booproj
+
+# Unity generated
+# ===============
+[Oo]bj/
+[Bb]uild
+sysinfo.txt
+*.stackdump
+
+#My ignored folders
+#================
+
+[Ll]ibrary/
+[Tt]emp/
+[Bb]uilds/
+Assets/Standard Assets/
+Assets/Audio/
+Assets/2D/
+Assets/Resources/Video/
+Assets/Particle Attractor by Moonflower Carnivore/

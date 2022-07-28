@@ -1,0 +1,31 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEditor;
+
+public class JZRunOnPrefabs : Editor
+{
+    [MenuItem("GameObject/Silhouette/addSpriteCode", false, -1)]
+    public static void SendSprites()
+    {
+        List<Component> _renderers = new List<Component>();
+
+        Component[] _childRenderers = Selection.activeGameObject.GetComponentsInChildren(typeof(SpriteRenderer));
+        Selection.activeGameObject.AddComponent<JZSpriteRoot>();
+        Selection.activeGameObject.transform.GetChild(0).gameObject.SetActive(true);
+        _renderers.AddRange(_childRenderers);
+
+        AddScripts(_renderers);
+    }
+
+    private static void AddScripts(List<Component> _renderers)
+    {
+        foreach (var item in _renderers)
+        {
+            if (item != null && !item.gameObject.name.Contains("eye"))
+            {
+                item.gameObject.AddComponent<JZSpriteChild>();
+            }
+        }
+    }
+}
