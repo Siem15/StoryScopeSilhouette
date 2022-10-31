@@ -47,7 +47,7 @@ TagManager:
   - Bee
   - Background
   - LevelSelect
-  - 
+  - curtain
   - 
   - 
   - 
@@ -123,4 +123,7 @@ TagManager:
     locked: 0
   - name: Foreground
     uniqueID: 702106041
+    locked: 0
+  - name: Robot
+    uniqueID: 2400675463
     locked: 0

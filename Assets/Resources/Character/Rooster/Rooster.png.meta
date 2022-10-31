@@ -1,12 +1,30 @@
 fileFormatVersion: 2
-guid: 66295e0ea9ac73744b006a3b51c69bca
+guid: 97c7de5706bce3848a80f5a1f81a0e5c
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: 1223526088056373679
+    second: Rooster_0
+  - first:
+      213: 1639429620285364922
+    second: Rooster_1
+  - first:
+      213: 7142273095176348842
+    second: Rooster_2
+  - first:
+      213: -6254573127680569390
+    second: Rooster_3
+  - first:
+      213: -2711892033306577372
+    second: Rooster_4
+  - first:
+      213: 6681675252163612075
+    second: Rooster_5
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
     mipMapMode: 0
-    enableMipMap: 1
+    enableMipMap: 0
     sRGBTexture: 1
     linearTexture: 0
     fadeOut: 0
@@ -35,24 +53,24 @@ TextureImporter:
     filterMode: 1
     aniso: 1
     mipBias: 0
-    wrapU: 0
-    wrapV: 0
+    wrapU: 1
+    wrapV: 1
     wrapW: 0
-  nPOTScale: 1
+  nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 0
+  spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
-  alphaIsTransparency: 0
+  alphaIsTransparency: 1
   spriteTessellationDetail: -1
-  textureType: 0
+  textureType: 8
   textureShape: 1
   singleChannelComponent: 0
   flipbookRows: 1
@@ -75,13 +93,175 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Rooster_0
+      rect:
+        serializedVersion: 2
+        x: 542
+        y: 784
+        width: 298
+        height: 236
+      alignment: 9
+      pivot: {x: 0.60043603, y: 0.15087022}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa1060c9e76daf010800000000000000
+      internalID: 1223526088056373679
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rooster_1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 601
+        width: 408
+        height: 347
+      alignment: 9
+      pivot: {x: 0.8923041, y: 0.19998811}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: abadc57bd8c60c610800000000000000
+      internalID: 1639429620285364922
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rooster_2
+      rect:
+        serializedVersion: 2
+        x: 414
+        y: 428
+        width: 330
+        height: 337
+      alignment: 9
+      pivot: {x: 0.53943336, y: 0.06751992}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa4e0d6e9837e1360800000000000000
+      internalID: 7142273095176348842
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rooster_3
+      rect:
+        serializedVersion: 2
+        x: 498
+        y: 279
+        width: 83
+        height: 136
+      alignment: 9
+      pivot: {x: 0.45296544, y: 0.6530939}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2df45e6e0ea4339a0800000000000000
+      internalID: -6254573127680569390
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rooster_4
+      rect:
+        serializedVersion: 2
+        x: 515
+        y: 177
+        width: 54
+        height: 161
+      alignment: 9
+      pivot: {x: 0.44073826, y: 0.83104026}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 426bc8d509c6d5ad0800000000000000
+      internalID: -2711892033306577372
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rooster_5
+      rect:
+        serializedVersion: 2
+        x: 523
+        y: 115
+        width: 96
+        height: 59
+      alignment: 9
+      pivot: {x: 0.29219374, y: 0.47122347}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bad0bb5ad341abc50800000000000000
+      internalID: 6681675252163612075
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 4be0142aeed0e64468981d908b3cde93
     internalID: 0
     vertices: []
     indices: 

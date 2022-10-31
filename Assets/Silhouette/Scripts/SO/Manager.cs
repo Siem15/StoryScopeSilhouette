@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class Manager : MonoBehaviour
 {
 
@@ -13,6 +13,11 @@ public class Manager : MonoBehaviour
 
     void Start()
     {
+#if UNITY_EDITOR
+        Application.runInBackground = true;
+#endif
+
+
         for (int i = 0; i <  InstantiatieThis.Length; i++)
         {
             Instantiate(InstantiatieThis[i]);
@@ -22,6 +27,7 @@ public class Manager : MonoBehaviour
 
     private void Update()
     {
+        if (Input.GetKey(KeyCode.Space) && Input.GetKeyDown(KeyCode.R)) SceneManager.LoadScene(0);
         if (ghostTextures.Length == 0) return;
         ghostMaterial.mainTexture = ghostTextures[JZSpriteCounter.spriteCounter % ghostTextures.Length];
     }

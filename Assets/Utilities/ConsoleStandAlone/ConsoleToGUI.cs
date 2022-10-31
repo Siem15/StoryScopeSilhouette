@@ -18,7 +18,11 @@ public class ConsoleToGUI : MonoBehaviour
         doShow = !doShow;
         Cursor.visible = doShow;
         //sceneCanvas.SetActive(doShow);
+
+#if !UNITY_EDITOR
         Debug.Log(DateTime.Now);
+#endif
+
     }
     public void Log(string logString, string stackTrace, LogType type)
     {

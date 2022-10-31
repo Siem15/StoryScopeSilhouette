@@ -19,8 +19,8 @@ public class Webcam : MonoBehaviour
 
     private void Start()
     {
+        WebCamDevice[] devicesPRINT = WebCamTexture.devices;
         GetComponent<Renderer>().material = _material;
-        
         Startup();
     }
 
@@ -52,8 +52,6 @@ public class Webcam : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Alpha7)) UpdateTextureSettings(-1f, sensetivity, sensetivitySlider, "sensitivity");
         if (Input.GetKeyDown(KeyCode.Alpha8)) UpdateTextureSettings(1f,  sensetivity, sensetivitySlider, "sensitivity");
         if (Input.GetKeyDown(KeyCode.H)) sliders.SetActive(!sliders.activeInHierarchy);
-        //if (!fiducialController.m_IsVisible && sliders.activeSelf == true) sliders.SetActive(false);
-        
         if (!webcamTexture.isPlaying) warning.SetActive(true);
         else warning.SetActive(false);
     }
@@ -94,12 +92,15 @@ public class Webcam : MonoBehaviour
         {
             for (int i = 0; i < devices.Length; i++)
             {
-                webcamTexture = new WebCamTexture(devices[i].name, (int)camResolution.x, (int)camResolution.y, 30);
-
+#if UNITY_EDITOR
+                webcamTexture = new WebCamTexture(devices[0].name, (int)camResolution.x, (int)camResolution.y, 30);
+#endif
+#if UNITY_STANDALONE_LINUX
+                webcamTexture = new WebCamTexture(devices[2].name, (int)camResolution.x, (int)camResolution.y, 30);
+#endif
                 if (webcamTexture.isReadable) webcamTexture.Play();
                 _material.SetTexture("_WebcamTex", webcamTexture);
                 if (webcamTexture.isPlaying) break;
-
             }
         }
     }

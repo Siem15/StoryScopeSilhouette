@@ -7,22 +7,16 @@ public class Character : MonoBehaviour
     public float WalkSpeed, RunSpeed;
     [Min(0.1f)]
     public float stopRunningUntilThisDist;
-    [Tooltip("Y axis from bottom 0 to top 1 - 0 = can fly")]
-    [Range(0f,1f)]
-    public float groundHeight;
-    public float groundOffset;
-    public bool controlRotation, controlPosition, facingRight;
+    public bool singleSprite, controlRotation, controlPosition, facingRight;
     public GameObject endMarkerPrefab;
     string check;
     float speed, distance;
-    Vector3 alteredHeight;
+    float distanceToMove = 0.5f;
     GameObject endMarker;
-   public Animator animator;
-    FiducialController endMarkerFC;
+    bool idle;
+    Animator animator;
+    FiducialController endMarkerFC, fidu;
     SpriteRenderer spriteRenderer;
-    public bool singleSprite;
-    Vector3 lastPos;
-    FiducialController fidu;
 
     void Start()
     {
@@ -40,18 +34,33 @@ public class Character : MonoBehaviour
 
     private void CheckGrounded()
     {
-        transform.position = Vector3.MoveTowards(transform.position, alteredHeight, speed * Time.deltaTime); //move to target
+        if (Vector3.Distance(transform.position, endMarker.transform.position) > distanceToMove) idle = false;
+        if (transform.position == endMarker.transform.position) idle = true;
+        if (!idle) transform.position = Vector3.MoveTowards(transform.position, endMarker.transform.position, speed * Time.deltaTime); //move to target
 
-        alteredHeight = endMarker.transform.position; //flying height
+        SetAnimation(idle);
+    }
 
-        if (1 - endMarkerFC.m_ScreenPosition.y < groundHeight)
+    private void SetAnimation(bool idle)
+    {
+        distance = Vector3.Distance(transform.position, endMarker.transform.position);
+
+        if (idle)
         {
-            alteredHeight.y = 0 + groundOffset; //grounded
-            SetAnimation(true);
+            SetAnimationAndSpeed("idle", 0f);
+            return;
         }
-        else
+
+        if (distance > 0.1f && distance < stopRunningUntilThisDist) SetAnimationAndSpeed("walk", WalkSpeed);
+        else if (distance > stopRunningUntilThisDist) SetAnimationAndSpeed("run", RunSpeed);
+    }
+
+    private void GetAnimator()
+    {
+        if (animator == null)
         {
-            SetAnimation(false);
+            if (GetComponentInChildren<Animator>()) animator = GetComponentInChildren<Animator>();
+            else animator = GetComponent<Animator>();
         }
     }
 
@@ -66,24 +75,6 @@ public class Character : MonoBehaviour
         return tempEndMarker;
     }
 
-    private void GetAnimator()
-    {
-        if (animator == null)
-        {
-            if (GetComponentInChildren<Animator>()) animator = GetComponentInChildren<Animator>();
-            else animator = GetComponent<Animator>();
-        }
-    }
-    private void SetAnimation(bool x)
-    {
-        var temppos = endMarker.transform.position;
-        if (x)temppos.y = transform.position.y;
-
-        distance = Vector3.Distance(transform.position,temppos);
-        if (distance > 0.1f && distance < stopRunningUntilThisDist) SetAnimationAndSpeed("walk", WalkSpeed);
-        else if (distance > stopRunningUntilThisDist) SetAnimationAndSpeed("run", RunSpeed);
-        else SetAnimationAndSpeed("idle", 0f);
-    }
 
     public void SetAnimationAndSpeed(string animation, float setSpeed)
     {

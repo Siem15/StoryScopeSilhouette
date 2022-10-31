@@ -1,0 +1,410 @@
+fileFormatVersion: 2
+guid: e056f1a36841f6041aef33bb243c7b28
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: robot StoryScope_2_tetem (1)-02 (1)_0
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 1312
+        width: 802
+        height: 654
+      alignment: 9
+      pivot: {x: 0.57730985, y: 0.27708}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf154e283aec3ad43a210a93732b3e46
+      internalID: 52360119
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: robot StoryScope_2_tetem (1)-02 (1)_1
+      rect:
+        serializedVersion: 2
+        x: 977
+        y: 1865
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 588d7fde8436c4842a5b9f20ab715f7c
+      internalID: 1809101393
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: robot StoryScope_2_tetem (1)-02 (1)_2
+      rect:
+        serializedVersion: 2
+        x: 1332
+        y: 1564
+        width: 72
+        height: 393
+      alignment: 9
+      pivot: {x: 0.6176537, y: 0.9149431}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aee8a2d54242a0d4fba5e41d0af7cf3a
+      internalID: 816469213
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: robot StoryScope_2_tetem (1)-02 (1)_3
+      rect:
+        serializedVersion: 2
+        x: 1579
+        y: 1822
+        width: 196
+        height: 129
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4fdaed7aa2de4db4a878c3c7cefcbada
+      internalID: 14432928
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: robot StoryScope_2_tetem (1)-02 (1)_4
+      rect:
+        serializedVersion: 2
+        x: 998
+        y: 1809
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29f51f980179b0149837030048f56b2b
+      internalID: -917468549
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: robot StoryScope_2_tetem (1)-02 (1)_5
+      rect:
+        serializedVersion: 2
+        x: 994
+        y: 1703
+        width: 208
+        height: 70
+      alignment: 9
+      pivot: {x: 0.94800156, y: 0.25795898}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa966e31330d1a248822327b8292e863
+      internalID: 1224499449
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: robot StoryScope_2_tetem (1)-02 (1)_6
+      rect:
+        serializedVersion: 2
+        x: 1615
+        y: 1652
+        width: 97
+        height: 104
+      alignment: 9
+      pivot: {x: 0.2379981, y: 0.15381329}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e6477b006a99f846b23d7f8c2773c28
+      internalID: -1439380462
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: robot StoryScope_2_tetem (1)-02 (1)_7
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 848
+        width: 140
+        height: 370
+      alignment: 9
+      pivot: {x: 0.73060703, y: 0.89057714}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3613baff22a9df442ac53a7fbe0b82ca
+      internalID: -609766900
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: robot StoryScope_2_tetem (1)-02 (1)_8
+      rect:
+        serializedVersion: 2
+        x: 349
+        y: 870
+        width: 452
+        height: 322
+      alignment: 9
+      pivot: {x: 0.08473131, y: 0.9654139}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bbf3a594793f51c42a1137bdc4aa4b55
+      internalID: -1850852946
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: robot StoryScope_2_tetem (1)-02 (1)_9
+      rect:
+        serializedVersion: 2
+        x: 969
+        y: 1051
+        width: 157
+        height: 267
+      alignment: 9
+      pivot: {x: 0.4190627, y: 0.9124605}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc07af300319ad343bc25daeb8267f08
+      internalID: -329725985
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: robot StoryScope_2_tetem (1)-02 (1)_10
+      rect:
+        serializedVersion: 2
+        x: 1248
+        y: 937
+        width: 391
+        height: 509
+      alignment: 9
+      pivot: {x: 0.034184996, y: 0.050636876}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1215f782cce39864c98922ed810d7487
+      internalID: 240861477
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: robot StoryScope_2_tetem (1)-02 (1)_11
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 858
+        width: 171
+        height: 110
+      alignment: 9
+      pivot: {x: 0.53715295, y: 0.67327213}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2954916213d493946a81f34c65c90af5
+      internalID: 258687411
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 9d1d6629ffccb214dbc179f20e4aa3f3
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      robot StoryScope_2_tetem (1)-02 (1)_7: -609766900
+      robot StoryScope_2_tetem (1)-02 (1)_9: -329725985
+      robot StoryScope_2_tetem (1)-02 (1)_10: 240861477
+      robot StoryScope_2_tetem (1)-02 (1)_11: 258687411
+      robot StoryScope_2_tetem (1)-02 (1)_1: 1809101393
+      robot StoryScope_2_tetem (1)-02 (1)_4: -917468549
+      robot StoryScope_2_tetem (1)-02 (1)_8: -1850852946
+      robot StoryScope_2_tetem (1)-02 (1)_6: -1439380462
+      robot StoryScope_2_tetem (1)-02 (1)_5: 1224499449
+      robot StoryScope_2_tetem (1)-02 (1)_0: 52360119
+      robot StoryScope_2_tetem (1)-02 (1)_2: 816469213
+      robot StoryScope_2_tetem (1)-02 (1)_3: 14432928
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

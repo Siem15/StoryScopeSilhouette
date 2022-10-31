@@ -148,6 +148,7 @@ namespace UniducialLibrary
             {
                 if (tuioObject.getSymbolID() == in_MarkerID)
                 {
+
                     return tuioObject;
                 }
 

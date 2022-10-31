@@ -47,10 +47,9 @@ public class FiducialController : MonoBehaviour
     private bool m_ControlsGUIElement = false;
     public float DegreesToAction;
     float lastDegree, eulerDegree;
-    bool resetDegrees = true;
     float rotationDifference;
     float totalRotation;
-
+    public float hideDelay = 1f;
 
     public float CameraOffset = 10;
     public RotationAxis RotateAround = RotationAxis.Back;
@@ -58,8 +57,6 @@ public class FiducialController : MonoBehaviour
     private Camera m_MainCamera;
     public float camY;
     public float camX;
-    bool deactivate;
-    bool isInverted = false;
     [Serializable]
     public class ExampleEvent : UnityEvent { }
 
@@ -84,6 +81,11 @@ public class FiducialController : MonoBehaviour
 
     public virtual void Awake()
     {
+
+#if UNITY_STANDALONE_LINUX
+     InvertX = true;
+     RotateAround = RotationAxis.Forward;
+#endif
 
         JZAxisZ = transform.position.z;
         this.m_TuioManager = UniducialLibrary.TuioManager.Instance;
@@ -114,17 +116,6 @@ public class FiducialController : MonoBehaviour
 
     public virtual void Start()
     {
-#if !UNITY_EDITOR
-    #if UNITY_STANDALONE_LINUX
-            InvertX = true;
-            RotateAround = RotationAxis.Forward;
-
-    #endif
-    #if UNITY_STANDALONE_WIN
-            InvertX = false;
-            RotateAround = RotationAxis.Back;
-    #endif
-#endif
         //get reference to main camera
         this.m_MainCamera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
    
@@ -146,20 +137,7 @@ public class FiducialController : MonoBehaviour
 
             //update parameters
             this.m_ScreenPosition.x = marker.getX();
-            if (!grounded)
-            {
-                this.m_ScreenPosition.y = marker.getY();
-            }
-            else
-            {
-                this.m_ScreenPosition.y = 1;
-            }
-            if (templateCam)
-            {
-                this.m_ScreenPosition.y = marker.getY() + camY;
-                this.m_ScreenPosition.x = marker.getX() + camX;
-            }
-
+            this.m_ScreenPosition.y = marker.getY();
             this.m_Angle = marker.getAngle() * RotationMultiplier;
             this.m_AngleDegrees = marker.getAngleDegrees() * RotationMultiplier;
             this.m_Speed = marker.getMotionSpeed();
@@ -176,17 +154,13 @@ public class FiducialController : MonoBehaviour
         }
         else //automatically hide game object when marker is not visible
         {
-            if (this.AutoHideGO) StartCoroutine(HideDelay(1));
-            this.m_IsVisible = false;
+            HideGameObject();
         }
     }
 
 
 
-    void OnApplicationQuit()
-    {
-        if (this.m_TuioManager.IsConnected) this.m_TuioManager.Disconnect();
-    }
+    void OnApplicationQuit(){if (this.m_TuioManager.IsConnected) this.m_TuioManager.Disconnect();}
 
     public virtual void UpdateTransform()
     {
@@ -199,10 +173,7 @@ public class FiducialController : MonoBehaviour
             if (this.InvertX) xPos = 1 - xPos;
             if (this.InvertY) yPos = 1 - yPos;
 
-            if (this.m_ControlsGUIElement)
-            {
-                transform.position = new Vector3(xPos, 1 - yPos, 0);
-            }
+            if (this.m_ControlsGUIElement) transform.position = new Vector3(xPos, 1 - yPos, 0);
             else
             {
                 Vector3 position = new Vector3(xPos * Screen.width,
@@ -240,7 +211,7 @@ public class FiducialController : MonoBehaviour
                     rotation = Quaternion.AngleAxis(this.m_AngleDegrees, Vector3.right);
                     break;
             }
-            transform.rotation = rotation; //JUSTIN dit was; transform.localRation = rotation;
+            transform.rotation = rotation;
         }
     }
 
@@ -268,19 +239,12 @@ public class FiducialController : MonoBehaviour
 
     public virtual void ShowGameObject()
     {
-        StopAllCoroutines();
 
         if (this.m_ControlsGUIElement)
         {
             //show GUI components
-            if (gameObject.GetComponent<Text>() != null && !gameObject.GetComponent<Text>().enabled)
-            {
-                gameObject.GetComponent<Text>().enabled = true;
-            }
-            if (gameObject.GetComponent<Image>() != null && !gameObject.GetComponent<Image>().enabled)
-            {
-                gameObject.GetComponent<Image>().enabled = true;
-            }
+            if (gameObject.GetComponent<Text>() != null && !gameObject.GetComponent<Text>().enabled) gameObject.GetComponent<Text>().enabled = true;
+            if (gameObject.GetComponent<Image>() != null && !gameObject.GetComponent<Image>().enabled) gameObject.GetComponent<Image>().enabled = true;
         }
         else
         {
@@ -288,52 +252,27 @@ public class FiducialController : MonoBehaviour
             {
                 child.gameObject.SetActive(true);
             }
-            if (gameObject.GetComponent<Renderer>() != null && !gameObject.GetComponent<Renderer>().enabled)
-            {
-                gameObject.GetComponent<Renderer>().enabled = true;
-            }
-            if (gameObject.GetComponent<Camera>() != null && !gameObject.GetComponent<Camera>().enabled)
-            {
-                gameObject.GetComponent<Camera>().enabled = true;
-            }
+            if (gameObject.GetComponent<Renderer>() != null && !gameObject.GetComponent<Renderer>().enabled) gameObject.GetComponent<Renderer>().enabled = true;
+            if (gameObject.GetComponent<Camera>() != null && !gameObject.GetComponent<Camera>().enabled) gameObject.GetComponent<Camera>().enabled = true;
         }
-    }
-    IEnumerator HideDelay(float delayTime)
-    {
-        yield return new WaitForSeconds(delayTime);
-        HideGameObject();
-        yield return null;
     }
     public virtual void HideGameObject()
     {
+        this.m_IsVisible = false;
+
+
         if (this.m_ControlsGUIElement)
         {
             //hide GUI components
-            if (gameObject.GetComponent<Text>() != null && gameObject.GetComponent<Text>().enabled)
-            {
-                gameObject.GetComponent<Text>().enabled = false;
-            }
-            if (gameObject.GetComponent<Image>() != null && gameObject.GetComponent<Image>().enabled)
-            {
-                gameObject.GetComponent<Image>().enabled = false;
-            }
+            if (gameObject.GetComponent<Text>() != null && gameObject.GetComponent<Text>().enabled) gameObject.GetComponent<Text>().enabled = false;
+            if (gameObject.GetComponent<Image>() != null && gameObject.GetComponent<Image>().enabled) gameObject.GetComponent<Image>().enabled = false;
         }
         else
         {
             //set 3d game object to visible, if it was hidden before
-            foreach (Transform child in transform)
-            {
-                child.gameObject.SetActive(false);
-
-            }
-            if (gameObject.GetComponent<Renderer>() != null && gameObject.GetComponent<Renderer>().enabled)
-            {
-                gameObject.GetComponent<Renderer>().enabled = false;
-            }
-            if (gameObject.GetComponent<Camera>() != null && gameObject.GetComponent<Camera>().enabled)
-            {
-                gameObject.GetComponent<Camera>().enabled = false;
-            }
+            foreach (Transform child in transform)  child.gameObject.SetActive(false);
+            if (gameObject.GetComponent<Renderer>() != null && gameObject.GetComponent<Renderer>().enabled) gameObject.GetComponent<Renderer>().enabled = false;
+            if (gameObject.GetComponent<Camera>() != null && gameObject.GetComponent<Camera>().enabled) gameObject.GetComponent<Camera>().enabled = false;
         }
     }
 #region Getter

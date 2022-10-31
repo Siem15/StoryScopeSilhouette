@@ -5,7 +5,8 @@ using UnityEngine;
 public class Stamp : MonoBehaviour {
 
 
-    bool cloned = false;
+    public bool cloned = false;
+    public bool vis;
     Transform stamp;
 
     FiducialController fidu;
@@ -19,8 +20,7 @@ public class Stamp : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
-
-        if (fidu.m_IsVisible || Input.GetKeyDown(KeyCode.O))
+        if (fidu.m_IsVisible)
         {
             StopAllCoroutines();
             if (!cloned)
@@ -34,7 +34,7 @@ public class Stamp : MonoBehaviour {
                 tempStamp.GetComponent<SpriteRenderer>().enabled = true;
             }
         }
-        if (!fidu.m_IsVisible)
+        if (!fidu.m_IsVisible && cloned == true )
         {
             StartCoroutine(deleteStamps());
             cloned = false;

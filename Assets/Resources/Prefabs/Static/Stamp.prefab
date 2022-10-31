@@ -51,14 +51,22 @@ MonoBehaviour:
   InvertY: 0
   grounded: 0
   templateCam: 0
-  Audio: 0
   full: 0
   IsRotationMapped: 0
-  AutoHideGO: 0
+  UseRotation: 0
+  AutoHideGO: 1
+  DegreesToAction: 0
+  hideDelay: 0.2
   CameraOffset: 10
   RotateAround: 1
   camY: 0
   camX: 0
+  onRotateForward:
+    m_PersistentCalls:
+      m_Calls: []
+  onRotateBackward:
+    m_PersistentCalls:
+      m_Calls: []
   m_ScreenPosition: {x: 0, y: 0}
   m_IsVisible: 0
   RotationMultiplier: 1
@@ -74,6 +82,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d4bd32dc52c2704c99a9f180870a1d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cloned: 0
+  vis: 0
   stamps: []
 --- !u!1 &7725894178400952348
 GameObject:
@@ -85,7 +95,6 @@ GameObject:
   m_Component:
   - component: {fileID: 7872944589731846745}
   - component: {fileID: 8134830340527223836}
-  - component: {fileID: 4394793941165680490}
   m_Layer: 0
   m_Name: StampWolk
   m_TagString: Untagged
@@ -147,8 +156,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 10
-  m_Sprite: {fileID: 21300000, guid: b5aeebeafde827946b0c3e144b990970, type: 3}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 36ed378a01f99fd46860f2bc434c9b03, type: 3}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -158,20 +167,3 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &4394793941165680490
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7725894178400952348}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ee16c4288d0bf764488b5256a1ed47cc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  modesSO: {fileID: 11400000, guid: ccd7e95dc57e66e4db1c92d70571cfb4, type: 2}
-  normal: {fileID: 21300000, guid: b5aeebeafde827946b0c3e144b990970, type: 3}
-  plant: {fileID: 21300000, guid: 264478dea4d6f4acaa3deb5935073569, type: 3}
-  scary: {fileID: 21300000, guid: 20f0776d906cd8041aaf461937a82d15, type: 3}
-  color: {fileID: 21300000, guid: 84e84386f864c1e46a7825ea67fbc23e, type: 3}

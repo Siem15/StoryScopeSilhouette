@@ -42,8 +42,8 @@ public class JZTurnSpriteCounter : MonoBehaviour
 
     public void X(int i)
     {
-        JZSpriteCounter.spriteCounter += i;
-        print(JZSpriteCounter.spriteCounter);
+        JZSpriteCounter.spriteCounter = Mathf.Clamp(JZSpriteCounter.spriteCounter += i,0,100);
+        //print(JZSpriteCounter.spriteCounter);
     }
 }
 

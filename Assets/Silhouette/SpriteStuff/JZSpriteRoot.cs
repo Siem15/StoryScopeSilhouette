@@ -11,25 +11,23 @@ public class JZSpriteRoot : MonoBehaviour
     string filesLocationOG = @"C:/StoryScopeMedia/SheetsOG";
     string filesLocation = @"C:/StoryScopeMedia/Sheets";
 #endif
+
 #if UNITY_STANDALONE_LINUX
-
-
-    string filesLocationOG = "/home/InteractiveCulture/StoryScopeMedia/Sheets";
-    string filesLocation = "/home/jzi7/Desktop/Characters";
+    string filesLocation = "/home/InteractiveCulture/StoryScopeMedia/Sheets";
+    // string filesLocation = "/home/jzi7/Desktop/Characters";
 #endif
 
 #if UNITY_STANDALONE_OSX
     string filesLocation = "";
 #endif
 
+
     public List<Texture2D> images = new List<Texture2D>();
 
     private void OnEnable()
     {
         images = Resources.LoadAll<Texture2D>("Character/" + gameObject.name).ToList();
-        
         StartCoroutine(GetExternalImages(Directory.GetFiles(filesLocation)));
-
     }
     public IEnumerator GetExternalImages(string[] filePaths) //Load paths 
     {
@@ -45,6 +43,6 @@ public class JZSpriteRoot : MonoBehaviour
 
     private void AddImgFile(string filePath, UnityWebRequest uwr)
     {
-        if (filePath.Contains(gameObject.name)) images.Add(DownloadHandlerTexture.GetContent(uwr));
+        if (filePath.ToLower().Contains(gameObject.name.ToLower())) images.Add(DownloadHandlerTexture.GetContent(uwr));
     }
 }

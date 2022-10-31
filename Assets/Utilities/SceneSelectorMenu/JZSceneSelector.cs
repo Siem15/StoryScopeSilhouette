@@ -59,6 +59,8 @@ public class JZSceneSelector : MonoBehaviour
             else icon = (DownloadHandlerTexture.GetContent(uwr));
             
             GetComponent<SpriteRenderer>().material.mainTexture = icon;
+            //GetComponent<Renderer>().material.SetTexture("_BaseMap", icon); voor pandemic
+
         }
     }
 }

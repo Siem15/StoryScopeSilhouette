@@ -20,11 +20,11 @@ public class JZRunOnPrefabs : Editor
 
     private static void AddScripts(List<Component> _renderers)
     {
-        foreach (var item in _renderers)
+        foreach (var rend in _renderers)
         {
-            if (item != null && !item.gameObject.name.Contains("eye"))
+            if (rend != null && !rend.gameObject.name.Contains("eye"))
             {
-                item.gameObject.AddComponent<JZSpriteChild>();
+                rend.gameObject.AddComponent<JZSpriteChild>();
             }
         }
     }

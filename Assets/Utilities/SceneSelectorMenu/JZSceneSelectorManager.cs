@@ -26,9 +26,11 @@ public class JZSceneSelectorManager : MonoBehaviour
         float scenes = otherScenesPath.Count;
         if (scenes < 4) SceneManagerButtons.threshold = true;
         else SceneManagerButtons.threshold = false;
+
+        SceneManagerButtons.threshold = scenes < 4 ? true : false;
+
         for (int i = 0; i < scenes; i++)
         {
-          //  Debug.Log(otherScenesPath[i]);
             GameObject levelSelect = Instantiate(prefabSelector, transform);
             JZSceneSelector jzSceneSelector = levelSelect.GetComponent<JZSceneSelector>();
             Vector3 tempT = levelSelect.transform.position;

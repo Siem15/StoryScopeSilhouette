@@ -5,28 +5,21 @@ using UnityEngine;
 
 public class JZSpriteChild : MonoBehaviour
 {
-    Sprite ogSprite;
     Vector2 spritePivot;
     SpriteRenderer sprRend;
+    float originalSpritePixelsPerUnit;
     public List<Texture2D> images = new List<Texture2D>();
-    public Sprite [] multipleLoaded;
+    Sprite [] multipleLoaded;
     void Start()
     {
         sprRend = GetComponent<SpriteRenderer>();
-        ogSprite = sprRend.sprite;
-
-        GetImagesFromRoot();
-
+        originalSpritePixelsPerUnit = sprRend.sprite.pixelsPerUnit;
+        images = transform.root.GetComponent<JZSpriteRoot>().images;
         spritePivot = CalculatePivot();
         multipleLoaded = new Sprite[images.Count];
         SpriteSlicer();
-    }
 
-    private void GetImagesFromRoot()
-    {
-        images = transform.root.GetComponent<JZSpriteRoot>().images;
     }
-
     public Vector2 CalculatePivot()
     {
         Bounds bounds = sprRend.sprite.bounds;
@@ -37,14 +30,13 @@ public class JZSpriteChild : MonoBehaviour
     {
         for (int i = 0; i < multipleLoaded.Length; i++)
         {
-            multipleLoaded[i] = Sprite.Create(images[i], sprRend.sprite.rect, spritePivot, 100, 0, SpriteMeshType.FullRect); //slice the sprite 
+            multipleLoaded[i] = Sprite.Create(images[i], sprRend.sprite.rect, spritePivot, originalSpritePixelsPerUnit, 0, SpriteMeshType.FullRect); //slice the sprite 
         }
     }
 
     private void Update()
     {
-        if (multipleLoaded.Length== 0) return;
+        if (multipleLoaded.Length == 0) return;
         sprRend.sprite = multipleLoaded[JZSpriteCounter.spriteCounter % multipleLoaded.Length];
-
     }
 }

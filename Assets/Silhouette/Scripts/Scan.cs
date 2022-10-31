@@ -6,45 +6,33 @@ using UnityEngine;
 public class Scan : MonoBehaviour
 {
     public GameObject scanCam;
-    FiducialController fiducialController;
-    public GameObject otherSide;
-    public bool isEmpty = true;
-    public CameraSnap cameraSnap;
     public Texture emptySprite;
+    public Scan otherSide;
+    public bool isEmpty = true;
 
+    Renderer rend; 
+    CameraSnap cameraSnap;
+    FiducialController fiducialController;
+    
     private void Awake()
     {
-        GetComponent<Renderer>().material.SetTexture("_BaseMap", emptySprite);
-        scanCam = GameObject.FindGameObjectWithTag("ScanCam");
+        rend = GetComponent<Renderer>();
         cameraSnap = scanCam.GetComponent<CameraSnap>();
-       // cameraSnap = GameObject.FindGameObjectWithTag("ScanCam").GetComponent<CameraSnap>();
         fiducialController = GetComponent<FiducialController>();
+    }
+    public void SetEmpty() { 
+        rend.material.SetTexture("_BaseMap", emptySprite);
+        isEmpty = true;
     }
     private void Update()
     {
-        if(scanCam == null) scanCam = GameObject.FindGameObjectWithTag("ScanCam");
-        if (Input.GetKeyDown(KeyCode.L))
+        if (isEmpty == true && fiducialController.m_IsVisible && scanCam.activeSelf)
         {
+            isEmpty = false;
+            otherSide.SetEmpty();
             ScanDrawing();
         }
-
-        if (scanCam.activeSelf)
-        {
-            if (fiducialController.m_IsVisible && isEmpty == true)
-            {
-                isEmpty = false;
-                PurgeOtherSide();
-                ScanDrawing();
-            }
-        }
     }
-
-    private void PurgeOtherSide()
-    {
-        otherSide.GetComponent<Renderer>().material.SetTexture("_BaseMap", emptySprite); //clear otherside
-        otherSide.GetComponent<Scan>().isEmpty = true; //set isEmpty true
-    }
-
     private void ScanDrawing()
     {
         cameraSnap.LoadNew(gameObject);

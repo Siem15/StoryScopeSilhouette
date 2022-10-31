@@ -59,6 +59,7 @@ MonoBehaviour:
   UseRotation: 1
   AutoHideGO: 1
   DegreesToAction: 90
+  hideDelay: 1
   CameraOffset: 10
   RotateAround: 1
   camY: 0
@@ -123,7 +124,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7134950775603620524
 Transform:
   m_ObjectHideFlags: 0
@@ -706,7 +707,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7134950776800268035
 Transform:
   m_ObjectHideFlags: 0
@@ -1013,7 +1014,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7134950776979729181
 Transform:
   m_ObjectHideFlags: 0
@@ -1223,7 +1224,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7134950777452474945
 Transform:
   m_ObjectHideFlags: 0

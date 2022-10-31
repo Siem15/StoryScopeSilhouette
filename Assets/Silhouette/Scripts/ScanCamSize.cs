@@ -9,15 +9,13 @@ using UnityEngine.Experimental.Rendering.LWRP;
 public class ScanCamSize : MonoBehaviour
 {
     new Camera camera;
-    public GameObject LinksOnder;
-    public GameObject RechtsBoven;
-    public GameObject LinksBoven;
-    public GameObject RechtsOnder;
+    public GameObject LinksOnder, RechtsBoven, LinksBoven, RechtsOnder;
     float camSize;
     public float growRate;
     private LineRenderer lineRenderer;
-
+    Vector3[] positions = new Vector3[4];
     FiducialController fiducialController;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -33,6 +31,7 @@ public class ScanCamSize : MonoBehaviour
     {
         camera.orthographicSize = Mathf.Clamp(camera.orthographicSize, 1f, 8f);
         if (camSize != camera.orthographicSize) ResetBorders();
+        if (Input.GetKeyDown(KeyCode.Z)) ResetBorders();
         if(fiducialController.RotationSpeed > 0) camera.orthographicSize += growRate;
         if (fiducialController.RotationSpeed < 0) camera.orthographicSize -= growRate;
     }
@@ -40,25 +39,32 @@ public class ScanCamSize : MonoBehaviour
     private void ResetBorders()
     {
         camSize = camera.orthographicSize;
-        Vector3[] positions = new Vector3[4];
-
-        positions[0] = camera.ScreenToWorldPoint(new Vector3(0, 0, 13)); //LnksOnder
-        LinksOnder.transform.position = positions[0];
-        positions[2] = camera.ScreenToWorldPoint(new Vector3(camera.pixelWidth, camera.pixelHeight, 13)); //Rechtsboven
-        RechtsBoven.transform.position = positions[2];
-        positions[1] = camera.ScreenToWorldPoint(new Vector3(0, camera.pixelHeight, 13)); //LnksBoven
-        LinksBoven.transform.position = positions[1];
-        positions[3] = camera.ScreenToWorldPoint(new Vector3(camera.pixelWidth, 0, 13)); //Rechtsboven
-        RechtsOnder.transform.position = positions[3];
-
+        GetCameraCornerPositions(positions);
+        SetCornerPositions(positions);
         RenderLines(positions);
 
     }
 
+    private void GetCameraCornerPositions(Vector3[] positions)
+    {
+        positions[0] = camera.ScreenToWorldPoint(new Vector3(0, 0, 13)); //LnksOnder
+        positions[2] = camera.ScreenToWorldPoint(new Vector3(camera.pixelWidth, camera.pixelHeight, 13)); //Rechtsboven
+        positions[1] = camera.ScreenToWorldPoint(new Vector3(0, camera.pixelHeight, 13)); //LnksBoven
+        positions[3] = camera.ScreenToWorldPoint(new Vector3(camera.pixelWidth, 0, 13)); //Rechtsboven
+    }
+
+    private void SetCornerPositions(Vector3[] positions)
+    {
+        LinksOnder.transform.position = positions[0];
+        LinksBoven.transform.position = positions[1];
+        RechtsBoven.transform.position = positions[2];
+        RechtsOnder.transform.position = positions[3];
+    }
+
     private void RenderLines(Vector3[] points)
     {
-        lineRenderer.startWidth = .2f;
-        lineRenderer.endWidth = .2f;
+        lineRenderer.startWidth = .1f;
+        lineRenderer.endWidth = .1f;
         lineRenderer.positionCount = points.Length;
         lineRenderer.SetPositions(points);
         lineRenderer.loop = true;

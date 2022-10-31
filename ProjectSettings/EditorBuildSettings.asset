@@ -11,4 +11,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Silhouette/Silhouette.unity
     guid: 12b5c75e63f3a0e44bb9741b477c26c1
+  - enabled: 0
+    path: Assets/Silhouette/draw/draw.unity
+    guid: 461631411ac6dcb40ab3eaf87aec4fec
+  - enabled: 0
+    path: Assets/Silhouette/test.unity
+    guid: 2f0db942e3e475d4f8c65bdceaf5f4db
   m_configObjects: {}

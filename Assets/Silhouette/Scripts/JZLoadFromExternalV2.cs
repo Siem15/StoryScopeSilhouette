@@ -27,9 +27,6 @@ public class JZLoadFromExternalV2 : MonoBehaviour
     VideoPlayer vp;
     Renderer jzrenderer = null;
     int currentItem = 0;
-    [Tooltip("put the extension here like: \"png\"")]
-    string extension;
-    string filesLocationLinux;
 
     void Start()
     {
@@ -42,13 +39,13 @@ public class JZLoadFromExternalV2 : MonoBehaviour
         if (sourceType == sourceElementType.Video)
         {
             vp = GetComponent<VideoPlayer>();
-            extension = "mp4";
+            //extension = "mp4";
 
         }
         if (sourceType == sourceElementType.Texture)
         {
             jzrenderer = GetComponent<Renderer>();
-            extension = "png";
+            //extension = "png";
         }
        //StartCoroutine("LoadAll", Directory.GetFiles(filesLocation, "*." + extension, SearchOption.AllDirectories));
         StartCoroutine(LoadAll(Directory.GetFiles(path)));
@@ -101,5 +98,10 @@ public class JZLoadFromExternalV2 : MonoBehaviour
         }
 
     }
-    public void LoadNewImages() {}
+
+    public void OnApplicationFocus(bool focus)
+    {
+        images.Clear();
+        StartCoroutine(LoadAll(Directory.GetFiles(path)));
+    }
 }

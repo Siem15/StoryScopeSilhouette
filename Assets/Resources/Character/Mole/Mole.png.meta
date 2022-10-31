@@ -1,12 +1,30 @@
 fileFormatVersion: 2
-guid: 89f5df49a431e5e429f8054ef596e980
+guid: 8f07974b834dc1743b3b12cf027a92cc
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: 8769549347541133393
+    second: Mole_0
+  - first:
+      213: -4611245308921733550
+    second: Mole_1
+  - first:
+      213: 3247847509178553989
+    second: Mole_2
+  - first:
+      213: 5959382565532510637
+    second: Mole_3
+  - first:
+      213: 2227810782823274613
+    second: Mole_4
+  - first:
+      213: -3744959067356602926
+    second: Mole_5
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
     mipMapMode: 0
-    enableMipMap: 1
+    enableMipMap: 0
     sRGBTexture: 1
     linearTexture: 0
     fadeOut: 0
@@ -35,24 +53,24 @@ TextureImporter:
     filterMode: 1
     aniso: 1
     mipBias: 0
-    wrapU: 0
-    wrapV: 0
+    wrapU: 1
+    wrapV: 1
     wrapW: 0
-  nPOTScale: 1
+  nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 0
+  spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
-  alphaIsTransparency: 0
+  alphaIsTransparency: 1
   spriteTessellationDetail: -1
-  textureType: 0
+  textureType: 8
   textureShape: 1
   singleChannelComponent: 0
   flipbookRows: 1
@@ -75,13 +93,175 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Mole_0
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 346
+        width: 103
+        height: 112
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 158a2742ba2b3b970800000000000000
+      internalID: 8769549347541133393
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mole_1
+      rect:
+        serializedVersion: 2
+        x: 556
+        y: 323
+        width: 195
+        height: 121
+      alignment: 9
+      pivot: {x: 0.85495937, y: 0.7765927}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25e988da2d09100c0800000000000000
+      internalID: -4611245308921733550
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mole_2
+      rect:
+        serializedVersion: 2
+        x: 786
+        y: 277
+        width: 189
+        height: 181
+      alignment: 9
+      pivot: {x: 0.65293115, y: 0.104979455}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 586993d0a1ca21d20800000000000000
+      internalID: 3247847509178553989
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mole_3
+      rect:
+        serializedVersion: 2
+        x: 791
+        y: 60
+        width: 203
+        height: 100
+      alignment: 9
+      pivot: {x: 0.526229, y: 0.74340117}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da9a8338edaf3b250800000000000000
+      internalID: 5959382565532510637
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mole_4
+      rect:
+        serializedVersion: 2
+        x: 614
+        y: 37
+        width: 161
+        height: 156
+      alignment: 9
+      pivot: {x: 0.50944924, y: 0.50975215}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57857f08a16caee10800000000000000
+      internalID: 2227810782823274613
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mole_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 42
+        width: 610
+        height: 252
+      alignment: 9
+      pivot: {x: 0.48004937, y: 0.1528888}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ddd4d3e19b370cc0800000000000000
+      internalID: -3744959067356602926
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: dbc5aa3423a571d48ad1a6ae13b16e1f
     internalID: 0
     vertices: []
     indices: 

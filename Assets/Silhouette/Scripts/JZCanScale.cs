@@ -7,6 +7,7 @@ public class JZCanScale : MonoBehaviour
     public JZSOCameraActive jZSOCameraActive;
     FiducialController fiducialController;
     public float scaleFactor;
+    public Transform[] otherOnes;
 
     void Start()
     {
@@ -31,6 +32,10 @@ public class JZCanScale : MonoBehaviour
                     scale.x * fiducialController.RotationSpeed * scaleFactor / 10,
                     scale.y * fiducialController.RotationSpeed * scaleFactor / 10,
                     scale.z * fiducialController.RotationSpeed * scaleFactor / 10);
+            }
+            for (int i = 0; i < otherOnes.Length; i++)
+            {
+                otherOnes[i].localScale = transform.localScale;
             }
         }
     }

@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{1555FAD6-E65C-7B70-91C9-38BC86C5EFCA}</ProjectGuid>
+    <ProjectGuid>{BE78EB8C-044B-9FC0-FF9C-BE53075F5131}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -53,15 +53,15 @@
     <UnityVersion>2020.3.17f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
-    <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio Tools for Unity\16.0\Analyzers\Microsoft.Unity.Analyzers.dll" />
+    <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Silhouette\Scripts\TurnOnEditorCharacter.cs" />
-    <Compile Include="Assets\Silhouette\Animations\char_people_tallGuy\AnimationHierarchyEditor.cs" />
     <Compile Include="Assets\ThirdParty\FiducialFolder\TUIOConnector\TuioPoint.cs" />
     <Compile Include="Assets\Silhouette\Scripts\Webcam.cs" />
     <Compile Include="Assets\ThirdParty\FiducialFolder\TUIOConnector\TuioContainer.cs" />
     <Compile Include="Assets\Silhouette\Scripts\SO\Manager.cs" />
+    <Compile Include="Assets\ThirdParty\Aran\TekenPackage\Drawable.cs" />
     <Compile Include="Assets\Silhouette\Scripts\Character.cs" />
     <Compile Include="Assets\Silhouette\Scripts\Resolution.cs" />
     <Compile Include="Assets\Silhouette\Scripts\WebCamera.cs" />
@@ -75,11 +75,15 @@
     <Compile Include="Assets\JZVariables.cs" />
     <Compile Include="Assets\Silhouette\Scripts\webcamDevices.cs" />
     <Compile Include="Assets\Silhouette\Scripts\JZSlides.cs" />
+    <Compile Include="Assets\JZdatabaseStuff.cs" />
     <Compile Include="Assets\Silhouette\Scripts\JZCanScale.cs" />
+    <Compile Include="Assets\Silhouette\draw\JZgetbase64.cs" />
     <Compile Include="Assets\ThirdParty\FiducialFolder\Uniducial\FiducialController.cs" />
     <Compile Include="Assets\Silhouette\Scripts\CameraSnap.cs" />
     <Compile Include="Assets\ThirdParty\FiducialFolder\TUIOConnector\TuioTime.cs" />
+    <Compile Include="Assets\ThirdParty\Aran\TekenPackage\StoryScopeGum.cs" />
     <Compile Include="Assets\Silhouette\Scripts\TextureExtension.cs" />
+    <Compile Include="Assets\ThirdParty\Aran\TekenPackage\DrawingSettings.cs" />
     <Compile Include="Assets\Silhouette\Scripts\Stamp.cs" />
     <Compile Include="Assets\JZRotateToNextChild.cs" />
     <Compile Include="Assets\Utilities\Loading\LoadingScene.cs" />
@@ -90,7 +94,10 @@
     <Compile Include="Assets\Utilities\SceneSelectorMenu\JZSceneDirectionButton.cs" />
     <Compile Include="Assets\Silhouette\SpriteStuff\JZSpriteChild.cs" />
     <Compile Include="Assets\Utilities\ConsoleStandAlone\ConsoleToGUI.cs" />
+    <Compile Include="Assets\Silhouette\Scripts\JZRunInBackground.cs" />
+    <Compile Include="Assets\ThirdParty\Aran\TekenPackage\PenManager.cs" />
     <Compile Include="Assets\ThirdParty\FiducialFolder\TUIOConnector\OSCBundle.cs" />
+    <Compile Include="Assets\Silhouette\draw\JZDatabaseAccess.cs" />
     <Compile Include="Assets\ThirdParty\FiducialFolder\FiducialExamples\Parameters.cs" />
     <Compile Include="Assets\ThirdParty\FiducialFolder\TUIOConnector\TuioCursor.cs" />
     <Compile Include="Assets\ThirdParty\FiducialFolder\TUIOConnector\TuioManager.cs" />
@@ -99,6 +106,7 @@
     <Compile Include="Assets\Utilities\ShutDownCanvas\JZShutdown_111.cs" />
     <Compile Include="Assets\ThirdParty\FiducialFolder\FiducialExamples\Compass.cs" />
     <Compile Include="Assets\ThirdParty\FiducialFolder\TUIOConnector\OSCMessage.cs" />
+    <Compile Include="Assets\ThirdParty\Aran\TekenPackage\StoryScopePen.cs" />
     <Compile Include="Assets\Silhouette\Scripts\JZTurnSpriteCounter.cs" />
     <Compile Include="Assets\Utilities\SceneSelectorMenu\JZSceneSelectorManager.cs" />
     <Compile Include="Assets\Utilities\TestScipt.cs" />
@@ -123,6 +131,7 @@
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Mobile.cginc" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF SSD.shader" />
+    <None Include="Assets\Database\Plugins\MongoDB.Bson.dll" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface-Mobile.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface.shader" />
     <None Include="Assets\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
@@ -133,12 +142,16 @@
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Properties.cginc" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Surface.cginc" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
+    <None Include="Assets\Database\Plugins\MongoDB.Driver.dll" />
     <None Include="Assets\Utilities\readme.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Masking.shader" />
+    <None Include="Assets\Database\Plugins\MongoDB.Driver.Core.dll" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF Overlay.shader" />
+    <None Include="Assets\Database\Plugins\System.Buffers.dll" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Mobile.shader" />
     <None Include="Assets\TextMesh Pro\Fonts\LiberationSans - OFL.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile.shader" />
+    <None Include="Assets\Database\Plugins\DnsClient.dll" />
     <None Include="Assets\ThirdParty\FiducialFolder\Uniducial\UniducialLibrary.dll" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Sprite.shader" />
   </ItemGroup>
@@ -362,14 +375,29 @@
     <Reference Include="UnityEditor.UnityConnectModule">
       <HintPath>C:\Program Files\Unity\2020.3.17f1\Editor\Data\Managed\UnityEngine\UnityEditor.UnityConnectModule.dll</HintPath>
     </Reference>
+    <Reference Include="MongoDB.Driver">
+      <HintPath>Assets\Database\Plugins\MongoDB.Driver.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.Analytics.StandardEvents">
       <HintPath>Library\PackageCache\com.unity.analytics@3.5.3\AnalyticsStandardEvents\Unity.Analytics.StandardEvents.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.Editor">
       <HintPath>Library\PackageCache\com.unity.analytics@3.5.3\Unity.Analytics.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="MongoDB.Bson">
+      <HintPath>Assets\Database\Plugins\MongoDB.Bson.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.Burst.Unsafe">
       <HintPath>Library\PackageCache\com.unity.burst@1.4.4\Unity.Burst.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="MongoDB.Driver.Core">
+      <HintPath>Assets\Database\Plugins\MongoDB.Driver.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DnsClient">
+      <HintPath>Assets\Database\Plugins\DnsClient.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Buffers">
+      <HintPath>Assets\Database\Plugins\System.Buffers.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.Tracker">
       <HintPath>Library\PackageCache\com.unity.analytics@3.5.3\Unity.Analytics.Tracker.dll</HintPath>

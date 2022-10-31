@@ -65,7 +65,10 @@ public class UniducialInspector : UnityEditor.Editor
         EditorGUILayout.EndHorizontal();
         EditorGUILayout.Separator();
 
-
+        EditorGUILayout.BeginHorizontal();
+        controller.hideDelay = EditorGUILayout.FloatField("Hide Delay", controller.hideDelay);
+        EditorGUILayout.EndHorizontal();
+        EditorGUILayout.Separator();
 
         EditorGUILayout.Separator();
 
