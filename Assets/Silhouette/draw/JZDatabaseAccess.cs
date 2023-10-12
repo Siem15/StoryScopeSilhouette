@@ -17,7 +17,7 @@ public class JZDatabaseAccess : MonoBehaviour
     void Start()
     {
         database = client.GetDatabase("draw");
-        collection = database.GetCollection<BsonDocument>("drawings");
+        collection = database.GetCollection<BsonDocument>("spriteSheet");
 
         //Invoke("DownloadDB", 3f);
     }

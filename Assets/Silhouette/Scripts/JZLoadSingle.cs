@@ -5,18 +5,15 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.Networking;
 
-public class JZSpriteRoot : MonoBehaviour
-
-
-//TODO: Turned off stuff is the ligth version 
+public class JZLoadSingle : MonoBehaviour
 {
 #if UNITY_STANDALONE_WIN
-    string filesLocationOG = @"C:/StoryScopeMedia/SheetsOG";
-    string filesLocation = @"C:/StoryScopeMedia/Sheets";
+    string filesLocationOG = @"C:/StoryScopeMedia/Props";
+    string filesLocation = @"C:/StoryScopeMedia/Props";
 #endif
 
 #if UNITY_STANDALONE_LINUX
-    string filesLocation = "/home/InteractiveCulture/StoryScopeMedia/Sheets";
+    string filesLocation = "/home/InteractiveCulture/StoryScopeMedia/Props";
     // string filesLocation = "/home/jzi7/Desktop/Characters";
 #endif
 
@@ -25,12 +22,11 @@ public class JZSpriteRoot : MonoBehaviour
 #endif
 
 
-    public List<Texture2D> images = new List<Texture2D>();
+    public Texture2D image;
 
     private void OnEnable()
     {
-        images = Resources.LoadAll<Texture2D>("Character/" + gameObject.name).ToList();
-      //TODO:  StartCoroutine(GetExternalImages(Directory.GetFiles(filesLocation)));
+        StartCoroutine(GetExternalImages(Directory.GetFiles(filesLocation)));
     }
     public IEnumerator GetExternalImages(string[] filePaths) //Load paths 
     {
@@ -46,6 +42,7 @@ public class JZSpriteRoot : MonoBehaviour
 
     private void AddImgFile(string filePath, UnityWebRequest uwr)
     {
-        if (filePath.ToLower().Contains(gameObject.name.ToLower())) images.Add(DownloadHandlerTexture.GetContent(uwr));
+        if (filePath.ToLower().Contains(gameObject.name.ToLower())) image = (DownloadHandlerTexture.GetContent(uwr));
+        GetComponent<Renderer>().material.mainTexture = image;
     }
 }

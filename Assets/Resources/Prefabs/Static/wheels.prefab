@@ -39,7 +39,7 @@ SpriteRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6881831716316535818}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -101,14 +101,22 @@ MonoBehaviour:
   InvertY: 0
   grounded: 0
   templateCam: 0
-  Audio: 0
   full: 0
   IsRotationMapped: 1
+  UseRotation: 0
   AutoHideGO: 1
+  DegreesToAction: 0
+  hideDelay: 1
   CameraOffset: 10
   RotateAround: 1
   camY: 0
   camX: 0
+  onRotateForward:
+    m_PersistentCalls:
+      m_Calls: []
+  onRotateBackward:
+    m_PersistentCalls:
+      m_Calls: []
   m_ScreenPosition: {x: 0, y: 0}
   m_IsVisible: 0
   RotationMultiplier: 1

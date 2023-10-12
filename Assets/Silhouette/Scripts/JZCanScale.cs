@@ -5,37 +5,33 @@ using UnityEngine;
 public class JZCanScale : MonoBehaviour
 {
     public JZSOCameraActive jZSOCameraActive;
-    FiducialController fiducialController;
+    FiducialController fidu;
     public float scaleFactor;
     public Transform[] otherOnes;
 
     void Start()
     {
-        fiducialController = GetComponent<FiducialController>();
+        fidu = GetComponent<FiducialController>();
     }
 
     void Update()
     {
-        if (fiducialController.IsVisible && jZSOCameraActive.camIsActive)
+        if (fidu.IsVisible && jZSOCameraActive.camIsActive)
         {
             Vector3 scale = transform.localScale;
-            if (fiducialController.RotationSpeed > 0)
+            if (fidu.RotationSpeed > 0)
             {
                 transform.localScale += new Vector3(
-                    scale.x * fiducialController.RotationSpeed * scaleFactor / 10,
-                    scale.y * fiducialController.RotationSpeed * scaleFactor / 10, 
-                    scale.z * fiducialController.RotationSpeed * scaleFactor / 10);
+                    scale.x * fidu.RotationSpeed * scaleFactor / 10,
+                    scale.y * fidu.RotationSpeed * scaleFactor / 10, 
+                    scale.z * fidu.RotationSpeed * scaleFactor / 10);
             }
-            if (fiducialController.RotationSpeed < 0)
+            if (fidu.RotationSpeed < 0)
             {
                 transform.localScale += new Vector3(
-                    scale.x * fiducialController.RotationSpeed * scaleFactor / 10,
-                    scale.y * fiducialController.RotationSpeed * scaleFactor / 10,
-                    scale.z * fiducialController.RotationSpeed * scaleFactor / 10);
-            }
-            for (int i = 0; i < otherOnes.Length; i++)
-            {
-                otherOnes[i].localScale = transform.localScale;
+                    scale.x * fidu.RotationSpeed * scaleFactor / 10,
+                    scale.y * fidu.RotationSpeed * scaleFactor / 10,
+                    scale.z * fidu.RotationSpeed * scaleFactor / 10);
             }
         }
     }

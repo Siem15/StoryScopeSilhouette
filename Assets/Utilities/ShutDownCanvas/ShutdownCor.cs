@@ -35,12 +35,7 @@ public class ShutdownCor : MonoBehaviour
             shutdownValue--;
         }
         jz.SetPPPower("power", "off");
-#if UNITY_STANDALONE_WIN
-        System.Diagnostics.Process.Start("C:/StoryScopeShutdown.bat");
-#endif
-#if UNITY_STANDALONE_LINUX
         System.Diagnostics.Process.Start("/home/shutdown.sh");
-#endif
     }
 
     public void StartShutdownTimer()

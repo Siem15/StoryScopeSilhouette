@@ -97,7 +97,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   images: []
-  multipleLoaded: []
 --- !u!1 &5316535397049497076
 GameObject:
   m_ObjectHideFlags: 0
@@ -251,7 +250,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   images: []
-  multipleLoaded: []
 --- !u!1 &5316599272820941094
 GameObject:
   m_ObjectHideFlags: 0
@@ -462,7 +460,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   images: []
-  multipleLoaded: []
 --- !u!1 &5316810500887738582
 GameObject:
   m_ObjectHideFlags: 0
@@ -735,7 +732,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   images: []
-  multipleLoaded: []
 --- !u!1 &5317447977368402732
 GameObject:
   m_ObjectHideFlags: 0
@@ -838,7 +834,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   images: []
-  multipleLoaded: []
 --- !u!1 &5317462415743183132
 GameObject:
   m_ObjectHideFlags: 0
@@ -955,15 +950,12 @@ MonoBehaviour:
   WalkSpeed: 3.76
   RunSpeed: 6.03
   stopRunningUntilThisDist: 0
-  groundHeight: 0
-  groundOffset: 0
+  singleSprite: 0
   controlRotation: 0
   controlPosition: 1
   facingRight: 1
   endMarkerPrefab: {fileID: 441084473105571446, guid: 2f7ed94a83a05a140be209a9a062c607,
     type: 3}
-  animator: {fileID: 0}
-  singleSprite: 0
 --- !u!114 &1394184109
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1074,7 +1066,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   images: []
-  multipleLoaded: []
 --- !u!1 &5318233953303162816
 GameObject:
   m_ObjectHideFlags: 0
@@ -1172,7 +1163,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   images: []
-  multipleLoaded: []
 --- !u!1 &5318289026960244728
 GameObject:
   m_ObjectHideFlags: 0
@@ -1270,7 +1260,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   images: []
-  multipleLoaded: []
 --- !u!1 &6136626448342462720
 GameObject:
   m_ObjectHideFlags: 0
@@ -1286,7 +1275,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &927855718311684897
 Transform:
   m_ObjectHideFlags: 0

@@ -6,15 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 0
-    path: Assets/Utilities/Loading/LoadScene.unity
-    guid: 079d73e642a5ed841a3aa0659f2eceeb
-  - enabled: 1
     path: Assets/Silhouette/Silhouette.unity
     guid: 12b5c75e63f3a0e44bb9741b477c26c1
   - enabled: 0
-    path: Assets/Silhouette/draw/draw.unity
-    guid: 461631411ac6dcb40ab3eaf87aec4fec
-  - enabled: 0
-    path: Assets/Silhouette/test.unity
-    guid: 2f0db942e3e475d4f8c65bdceaf5f4db
+    path: Assets/Silhouette/SilhouetteTETEM.unity
+    guid: 8f07bf7a769c5d245981ada75480bc71
+  - enabled: 1
+    path: Assets/Silhouette/SilhouetteLight.unity
+    guid: d9f93016d1d67a94eb54c10291478efe
   m_configObjects: {}

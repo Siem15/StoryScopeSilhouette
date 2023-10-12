@@ -113,6 +113,12 @@ public class Webcam : MonoBehaviour
             yield return new WaitForSeconds(10);
         }
     }
+
+    public void OnApplicationQuit()
+    {
+        TurnOffWebcam();
+    }
+
     public void TurnOffWebcam()
     {
         if (webcamTexture != null && webcamTexture.isPlaying)

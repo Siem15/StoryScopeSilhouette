@@ -10,6 +10,8 @@ public class JZLoadFromExternalV2 : MonoBehaviour
 	enum sourceElementType { Video, Texture };
 	sourceElementType sourceType;
 
+    //TODO: Turned off stuff is the ligth version 
+
 #if UNITY_STANDALONE_WIN
     string filesLocation = @"C:/StoryScopeMedia/";
 #endif
@@ -21,6 +23,7 @@ public class JZLoadFromExternalV2 : MonoBehaviour
 #endif
 
     public string folder;
+    [SerializeField]
     string path;
     public List<Texture2D> images = new List<Texture2D>();
     readonly List<string> videoURL = new List<string>();
@@ -53,7 +56,7 @@ public class JZLoadFromExternalV2 : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKey(KeyCode.Space) && Input.GetKeyDown(KeyCode.B)) StartCoroutine(LoadAll(Directory.GetFiles(path)));
+        //TODO:if (Input.GetKey(KeyCode.Space) && Input.GetKeyDown(KeyCode.B)) StartCoroutine(LoadAll(Directory.GetFiles(path)));
     }
     public IEnumerator LoadAll(string[] filePaths) //Load all video's and textures
     {
@@ -101,7 +104,7 @@ public class JZLoadFromExternalV2 : MonoBehaviour
 
     public void OnApplicationFocus(bool focus)
     {
-        images.Clear();
-        StartCoroutine(LoadAll(Directory.GetFiles(path)));
+      //TODO:  images.Clear();
+       //TODO: StartCoroutine(LoadAll(Directory.GetFiles(path)));
     }
 }

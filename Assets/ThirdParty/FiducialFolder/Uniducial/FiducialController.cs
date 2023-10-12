@@ -154,10 +154,16 @@ public class FiducialController : MonoBehaviour
         }
         else //automatically hide game object when marker is not visible
         {
-            HideGameObject();
+            if (this.AutoHideGO) StartCoroutine(HideDelay(hideDelay));
         }
     }
 
+    IEnumerator HideDelay(float delayTime)
+    {
+        yield return new WaitForSeconds(delayTime);
+        HideGameObject();
+        yield return null;
+    }
 
 
     void OnApplicationQuit(){if (this.m_TuioManager.IsConnected) this.m_TuioManager.Disconnect();}
@@ -239,6 +245,7 @@ public class FiducialController : MonoBehaviour
 
     public virtual void ShowGameObject()
     {
+		StopAllCoroutines();
 
         if (this.m_ControlsGUIElement)
         {
@@ -258,6 +265,7 @@ public class FiducialController : MonoBehaviour
     }
     public virtual void HideGameObject()
     {
+        if (!AutoHideGO) return; 
         this.m_IsVisible = false;
 
 
