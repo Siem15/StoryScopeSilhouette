@@ -1,16 +1,15 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Flicker : MonoBehaviour
 {
     SpriteRenderer sprite;
-    private float  changeTime = 0;
+    private float changeTime = 0;
 
     private void Start()
     {
         sprite = gameObject.GetComponent<SpriteRenderer>();
     }
+
     void Update()
     {
         float timeDonker = Random.Range(2.0f, 0.5f);

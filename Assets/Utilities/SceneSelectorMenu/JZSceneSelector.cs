@@ -1,12 +1,11 @@
 using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 using System.IO;
+using UnityEngine;
 using UnityEngine.Networking;
 
 public class JZSceneSelector : MonoBehaviour
 {
-	public string pathToImage;
+    public string pathToImage;
     public float speed;
     public float startPos, endPos;
     public Texture2D icon;
@@ -37,8 +36,9 @@ public class JZSceneSelector : MonoBehaviour
         transform.Translate(Vector3.right * SceneManagerButtons.speed / 10);
     }
 
-    private void OnTriggerEnter2D(Collider2D collision) {StartCoroutine(GoToScene()); }
-    private void OnTriggerExit2D(Collider2D collision){StopAllCoroutines();}
+    private void OnTriggerEnter2D(Collider2D collision) { StartCoroutine(GoToScene()); }
+
+    private void OnTriggerExit2D(Collider2D collision) { StopAllCoroutines(); }
 
     IEnumerator GoToScene()
     {
@@ -47,7 +47,8 @@ public class JZSceneSelector : MonoBehaviour
         System.Diagnostics.Process.Start(pathToScene);
         Application.Quit();
     }
-    public IEnumerator LoadAll(string [] filePaths) //Load all video's and textures
+
+    public IEnumerator LoadAll(string[] filePaths) //Load all video's and textures
     {
         foreach (string filePath in filePaths)
         {
@@ -57,7 +58,7 @@ public class JZSceneSelector : MonoBehaviour
 
             if (uwr.result != UnityWebRequest.Result.Success) Debug.Log(uwr.error);
             else icon = (DownloadHandlerTexture.GetContent(uwr));
-            
+
             GetComponent<SpriteRenderer>().material.mainTexture = icon;
             //GetComponent<Renderer>().material.SetTexture("_BaseMap", icon); voor pandemic
 

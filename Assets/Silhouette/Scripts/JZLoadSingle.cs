@@ -1,7 +1,5 @@
 using System.Collections;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using UnityEngine;
 using UnityEngine.Networking;
 
@@ -21,13 +19,13 @@ public class JZLoadSingle : MonoBehaviour
     string filesLocation = "";
 #endif
 
-
     public Texture2D image;
 
     private void OnEnable()
     {
         StartCoroutine(GetExternalImages(Directory.GetFiles(filesLocation)));
     }
+
     public IEnumerator GetExternalImages(string[] filePaths) //Load paths 
     {
         foreach (string filePath in filePaths) //check img to texturelist

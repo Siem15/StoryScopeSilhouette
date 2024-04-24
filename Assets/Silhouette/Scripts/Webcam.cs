@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections;
 using UnityEngine;
-using UnityEngine.Events;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class Webcam : MonoBehaviour
@@ -50,7 +46,7 @@ public class Webcam : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Alpha5)) UpdateTextureSettings(-1f, "_Posterize", posterize, posterizeSlider, "posterize");
         if (Input.GetKeyDown(KeyCode.Alpha6)) UpdateTextureSettings(1f, "_Posterize", posterize, posterizeSlider, "posterize");
         if (Input.GetKeyDown(KeyCode.Alpha7)) UpdateTextureSettings(-1f, sensetivity, sensetivitySlider, "sensitivity");
-        if (Input.GetKeyDown(KeyCode.Alpha8)) UpdateTextureSettings(1f,  sensetivity, sensetivitySlider, "sensitivity");
+        if (Input.GetKeyDown(KeyCode.Alpha8)) UpdateTextureSettings(1f, sensetivity, sensetivitySlider, "sensitivity");
         if (Input.GetKeyDown(KeyCode.H)) sliders.SetActive(!sliders.activeInHierarchy);
         if (!webcamTexture.isPlaying) warning.SetActive(true);
         else warning.SetActive(false);
@@ -133,7 +129,7 @@ public class Webcam : MonoBehaviour
             Debug.Log("Camera stopped playing");
         }
         webcamTexture = null;
-      //  SceneManager.LoadScene(0);
+        //  SceneManager.LoadScene(0);
     }
 
 }

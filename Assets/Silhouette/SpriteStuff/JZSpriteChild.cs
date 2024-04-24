@@ -1,5 +1,3 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -9,7 +7,7 @@ public class JZSpriteChild : MonoBehaviour
     SpriteRenderer sprRend;
     float originalSpritePixelsPerUnit;
     public List<Texture2D> images = new List<Texture2D>();
-    Sprite [] multipleLoaded;
+    Sprite[] multipleLoaded;
     void Start()
     {
         sprRend = GetComponent<SpriteRenderer>();

@@ -1,7 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using System.Dynamic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class TurnOnEditorCharacter : MonoBehaviour
 {
@@ -11,8 +8,9 @@ public class TurnOnEditorCharacter : MonoBehaviour
 
     private void Start()
     {
-             fiducialController = GetComponent<FiducialController>();
+        fiducialController = GetComponent<FiducialController>();
     }
+
     void Update()
     {
         if (show)

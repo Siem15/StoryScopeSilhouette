@@ -1,28 +1,22 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;
+
 public class Manager : MonoBehaviour
 {
-
     public Material ghostMaterial;
-    public Texture [] ghostTextures;
-
+    public Texture[] ghostTextures;
     public GameObject[] InstantiatieThis;
 
-
-    void Start()
+    private void Start()
     {
 #if UNITY_EDITOR
         Application.runInBackground = true;
 #endif
 
-
-        for (int i = 0; i <  InstantiatieThis.Length; i++)
+        for (int i = 0; i < InstantiatieThis.Length; i++)
         {
             Instantiate(InstantiatieThis[i]);
         }
-
     }
 
     private void Update()

@@ -1,6 +1,5 @@
-﻿using UnityEngine;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
 public static class TextureExtension
 {
@@ -119,7 +118,6 @@ public static class TextureExtension
         aTex.SetPixels(colors);
     }
 
-
     public static bool ColorTest(Color c1, Color c2, float tol)
     {
         float diffRed = Mathf.Abs(c1.r - c2.r);
@@ -143,5 +141,4 @@ public static class TextureExtension
             return true;
         }
     }
-
 }

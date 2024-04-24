@@ -1,12 +1,10 @@
-using System.Collections;
-using UnityEngine.SceneManagement;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class JZReloadScene : MonoBehaviour
 {
-
     FiducialController fidu;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -16,8 +14,6 @@ public class JZReloadScene : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (fidu.IsVisible ) SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        
-
+        if (fidu.IsVisible) SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }

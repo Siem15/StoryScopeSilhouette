@@ -1,5 +1,5 @@
-﻿using UnityEngine;
-using System.Collections;
+﻿using System.Collections;
+using UnityEngine;
 
 // Basic code borrowed from: http://www.ikriz.nl/2011/12/23/unity-video-remake
 public class WebCamera : MonoBehaviour

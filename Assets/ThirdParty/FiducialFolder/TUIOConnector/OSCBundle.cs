@@ -1,92 +1,92 @@
-using System;
 using System.Collections;
 
 namespace OSC.NET
 {
-	/// <summary>
-	/// OSCBundle
-	/// </summary>
-	public class OSCBundle : OSCPacket
-	{
-		protected const string BUNDLE = "#bundle";
-		private long timestamp = 0;
-		
-		public OSCBundle(long ts)
-		{
-			this.address = BUNDLE;
-			this.timestamp = ts;
-		}
+    /// <summary>
+    /// OSCBundle
+    /// </summary>
+    public class OSCBundle : OSCPacket
+    {
+        protected const string BUNDLE = "#bundle";
+        private long timestamp = 0;
 
-		public OSCBundle()
-		{
-			this.address = BUNDLE;
-			this.timestamp = 0;
-		}
+        public OSCBundle(long ts)
+        {
+            this.address = BUNDLE;
+            this.timestamp = ts;
+        }
 
-		override protected void pack()
-		{
-			ArrayList data = new ArrayList();
+        public OSCBundle()
+        {
+            this.address = BUNDLE;
+            this.timestamp = 0;
+        }
 
-			addBytes(data, packString(this.Address));
-			padNull(data);
-			addBytes(data, packLong(0)); // TODO
-			
-			foreach(object value in this.Values)
-			{
-				if(value is OSCPacket)
-				{
-					byte[] bs = ((OSCPacket)value).BinaryData;
-					addBytes(data, packInt(bs.Length));
-					addBytes(data, bs);
-				}
-				else 
-				{
-					// TODO
-				}
-			}
-			
-			this.binaryData = (byte[])data.ToArray(typeof(byte));
-		}
+        override protected void pack()
+        {
+            ArrayList data = new ArrayList();
 
-		public static new OSCBundle Unpack(byte[] bytes, ref int start, int end)
-		{
+            addBytes(data, packString(this.Address));
+            padNull(data);
+            addBytes(data, packLong(0)); // TODO
 
-			string address = unpackString(bytes, ref start);
-			//Console.WriteLine("bundle: " + address);
-			if(!address.Equals(BUNDLE)) return null; // TODO
+            foreach (object value in this.Values)
+            {
+                if (value is OSCPacket)
+                {
+                    byte[] bs = ((OSCPacket)value).BinaryData;
+                    addBytes(data, packInt(bs.Length));
+                    addBytes(data, bs);
+                }
+                else
+                {
+                    // TODO
+                }
+            }
 
-			long timestamp = unpackLong(bytes, ref start);
-			OSCBundle bundle = new OSCBundle(timestamp);
-			
-			while(start < end)
-			{
-				int length = unpackInt(bytes, ref start);
-				int sub_end = start + length;
-				//Console.WriteLine(bytes.Length +" "+ start+" "+length+" "+sub_end);
-				bundle.Append(OSCPacket.Unpack(bytes, ref start, sub_end));
+            this.binaryData = (byte[])data.ToArray(typeof(byte));
+        }
 
-			}
+        public static new OSCBundle Unpack(byte[] bytes, ref int start, int end)
+        {
 
-			return bundle;
-		}
+            string address = unpackString(bytes, ref start);
+            //Console.WriteLine("bundle: " + address);
+            if (!address.Equals(BUNDLE)) return null; // TODO
 
-		public long getTimeStamp() {
-			return timestamp;
-		}
+            long timestamp = unpackLong(bytes, ref start);
+            OSCBundle bundle = new OSCBundle(timestamp);
 
-		override public void Append(object value)
-		{
-			if( value is OSCPacket) 
-			{
-				values.Add(value);
-			}
-			else 
-			{
-				// TODO: exception
-			}
-		}
+            while (start < end)
+            {
+                int length = unpackInt(bytes, ref start);
+                int sub_end = start + length;
+                //Console.WriteLine(bytes.Length +" "+ start+" "+length+" "+sub_end);
+                bundle.Append(OSCPacket.Unpack(bytes, ref start, sub_end));
 
-		override public bool IsBundle() { return true; }
-	}
+            }
+
+            return bundle;
+        }
+
+        public long getTimeStamp()
+        {
+            return timestamp;
+        }
+
+        override public void Append(object value)
+        {
+            if (value is OSCPacket)
+            {
+                values.Add(value);
+            }
+            else
+            {
+                // TODO: exception
+            }
+        }
+
+        override public bool IsBundle() { return true; }
+    }
 }
 

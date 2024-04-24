@@ -20,31 +20,27 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 */
 
-using UnityEngine;
-using System.Collections;
 using UnityEditor;
-using UniducialLibrary;
+using UnityEngine;
 
 [CustomEditor(typeof(FiducialController))]
 public class UniducialInspector : UnityEditor.Editor
 {
-    SerializedProperty m_RotateBack;
+    private SerializedProperty m_RotateBack;
     private FiducialController controller;
+
     public UniducialInspector()
     {
 
     }
 
-    private void onEnable()
+    private void OnEnable()
     {
         m_RotateBack = serializedObject.FindProperty("RotateBack");
     }
 
     public override void OnInspectorGUI()
     {
-
-
-
         controller = base.target as FiducialController;
         Camera mainCamera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
 
@@ -79,7 +75,6 @@ public class UniducialInspector : UnityEditor.Editor
 
         if (controller.IsPositionMapped)
         {
-
             EditorGUILayout.BeginHorizontal();
             controller.InvertX = EditorGUILayout.Toggle("Invert X-Axis", controller.InvertX);
             EditorGUILayout.EndHorizontal();
@@ -92,7 +87,6 @@ public class UniducialInspector : UnityEditor.Editor
             controller.grounded = EditorGUILayout.Toggle("Grounded", controller.grounded);
             EditorGUILayout.EndHorizontal();
 
-
             if (!mainCamera.orthographic && !controller.isAttachedToGUIComponent())
             {
                 EditorGUILayout.BeginHorizontal();
@@ -101,7 +95,6 @@ public class UniducialInspector : UnityEditor.Editor
             }
         }
 
-
         EditorGUILayout.Separator();
 
         if (!controller.isAttachedToGUIComponent())
@@ -109,8 +102,6 @@ public class UniducialInspector : UnityEditor.Editor
             EditorGUILayout.BeginHorizontal();
             controller.IsRotationMapped = EditorGUILayout.Toggle("Control Rotation", controller.IsRotationMapped);
             EditorGUILayout.EndHorizontal();
-
-
 
             if (controller.IsRotationMapped)
             {
@@ -122,7 +113,7 @@ public class UniducialInspector : UnityEditor.Editor
                 EditorGUILayout.BeginHorizontal();
                 controller.RotationMultiplier = EditorGUILayout.Slider("Rotation Factor", controller.RotationMultiplier, 0.01f, 5f);
                 EditorGUILayout.EndHorizontal();
- 
+
             }
 
             EditorGUILayout.BeginHorizontal();
@@ -131,25 +122,24 @@ public class UniducialInspector : UnityEditor.Editor
 
             if (controller.UseRotation)
             {
-
-
                 EditorGUILayout.BeginHorizontal();
                 controller.DegreesToAction = EditorGUILayout.FloatField("Degrees To Action", controller.DegreesToAction);
                 EditorGUILayout.EndHorizontal();
 
-                this.serializedObject.Update();
-                EditorGUILayout.PropertyField(this.serializedObject.FindProperty("onRotateForward"), true);
-                this.serializedObject.ApplyModifiedProperties();
+                serializedObject.Update();
+                EditorGUILayout.PropertyField(serializedObject.FindProperty("onRotateForward"), true);
+                serializedObject.ApplyModifiedProperties();
 
 
-                this.serializedObject.Update();
-                EditorGUILayout.PropertyField(this.serializedObject.FindProperty("onRotateBackward"), true);
-                this.serializedObject.ApplyModifiedProperties();
+                serializedObject.Update();
+                EditorGUILayout.PropertyField(serializedObject.FindProperty("onRotateBackward"), true);
+                serializedObject.ApplyModifiedProperties();
             }
         }
 
-
-        if (GUI.changed)
+        if (GUI.changed) 
+        {
             EditorUtility.SetDirty(controller);
+        }        
     }
 }

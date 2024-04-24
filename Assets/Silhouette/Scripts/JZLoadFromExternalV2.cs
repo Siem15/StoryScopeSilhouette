@@ -1,16 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 using System.IO;
-using UnityEngine.Video;
+using UnityEngine;
 using UnityEngine.Networking;
+using UnityEngine.Video;
 
 public class JZLoadFromExternalV2 : MonoBehaviour
 {
-	enum sourceElementType { Video, Texture };
-	sourceElementType sourceType;
+    enum SourceElementType 
+    { 
+        Video, 
+        Texture 
+    };
 
-    //TODO: Turned off stuff is the ligth version 
+    SourceElementType sourceType;
+
+    //TODO: Turned off stuff is the light version 
 
 #if UNITY_STANDALONE_WIN
     string filesLocation = @"C:/StoryScopeMedia/";
@@ -35,22 +40,24 @@ public class JZLoadFromExternalV2 : MonoBehaviour
     {
         path = filesLocation + folder;
         GetComponentInChildren<FiducialController>().MarkerID = int.Parse(gameObject.name.Substring(gameObject.name.Length - 2));
-        //Check if video or Texture
-        if (GetComponent<VideoPlayer>()) sourceType = sourceElementType.Video;
-        else sourceType = sourceElementType.Texture;
 
-        if (sourceType == sourceElementType.Video)
+        //Check if video or Texture
+        if (GetComponent<VideoPlayer>()) sourceType = SourceElementType.Video;
+        else sourceType = SourceElementType.Texture;
+
+        if (sourceType == SourceElementType.Video)
         {
             vp = GetComponent<VideoPlayer>();
             //extension = "mp4";
 
         }
-        if (sourceType == sourceElementType.Texture)
+        else if (sourceType == SourceElementType.Texture)
         {
             jzrenderer = GetComponent<Renderer>();
             //extension = "png";
         }
-       //StartCoroutine("LoadAll", Directory.GetFiles(filesLocation, "*." + extension, SearchOption.AllDirectories));
+
+        //StartCoroutine("LoadAll", Directory.GetFiles(filesLocation, "*." + extension, SearchOption.AllDirectories));
         StartCoroutine(LoadAll(Directory.GetFiles(path)));
     }
 
@@ -62,7 +69,7 @@ public class JZLoadFromExternalV2 : MonoBehaviour
     {
         foreach (string filePath in filePaths)
         {
-            if (sourceType == sourceElementType.Texture)
+            if (sourceType == SourceElementType.Texture)
             {
                 UnityWebRequest uwr = UnityWebRequestTexture.GetTexture("file:///" + filePath);
 
@@ -74,7 +81,7 @@ public class JZLoadFromExternalV2 : MonoBehaviour
 
             UnityWebRequest load = new UnityWebRequest("file:///" + filePath);
 
-            if (sourceType == sourceElementType.Video)
+            if (sourceType == SourceElementType.Video)
             {
                 yield return load;
 
@@ -87,13 +94,13 @@ public class JZLoadFromExternalV2 : MonoBehaviour
     {
         if (next) currentItem++;
         if (!next) currentItem--;
-        if (sourceType == sourceElementType.Video)
+        if (sourceType == SourceElementType.Video)
         {
             if (currentItem < 0) currentItem = videoURL.Count - 1;
             currentItem %= videoURL.Count;
             vp.url = videoURL[currentItem];
         }
-        if (sourceType == sourceElementType.Texture)
+        if (sourceType == SourceElementType.Texture)
         {
             if (currentItem < 0) currentItem = images.Count - 1;
             currentItem %= images.Count;
@@ -104,7 +111,7 @@ public class JZLoadFromExternalV2 : MonoBehaviour
 
     public void OnApplicationFocus(bool focus)
     {
-      //TODO:  images.Clear();
-       //TODO: StartCoroutine(LoadAll(Directory.GetFiles(path)));
+        //TODO: images.Clear();
+        //TODO: StartCoroutine(LoadAll(Directory.GetFiles(path)));
     }
 }

@@ -1,7 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Events;
 
 public class JZTurnSpriteCounter : MonoBehaviour
 {
@@ -9,6 +6,7 @@ public class JZTurnSpriteCounter : MonoBehaviour
     float lastDegree;
     bool resetDegrees = true;
     FiducialController fiducialController;
+
     void Start()
     {
         fiducialController = GetComponent<FiducialController>();
@@ -31,7 +29,7 @@ public class JZTurnSpriteCounter : MonoBehaviour
             if (transform.localEulerAngles.z < lastDegree - DegreesToAction)
             {
                 lastDegree = transform.localEulerAngles.z;
-                 X(1);
+                X(1);
             }
         }
         if (!fiducialController.IsVisible && !resetDegrees)
@@ -42,7 +40,7 @@ public class JZTurnSpriteCounter : MonoBehaviour
 
     public void X(int i)
     {
-        JZSpriteCounter.spriteCounter = Mathf.Clamp(JZSpriteCounter.spriteCounter += i,0,100);
+        JZSpriteCounter.spriteCounter = Mathf.Clamp(JZSpriteCounter.spriteCounter += i, 0, 100);
         //print(JZSpriteCounter.spriteCounter);
     }
 }

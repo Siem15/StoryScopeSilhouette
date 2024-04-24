@@ -1,15 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.Networking;
 
 public class JZSpriteRoot : MonoBehaviour
-
-
-//TODO: Turned off stuff is the ligth version 
 {
+    //TODO: Turned off stuff is the ligth version 
 #if UNITY_STANDALONE_WIN
     string filesLocationOG = @"C:/StoryScopeMedia/SheetsOG";
     string filesLocation = @"C:/StoryScopeMedia/Sheets";
@@ -24,13 +21,12 @@ public class JZSpriteRoot : MonoBehaviour
     string filesLocation = "";
 #endif
 
-
     public List<Texture2D> images = new List<Texture2D>();
 
     private void OnEnable()
     {
         images = Resources.LoadAll<Texture2D>("Character/" + gameObject.name).ToList();
-      //TODO:  StartCoroutine(GetExternalImages(Directory.GetFiles(filesLocation)));
+        //TODO:  StartCoroutine(GetExternalImages(Directory.GetFiles(filesLocation)));
     }
     public IEnumerator GetExternalImages(string[] filePaths) //Load paths 
     {

@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class JZButtonSequence : MonoBehaviour
@@ -10,12 +9,14 @@ public class JZButtonSequence : MonoBehaviour
     public SpriteRenderer sprRend;
     public Vector2 emptyPos, fillPos;
     bool x;
+
     private void Start()
     {
         fidu = GetComponent<FiducialController>();
         Invoke("Delay", 3);
     }
-    void Update()
+
+    private void Update()
     {
         if (Input.GetKeyDown(KeyCode.F))
         {
@@ -28,7 +29,7 @@ public class JZButtonSequence : MonoBehaviour
         LevelSelect();
     }
 
-    public void Delay(){x = true;}
+    public void Delay() { x = true; }
 
     private void LevelSelect()
     {

@@ -1,14 +1,7 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Net.Sockets;
-using UnityEditor;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Flock : MonoBehaviour
 {
-
     public Vector2 speedRange;
     float Speed;
     float RotationSpeed = 4.0f;
@@ -29,19 +22,20 @@ public class Flock : MonoBehaviour
         {
             Turning = true;
         }
-        else 
+        else
         {
             Turning = false;
         }
-        if (Turning) 
+
+        if (Turning)
         {
             Vector3 direction = goalPos - transform.position; ;
             transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(direction), RotationSpeed * Time.deltaTime);
 
 
-            Speed = UnityEngine.Random.Range(speedRange.x,speedRange.y);
+            Speed = UnityEngine.Random.Range(speedRange.x, speedRange.y);
         }
-        else 
+        else
         {
             if (UnityEngine.Random.Range(0, 5) < 1)
             {
@@ -54,7 +48,6 @@ public class Flock : MonoBehaviour
 
     private void ApplyRules()
     {
-
         Vector3 goalPos = GlobalFlock.GoalPos;
 
         GameObject[] fishes; // gos  = fishes 
@@ -77,29 +70,28 @@ public class Flock : MonoBehaviour
                 {
                     groupCentre += fish.transform.position;
                     groupSize++;
-                    if (dist < 1.0f) 
+                    if (dist < 1.0f)
                     {
-                        groupAvoid = groupAvoid + (transform.position - fish.transform.position);
+                        groupAvoid += (transform.position - fish.transform.position);
                     }
 
                     Flock anotherFlock = fish.GetComponent<Flock>();
-                    groupSpeed = groupSpeed + anotherFlock.Speed;
+                    groupSpeed += anotherFlock.Speed;
                 }
             }
         }
 
-        if (groupSize > 0) 
+        if (groupSize > 0)
         {
             groupCentre = groupCentre / groupSize + (goalPos - transform.position);
             Speed = groupSpeed / groupSize;
 
             Vector3 direction = (groupCentre + groupAvoid) - transform.position;
-            if (direction != goalPos) 
+            if (direction != goalPos)
             {
                 transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(direction), RotationSpeed * Time.deltaTime);
 
             }
         }
-
     }
 }

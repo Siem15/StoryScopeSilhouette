@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class JZSlides : MonoBehaviour
@@ -11,13 +9,14 @@ public class JZSlides : MonoBehaviour
 
     public int DegreesToAction;
     float lastDegree;
-    void Start()
+
+    private void Start()
     {
         spr = GetComponent<SpriteRenderer>();
         fidu = GetComponent<FiducialController>();
     }
 
-    void Update()
+    private void Update()
     {
         if (fidu.IsVisible)
         {
@@ -33,5 +32,4 @@ public class JZSlides : MonoBehaviour
         if (nextSlide < 0) nextSlide = slides.Length - 1;
         spr.sprite = slides[nextSlide %= slides.Length];
     }
-
 }

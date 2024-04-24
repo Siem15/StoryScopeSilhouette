@@ -1,11 +1,11 @@
-using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 using System.IO;
+using UnityEngine;
 
 public class JZSceneSelectorManager : MonoBehaviour
 {
     public List<string> otherScenesPath = new List<string>();
+
 #if UNITY_STANDALONE_WIN
     string filesLocation = "C:/StoryScopeMedia/Builds/";
 #endif
@@ -34,13 +34,13 @@ public class JZSceneSelectorManager : MonoBehaviour
             GameObject levelSelect = Instantiate(prefabSelector, transform);
             JZSceneSelector jzSceneSelector = levelSelect.GetComponent<JZSceneSelector>();
             Vector3 tempT = levelSelect.transform.position;
-            
-            tempT.x = (-(scenes * levelSelect.transform.localScale.x + (scenes - 1) *  2) / 2) + 4 + (i*10);
-            
+
+            tempT.x = (-(scenes * levelSelect.transform.localScale.x + (scenes - 1) * 2) / 2) + 4 + (i * 10);
+
             if (i == 0)
             {
                 startPos = tempT.x - 4f;
-                endPos = startPos*-1 + 2;
+                endPos = startPos * -1 + 2;
             }
 
             jzSceneSelector.startPos = startPos;

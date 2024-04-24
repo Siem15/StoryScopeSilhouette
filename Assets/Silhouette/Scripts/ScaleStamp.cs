@@ -1,25 +1,24 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class ScaleStamp : MonoBehaviour {
-
+public class ScaleStamp : MonoBehaviour
+{
     public float scaleFactor;
     public GameObject lastStamped;
     FiducialController _controller;
-
     public Vector2 scale;
+
     // Use this for initialization
-    void Start () {
+    void Start()
+    {
         _controller = gameObject.GetComponent<FiducialController>();
     }
-	
-	// Update is called once per frame
-	void Update () {
+
+    // Update is called once per frame
+    void Update()
+    {
         if (lastStamped != null)
         {
             Vector3 temp = lastStamped.transform.localScale;
-
 
             if (_controller.RotationSpeed > 0 && temp.y < scale.y)
             {

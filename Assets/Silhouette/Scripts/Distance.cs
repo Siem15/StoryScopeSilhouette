@@ -1,9 +1,7 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class Distance : MonoBehaviour {
-
+public class Distance : MonoBehaviour
+{
     Transform partner = null;
     //public Transform hearts;
     public ParticleSystem ps;
@@ -12,13 +10,15 @@ public class Distance : MonoBehaviour {
     float dist;
 
     // Use this for initialization
-    void Start () {
+    void Start()
+    {
         em = ps.emission;
         partner = GameObject.Find("PlantVase(Clone)").transform;
     }
-	
-	// Update is called once per frame
-	void Update () {
+
+    // Update is called once per frame
+    void Update()
+    {
         if (partner != null)
         {
             dist = Vector3.Distance(partner.position, transform.position);

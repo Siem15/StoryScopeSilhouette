@@ -21,7 +21,6 @@ THE SOFTWARE.
 */
 
 using UnityEngine;
-using System.Collections;
 
 [RequireComponent(typeof(FiducialController))]
 public class Parameters : MonoBehaviour
@@ -41,13 +40,13 @@ public class Parameters : MonoBehaviour
 #if UNITY_EDITOR
     void OnGUI()
     {
-            //GUI.Box(new Rect(20, 20, speedBoxWidth, 30), "");
-            GUI.Label(new Rect(20, 20, 100, 30), "Marker ID: " + fiducialController.MarkerID);
-            GUI.Label(new Rect(20, 40, 300, 30), "Marker Position X: " + fiducialController.ScreenPosition.x + " Y: " + fiducialController.ScreenPosition.y);
-            GUI.Label(new Rect(20, 60, 300, 30), "Speed: " + fiducialController.Speed);
-            GUI.Label(new Rect(20, 80, 300, 30), "Acceleration: " + fiducialController.Acceleration);
-            GUI.Label(new Rect(20, 100, 300, 30), "Rotation Speed: " + fiducialController.RotationSpeed);
-            GUI.Label(new Rect(20, 120, 300, 30), "Rotation Acceleration: " + fiducialController.RotationAcceleration);
+        //GUI.Box(new Rect(20, 20, speedBoxWidth, 30), "");
+        GUI.Label(new Rect(20, 20, 100, 30), "Marker ID: " + fiducialController.MarkerID);
+        GUI.Label(new Rect(20, 40, 300, 30), "Marker Position X: " + fiducialController.ScreenPosition.x + " Y: " + fiducialController.ScreenPosition.y);
+        GUI.Label(new Rect(20, 60, 300, 30), "Speed: " + fiducialController.Speed);
+        GUI.Label(new Rect(20, 80, 300, 30), "Acceleration: " + fiducialController.Acceleration);
+        GUI.Label(new Rect(20, 100, 300, 30), "Rotation Speed: " + fiducialController.RotationSpeed);
+        GUI.Label(new Rect(20, 120, 300, 30), "Rotation Acceleration: " + fiducialController.RotationAcceleration);
     }
 #endif
 }

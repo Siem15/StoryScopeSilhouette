@@ -1,10 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class StoryScopePen : MonoBehaviour
 {
-
     FreeDraw.Drawable drawable = null;
     public Color PenColor;
     public int PenWidth;
@@ -22,7 +19,7 @@ public class StoryScopePen : MonoBehaviour
         if (GetComponent<SpriteRenderer>().enabled) drawable.PenPos = transform.position;
         float PenScale = penSize(transform.rotation.eulerAngles.z);
         PenWidth = (int)PenScale;
-        transform.localScale = new Vector3(PenScale/5, PenScale/5, PenScale/5);
+        transform.localScale = new Vector3(PenScale / 5, PenScale / 5, PenScale / 5);
     }
 
     float penSize(float rotation)

@@ -1,19 +1,17 @@
 ﻿using System.Collections;
-using UnityEngine;
-using System.IO;
 using System.Collections.Generic;
-using UnityEngine.Experimental.XR;
+using UnityEngine;
 
 public class CameraSnap : MonoBehaviour
 {
-     Renderer topRenderer;
-     Renderer[] childRenderers;
+    Renderer topRenderer;
+    Renderer[] childRenderers;
     public float tolerance;
     Camera cam;
     int width = Screen.width;
     int height = Screen.height;
 
-    void Start()
+    private void Start()
     {
         cam = GetComponent<Camera>();
     }
@@ -24,9 +22,8 @@ public class CameraSnap : MonoBehaviour
     }
 
     //creat a new texture and floodfill 
-    public IEnumerator Screenshot( )
+    public IEnumerator Screenshot()
     {
-
         // TODO evt aftellen 
 
         cam.depth = 1;
@@ -34,7 +31,7 @@ public class CameraSnap : MonoBehaviour
 
         Texture2D tex = new Texture2D(width, height, TextureFormat.ARGB32, false);
         tex.ReadPixels(new Rect(0, 0, width, height), 0, 0);
-        tex.FloodFillArea(10, height/2, Color.clear, tolerance);
+        tex.FloodFillArea(10, height / 2, Color.clear, tolerance);
         tex.Apply();
         byte[] bytes = tex.EncodeToPNG();
 
@@ -50,31 +47,34 @@ public class CameraSnap : MonoBehaviour
                 //childRenderers[i].sharedMaterial.color = Color.black;//--Norm----------------------------------------------------------
             }
         }
+
         cam.depth = -5;
         yield return null;
     }
-
 
     //geeft een GameObject vanuit een ander script  & laad alle child renderers in 
     public void LoadNew(GameObject newDrawing)
     {
         topRenderer = newDrawing.GetComponent<Renderer>();
-        childRenderers = addToList.getChildren(topRenderer, true);
+        childRenderers = AddToList.GetChildren(topRenderer, true);
     } //load a drawing and all its child renderers
 
-    public class addToList
+    public class AddToList
     {
-        public static Renderer[] getChildren(Renderer parent, bool recursive)
+        public static Renderer[] GetChildren(Renderer parent, bool recursive)
         {
             List<Renderer> items = new List<Renderer>();
             for (int i = 0; i < parent.transform.childCount; i++)
             {
                 items.Add(parent.transform.GetChild(i).gameObject.GetComponent<Renderer>());
+
                 if (recursive)
-                { // set true to go through the hiearchy.
-                    items.AddRange(getChildren(parent.transform.GetChild(i).gameObject.GetComponent<Renderer>(), recursive));
+                { 
+                    // Set true to go through the hierarchy.
+                    items.AddRange(GetChildren(parent.transform.GetChild(i).gameObject.GetComponent<Renderer>(), recursive));
                 }
             }
+
             return items.ToArray();
         }
     } //add children to list

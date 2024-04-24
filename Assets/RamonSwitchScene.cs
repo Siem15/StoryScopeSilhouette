@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class RamonSwitchScene : MonoBehaviour
@@ -7,7 +6,8 @@ public class RamonSwitchScene : MonoBehaviour
     bool shuttingDown = false;
     FiducialController fidu;
     string otherScene;
-    string filesLocation = "C:/StoryScope/StoryScopeMedia/Scene";
+    readonly string filesLocation = "C:/StoryScope/StoryScopeMedia/Scene";
+
     void Start()
     {
         otherScene = gameObject.name;

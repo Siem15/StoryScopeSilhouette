@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 public class ConsoleToGUI : MonoBehaviour
@@ -7,23 +6,27 @@ public class ConsoleToGUI : MonoBehaviour
     string filename = "";
     bool doShow = true;
     int kChars = 700;
-   // public GameObject sceneCanvas;
-    private void Start(){ ShowOptions(); }
-    void OnEnable() {Application.logMessageReceived += Log; }
-    void OnDisable() {Application.logMessageReceived -= Log; }
-    void Update() {if (Input.GetKey(KeyCode.Space) && Input.GetKeyDown(KeyCode.L)) ShowOptions();}
+    // public GameObject sceneCanvas;
+
+    private void Start() { ShowOptions(); }
+
+    void OnEnable() { Application.logMessageReceived += Log; }
+
+    void OnDisable() { Application.logMessageReceived -= Log; }
+
+    void Update() { if (Input.GetKey(KeyCode.Space) && Input.GetKeyDown(KeyCode.L)) ShowOptions(); }
 
     public void ShowOptions()
     {
         doShow = !doShow;
-        Cursor.visible = doShow;
+        Cursor.visible = doShow;    
         //sceneCanvas.SetActive(doShow);
 
 #if !UNITY_EDITOR
         Debug.Log(DateTime.Now);
 #endif
-
     }
+
     public void Log(string logString, string stackTrace, LogType type)
     {
         // for onscreen...

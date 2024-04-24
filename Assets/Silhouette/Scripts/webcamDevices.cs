@@ -1,8 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class webcamDevices : MonoBehaviour
+public class WebcamDevices : MonoBehaviour
 {
     // Gets the list of devices and prints them to the console.
     void Start()
@@ -10,6 +8,5 @@ public class webcamDevices : MonoBehaviour
         WebCamDevice[] devices = WebCamTexture.devices;
         for (int i = 0; i < devices.Length; i++)
             Debug.Log(devices[i].name + i);
-
     }
 }

@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class JZSetActiveOnRotation : MonoBehaviour
@@ -16,10 +14,10 @@ public class JZSetActiveOnRotation : MonoBehaviour
             children[i] = transform.GetChild(i).GetChild(0).gameObject;
         }
     }
-    
+
     void Update()
     {
-     if(fidu.IsVisible)CheckRotation(fidu.AngleDegrees);
+        if (fidu.IsVisible) CheckRotation(fidu.AngleDegrees);
     }
     void CheckRotation(float angle)
     {

@@ -39,7 +39,7 @@ public class FiducialController : MonoBehaviour
     public bool grounded = false;
     public bool templateCam = false;
     public bool full = false;
-    
+
     //rotation
     public bool IsRotationMapped = false;
     public bool UseRotation = false;
@@ -102,7 +102,6 @@ public class FiducialController : MonoBehaviour
         }
 
         this.m_ScreenPosition = Vector2.zero;
-
         this.m_WorldPosition = Vector3.zero;
         this.m_Direction = Vector2.zero;
         this.m_Angle = 0f;
@@ -118,21 +117,23 @@ public class FiducialController : MonoBehaviour
     {
         //get reference to main camera
         this.m_MainCamera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
-   
+
         //check if the main camera exists
         if (this.m_MainCamera == null)
         {
             Debug.LogError("There is no main camera defined in your scene.");
         }
+
         GameObject manager = GameObject.FindGameObjectWithTag("Manager");
     }
 
     public virtual void Update()
     {
-        if(UseRotation)GetRotation();
+        if (UseRotation) GetRotation();
+
         if (this.m_TuioManager.IsConnected && this.m_TuioManager.IsMarkerAlive(MarkerID))
         {
- 
+
             TUIO.TuioObject marker = this.m_TuioManager.GetMarker(MarkerID);
 
             //update parameters
@@ -165,8 +166,7 @@ public class FiducialController : MonoBehaviour
         yield return null;
     }
 
-
-    void OnApplicationQuit(){if (this.m_TuioManager.IsConnected) this.m_TuioManager.Disconnect();}
+    void OnApplicationQuit() { if (this.m_TuioManager.IsConnected) this.m_TuioManager.Disconnect(); }
 
     public virtual void UpdateTransform()
     {
@@ -186,7 +186,7 @@ public class FiducialController : MonoBehaviour
                     (1 - yPos) * Screen.height, this.CameraOffset);
                 this.m_WorldPosition = this.m_MainCamera.ScreenToWorldPoint(position);
                 //worldPosition += cameraOffset * mainCamera.transform.forward;
-                this.m_WorldPosition = new Vector3(this.m_WorldPosition.x , this.m_WorldPosition.y, JZAxisZ);
+                this.m_WorldPosition = new Vector3(this.m_WorldPosition.x, this.m_WorldPosition.y, JZAxisZ);
                 transform.position = this.m_WorldPosition;
             }
         }
@@ -245,7 +245,7 @@ public class FiducialController : MonoBehaviour
 
     public virtual void ShowGameObject()
     {
-		StopAllCoroutines();
+        StopAllCoroutines();
 
         if (this.m_ControlsGUIElement)
         {
@@ -263,9 +263,10 @@ public class FiducialController : MonoBehaviour
             if (gameObject.GetComponent<Camera>() != null && !gameObject.GetComponent<Camera>().enabled) gameObject.GetComponent<Camera>().enabled = true;
         }
     }
+
     public virtual void HideGameObject()
     {
-        if (!AutoHideGO) return; 
+        if (!AutoHideGO) return;
         this.m_IsVisible = false;
 
 
@@ -278,12 +279,13 @@ public class FiducialController : MonoBehaviour
         else
         {
             //set 3d game object to visible, if it was hidden before
-            foreach (Transform child in transform)  child.gameObject.SetActive(false);
+            foreach (Transform child in transform) child.gameObject.SetActive(false);
             if (gameObject.GetComponent<Renderer>() != null && gameObject.GetComponent<Renderer>().enabled) gameObject.GetComponent<Renderer>().enabled = false;
             if (gameObject.GetComponent<Camera>() != null && gameObject.GetComponent<Camera>().enabled) gameObject.GetComponent<Camera>().enabled = false;
         }
     }
-#region Getter
+
+    #region Getter
 
     public bool isAttachedToGUIComponent()
     {
@@ -329,5 +331,5 @@ public class FiducialController : MonoBehaviour
     {
         get { return this.m_IsVisible; }
     }
-#endregion
+    #endregion
 }

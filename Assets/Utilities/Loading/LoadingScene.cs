@@ -1,14 +1,13 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement; 
-
 
 public class LoadingScene : MonoBehaviour
 {
-        public GameObject LoadingScreen;
+    public GameObject LoadingScreen;
     public Image LoadingBarFill;
+
     private void Start()
     {
         LoadScene(1);
@@ -34,7 +33,5 @@ public class LoadingScene : MonoBehaviour
             yield return null;
 
         }
-
     }
-
 }

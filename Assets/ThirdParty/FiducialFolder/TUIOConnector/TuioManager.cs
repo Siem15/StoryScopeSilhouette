@@ -19,10 +19,9 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 */
-using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 using TUIO;
+using UnityEngine;
 namespace UniducialLibrary
 {
     public class TuioManager : TuioListener
@@ -71,7 +70,7 @@ namespace UniducialLibrary
         ~TuioManager()
         {
             Disconnect();
-        } 
+        }
 
         #region TUIOListener methods
 
@@ -119,7 +118,7 @@ namespace UniducialLibrary
             if (this.m_Client.isConnected())
             {
 
-              //  Debug.Log("Listening to TUIO port " + m_Client.getPort() + ".");
+                //  Debug.Log("Listening to TUIO port " + m_Client.getPort() + ".");
             }
             else
             {

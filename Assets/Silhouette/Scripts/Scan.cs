@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Scan : MonoBehaviour
 {
@@ -10,20 +7,23 @@ public class Scan : MonoBehaviour
     public Scan otherSide;
     public bool isEmpty = true;
 
-    Renderer rend; 
+    Renderer rend;
     CameraSnap cameraSnap;
     FiducialController fiducialController;
-    
+
     private void Awake()
     {
         rend = GetComponent<Renderer>();
         cameraSnap = scanCam.GetComponent<CameraSnap>();
         fiducialController = GetComponent<FiducialController>();
     }
-    public void SetEmpty() { 
+
+    public void SetEmpty()
+    {
         rend.material.SetTexture("_BaseMap", emptySprite);
         isEmpty = true;
     }
+
     private void Update()
     {
         if (isEmpty == true && fiducialController.m_IsVisible && scanCam.activeSelf)

@@ -1,10 +1,4 @@
-﻿using System;
-using System.CodeDom.Compiler;
-using System.Collections;
-using System.Collections.Generic;
-using System.Dynamic;
-using UnityEngine;
-using UnityEngine.Experimental.Rendering.LWRP;
+﻿using UnityEngine;
 
 public class ScanCamSize : MonoBehaviour
 {
@@ -17,7 +11,7 @@ public class ScanCamSize : MonoBehaviour
     FiducialController fiducialController;
 
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         lineRenderer = GetComponent<LineRenderer>();
         lineRenderer.material = new Material(Shader.Find("Sprites/Default"));
@@ -27,15 +21,15 @@ public class ScanCamSize : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
         camera.orthographicSize = Mathf.Clamp(camera.orthographicSize, 1f, 8f);
         if (camSize != camera.orthographicSize) ResetBorders();
         if (Input.GetKeyDown(KeyCode.Z)) ResetBorders();
-        if(fiducialController.RotationSpeed > 0) camera.orthographicSize += growRate;
+        if (fiducialController.RotationSpeed > 0) camera.orthographicSize += growRate;
         if (fiducialController.RotationSpeed < 0) camera.orthographicSize -= growRate;
     }
-    
+
     private void ResetBorders()
     {
         camSize = camera.orthographicSize;
@@ -72,6 +66,3 @@ public class ScanCamSize : MonoBehaviour
         lineRenderer.endColor = Color.red;
     }
 }
-
-
-  

@@ -1,15 +1,12 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.UI;
-using UnityEngine.Events;
 using System;
+using UnityEngine;
 
 public class JZShutdown_111 : FiducialController
 {
     public ShutdownCor shutdownCor;
     public bool canShutdown = true;
     DateTime startup;
+
     public override void Start()
     {
         base.Start();
@@ -31,9 +28,10 @@ public class JZShutdown_111 : FiducialController
         PlayerPrefs.Save();
 #endif
     }
+
     private string GetPPPower(string power)
     {
-       return PlayerPrefs.GetString(power);
+        return PlayerPrefs.GetString(power);
     }
 
     public override void ShowGameObject()
@@ -55,5 +53,4 @@ public class JZShutdown_111 : FiducialController
             shutdownCor.StopShutdownTimer();
         }
     }
-
 }

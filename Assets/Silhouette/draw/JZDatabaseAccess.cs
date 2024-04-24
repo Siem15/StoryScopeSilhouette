@@ -1,7 +1,6 @@
 using MongoDB.Bson;
 using MongoDB.Driver;
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using UnityEngine;
@@ -11,30 +10,33 @@ public class JZDatabaseAccess : MonoBehaviour
     MongoClient client = new MongoClient("mongodb+srv://justindraw:justindraw@cluster0.fulmstt.mongodb.net/?retryWrites=true&w=majority");
     IMongoDatabase database;
     IMongoCollection<BsonDocument> collection;
-    public SpriteRenderer [] spr;
+    public SpriteRenderer[] spr;
     Sprite _sprite;
+
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         database = client.GetDatabase("draw");
         collection = database.GetCollection<BsonDocument>("spriteSheet");
 
         //Invoke("DownloadDB", 3f);
     }
+
     async void DownloadDB()
     {
-        Task<List<DrawData>> task  = GetFromDatabase();
+        Task<List<DrawData>> task = GetFromDatabase();
         var result = await task;
         string output = "";
 
         foreach (DrawData drawing in result)
         {
-            output += drawing.name;
+            output += drawing.Name;
             Debug.Log(output);
         }
-        CreateSpriteFromURI(result[0].dataURI);
 
+        CreateSpriteFromURI(result[0].DataURI);
     }
+
     public async Task<List<DrawData>> GetFromDatabase()
     {
         var allSprites = collection.FindAsync(new BsonDocument());
@@ -48,14 +50,15 @@ public class JZDatabaseAccess : MonoBehaviour
 
         return drawdata;
     }
+
     private DrawData Deserialize(string rawJson)
     {
         DrawData drawing = new DrawData();
 
         string startDataURI = rawJson.Substring(rawJson.IndexOf("iVBORw"));
         string cleanDataURI = startDataURI.Substring(0, startDataURI.Length - 3);
-        
-        drawing.dataURI = cleanDataURI;
+
+        drawing.DataURI = cleanDataURI;
 
         return drawing;
     }
@@ -63,11 +66,11 @@ public class JZDatabaseAccess : MonoBehaviour
     public void CreateSpriteFromURI(string URIstring)
     {
         byte[] imageBytes = Convert.FromBase64String(URIstring);
-        Texture2D tex = new Texture2D(1,1);
+        Texture2D tex = new Texture2D(1, 1);
         tex.LoadImage(imageBytes);
         Sprite sprite = Sprite.Create(tex, new Rect(0.0f, 0.0f, tex.width, tex.height), new Vector2(0.5f, 0.5f), 100.0f);
-            spr[0].sprite = sprite;
-            spr[1].sprite = sprite;
+        spr[0].sprite = sprite;
+        spr[1].sprite = sprite;
     }
 
     private void Update()
@@ -79,12 +82,11 @@ public class JZDatabaseAccess : MonoBehaviour
     }
 }
 
-    public class DrawData
-    {
-        public string name { get; set; }
-        public string sprite { get; set; }
-        public string dataURI { get; set; }
+public class DrawData
+{
+    public string Name { get; set; }
+    public string Sprite { get; set; }
+    public string DataURI { get; set; }
 
-        //coords
-
-    }
+    //coords
+}

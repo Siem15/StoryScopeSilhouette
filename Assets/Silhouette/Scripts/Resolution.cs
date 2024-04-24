@@ -1,16 +1,14 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Resolution : MonoBehaviour
 {
     bool correctResolution = false;
 
-    void Start()
+    private void Start()
     {
         StartCoroutine(SetScreenResolution());
     }
-
 
     IEnumerator SetScreenResolution()
     {

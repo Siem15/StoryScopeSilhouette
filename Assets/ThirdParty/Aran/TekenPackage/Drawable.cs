@@ -1,8 +1,4 @@
-using System.Collections;
 using UnityEngine;
-using System;
-using UnityEngine.EventSystems;
-using System.Collections.Generic;
 
 namespace FreeDraw
 {
@@ -15,7 +11,7 @@ namespace FreeDraw
     public class Drawable : MonoBehaviour
     {
         // PEN COLOUR
-        public static Color Pen_Colour = Color.red;     // Change these to change the default drawing settings
+        public static Color Pen_Colour = Color.red; // Change these to change the default drawing settings
         // PEN WIDTH (actually, it's a radius, in pixels)
         public static int Pen_Width = 3;
 
@@ -48,8 +44,8 @@ namespace FreeDraw
         public SpriteRenderer PenSpriteRef;
         public SpriteRenderer GumSpriteRef;
 
-//////////////////////////////////////////////////////////////////////////////
-// BRUSH TYPES. Implement your own here
+        //////////////////////////////////////////////////////////////////////////////
+        // BRUSH TYPES. Implement your own here
 
 
         // When you want to make your own type of brush effects,
@@ -89,7 +85,7 @@ namespace FreeDraw
             // 3. Actually apply the changes we marked earlier
             // Done here to be more efficient
             ApplyMarkedPixelChanges();
-            
+
             // 4. If dragging, update where we were previously
             previous_drag_position = pixel_pos;
         }
@@ -149,7 +145,7 @@ namespace FreeDraw
                 Pen_Width = PenSpriteRef.gameObject.GetComponent<StoryScopePen>().PenWidth;
                 //Debug.Log(Pen_Colour);
             }
-            else if (GumSpriteRef.enabled) 
+            else if (GumSpriteRef.enabled)
             {
                 mouse_held_down = true;
                 Pen_Colour = GumSpriteRef.gameObject.GetComponent<StoryScopeGum>().PenColor;
@@ -310,7 +306,7 @@ namespace FreeDraw
         }
 
 
-        
+
         void Awake()
         {
             drawable = this;

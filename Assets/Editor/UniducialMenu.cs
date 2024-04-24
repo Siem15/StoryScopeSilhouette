@@ -20,10 +20,8 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 */
 
-using UnityEngine;
-using System.Collections;
 using UnityEditor;
-using UniducialLibrary;
+using UnityEngine;
 
 public class UniducialMenu : UnityEditor.Editor
 {
@@ -40,7 +38,6 @@ public class UniducialMenu : UnityEditor.Editor
     }
 
     [MenuItem("Component/Input/Fiducial Controller")]
-
     //attaches a fiducial input component to all selected Game Objects
     public static void AttachFiducialController()
     {
@@ -59,17 +56,9 @@ public class UniducialMenu : UnityEditor.Editor
         }
     }
 
-    private static bool sceneContaintsTUIO()
+    private static bool SceneContaintsTUIO()
     {
         GameObject tuioGO = GameObject.Find("TUIO");
-
-        if (tuioGO != null)
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
+        return tuioGO != null;
     }
 }

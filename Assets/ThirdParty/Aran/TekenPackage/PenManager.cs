@@ -1,10 +1,8 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class PenManager : MonoBehaviour
 {
-
     public List<GameObject> icons;
     public GameObject pen;
     int lastSelectedIcon = 3;

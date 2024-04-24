@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Character : MonoBehaviour
 {
@@ -18,14 +16,14 @@ public class Character : MonoBehaviour
     FiducialController endMarkerFC, fidu;
     SpriteRenderer spriteRenderer;
 
-    void Start()
+    private void Start()
     {
-       if(singleSprite) spriteRenderer = transform.GetChild(0).GetComponent<SpriteRenderer>();
+        if (singleSprite) spriteRenderer = transform.GetChild(0).GetComponent<SpriteRenderer>();
         endMarker = SetEndMarker();
         fidu = GetComponent<FiducialController>();
     }
 
-    void Update()
+    private void Update()
     {
         if (fidu.m_IsVisible && animator == null) GetAnimator();
         CheckGrounded();
@@ -75,7 +73,6 @@ public class Character : MonoBehaviour
         return tempEndMarker;
     }
 
-
     public void SetAnimationAndSpeed(string animation, float setSpeed)
     {
         if (animation != check)
@@ -92,6 +89,7 @@ public class Character : MonoBehaviour
         if (endMarker.transform.position.x - 0.05f >= transform.position.x && facingRight) Rotate();
         else if (endMarker.transform.position.x + 0.05f <= transform.position.x && !facingRight) Rotate();
     }
+
     void Rotate()
     {
         if (singleSprite)
@@ -99,6 +97,7 @@ public class Character : MonoBehaviour
             spriteRenderer.flipX = !spriteRenderer.flipX;
             return;
         }
+
         facingRight = !facingRight;
         transform.Rotate(new Vector3(0, +180, 0));
     }

@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class JZVariables : MonoBehaviour
@@ -8,15 +6,14 @@ public class JZVariables : MonoBehaviour
 
     public float angle, angleDegrees;
 
-
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         fidu = GetComponent<FiducialController>();
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
         angle = fidu.Angle;
         angleDegrees = fidu.AngleDegrees;

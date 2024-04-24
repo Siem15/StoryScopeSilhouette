@@ -1,14 +1,14 @@
-using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+
 public class ShutdownCor : MonoBehaviour
 {
     public JZShutdown_111 jz;
     public Text text;
     readonly int shutdownTimer = 10;
     int shutdownValue = 10;
+
     void Start()
     {
         text.enabled = false;
@@ -42,6 +42,7 @@ public class ShutdownCor : MonoBehaviour
     {
         StartCoroutine(Shutdown());
     }
+
     public void StopShutdownTimer()
     {
         StopAllCoroutines();

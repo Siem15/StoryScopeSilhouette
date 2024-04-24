@@ -1,9 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using UnityEngine;
 using UnityEngine.UI;
-using System;
-using System.Text;
 public class JZdatabaseStuff : MonoBehaviour
 {
     public JZDatabaseAccess bdAccess;
@@ -25,7 +22,7 @@ public class JZdatabaseStuff : MonoBehaviour
 
         foreach (var item in result)
         {
-            output += item.name;
+            output += item.Name;
         }
         byte[] imageBytes = Convert.FromBase64String(ss);
         Texture2D tex = new Texture2D(2, 2);
@@ -34,11 +31,11 @@ public class JZdatabaseStuff : MonoBehaviour
 
         Sprite sprite = Sprite.Create(tex, new Rect(0.0f, 0.0f, tex.width, tex.height), new Vector2(0.5f, 0.5f), 100.0f);
         //GetComponent<SpriteRenderer>().sprite = sprite;
-        spr.sprite = sprite ;
+        spr.sprite = sprite;
     }
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 }

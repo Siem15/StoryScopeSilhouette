@@ -21,23 +21,25 @@ THE SOFTWARE.
 */
 
 using UnityEngine;
-using System.Collections;
 
 [RequireComponent(typeof(FiducialController))]
-public class Compass : MonoBehaviour {
+public class Compass : MonoBehaviour
+{
 
     public Texture compassTexture;
     private FiducialController fiducialController;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start()
+    {
         fiducialController = (FiducialController)gameObject.GetComponent("FiducialController");
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+
+    }
 
     void OnGUI()
     {
