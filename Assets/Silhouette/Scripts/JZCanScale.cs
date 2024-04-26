@@ -7,12 +7,12 @@ public class JZCanScale : MonoBehaviour
     public float scaleFactor;
     public Transform[] otherOnes;
 
-    void Start()
+    private void Start()
     {
         fidu = GetComponent<FiducialController>();
     }
 
-    void Update()
+    private void Update()
     {
         if (fidu.IsVisible && jZSOCameraActive.camIsActive)
         {

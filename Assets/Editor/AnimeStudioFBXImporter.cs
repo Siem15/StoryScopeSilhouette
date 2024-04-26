@@ -6,7 +6,7 @@ public class AnimeStudioPostProcessor : AssetPostprocessor
 {
     private bool fIsAnimeStudioModel = false;
 
-    void OnPreprocessModel()
+    private void OnPreprocessModel()
     {
         fIsAnimeStudioModel = false;
 
@@ -20,10 +20,11 @@ public class AnimeStudioPostProcessor : AssetPostprocessor
         }
         catch
         {
+
         }
     }
 
-    void OnPostprocessGameObjectWithUserProperties(GameObject g, string[] names, System.Object[] values)
+    private void OnPostprocessGameObjectWithUserProperties(GameObject g, string[] names, System.Object[] values)
     {
         // Only operate on FBX files
         if (assetPath.IndexOf(".fbx") == -1)
@@ -41,7 +42,7 @@ public class AnimeStudioPostProcessor : AssetPostprocessor
         }
     }
 
-    void OnPostprocessModel(GameObject g)
+    private void OnPostprocessModel(GameObject g)
     {
         // Only operate on FBX files
         if (assetPath.IndexOf(".fbx") == -1)
@@ -56,11 +57,13 @@ public class AnimeStudioPostProcessor : AssetPostprocessor
         }
 
         Shader shader = Shader.Find("Sprites/Default");
+
         if (shader == null)
             return;
 
         Renderer[] renderers = g.GetComponentsInChildren<Renderer>();
         int straightRenderOrder = shader.renderQueue;
+
         foreach (Renderer r in renderers)
         {
             int renderOrder = straightRenderOrder;

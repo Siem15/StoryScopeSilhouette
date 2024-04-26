@@ -8,12 +8,12 @@ public class Flock : MonoBehaviour
     float NeighbourDistance = 2.0f;
     bool Turning = false;
 
-    void Start()
+    private void Start()
     {
         Speed = UnityEngine.Random.Range(speedRange.x, speedRange.y);
     }
 
-    void Update()
+    private void Update()
     {
 
         Vector3 goalPos = GlobalFlock.GoalPos;

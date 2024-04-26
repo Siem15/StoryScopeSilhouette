@@ -13,7 +13,7 @@ public class GlobalFlock : MonoBehaviour
     public float butterflySize = 1.0f;
     Vector2 CamWorldSize;
 
-    void Start()
+    private void Start()
     {
         GameObject FishTarget = Instantiate(GoalPrefab);
         GoalPrefab = FishTarget;
@@ -45,7 +45,7 @@ public class GlobalFlock : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
 
         GoalPos = GoalPrefab.transform.position;

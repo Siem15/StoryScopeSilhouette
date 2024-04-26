@@ -6,7 +6,8 @@ public class JZSetActiveOnRotation : MonoBehaviour
     GameObject[] children = new GameObject[4];
     int spriteCheck = -1;
     int sprite;
-    void Start()
+
+    private void Start()
     {
         fidu = GetComponent<FiducialController>();
         for (int i = 0; i < children.Length; i++)
@@ -15,17 +16,17 @@ public class JZSetActiveOnRotation : MonoBehaviour
         }
     }
 
-    void Update()
+    private void Update()
     {
         if (fidu.IsVisible) CheckRotation(fidu.AngleDegrees);
     }
+
     void CheckRotation(float angle)
     {
         if (angle > 315 || angle < 45) sprite = 0;
         if (angle > 46 && angle < 135) sprite = 1;
         if (angle > 136 && angle < 225) sprite = 2;
         if (angle > 226 && angle < 314) sprite = 3;
-
 
         if (spriteCheck != sprite) ActivateSprite(sprite);
     }
@@ -36,6 +37,7 @@ public class JZSetActiveOnRotation : MonoBehaviour
         {
             children[i].SetActive(false);
         }
+
         children[spr].SetActive(true);
         spriteCheck = spr;
     }

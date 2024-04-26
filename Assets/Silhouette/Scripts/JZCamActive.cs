@@ -6,15 +6,14 @@ public class JZCamActive : MonoBehaviour
     public JZSOCameraActive jZSOCameraActive;
 
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         fiducialController = GetComponent<FiducialController>();
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        if (fiducialController.m_IsVisible) jZSOCameraActive.camIsActive = true;
-        else jZSOCameraActive.camIsActive = false;
+        jZSOCameraActive.camIsActive = fiducialController.m_IsVisible;
     }
 }

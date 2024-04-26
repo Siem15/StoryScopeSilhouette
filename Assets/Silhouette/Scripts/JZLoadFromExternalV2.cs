@@ -36,7 +36,7 @@ public class JZLoadFromExternalV2 : MonoBehaviour
     Renderer jzrenderer = null;
     int currentItem = 0;
 
-    void Start()
+    private void Start()
     {
         path = filesLocation + folder;
         GetComponentInChildren<FiducialController>().MarkerID = int.Parse(gameObject.name.Substring(gameObject.name.Length - 2));
@@ -65,6 +65,7 @@ public class JZLoadFromExternalV2 : MonoBehaviour
     {
         //TODO:if (Input.GetKey(KeyCode.Space) && Input.GetKeyDown(KeyCode.B)) StartCoroutine(LoadAll(Directory.GetFiles(path)));
     }
+
     public IEnumerator LoadAll(string[] filePaths) //Load all video's and textures
     {
         foreach (string filePath in filePaths)
@@ -90,6 +91,7 @@ public class JZLoadFromExternalV2 : MonoBehaviour
             }
         }
     }
+
     public void Next(bool next)// show Next or previous item (texture or video)
     {
         if (next) currentItem++;

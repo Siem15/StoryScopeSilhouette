@@ -22,7 +22,7 @@ public class JZDatabaseAccess : MonoBehaviour
         //Invoke("DownloadDB", 3f);
     }
 
-    async void DownloadDB()
+    private async void DownloadDB()
     {
         Task<List<DrawData>> task = GetFromDatabase();
         var result = await task;

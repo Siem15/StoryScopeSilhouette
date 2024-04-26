@@ -6,7 +6,7 @@ public class JZMicrophone : MonoBehaviour
     string lastMic;
 
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         audioSource = GetComponent<AudioSource>();
         lastMic = Microphone.devices[Microphone.devices.Length - 1];

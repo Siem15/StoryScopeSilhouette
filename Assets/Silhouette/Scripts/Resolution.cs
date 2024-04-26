@@ -10,28 +10,22 @@ public class Resolution : MonoBehaviour
         StartCoroutine(SetScreenResolution());
     }
 
-    IEnumerator SetScreenResolution()
+    private IEnumerator SetScreenResolution()
     {
         while (!correctResolution)
         {
-            if (WidthHeight())
+            if (WidthAndHeight())
             {
                 correctResolution = true;
             }
+
             yield return new WaitForSeconds(5);
             Screen.SetResolution(1920, 1080, true);
         }
     }
 
-    public bool WidthHeight()
+    public bool WidthAndHeight()
     {
-        if (Screen.currentResolution.width == 1920 && Screen.currentResolution.height == 1080)
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
+        return Screen.currentResolution.width == 1920 && Screen.currentResolution.height == 1080;        
     }
 }

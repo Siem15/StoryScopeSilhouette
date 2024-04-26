@@ -8,13 +8,13 @@ public class RamonSwitchScene : MonoBehaviour
     string otherScene;
     readonly string filesLocation = "C:/StoryScope/StoryScopeMedia/Scene";
 
-    void Start()
+    private void Start()
     {
         otherScene = gameObject.name;
         fidu = GetComponent<FiducialController>();
     }
 
-    void Update()
+    private void Update()
     {
         if (fidu.m_IsVisible && !shuttingDown)
         {
@@ -28,12 +28,13 @@ public class RamonSwitchScene : MonoBehaviour
         }
     }
 
-    IEnumerator NextSceneDelay()
+    private IEnumerator NextSceneDelay()
     {
         shuttingDown = true;
         yield return new WaitForSeconds(4);
         LoadAnotherScene();
     }
+
     public void LoadAnotherScene()
     {
         Debug.Log(filesLocation + "/" + otherScene + ".lnk");

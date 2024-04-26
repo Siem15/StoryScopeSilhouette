@@ -8,7 +8,7 @@ public class JZBGTurnControl : MonoBehaviour
     FiducialController fiducialController;
 
     JZLoadFromExternalV2 parent;
-    void Start()
+    private void Start()
     {
         parent = transform.GetComponentInParent<JZLoadFromExternalV2>();
         fiducialController = GetComponent<FiducialController>();
@@ -16,8 +16,7 @@ public class JZBGTurnControl : MonoBehaviour
 
     /*de euler angles zijn belangrijk als je een parent hebt of niet
      als je euler gebruikt kan je een parent hebben*/
-
-    void Update()
+    private void Update()
     {
         GetRotation();
     }
@@ -42,6 +41,7 @@ public class JZBGTurnControl : MonoBehaviour
                 parent.Next(false);
             }
         }
+
         if (!fiducialController.IsVisible && !resetDegrees)
         {
             resetDegrees = true;

@@ -5,7 +5,7 @@ public class JZSpriteParticle : MonoBehaviour
     Material sprRend;
     public Texture2D[] multipleLoaded;
 
-    void Start()
+    private void Start()
     {
         sprRend = GetComponent<ParticleSystemRenderer>().material;
     }

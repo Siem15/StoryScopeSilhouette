@@ -7,12 +7,12 @@ public class JZTurnSpriteCounter : MonoBehaviour
     bool resetDegrees = true;
     FiducialController fiducialController;
 
-    void Start()
+    private void Start()
     {
         fiducialController = GetComponent<FiducialController>();
     }
 
-    void Update()
+    private void Update()
     {
         if (fiducialController.IsVisible)
         {

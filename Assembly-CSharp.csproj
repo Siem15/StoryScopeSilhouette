@@ -73,9 +73,9 @@
     <Compile Include="Assets\JZVariables.cs" />
     <Compile Include="Assets\Silhouette\Scripts\WebcamDevices.cs" />
     <Compile Include="Assets\Silhouette\Scripts\JZSlides.cs" />
-    <Compile Include="Assets\JZdatabaseStuff.cs" />
+    <Compile Include="Assets\JZDatabaseStuff.cs" />
     <Compile Include="Assets\Silhouette\Scripts\JZCanScale.cs" />
-    <Compile Include="Assets\Silhouette\draw\JZgetbase64.cs" />
+    <Compile Include="Assets\Silhouette\draw\JZGetBase64.cs" />
     <Compile Include="Assets\ThirdParty\FiducialFolder\Uniducial\FiducialController.cs" />
     <Compile Include="Assets\Silhouette\Scripts\CameraSnap.cs" />
     <Compile Include="Assets\ThirdParty\FiducialFolder\TUIOConnector\TuioTime.cs" />

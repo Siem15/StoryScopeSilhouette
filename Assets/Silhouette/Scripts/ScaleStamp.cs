@@ -8,13 +8,13 @@ public class ScaleStamp : MonoBehaviour
     public Vector2 scale;
 
     // Use this for initialization
-    void Start()
+    private void Start()
     {
         _controller = gameObject.GetComponent<FiducialController>();
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
         if (lastStamped != null)
         {

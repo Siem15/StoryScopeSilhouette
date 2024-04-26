@@ -3,17 +3,17 @@ using UnityEngine.SceneManagement;
 
 public class JZReloadScene : MonoBehaviour
 {
-    FiducialController fidu;
+    FiducialController fiducialController;
 
     // Start is called before the first frame update
     void Start()
     {
-        fidu = GetComponent<FiducialController>();
+        fiducialController = GetComponent<FiducialController>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (fidu.IsVisible) SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        if (fiducialController.IsVisible) SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }

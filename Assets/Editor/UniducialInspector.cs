@@ -41,7 +41,7 @@ public class UniducialInspector : UnityEditor.Editor
 
     public override void OnInspectorGUI()
     {
-        controller = base.target as FiducialController;
+        controller = target as FiducialController;
         Camera mainCamera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
 
         EditorGUILayout.BeginHorizontal();
@@ -105,7 +105,6 @@ public class UniducialInspector : UnityEditor.Editor
 
             if (controller.IsRotationMapped)
             {
-
                 EditorGUILayout.BeginHorizontal();
                 controller.RotateAround = (FiducialController.RotationAxis)EditorGUILayout.EnumPopup("Rotation Axis", controller.RotateAround);
                 EditorGUILayout.EndHorizontal();
@@ -113,7 +112,6 @@ public class UniducialInspector : UnityEditor.Editor
                 EditorGUILayout.BeginHorizontal();
                 controller.RotationMultiplier = EditorGUILayout.Slider("Rotation Factor", controller.RotationMultiplier, 0.01f, 5f);
                 EditorGUILayout.EndHorizontal();
-
             }
 
             EditorGUILayout.BeginHorizontal();
