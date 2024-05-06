@@ -1,5 +1,8 @@
 using UnityEngine;
 
+/// <summary>
+/// 
+/// </summary>
 public class JZMicrophone : MonoBehaviour
 {
     AudioSource audioSource;

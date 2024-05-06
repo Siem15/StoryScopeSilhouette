@@ -4,6 +4,9 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.Networking;
 
+/// <summary>
+/// 
+/// </summary>
 public class JZSpriteRoot : MonoBehaviour
 {
     //TODO: Turned off stuff is the ligth version 

@@ -3,6 +3,9 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
+/// <summary>
+/// 
+/// </summary>
 public class LoadingScene : MonoBehaviour
 {
     public GameObject LoadingScreen;

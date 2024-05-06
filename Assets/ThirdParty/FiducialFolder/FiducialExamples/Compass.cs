@@ -22,6 +22,10 @@ THE SOFTWARE.
 
 using UnityEngine;
 
+/// <summary>
+/// 
+/// </summary>
+
 [RequireComponent(typeof(FiducialController))]
 public class Compass : MonoBehaviour
 {

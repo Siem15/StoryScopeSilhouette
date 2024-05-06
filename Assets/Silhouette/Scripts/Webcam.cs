@@ -2,6 +2,9 @@
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// 
+/// </summary>
 public class Webcam : MonoBehaviour
 {
     public CameraSnap camSensetivity;

@@ -1,6 +1,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// 
+/// </summary>
 public class JZSpriteChild : MonoBehaviour
 {
     Vector2 spritePivot;

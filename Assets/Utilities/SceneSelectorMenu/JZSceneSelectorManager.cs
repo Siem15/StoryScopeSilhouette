@@ -2,6 +2,9 @@ using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 
+/// <summary>
+/// 
+/// </summary>
 public class JZSceneSelectorManager : MonoBehaviour
 {
     public List<string> otherScenesPath = new List<string>();

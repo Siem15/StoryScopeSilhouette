@@ -2,6 +2,9 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// 
+/// </summary>
 public class ShutdownCor : MonoBehaviour
 {
     public JZShutdown_111 jz;

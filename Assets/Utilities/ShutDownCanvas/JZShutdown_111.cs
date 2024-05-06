@@ -1,6 +1,9 @@
 using System;
 using UnityEngine;
 
+/// <summary>
+/// 
+/// </summary>
 public class JZShutdown_111 : FiducialController
 {
     public ShutdownCor shutdownCor;

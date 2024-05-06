@@ -1,5 +1,8 @@
 using UnityEngine;
 
+/// <summary>
+/// 
+/// </summary>
 public class ConsoleToGUI : MonoBehaviour
 {
     string myLog = "*begin log";

@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
-
+/// <summary>
+/// 
+/// </summary>
 public class Distance : MonoBehaviour
 {
     Transform partner = null;

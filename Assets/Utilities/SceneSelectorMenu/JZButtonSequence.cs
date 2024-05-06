@@ -1,6 +1,9 @@
 using System.Collections;
 using UnityEngine;
 
+/// <summary>
+/// 
+/// </summary>
 public class JZButtonSequence : MonoBehaviour
 {
     public GameObject activateGO, levelSelector, volume;

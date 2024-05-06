@@ -26,6 +26,10 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
 
+/// <summary>
+/// 
+/// </summary>
+
 public class FiducialController : MonoBehaviour
 {
     public int MarkerID = 0;

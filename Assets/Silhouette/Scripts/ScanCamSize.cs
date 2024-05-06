@@ -1,5 +1,8 @@
 ﻿using UnityEngine;
 
+/// <summary>
+/// 
+/// </summary>
 public class ScanCamSize : MonoBehaviour
 {
     new Camera camera;

@@ -3,6 +3,9 @@ using System.IO;
 using UnityEngine;
 using UnityEngine.Networking;
 
+/// <summary>
+/// 
+/// </summary>
 public class JZSceneSelector : MonoBehaviour
 {
     public string pathToImage;

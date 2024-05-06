@@ -1,5 +1,8 @@
 ﻿using UnityEngine;
 
+/// <summary>
+/// 
+/// </summary>
 public class Flock : MonoBehaviour
 {
     public Vector2 speedRange;

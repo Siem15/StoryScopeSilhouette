@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
-
+/// <summary>
+/// 
+/// </summary>
 public class Character : MonoBehaviour
 {
     public float WalkSpeed, RunSpeed;

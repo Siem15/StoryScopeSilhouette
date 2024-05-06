@@ -1,5 +1,8 @@
 using UnityEngine;
 
+/// <summary>
+/// 
+/// </summary>
 public class StoryScopeGum : MonoBehaviour
 {
     FreeDraw.Drawable drawable = null;

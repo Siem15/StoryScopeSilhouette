@@ -1,5 +1,8 @@
 using UnityEngine;
 
+/// <summary>
+/// 
+/// </summary>
 public class JZSlides : MonoBehaviour
 {
     int nextSlide = 0;

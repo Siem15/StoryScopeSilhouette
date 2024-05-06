@@ -1,5 +1,8 @@
 ﻿using UnityEngine;
 
+/// <summary>
+/// 
+/// </summary>
 public class ScaleStamp : MonoBehaviour
 {
     public float scaleFactor;

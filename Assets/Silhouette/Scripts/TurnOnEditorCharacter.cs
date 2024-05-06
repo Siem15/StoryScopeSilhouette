@@ -1,5 +1,8 @@
 ﻿using UnityEngine;
 
+/// <summary>
+/// 
+/// </summary>
 public class TurnOnEditorCharacter : MonoBehaviour
 {
 #if (UNITY_EDITOR)

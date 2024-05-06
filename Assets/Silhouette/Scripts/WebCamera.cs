@@ -1,6 +1,9 @@
 ﻿using System.Collections;
 using UnityEngine;
 
+/// <summary>
+/// 
+/// </summary>
 // Basic code borrowed from: http://www.ikriz.nl/2011/12/23/unity-video-remake
 public class WebCamera : MonoBehaviour
 {

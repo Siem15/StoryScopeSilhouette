@@ -1,5 +1,8 @@
 using UnityEngine;
 
+/// <summary>
+/// 
+/// </summary>
 public class JZRotateToNextChild : MonoBehaviour
 {
     GameObject[] children;

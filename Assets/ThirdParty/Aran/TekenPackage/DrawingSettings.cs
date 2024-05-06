@@ -2,6 +2,10 @@ using UnityEngine;
 
 namespace FreeDraw
 {
+    /// <summary>
+    /// 
+    /// </summary>
+
     // Helper methods used to set drawing settings
     public class DrawingSettings : MonoBehaviour
     {

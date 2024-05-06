@@ -1,6 +1,9 @@
 ﻿using System.Collections;
 using UnityEngine;
 
+/// <summary>
+/// 
+/// </summary>
 public class Resolution : MonoBehaviour
 {
     bool correctResolution = false;

@@ -2,6 +2,9 @@ using System;
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// 
+/// </summary>
 public class JZDatabaseStuff : MonoBehaviour
 {
     public JZDatabaseAccess bdAccess;

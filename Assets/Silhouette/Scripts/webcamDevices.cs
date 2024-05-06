@@ -1,5 +1,8 @@
 ﻿using UnityEngine;
 
+/// <summary>
+/// 
+/// </summary>
 public class WebcamDevices : MonoBehaviour
 {
     // Gets the list of devices and prints them to the console.
