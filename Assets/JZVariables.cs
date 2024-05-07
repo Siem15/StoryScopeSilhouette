@@ -5,20 +5,19 @@ using UnityEngine;
 /// </summary>
 public class JZVariables : MonoBehaviour
 {
-    FiducialController fidu;
-
+    FiducialController fiducialController;
     public float angle, angleDegrees;
 
     // Start is called before the first frame update
     private void Start()
     {
-        fidu = GetComponent<FiducialController>();
+        fiducialController = GetComponent<FiducialController>();
     }
 
     // Update is called once per frame
     private void Update()
     {
-        angle = fidu.Angle;
-        angleDegrees = fidu.AngleDegrees;
+        angle = fiducialController.Angle;
+        angleDegrees = fiducialController.AngleDegrees;
     }
 }
