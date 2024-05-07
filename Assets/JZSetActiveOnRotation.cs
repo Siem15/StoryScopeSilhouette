@@ -5,43 +5,61 @@ using UnityEngine;
 /// </summary>
 public class JZSetActiveOnRotation : MonoBehaviour
 {
-    FiducialController fidu;
-    GameObject[] children = new GameObject[4];
-    int spriteCheck = -1;
-    int sprite;
+    FiducialController fiducialController; // Used to check rotation of game object.
+    GameObject[] sprites; // Stores various sprites of game object.
+    int spriteIndex; // Maintains index of currently active sprite.
 
     private void Start()
     {
-        fidu = GetComponent<FiducialController>();
-        for (int i = 0; i < children.Length; i++)
+        // Get component for fiducial controller.
+        fiducialController = GetComponent<FiducialController>(); 
+
+        // Initialize array of sprites.
+        sprites = new GameObject[4];
+
+        for (int i = 0; i < sprites.Length; i++)
         {
-            children[i] = transform.GetChild(i).GetChild(0).gameObject;
+            // Get sprites from game object.
+            sprites[i] = transform.GetChild(i).GetChild(0).gameObject;
         }
     }
 
     private void Update()
     {
-        if (fidu.IsVisible) CheckRotation(fidu.AngleDegrees);
+        // Check game object rotation if fiducial controller is visible.
+        if (fiducialController.IsVisible) 
+        {
+            CheckRotation(fiducialController.AngleDegrees);
+        }        
     }
 
     void CheckRotation(float angle)
     {
-        if (angle > 315 || angle < 45) sprite = 0;
-        if (angle > 46 && angle < 135) sprite = 1;
-        if (angle > 136 && angle < 225) sprite = 2;
-        if (angle > 226 && angle < 314) sprite = 3;
-
-        if (spriteCheck != sprite) ActivateSprite(sprite);
-    }
-
-    public void ActivateSprite(int spr)
-    {
-        for (int i = 0; i < children.Length; i++)
+        // Return if sprite index is less than zero.
+        if (spriteIndex < 0)
         {
-            children[i].SetActive(false);
+            return;
         }
 
-        children[spr].SetActive(true);
-        spriteCheck = spr;
+        // Set sprite index based on angle of game object.
+        if (angle > 315 || angle < 45) spriteIndex = 0;
+        if (angle > 46 && angle < 135) spriteIndex = 1;
+        if (angle > 136 && angle < 225) spriteIndex = 2;
+        if (angle > 226 && angle < 314) spriteIndex = 3;
+
+        // Set sprite being displayed based on sprite index.
+        SelectSprite(spriteIndex);
+    }
+
+    public void SelectSprite(int spriteIndex)
+    {
+        for (int i = 0; i < sprites.Length; i++)
+        {
+            // Disable all sprites.
+            sprites[i].SetActive(false);
+        }
+
+        // Enable only the selected sprite.
+        sprites[spriteIndex].SetActive(true);
     }
 }
