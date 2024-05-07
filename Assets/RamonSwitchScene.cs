@@ -6,25 +6,28 @@ using UnityEngine;
 /// </summary>
 public class RamonSwitchScene : MonoBehaviour
 {
-    bool shuttingDown = false;
-    FiducialController fidu;
-    string otherScene;
-    readonly string filesLocation = "C:/StoryScope/StoryScopeMedia/Scene";
+    FiducialController fiducialController; // Used to check rotation of game object.
+    bool shuttingDown = false; // Stores if current scene is being shut down or not.
+    string nextScene; // Stores name of next scene to be loaded
+    readonly string sceneFolderPath = "C:/StoryScope/StoryScopeMedia/Scene"; // Location where scene logs are stored.
 
     private void Start()
     {
-        otherScene = gameObject.name;
-        fidu = GetComponent<FiducialController>();
+        nextScene = gameObject.name; // Scene name is derived from game object.
+        fiducialController = GetComponent<FiducialController>();
     }
 
     private void Update()
     {
-        if (fidu.m_IsVisible && !shuttingDown)
+        // Load next scene if fiducial is visible and scene is not being shut down.
+        if (fiducialController.m_IsVisible && !shuttingDown)
         {
             //LoadAnotherScene();
             StartCoroutine(NextSceneDelay());
         }
-        if (!fidu.m_IsVisible && shuttingDown)
+
+        // Once scene has been shut down and fiducial is invisible, stop coroutines and reset values.
+        if (!fiducialController.m_IsVisible && shuttingDown)
         {
             shuttingDown = false;
             StopAllCoroutines();
@@ -33,15 +36,18 @@ public class RamonSwitchScene : MonoBehaviour
 
     private IEnumerator NextSceneDelay()
     {
+        // Set current scene to be shut down, wait a few seconds and then load next scene.
         shuttingDown = true;
-        yield return new WaitForSeconds(4);
+        yield return new WaitForSeconds(4.0f);
         LoadAnotherScene();
     }
 
     public void LoadAnotherScene()
     {
-        Debug.Log(filesLocation + "/" + otherScene + ".lnk");
-        System.Diagnostics.Process.Start(filesLocation + "/" + otherScene + ".lnk");
+        // Print out location of newly loaded scene, then quit application.
+        string nextSceneFilePath = $"{sceneFolderPath}/{nextScene}.lnk";
+        Debug.Log(nextSceneFilePath);
+        System.Diagnostics.Process.Start(nextSceneFilePath);
         Application.Quit();
     }
 }
