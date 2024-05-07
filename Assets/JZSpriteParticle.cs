@@ -5,17 +5,24 @@ using UnityEngine;
 /// </summary>
 public class JZSpriteParticle : MonoBehaviour
 {
-    Material sprRend;
-    public Texture2D[] multipleLoaded;
+    Material particleMaterial; // Material needed for particle texture.
+    public Texture2D[] particleSprites; // Stores various particle sprites.
 
     private void Start()
     {
-        sprRend = GetComponent<ParticleSystemRenderer>().material;
+        // Get material from renderer component of particle system.
+        particleMaterial = GetComponent<ParticleSystemRenderer>().material;
     }
 
     private void Update()
     {
-        if (multipleLoaded.Length == 0) return;
-        sprRend.mainTexture = multipleLoaded[JZSpriteCounter.spriteCounter % multipleLoaded.Length];
+        // Return if no particle sprites are found.
+        if (particleSprites.Length == 0) 
+        {
+            return;
+        }
+        
+        // Set particle texture using list of particle sprites.
+        particleMaterial.mainTexture = particleSprites[JZSpriteCounter.spriteCounter % particleSprites.Length];
     }
 }

@@ -117,15 +117,12 @@ MonoBehaviour:
   WalkSpeed: 4
   RunSpeed: 5
   stopRunningUntilThisDist: 3
-  groundHeight: 0
-  groundOffset: 0
+  singleSprite: 0
   controlRotation: 0
   controlPosition: 1
   facingRight: 1
   endMarkerPrefab: {fileID: 441084473105571446, guid: 2f7ed94a83a05a140be209a9a062c607,
     type: 3}
-  animator: {fileID: 0}
-  singleSprite: 0
 --- !u!114 &258741407072245040
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5082,7 +5079,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a039206aabebf24486baa2292e4d01c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  multipleLoaded:
+  particleSprites:
   - {fileID: 2800000, guid: 7bf43b3eefaeba948bc7633f20d887eb, type: 3}
   - {fileID: 2800000, guid: 214fbd38b09284b47b84bfd2e672f6c4, type: 3}
   - {fileID: 2800000, guid: d168aa0ec81aaf54cbdd9c339b8e17d5, type: 3}
@@ -5270,7 +5267,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   images: []
-  multipleLoaded: []
 --- !u!1 &7757464767289530300
 GameObject:
   m_ObjectHideFlags: 0
