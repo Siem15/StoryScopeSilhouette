@@ -1,7 +1,12 @@
 ﻿using UnityEngine;
 
 /// <summary>
+/// This script is currently used only by the fish object in the scene, 
+/// That establishes how many actors are in the flock, which sprite they use and instantiates them.
+/// The script also uses the fiducial position to create a center for the flock to move around. 
+/// This script's variables should be changed around to make sure that it can be used for other objects as well.
 /// 
+/// - Siem Wesseling, 08/05/2024
 /// </summary>
 
 public class GlobalFlock : MonoBehaviour
