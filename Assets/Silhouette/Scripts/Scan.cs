@@ -38,7 +38,7 @@ public class Scan : MonoBehaviour
     }
     private void ScanDrawing()
     {
-        cameraSnap.LoadNew(gameObject);
+        cameraSnap.LoadNewDrawing(gameObject);
         cameraSnap.StartSnapping();
     }
 }
