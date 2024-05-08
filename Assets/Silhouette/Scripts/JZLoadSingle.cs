@@ -4,8 +4,11 @@ using UnityEngine;
 using UnityEngine.Networking;
 
 /// <summary>
+/// In essence this script does the same thing that JZLoadFromExternalV2 does, but it can only load in images. 
 /// 
+/// - Siem Wesseling, 08/05/2024
 /// </summary>
+
 public class JZLoadSingle : MonoBehaviour
 {
 #if UNITY_STANDALONE_WIN

@@ -1,7 +1,9 @@
 using UnityEngine;
 
 /// <summary>
+/// This script is used to make sure the drawings that are scanned in can be scaled with the scaling fiducial. 
 /// 
+/// - Siem Wesseling, 08/05/2024
 /// </summary>
 public class JZCanScale : MonoBehaviour
 {

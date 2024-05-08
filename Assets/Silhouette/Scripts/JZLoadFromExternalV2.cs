@@ -6,8 +6,13 @@ using UnityEngine.Networking;
 using UnityEngine.Video;
 
 /// <summary>
+/// With this script, files from a specific file location can be loaded in. I don't know how this is used currently,
+/// but my guess is that you can load in backgrounds that are gifs or videos or textures that can go on the characters 
+/// (that get added to the texture array).
 /// 
+/// - Siem Wesseling, 08/05/2024
 /// </summary>
+
 public class JZLoadFromExternalV2 : MonoBehaviour
 {
     enum SourceElementType 
