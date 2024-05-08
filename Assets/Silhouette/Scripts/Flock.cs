@@ -1,8 +1,9 @@
 ﻿using UnityEngine;
 
 /// <summary>
-/// 
+/// This script is currently used by the fish object in the scene, 
 /// </summary>
+
 public class Flock : MonoBehaviour
 {
     public Vector2 speedRange;

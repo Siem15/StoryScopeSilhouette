@@ -1,7 +1,12 @@
 ﻿using UnityEngine;
+
 /// <summary>
+/// This script is supposed to be used by the vase, only the vase also currently does not use this script.
+/// It used partner to synchronize the transform of the vase with a certain particle system.
 /// 
+/// - Siem Wesseling, 08/05/2024
 /// </summary>
+
 public class Distance : MonoBehaviour
 {
     Transform partner = null;
