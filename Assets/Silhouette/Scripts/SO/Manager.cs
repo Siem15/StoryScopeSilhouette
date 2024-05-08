@@ -2,8 +2,10 @@
 using UnityEngine.SceneManagement;
 
 /// <summary>
+/// This Manager script is used to load in a new texture onto the objects when the user turns the "ghost" fiducial block. 
 /// 
-/// </summary>
+/// - Siem Wesseling, 08/05/2024
+/// /// </summary>
 public class Manager : MonoBehaviour
 {
     public Material ghostMaterial;

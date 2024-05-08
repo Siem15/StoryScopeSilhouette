@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 /// <summary>
-/// 
+/// This script is the main script used for every character fiducial in the game. 
+/// This script contains all the functions of what all characters need to be able to do.
+/// - Siem Wesseling, 08/05/2024
 /// </summary>
 public class Character : MonoBehaviour
 {

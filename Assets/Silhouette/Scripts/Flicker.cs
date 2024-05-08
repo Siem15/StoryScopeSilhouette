@@ -1,8 +1,13 @@
 ﻿using UnityEngine;
 
 /// <summary>
+/// This script is supposed to change the lighting of the scene, depending on the runtime of the game.
+/// It currently does not do this yet.
+/// This script does not seem to be used by any object in the game currently. 
 /// 
+/// - Siem Wesseling, 08/05/2024
 /// </summary>
+
 public class Flicker : MonoBehaviour
 {
     SpriteRenderer sprite;
