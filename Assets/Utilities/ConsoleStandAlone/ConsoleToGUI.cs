@@ -6,23 +6,29 @@ using UnityEngine;
 public class ConsoleToGUI : MonoBehaviour
 {
     string myLog = "*begin log";
-    string filename = "";
-    bool doShow = true;
+    string fileName = "";
+    bool showOptions = true;
     int kChars = 700;
     // public GameObject sceneCanvas;
 
-    private void Start() { ShowOptions(); }
+    private void Start() => ShowOptions();
 
-    void OnEnable() { Application.logMessageReceived += Log; }
+    void OnEnable() => Application.logMessageReceived += Log;
 
-    void OnDisable() { Application.logMessageReceived -= Log; }
+    void OnDisable() => Application.logMessageReceived -= Log;
 
-    void Update() { if (Input.GetKey(KeyCode.Space) && Input.GetKeyDown(KeyCode.L)) ShowOptions(); }
+    void Update() 
+    {
+        if (Input.GetKey(KeyCode.Space) && Input.GetKeyDown(KeyCode.L)) 
+        {
+            ShowOptions();
+        }        
+    }
 
     public void ShowOptions()
     {
-        doShow = !doShow;
-        Cursor.visible = doShow;    
+        showOptions = !showOptions;
+        Cursor.visible = showOptions;    
         //sceneCanvas.SetActive(doShow);
 
 #if !UNITY_EDITOR
@@ -34,23 +40,37 @@ public class ConsoleToGUI : MonoBehaviour
     {
         // for onscreen...
         myLog = myLog + "\n" + logString;
-        if (myLog.Length > kChars) { myLog = myLog.Substring(myLog.Length - kChars); }
+
+        if (myLog.Length > kChars) 
+        {
+            myLog = myLog.Substring(myLog.Length - kChars); 
+        }
 
         // for the file ...
-        if (filename == "")
+        if (fileName == "")
         {
             string d = "C:/StoryScopeMedia/Scene" + "/YOUR_LOGS";
             System.IO.Directory.CreateDirectory(d);
             string r = UnityEngine.Random.Range(1000, 9999).ToString();
-            filename = d + "/log-" + r + ".txt";
+            fileName = d + "/log-" + r + ".txt";
         }
-        try { System.IO.File.AppendAllText(filename, logString + "\n"); }
-        catch { }
+
+        try 
+        { 
+            System.IO.File.AppendAllText(fileName, logString + "\n"); 
+        }
+        catch 
+        { 
+        }
     }
 
     void OnGUI()
     {
-        if (!doShow) { return; }
+        if (!showOptions) 
+        { 
+            return; 
+        }
+
         GUI.matrix = Matrix4x4.TRS(Vector3.zero, Quaternion.identity,
         new Vector3(Screen.width / 1200.0f, Screen.height / 800.0f, 1.0f));
         GUI.TextArea(new Rect(10, 10, 540, 370), myLog);

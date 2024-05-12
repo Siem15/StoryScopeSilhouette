@@ -7,16 +7,16 @@ using UnityEngine;
 public class JZButtonSequence : MonoBehaviour
 {
     public GameObject activateGO, levelSelector, volume;
-    FiducialController fidu;
+    FiducialController fiducialController;
     public Transform fill;
     public SpriteRenderer sprRend;
     public Vector2 emptyPos, fillPos;
-    bool x;
+    bool delay;
 
     private void Start()
     {
-        fidu = GetComponent<FiducialController>();
-        Invoke("Delay", 3);
+        fiducialController = GetComponent<FiducialController>();
+        Invoke(nameof(Delay), 3);
     }
 
     private void Update()
@@ -26,13 +26,21 @@ public class JZButtonSequence : MonoBehaviour
             StartCoroutine(LerpPosition(fillPos, 3));
             sprRend.color = Random.ColorHSV(0f, 1f, .5f, .5f, 1f, 1f);
         }
-        if (Input.GetKeyDown(KeyCode.E)) StartCoroutine(LerpPosition(emptyPos, 0.5f));
 
-        if (!x) return;
+        if (Input.GetKeyDown(KeyCode.E)) 
+        {
+            StartCoroutine(LerpPosition(emptyPos, 0.5f));
+        }
+
+        if (!delay) 
+        {
+            return;
+        }        
+
         LevelSelect();
     }
 
-    public void Delay() { x = true; }
+    public void Delay() => delay = true;
 
     private void LevelSelect()
     {
@@ -41,7 +49,7 @@ public class JZButtonSequence : MonoBehaviour
             levelSelector.SetActive(true);
             activateGO.SetActive(false);
         }
-        if (!fidu.IsVisible)
+        if (!fiducialController.IsVisible)
         {
             levelSelector.SetActive(false);
             activateGO.SetActive(false);
@@ -51,8 +59,8 @@ public class JZButtonSequence : MonoBehaviour
         {
             volume.SetActive(true);
         }
-        if (fidu.IsVisible && !levelSelector.activeSelf) activateGO.SetActive(true);
-        else activateGO.SetActive(false);
+
+        activateGO.SetActive(fiducialController.IsVisible && !levelSelector.activeSelf);     
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -74,12 +82,14 @@ public class JZButtonSequence : MonoBehaviour
     {
         float time = 0;
         Vector2 startPosition = fill.localPosition;
+
         while (time < duration)
         {
             fill.localPosition = Vector2.Lerp(startPosition, targetPosition, time / duration);
             time += Time.deltaTime;
             yield return null;
         }
+
         fill.localPosition = targetPosition;
     }
 }

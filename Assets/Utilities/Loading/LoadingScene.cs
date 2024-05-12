@@ -11,30 +11,21 @@ public class LoadingScene : MonoBehaviour
     public GameObject LoadingScreen;
     public Image LoadingBarFill;
 
-    private void Start()
-    {
-        LoadScene(1);
-    }
+    private void Start() => LoadScene(1);
 
-    public void LoadScene(int sceneID)
-    {
-        StartCoroutine(LoadSceneAsync(sceneID));
-    }
+    public void LoadScene(int sceneID) => StartCoroutine(LoadSceneAsync(sceneID));
 
     IEnumerator LoadSceneAsync(int sceneID)
     {
-        AsyncOperation operation = SceneManager.LoadSceneAsync(sceneID);
+        AsyncOperation asyncOperation = SceneManager.LoadSceneAsync(sceneID);
 
         LoadingScreen.SetActive(true);
 
-        while (!operation.isDone)
+        while (!asyncOperation.isDone)
         {
-            float progressValue = Mathf.Clamp01(operation.progress / 0.9f);
-
+            float progressValue = Mathf.Clamp01(asyncOperation.progress / 0.9f);
             LoadingBarFill.fillAmount = progressValue;
-
             yield return null;
-
         }
     }
 }

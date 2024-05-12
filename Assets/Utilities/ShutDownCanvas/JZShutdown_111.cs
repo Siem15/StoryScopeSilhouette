@@ -8,7 +8,7 @@ public class JZShutdown_111 : FiducialController
 {
     public ShutdownCor shutdownCor;
     public bool canShutdown = true;
-    DateTime startup;
+    DateTime onStartUp;
 
     public override void Start()
     {
@@ -22,7 +22,7 @@ public class JZShutdown_111 : FiducialController
         SetPPPower("power", "on");
 #endif
     }
-    public void SetPPPower(string power, string toggle)
+    public void SetPlayerPrefsPower(string power, string toggle)
     {
 #if !UNITY_EDITOR //TODO: why does UNITY_STANDALONE not work
         Debug.Log("Power: " + toggle + "  Date: " + DateTime.Now);
@@ -32,14 +32,12 @@ public class JZShutdown_111 : FiducialController
 #endif
     }
 
-    private string GetPPPower(string power)
-    {
-        return PlayerPrefs.GetString(power);
-    }
+    private string GetPlayerPrefsPower(string power) => PlayerPrefs.GetString(power);
 
     public override void ShowGameObject()
     {
         base.ShowGameObject();
+
         if (canShutdown)
         {
             canShutdown = false;
@@ -50,6 +48,7 @@ public class JZShutdown_111 : FiducialController
     public override void HideGameObject()
     {
         base.HideGameObject();
+
         if (!canShutdown)
         {
             canShutdown = true;

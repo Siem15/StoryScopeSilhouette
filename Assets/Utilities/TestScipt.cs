@@ -12,8 +12,8 @@ public class TestScipt : MonoBehaviour
         }
         if (!y)
         {
-            if (x) print("falsey");
-            else print("truuthu");
+            if (x) print("false");
+            else print("truth");
         }
     }
 }

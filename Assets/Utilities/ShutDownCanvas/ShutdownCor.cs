@@ -31,13 +31,15 @@ public class ShutdownCor : MonoBehaviour
     public IEnumerator Shutdown()
     {
         shutdownValue = shutdownTimer;
+
         while (shutdownValue > 0)
         {
             text.text = shutdownValue.ToString();
             yield return new WaitForSeconds(1);
             shutdownValue--;
         }
-        jz.SetPPPower("power", "off");
+
+        jz.SetPlayerPrefsPower("power", "off");
         System.Diagnostics.Process.Start("/home/shutdown.sh");
     }
 

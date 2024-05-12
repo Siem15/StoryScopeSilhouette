@@ -10,7 +10,7 @@ public class JZSceneSelectorManager : MonoBehaviour
     public List<string> otherScenesPath = new List<string>();
 
 #if UNITY_STANDALONE_WIN
-    string filesLocation = "C:/StoryScopeMedia/Builds/";
+    readonly string buildsFilePath = "C:/StoryScopeMedia/Builds/";
 #endif
 #if UNITY_STANDALONE_LINUX
     string filesLocation = "/home/InteractiveCulture/Builds/";
@@ -21,10 +21,11 @@ public class JZSceneSelectorManager : MonoBehaviour
 
     public GameObject prefabSelector;
     float startPos, endPos;
+
     // Start is called before the first frame update
     void Start()
     {
-        otherScenesPath = new List<string>(Directory.GetDirectories(filesLocation));
+        otherScenesPath = new List<string>(Directory.GetDirectories(buildsFilePath));
 
         float scenes = otherScenesPath.Count;
         if (scenes < 4) SceneManagerButtons.threshold = true;
@@ -34,21 +35,21 @@ public class JZSceneSelectorManager : MonoBehaviour
 
         for (int i = 0; i < scenes; i++)
         {
-            GameObject levelSelect = Instantiate(prefabSelector, transform);
-            JZSceneSelector jzSceneSelector = levelSelect.GetComponent<JZSceneSelector>();
-            Vector3 tempT = levelSelect.transform.position;
+            GameObject levelSelectorObject = Instantiate(prefabSelector, transform);
+            JZSceneSelector jzSceneSelector = levelSelectorObject.GetComponent<JZSceneSelector>();
+            Vector3 tempTransform = levelSelectorObject.transform.position;
 
-            tempT.x = (-(scenes * levelSelect.transform.localScale.x + (scenes - 1) * 2) / 2) + 4 + (i * 10);
+            tempTransform.x = (-(scenes * levelSelectorObject.transform.localScale.x + (scenes - 1) * 2) / 2) + 4 + (i * 10);
 
             if (i == 0)
             {
-                startPos = tempT.x - 4f;
+                startPos = tempTransform.x - 4f;
                 endPos = startPos * -1 + 2;
             }
 
             jzSceneSelector.startPos = startPos;
             jzSceneSelector.endPos = endPos;
-            levelSelect.transform.position = tempT;
+            levelSelectorObject.transform.position = tempTransform;
 
             jzSceneSelector.pathToImage = otherScenesPath[i];
         }
