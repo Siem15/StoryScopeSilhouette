@@ -386,10 +386,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4359827659742209914, guid: 78b74fd16e4934647a2ba8de56436244,
+        type: 3}
+      propertyPath: AutoHideGO
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4359827659742209915, guid: 78b74fd16e4934647a2ba8de56436244,
         type: 3}
       propertyPath: m_Name
       value: TallGuy
+      objectReference: {fileID: 0}
+    - target: {fileID: 4379370295723882895, guid: 78b74fd16e4934647a2ba8de56436244,
+        type: 3}
+      propertyPath: canEatFood
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4379370295723882895, guid: 78b74fd16e4934647a2ba8de56436244,
+        type: 3}
+      propertyPath: isFlammable
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5914274967855788379, guid: 78b74fd16e4934647a2ba8de56436244,
         type: 3}
@@ -5653,7 +5668,7 @@ PrefabInstance:
     - target: {fileID: -1946749165847445664, guid: ddecfd26d3d1d0c43b8b3a02c106bb1f,
         type: 3}
       propertyPath: AutoHideGO
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -1946749165847445664, guid: ddecfd26d3d1d0c43b8b3a02c106bb1f,
         type: 3}
@@ -5673,12 +5688,12 @@ PrefabInstance:
     - target: {fileID: 5318059455763240963, guid: ddecfd26d3d1d0c43b8b3a02c106bb1f,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -4.09
       objectReference: {fileID: 0}
     - target: {fileID: 5318059455763240963, guid: ddecfd26d3d1d0c43b8b3a02c106bb1f,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 2.86
       objectReference: {fileID: 0}
     - target: {fileID: 5318059455763240963, guid: ddecfd26d3d1d0c43b8b3a02c106bb1f,
         type: 3}
@@ -5725,9 +5740,24 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bird
       objectReference: {fileID: 0}
+    - target: {fileID: 5318059455763240966, guid: ddecfd26d3d1d0c43b8b3a02c106bb1f,
+        type: 3}
+      propertyPath: m_TagString
+      value: flying
+      objectReference: {fileID: 0}
+    - target: {fileID: 6004073735233996912, guid: ddecfd26d3d1d0c43b8b3a02c106bb1f,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6136626448342462720, guid: ddecfd26d3d1d0c43b8b3a02c106bb1f,
         type: 3}
       propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7951071278748759119, guid: ddecfd26d3d1d0c43b8b3a02c106bb1f,
+        type: 3}
+      propertyPath: isFood
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -5812,6 +5842,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Foliage
+      objectReference: {fileID: 0}
+    - target: {fileID: 8698902520074339325, guid: abaa6422b52c19243b78164a7ac980d2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8698902520074339327, guid: abaa6422b52c19243b78164a7ac980d2,
         type: 3}
