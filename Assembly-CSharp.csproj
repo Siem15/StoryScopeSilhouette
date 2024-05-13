@@ -96,6 +96,7 @@
     <Compile Include="Assets\ThirdParty\FiducialFolder\TUIOConnector\OSCBundle.cs" />
     <Compile Include="Assets\Silhouette\draw\JZDatabaseAccess.cs" />
     <Compile Include="Assets\ThirdParty\FiducialFolder\FiducialExamples\Parameters.cs" />
+    <Compile Include="Assets\Silhouette\Scripts\Properties.cs" />
     <Compile Include="Assets\ThirdParty\FiducialFolder\TUIOConnector\TuioCursor.cs" />
     <Compile Include="Assets\ThirdParty\FiducialFolder\TUIOConnector\TuioManager.cs" />
     <Compile Include="Assets\Silhouette\Scripts\ScaleStamp.cs" />
@@ -122,7 +123,6 @@
     <Compile Include="Assets\Silhouette\Scripts\JZLoadFromExternalV2.cs" />
     <Compile Include="Assets\Silhouette\Scripts\JZReloadScene.cs" />
     <Compile Include="Assets\Silhouette\SpriteStuff\JZSpriteRoot.cs" />
-    <Compile Include="Assets\Silhouette\Scripts\Properties.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

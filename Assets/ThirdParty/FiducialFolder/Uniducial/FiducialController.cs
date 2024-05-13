@@ -57,7 +57,7 @@ public class FiducialController : MonoBehaviour
 
     public float CameraOffset = 10;
     public RotationAxis RotateAround = RotationAxis.Back;
-    private UniducialLibrary.TuioManager m_TuioManager;
+    public UniducialLibrary.TuioManager m_TuioManager;
     private Camera m_MainCamera;
     public float camY;
     public float camX;
@@ -137,7 +137,6 @@ public class FiducialController : MonoBehaviour
 
         if (this.m_TuioManager.IsConnected && this.m_TuioManager.IsMarkerAlive(MarkerID))
         {
-
             TUIO.TuioObject marker = this.m_TuioManager.GetMarker(MarkerID);
 
             //update parameters

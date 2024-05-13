@@ -9,9 +9,12 @@ public class Properties : MonoBehaviour
     public bool isWheel = false;
     public bool isVehicle = false;
     public bool reset = false;
+    public bool isAlive = false;
+    public bool connected = true;
 
     private Vector3 originalScale;
     private GameObject originalendmarker;
+    private FiducialController FC;
     private float originalWalkingSpeed;
     private float originalRunningSpeed;
 
@@ -21,6 +24,42 @@ public class Properties : MonoBehaviour
         originalendmarker = this.GetComponent<Character>().endMarker;
         originalWalkingSpeed = this.GetComponent<Character>().WalkSpeed;
         originalRunningSpeed = this.GetComponent<Character>().RunSpeed;
+        FC = this.GetComponent<FiducialController>();
+        if (!FC.AutoHideGO)
+        {
+            reset = true;
+            connected = false;
+        }
+    }
+
+    private void Update()
+    {
+        if (reset)
+        {
+            ResetObject();
+            reset = false;
+        }
+
+        if (connected)
+        {
+
+            if (FC.m_IsVisible)
+            {
+                if (!isAlive)
+                {
+                    ResetObject();
+                }
+                isAlive = true;
+            }
+            else
+            {
+                if (isAlive)
+                {
+                    this.GetComponent<BoxCollider2D>().enabled = false;
+                }
+                isAlive = false;
+            }
+        }
     }
 
     private void FixedUpdate()
@@ -30,11 +69,6 @@ public class Properties : MonoBehaviour
             transform.Rotate(Vector3.back, 5f); // Rotate if wheel and touches a vehicle
         }
 
-        if (reset)
-        {
-            ResetObject();
-            reset = false;
-        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -54,7 +88,10 @@ public class Properties : MonoBehaviour
             if (isFlammable && otherObject.isFire)
             {
                 Debug.Log("flame");
-                Destroy(gameObject); // Destroy if flammable and touches fire
+                if (transform.childCount > 0)
+                {
+                    transform.GetChild(0).gameObject.SetActive(false);
+                }
             }
             if (isWheel && otherObject.isVehicle)
             {
@@ -76,5 +113,9 @@ public class Properties : MonoBehaviour
         this.GetComponent<Character>().endMarker = originalendmarker;
         this.GetComponent<Character>().WalkSpeed = originalWalkingSpeed;
         this.GetComponent<Character>().RunSpeed = originalRunningSpeed;
+        if (transform.childCount > 0)
+        {
+            transform.GetChild(0).gameObject.SetActive(true);
+        }
     }
 }
