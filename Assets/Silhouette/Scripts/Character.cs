@@ -1,9 +1,6 @@
 ﻿using UnityEngine;
-
 /// <summary>
-/// This script is the main script used for every character fiducial in the game. 
-/// This script contains all the functions of what all characters need to be able to do.
-/// - Siem Wesseling, 08/05/2024
+/// 
 /// </summary>
 public class Character : MonoBehaviour
 {
@@ -30,11 +27,7 @@ public class Character : MonoBehaviour
 
     private void Update()
     {
-        if (fidu.m_IsVisible && animator == null) 
-        {
-            GetAnimator();
-        }
-        
+        if (/*fidu.m_IsVisible &&*/ animator == null) GetAnimator();
         CheckGrounded();
         Flip();
     }
@@ -66,7 +59,8 @@ public class Character : MonoBehaviour
     {
         if (animator == null)
         {
-            animator = GetComponentInChildren<Animator>() ? GetComponentInChildren<Animator>() : GetComponent<Animator>();
+            if (GetComponentInChildren<Animator>()) animator = GetComponentInChildren<Animator>();
+            else animator = GetComponent<Animator>();
         }
     }
 
@@ -81,13 +75,13 @@ public class Character : MonoBehaviour
         return tempEndMarker;
     }
 
-    public void SetAnimationAndSpeed(string animation, float speed)
+    public void SetAnimationAndSpeed(string animation, float setSpeed)
     {
         if (animation != check)
         {
-            this.speed = speed;
+            speed = setSpeed;
             if (!animator) return;
-            if (fidu.m_IsVisible) animator.Play(animation);
+            /*if (fidu.m_IsVisible)*/ animator.Play(animation);
             check = animation;
         }
     }
@@ -107,6 +101,6 @@ public class Character : MonoBehaviour
         }
 
         facingRight = !facingRight;
-        transform.Rotate(new Vector3(0, 180, 0));
+        transform.Rotate(new Vector3(0, +180, 0));
     }
 }
