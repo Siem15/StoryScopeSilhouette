@@ -12,7 +12,7 @@ public class Character : MonoBehaviour
     string check;
     float speed, distance;
     float distanceToMove = 0.5f;
-    GameObject endMarker;
+    public GameObject endMarker;
     bool idle;
     Animator animator;
     FiducialController endMarkerFC, fidu;
