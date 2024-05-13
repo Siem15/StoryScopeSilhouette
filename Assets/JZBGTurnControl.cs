@@ -36,12 +36,12 @@ public class JZBGTurnControl : MonoBehaviour
             if (transform.eulerAngles.z > lastDegree + DegreesToAction)
             {
                 lastDegree = transform.eulerAngles.z;
-                parent.Next(true);
+                parent.ShowNextItem(true);
             }
             if (transform.eulerAngles.z < lastDegree - DegreesToAction)
             {
                 lastDegree = transform.eulerAngles.z;
-                parent.Next(false);
+                parent.ShowNextItem(false);
             }
         }
 

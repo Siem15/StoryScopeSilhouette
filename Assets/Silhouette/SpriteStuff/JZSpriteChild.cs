@@ -7,37 +7,45 @@ using UnityEngine;
 public class JZSpriteChild : MonoBehaviour
 {
     Vector2 spritePivot;
-    SpriteRenderer sprRend;
+    SpriteRenderer spriteRenderer;
     float originalSpritePixelsPerUnit;
     public List<Texture2D> images = new List<Texture2D>();
-    Sprite[] multipleLoaded;
+    Sprite[] arrayOfImages;
+
     void Start()
     {
-        sprRend = GetComponent<SpriteRenderer>();
-        originalSpritePixelsPerUnit = sprRend.sprite.pixelsPerUnit;
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        originalSpritePixelsPerUnit = spriteRenderer.sprite.pixelsPerUnit;
         images = transform.root.GetComponent<JZSpriteRoot>().images;
         spritePivot = CalculatePivot();
-        multipleLoaded = new Sprite[images.Count];
+        arrayOfImages = new Sprite[images.Count];
         SpriteSlicer();
-
     }
+
     public Vector2 CalculatePivot()
     {
-        Bounds bounds = sprRend.sprite.bounds;
-        return new Vector2(-bounds.center.x / bounds.extents.x / 2 + 0.5f,
-                          -bounds.center.y / bounds.extents.y / 2 + 0.5f);
+        Bounds bounds = spriteRenderer.sprite.bounds;
+        float pivotX = -bounds.center.x / bounds.extents.x / 2 + 0.5f;
+        float pivotY = -bounds.center.y / bounds.extents.y / 2 + 0.5f;
+        return new Vector2(pivotX, pivotY);
     }
+
     public void SpriteSlicer()
     {
-        for (int i = 0; i < multipleLoaded.Length; i++)
+        for (int i = 0; i < arrayOfImages.Length; i++)
         {
-            multipleLoaded[i] = Sprite.Create(images[i], sprRend.sprite.rect, spritePivot, originalSpritePixelsPerUnit, 0, SpriteMeshType.FullRect); //slice the sprite 
+            arrayOfImages[i] = Sprite.Create(images[i], spriteRenderer.sprite.rect, spritePivot,
+                originalSpritePixelsPerUnit, 0, SpriteMeshType.FullRect); // Slice the sprite 
         }
     }
 
     private void Update()
     {
-        if (multipleLoaded.Length == 0) return;
-        sprRend.sprite = multipleLoaded[JZSpriteCounter.spriteCounter % multipleLoaded.Length];
+        if (arrayOfImages.Length == 0)
+        {
+            return;
+        }
+
+        spriteRenderer.sprite = arrayOfImages[JZSpriteCounter.spriteCounter % arrayOfImages.Length];
     }
 }

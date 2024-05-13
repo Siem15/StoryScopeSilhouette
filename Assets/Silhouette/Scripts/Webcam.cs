@@ -18,7 +18,7 @@ public class Webcam : MonoBehaviour
 
     private void Start()
     {
-        WebCamDevice[] devicesPRINT = WebCamTexture.devices;
+        WebCamDevice[] printDevices = WebCamTexture.devices;
         GetComponent<Renderer>().material = _material;
         Startup();
     }
@@ -27,11 +27,29 @@ public class Webcam : MonoBehaviour
     {
         devices = WebCamTexture.devices;
         webcamTexture = new WebCamTexture();
+
         StartCoroutine(TryCamera());
-        if (PlayerPrefs.HasKey("contrast")) _material.SetFloat("_Contrast", GetFloatFromPlayerPrefs("contrast"));
-        if (PlayerPrefs.HasKey("saturation")) _material.SetFloat("_Saturation", GetFloatFromPlayerPrefs("saturation"));
-        if (PlayerPrefs.HasKey("posterize")) _material.SetFloat("_Posterize", GetFloatFromPlayerPrefs("posterize"));
-        if (PlayerPrefs.HasKey("sensitivity")) camSensetivity.tolerance = GetFloatFromPlayerPrefs("sensitivity");
+
+        if (PlayerPrefs.HasKey("contrast")) 
+        {
+            _material.SetFloat("_Contrast", GetFloatFromPlayerPrefs("contrast"));
+        }
+
+        if (PlayerPrefs.HasKey("saturation")) 
+        {
+            _material.SetFloat("_Saturation", GetFloatFromPlayerPrefs("saturation"));
+        }
+
+        if (PlayerPrefs.HasKey("posterize")) 
+        {
+            _material.SetFloat("_Posterize", GetFloatFromPlayerPrefs("posterize"));
+        }
+
+        if (PlayerPrefs.HasKey("sensitivity")) 
+        {
+            camSensetivity.tolerance = GetFloatFromPlayerPrefs("sensitivity");
+        }
+
         contrastSlider.value = GetFloatFromPlayerPrefs("contrast");
         saturationSlider.value = GetFloatFromPlayerPrefs("saturation");
         posterizeSlider.value = GetFloatFromPlayerPrefs("posterize");
@@ -40,25 +58,60 @@ public class Webcam : MonoBehaviour
 
     private void Update()
     {
-        if (Time.timeSinceLevelLoad < 15f) return;
-        if (Input.GetKey(KeyCode.Alpha1)) UpdateTextureSettings(-.01f, "_Contrast", contrast, contrastSlider, "contrast");
-        if (Input.GetKey(KeyCode.Alpha1)) UpdateTextureSettings(-.01f, "_Contrast", contrast, contrastSlider, "contrast");
-        if (Input.GetKey(KeyCode.Alpha2)) UpdateTextureSettings(.01f, "_Contrast", contrast, contrastSlider, "contrast");
-        if (Input.GetKey(KeyCode.Alpha3)) UpdateTextureSettings(-.05f, "_Saturation", saturation, saturationSlider, "saturation");
-        if (Input.GetKey(KeyCode.Alpha4)) UpdateTextureSettings(.05f, "_Saturation", saturation, saturationSlider, "saturation");
-        if (Input.GetKeyDown(KeyCode.Alpha5)) UpdateTextureSettings(-1f, "_Posterize", posterize, posterizeSlider, "posterize");
-        if (Input.GetKeyDown(KeyCode.Alpha6)) UpdateTextureSettings(1f, "_Posterize", posterize, posterizeSlider, "posterize");
-        if (Input.GetKeyDown(KeyCode.Alpha7)) UpdateTextureSettings(-1f, sensetivity, sensetivitySlider, "sensitivity");
-        if (Input.GetKeyDown(KeyCode.Alpha8)) UpdateTextureSettings(1f, sensetivity, sensetivitySlider, "sensitivity");
-        if (Input.GetKeyDown(KeyCode.H)) sliders.SetActive(!sliders.activeInHierarchy);
-        if (!webcamTexture.isPlaying) warning.SetActive(true);
-        else warning.SetActive(false);
+        if (Time.timeSinceLevelLoad < 15f) 
+        {
+            return;
+        }
+        
+        if (Input.GetKey(KeyCode.Alpha1)) 
+        {
+            UpdateTextureSettings(-.01f, "_Contrast", contrast, contrastSlider, "contrast");
+        } 
+
+        if (Input.GetKey(KeyCode.Alpha2)) 
+        {
+            UpdateTextureSettings(.01f, "_Contrast", contrast, contrastSlider, "contrast");
+        }
+
+        if (Input.GetKey(KeyCode.Alpha3)) 
+        {
+            UpdateTextureSettings(-.05f, "_Saturation", saturation, saturationSlider, "saturation");
+        }
+
+        if (Input.GetKey(KeyCode.Alpha4)) 
+        {
+            UpdateTextureSettings(.05f, "_Saturation", saturation, saturationSlider, "saturation");
+        }
+
+        if (Input.GetKeyDown(KeyCode.Alpha5)) 
+        {
+            UpdateTextureSettings(-1f, "_Posterize", posterize, posterizeSlider, "posterize");
+        }
+
+        if (Input.GetKeyDown(KeyCode.Alpha6)) 
+        {
+            UpdateTextureSettings(1f, "_Posterize", posterize, posterizeSlider, "posterize");
+        }
+
+        if (Input.GetKeyDown(KeyCode.Alpha7)) 
+        {
+            UpdateTextureSettings(-1f, sensetivity, sensetivitySlider, "sensitivity");
+        }
+
+        if (Input.GetKeyDown(KeyCode.Alpha8)) 
+        {
+            UpdateTextureSettings(1f, sensetivity, sensetivitySlider, "sensitivity");
+        }
+
+        if (Input.GetKeyDown(KeyCode.H)) {
+
+            sliders.SetActive(!sliders.activeInHierarchy);
+        }
+
+        warning.SetActive(!webcamTexture.isPlaying);
     }
 
-    private void OnDisable()
-    {
-        sliders.SetActive(false);
-    }
+    private void OnDisable() => sliders.SetActive(false);
 
     private void UpdateTextureSettings(float value, Vector2 clamp, Slider slider, string playerPrefsKey)
     {
@@ -68,6 +121,7 @@ public class Webcam : MonoBehaviour
         SetFloatToPlayerPrefs(playerPrefsKey, camSensetivity.tolerance);
         PlayerPrefs.Save();
     }
+
     private void UpdateTextureSettings(float value, string setting, Vector2 clamp, Slider slider, string playerPrefsKey)
     {
         float c = Mathf.Clamp(_material.GetFloat(setting) + value, clamp.x, clamp.y); //1 7
@@ -76,10 +130,12 @@ public class Webcam : MonoBehaviour
         SetFloatToPlayerPrefs(playerPrefsKey, _material.GetFloat(setting));
         PlayerPrefs.Save();
     }
+
     private void SetFloatToPlayerPrefs(string contrast, float value)
     {
         PlayerPrefs.SetFloat(contrast, value);
     }
+
     private float GetFloatFromPlayerPrefs(string contrast)
     {
         return PlayerPrefs.GetFloat(contrast);
@@ -97,26 +153,31 @@ public class Webcam : MonoBehaviour
 #if UNITY_STANDALONE_LINUX
                 webcamTexture = new WebCamTexture(devices[2].name, (int)camResolution.x, (int)camResolution.y, 30);
 #endif
-                if (webcamTexture.isReadable) webcamTexture.Play();
+                if (webcamTexture.isReadable) 
+                {
+                    webcamTexture.Play();
+                }
+
                 _material.SetTexture("_WebcamTex", webcamTexture);
-                if (webcamTexture.isPlaying) break;
+
+                if (webcamTexture.isPlaying) 
+                {
+                    break;
+                }
             }
         }
     }
+
     IEnumerator TryCamera()
     {
-        while (true)
+        while (!webcamTexture.isPlaying)
         {
-            if (webcamTexture.isPlaying) break;
             RestartCam();
             yield return new WaitForSeconds(10);
         }
     }
 
-    public void OnApplicationQuit()
-    {
-        TurnOffWebcam();
-    }
+    public void OnApplicationQuit() => TurnOffWebcam();
 
     public void TurnOffWebcam()
     {
@@ -129,10 +190,11 @@ public class Webcam : MonoBehaviour
             {
                 continue;
             }
+
             Debug.Log("Camera stopped playing");
         }
+
         webcamTexture = null;
         //  SceneManager.LoadScene(0);
     }
-
 }

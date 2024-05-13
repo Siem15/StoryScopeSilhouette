@@ -12,7 +12,6 @@ using UnityEngine.Video;
 /// 
 /// - Siem Wesseling, 08/05/2024
 /// </summary>
-
 public class JZLoadFromExternalV2 : MonoBehaviour
 {
     enum SourceElementType 
@@ -52,17 +51,17 @@ public class JZLoadFromExternalV2 : MonoBehaviour
         //Check if video or Texture
         if (GetComponent<VideoPlayer>()) sourceType = SourceElementType.Video;
         else sourceType = SourceElementType.Texture;
-
-        if (sourceType == SourceElementType.Video)
-        {
-            vp = GetComponent<VideoPlayer>();
-            //extension = "mp4";
-
-        }
-        else if (sourceType == SourceElementType.Texture)
-        {
-            jzrenderer = GetComponent<Renderer>();
-            //extension = "png";
+        
+        switch (sourceType) 
+        { 
+            case SourceElementType.Video:
+                vp = GetComponent<VideoPlayer>();
+                //extension = "mp4";
+                break;
+            case SourceElementType.Texture:
+                jzrenderer = GetComponent<Renderer>();
+                //extension = "png";
+                break;
         }
 
         //StartCoroutine("LoadAll", Directory.GetFiles(filesLocation, "*." + extension, SearchOption.AllDirectories));
@@ -100,10 +99,17 @@ public class JZLoadFromExternalV2 : MonoBehaviour
         }
     }
 
-    public void Next(bool next)// show Next or previous item (texture or video)
+    public void ShowNextItem(bool nextItem)// show Next or previous item (texture or video)
     {
-        if (next) currentItem++;
-        if (!next) currentItem--;
+        if (nextItem)
+        {
+            currentItem++;
+        }
+        else 
+        {
+            currentItem--;
+        }
+        
         if (sourceType == SourceElementType.Video)
         {
             if (currentItem < 0) currentItem = videoURL.Count - 1;
@@ -116,7 +122,6 @@ public class JZLoadFromExternalV2 : MonoBehaviour
             currentItem %= images.Count;
             jzrenderer.material.mainTexture = images[currentItem];
         }
-
     }
 
     public void OnApplicationFocus(bool focus)

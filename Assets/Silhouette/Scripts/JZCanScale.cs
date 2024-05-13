@@ -8,33 +8,35 @@ using UnityEngine;
 public class JZCanScale : MonoBehaviour
 {
     public JZSOCameraActive jZSOCameraActive;
-    FiducialController fidu;
+    FiducialController fiducialController;
     public float scaleFactor;
     public Transform[] otherOnes;
 
     private void Start()
     {
-        fidu = GetComponent<FiducialController>();
+        fiducialController = GetComponent<FiducialController>();
     }
 
     private void Update()
     {
-        if (fidu.IsVisible && jZSOCameraActive.camIsActive)
+        if (fiducialController.IsVisible && jZSOCameraActive.camIsActive)
         {
             Vector3 scale = transform.localScale;
-            if (fidu.RotationSpeed > 0)
+
+            if (fiducialController.RotationSpeed > 0)
             {
                 transform.localScale += new Vector3(
-                    scale.x * fidu.RotationSpeed * scaleFactor / 10,
-                    scale.y * fidu.RotationSpeed * scaleFactor / 10,
-                    scale.z * fidu.RotationSpeed * scaleFactor / 10);
+                    scale.x * fiducialController.RotationSpeed * scaleFactor / 10,
+                    scale.y * fiducialController.RotationSpeed * scaleFactor / 10,
+                    scale.z * fiducialController.RotationSpeed * scaleFactor / 10);
             }
-            if (fidu.RotationSpeed < 0)
+
+            if (fiducialController.RotationSpeed < 0)
             {
                 transform.localScale += new Vector3(
-                    scale.x * fidu.RotationSpeed * scaleFactor / 10,
-                    scale.y * fidu.RotationSpeed * scaleFactor / 10,
-                    scale.z * fidu.RotationSpeed * scaleFactor / 10);
+                    scale.x * fiducialController.RotationSpeed * scaleFactor / 10,
+                    scale.y * fiducialController.RotationSpeed * scaleFactor / 10,
+                    scale.z * fiducialController.RotationSpeed * scaleFactor / 10);
             }
         }
     }

@@ -7,7 +7,6 @@ using UnityEngine;
 /// I currently don't really understand why this is in a separate script, seems a bit redundant
 /// - Siem Wesseling, 08/05/2024
 /// /// </summary>
-
 [CreateAssetMenu(fileName = "CameraActive", menuName = "ScriptableObjects/IsCamActive", order = 1)]
 public class JZSOCameraActive : ScriptableObject
 {

@@ -28,23 +28,33 @@ public class JZSpriteRoot : MonoBehaviour
 
     private void OnEnable()
     {
-        images = Resources.LoadAll<Texture2D>("Character/" + gameObject.name).ToList();
+        images = Resources.LoadAll<Texture2D>($"Character/{gameObject.name}").ToList();
         //TODO:  StartCoroutine(GetExternalImages(Directory.GetFiles(filesLocation)));
     }
+
     public IEnumerator GetExternalImages(string[] filePaths) //Load paths 
     {
         foreach (string filePath in filePaths) //check img to texturelist
         {
             UnityWebRequest uwr = UnityWebRequestTexture.GetTexture("file:///" + filePath);
-
             yield return uwr.SendWebRequest();
-            if (uwr.result != UnityWebRequest.Result.Success) Debug.Log(uwr.error);
-            else AddImgFile(filePath, uwr);
+
+            if (uwr.result != UnityWebRequest.Result.Success)
+            {
+                Debug.Log(uwr.error);
+            }
+            else 
+            {
+                AddImgFile(filePath, uwr);
+            }            
         }
     }
 
     private void AddImgFile(string filePath, UnityWebRequest uwr)
     {
-        if (filePath.ToLower().Contains(gameObject.name.ToLower())) images.Add(DownloadHandlerTexture.GetContent(uwr));
+        if (filePath.ToLower().Contains(gameObject.name.ToLower())) 
+        {
+            images.Add(DownloadHandlerTexture.GetContent(uwr));
+        }
     }
 }

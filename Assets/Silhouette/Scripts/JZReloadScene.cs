@@ -17,6 +17,9 @@ public class JZReloadScene : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (fiducialController.IsVisible) SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        if (fiducialController.IsVisible) 
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }        
     }
 }

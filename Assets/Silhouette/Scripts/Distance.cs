@@ -6,20 +6,18 @@
 /// 
 /// - Siem Wesseling, 08/05/2024
 /// </summary>
-
 public class Distance : MonoBehaviour
 {
     Transform partner = null;
     //public Transform hearts;
     public ParticleSystem ps;
     public float DistanceOfLove;
-    ParticleSystem.EmissionModule em;
-    float dist;
+    ParticleSystem.EmissionModule emissionModule;
 
     // Use this for initialization
     void Start()
     {
-        em = ps.emission;
+        emissionModule = ps.emission;
         partner = GameObject.Find("PlantVase(Clone)").transform;
     }
 
@@ -28,16 +26,9 @@ public class Distance : MonoBehaviour
     {
         if (partner != null)
         {
-            dist = Vector3.Distance(partner.position, transform.position);
-            //hearts.position = partner.position +(transform.position -partner.position) / 2 + new Vector3(0,3,0); 
-            if (dist < DistanceOfLove)
-            {
-                em.enabled = true;
-            }
-            else
-            {
-                em.enabled = false;
-            }
+            float distance = Vector3.Distance(partner.position, transform.position);
+            //hearts.position = partner.position + (transform.position -partner.position) / 2 + new Vector3(0,3,0); 
+            emissionModule.enabled = distance < DistanceOfLove;
         }
     }
 }

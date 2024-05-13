@@ -14,14 +14,17 @@ public class WebCamera : MonoBehaviour
         /* First we'll try to go through the list of cameras (if
          * we can) and find a suitable one (not front-facing). */
         bool foundCamera = false;
-        string desiredCameraName = "";
+        string desiredCameraName = string.Empty;
+
         if (WebCamTexture.devices != null)
         {
             for (int i = 0; i < WebCamTexture.devices.Length; i++)
             {
                 // We'd like a camera which is not front-facing.
-                if (!WebCamTexture.devices[i].isFrontFacing)
+                if (!WebCamTexture.devices[i].isFrontFacing) 
+                {
                     desiredCameraName = WebCamTexture.devices[i].name;
+                }                
             }
         }
 
@@ -32,6 +35,7 @@ public class WebCamera : MonoBehaviour
             GetComponent<Renderer>().material.mainTexture = webcamTexture;
 
             yield return Application.RequestUserAuthorization(UserAuthorization.WebCam);
+
             if (Application.HasUserAuthorization(UserAuthorization.WebCam))
             {
                 webcamTexture.Play();

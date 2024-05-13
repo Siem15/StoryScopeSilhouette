@@ -10,24 +10,23 @@
 
 public class Flicker : MonoBehaviour
 {
-    SpriteRenderer sprite;
+    SpriteRenderer spriteRenderer;
     private float changeTime = 0;
 
     private void Start()
     {
-        sprite = gameObject.GetComponent<SpriteRenderer>();
+        spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
     }
 
     void Update()
     {
-        float timeDonker = Random.Range(2.0f, 0.5f);
-        float timeLicht = Random.Range(1.0f, 0.1f);
+        float timeDark = Random.Range(2.0f, 0.5f);
+        float timeLight = Random.Range(1.0f, 0.1f);
 
         if (Time.time > changeTime)
         {
-            sprite.enabled = !sprite.enabled;
-            if (sprite.enabled) changeTime = Time.time + timeDonker;
-            else changeTime = Time.time + timeLicht;
+            spriteRenderer.enabled = !spriteRenderer.enabled;
+            changeTime = spriteRenderer.enabled ? Time.time + timeDark : Time.time + timeLight;
         }
     }
 }

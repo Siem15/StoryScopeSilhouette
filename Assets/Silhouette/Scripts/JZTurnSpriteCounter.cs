@@ -27,23 +27,24 @@ public class JZTurnSpriteCounter : MonoBehaviour
             if (transform.localEulerAngles.z > lastDegree + DegreesToAction)
             {
                 lastDegree = transform.localEulerAngles.z;
-                X(-1);
+                UpdateSpriteCounter(-1);
             }
             if (transform.localEulerAngles.z < lastDegree - DegreesToAction)
             {
                 lastDegree = transform.localEulerAngles.z;
-                X(1);
+                UpdateSpriteCounter(1);
             }
         }
+
         if (!fiducialController.IsVisible && !resetDegrees)
         {
             resetDegrees = true;
         }
     }
 
-    public void X(int i)
+    public void UpdateSpriteCounter(int amount)
     {
-        JZSpriteCounter.spriteCounter = Mathf.Clamp(JZSpriteCounter.spriteCounter += i, 0, 100);
+        JZSpriteCounter.spriteCounter = Mathf.Clamp(JZSpriteCounter.spriteCounter += amount, 0, 100);
         //print(JZSpriteCounter.spriteCounter);
     }
 }

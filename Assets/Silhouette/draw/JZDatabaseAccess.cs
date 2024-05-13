@@ -42,13 +42,13 @@ public class JZDatabaseAccess : MonoBehaviour
         var allSprites = collection.FindAsync(new BsonDocument());
         var spritesAwaited = await allSprites;
 
-        List<DrawData> drawdata = new List<DrawData>();
+        List<DrawData> drawData = new List<DrawData>();
         foreach (var item in spritesAwaited.ToList())
         {
-            drawdata.Add(Deserialize(item.ToString()));
+            drawData.Add(Deserialize(item.ToString()));
         }
 
-        return drawdata;
+        return drawData;
     }
 
     private DrawData Deserialize(string rawJson)

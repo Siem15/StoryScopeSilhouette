@@ -26,7 +26,6 @@ public class CameraSnap : MonoBehaviour
     public IEnumerator Screenshot()
     {
         // TODO: eventueel aftellen...
-
         cam.depth = 1;
         yield return new WaitForEndOfFrame();
 

@@ -10,7 +10,7 @@ public class ScanCamSize : MonoBehaviour
     float camSize;
     public float growRate;
     private LineRenderer lineRenderer;
-    Vector3[] positions = new Vector3[4];
+    readonly Vector3[] positions = new Vector3[4];
     FiducialController fiducialController;
 
     // Start is called before the first frame update
@@ -27,8 +27,17 @@ public class ScanCamSize : MonoBehaviour
     private void Update()
     {
         camera.orthographicSize = Mathf.Clamp(camera.orthographicSize, 1f, 8f);
-        if (camSize != camera.orthographicSize) ResetBorders();
-        if (Input.GetKeyDown(KeyCode.Z)) ResetBorders();
+
+        if (camSize != camera.orthographicSize) 
+        {
+            ResetBorders();
+        }
+        
+        if (Input.GetKeyDown(KeyCode.Z))
+        {
+            ResetBorders();
+        }
+        
         if (fiducialController.RotationSpeed > 0) camera.orthographicSize += growRate;
         if (fiducialController.RotationSpeed < 0) camera.orthographicSize -= growRate;
     }
@@ -39,7 +48,6 @@ public class ScanCamSize : MonoBehaviour
         GetCameraCornerPositions(positions);
         SetCornerPositions(positions);
         RenderLines(positions);
-
     }
 
     private void GetCameraCornerPositions(Vector3[] positions)

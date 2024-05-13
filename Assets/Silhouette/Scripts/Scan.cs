@@ -29,13 +29,14 @@ public class Scan : MonoBehaviour
 
     private void Update()
     {
-        if (isEmpty == true && fiducialController.m_IsVisible && scanCam.activeSelf)
+        if (isEmpty && fiducialController.m_IsVisible && scanCam.activeSelf)
         {
             isEmpty = false;
             otherSide.SetEmpty();
             ScanDrawing();
         }
     }
+
     private void ScanDrawing()
     {
         cameraSnap.LoadNewDrawing(gameObject);

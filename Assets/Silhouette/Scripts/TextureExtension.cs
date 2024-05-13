@@ -104,7 +104,9 @@ public static class TextureExtension
             {
                 if (checkedPixels[i + current.y * w] > 0 || colors[i + current.y * w] == refCol)
                     break;
+
                 colors[i + current.y * w] = aFillColor;
+
                 checkedPixels[i + current.y * w] = 1;
                 if (current.y + 1 < h)
                 {
@@ -118,6 +120,7 @@ public static class TextureExtension
                 }
             }
         }
+
         aTex.SetPixels(colors);
     }
 
@@ -135,13 +138,6 @@ public static class TextureExtension
         //After which you can just find the average color difference in percentage.
         float diffPercentage = (pctDiffRed + pctDiffGreen + pctDiffBlue) / 3 * 100;
 
-        if (diffPercentage >= tol)
-        {
-            return false;
-        }
-        else
-        {
-            return true;
-        }
+        return diffPercentage < tol;
     }
 }

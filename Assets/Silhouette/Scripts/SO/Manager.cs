@@ -26,8 +26,16 @@ public class Manager : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKey(KeyCode.Space) && Input.GetKeyDown(KeyCode.R)) SceneManager.LoadScene(0);
-        if (ghostTextures.Length == 0) return;
+        if (Input.GetKey(KeyCode.Space) && Input.GetKeyDown(KeyCode.R)) 
+        {
+            SceneManager.LoadScene(0);
+        }
+        
+        if (ghostTextures.Length == 0) 
+        {
+            return;
+        }
+        
         ghostMaterial.mainTexture = ghostTextures[JZSpriteCounter.spriteCounter % ghostTextures.Length];
     }
 }

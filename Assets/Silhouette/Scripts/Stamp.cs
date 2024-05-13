@@ -11,22 +11,23 @@ public class Stamp : MonoBehaviour
     public bool vis;
     Transform stamp;
 
-    FiducialController fidu;
+    FiducialController fiducialController;
 
     public List<GameObject> stamps = new List<GameObject>();
 
     void Start()
     {
-        fidu = GetComponent<FiducialController>();
+        fiducialController = GetComponent<FiducialController>();
         stamp = transform.GetChild(0);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (fidu.m_IsVisible)
+        if (fiducialController.m_IsVisible)
         {
             StopAllCoroutines();
+
             if (!cloned)
             {
                 cloned = true;
@@ -39,7 +40,7 @@ public class Stamp : MonoBehaviour
             }
         }
 
-        if (!fidu.m_IsVisible && cloned == true)
+        if (!fiducialController.m_IsVisible && cloned)
         {
             StartCoroutine(DeleteStamps());
             cloned = false;

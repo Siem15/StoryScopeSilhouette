@@ -8,7 +8,6 @@
 /// 
 /// - Siem Wesseling, 08/05/2024
 /// </summary>
-
 public class GlobalFlock : MonoBehaviour
 {
     public GameObject FishPrefab;
@@ -56,7 +55,6 @@ public class GlobalFlock : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-
         GoalPos = GoalPrefab.transform.position;
         //if (Random.Range(0, 10000) < 50) 
         //{

@@ -12,8 +12,8 @@ public class Flock : MonoBehaviour
 {
     public Vector2 speedRange;
     float Speed;
-    float RotationSpeed = 4.0f;
-    float NeighbourDistance = 2.0f;
+    readonly float RotationSpeed = 4.0f;
+    readonly float NeighbourDistance = 2.0f;
     bool Turning = false;
 
     private void Start()
@@ -23,24 +23,14 @@ public class Flock : MonoBehaviour
 
     private void Update()
     {
-
-        Vector3 goalPos = GlobalFlock.GoalPos;
-
-        if (Vector3.Distance(transform.position, goalPos) >= GlobalFlock.tankSize)
-        {
-            Turning = true;
-        }
-        else
-        {
-            Turning = false;
-        }
+        Vector3 goalPosition = GlobalFlock.GoalPos;
+        Turning = Vector3.Distance(transform.position, goalPosition) >= GlobalFlock.tankSize;
 
         if (Turning)
         {
-            Vector3 direction = goalPos - transform.position; ;
-            transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(direction), RotationSpeed * Time.deltaTime);
-
-
+            Vector3 direction = goalPosition - transform.position;
+            transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(direction), 
+                RotationSpeed * Time.deltaTime);
             Speed = UnityEngine.Random.Range(speedRange.x, speedRange.y);
         }
         else
@@ -56,29 +46,28 @@ public class Flock : MonoBehaviour
 
     private void ApplyRules()
     {
-        Vector3 goalPos = GlobalFlock.GoalPos;
+        Vector3 goalPosition = GlobalFlock.GoalPos;
 
         GameObject[] fishes; // gos  = fishes 
         fishes = GlobalFlock.AllFish;
 
-        Vector3 groupCentre = goalPos; //group center
+        Vector3 groupCentre = goalPosition; //group center
         Vector3 groupAvoid = Vector3.zero; // avoid group
         float groupSpeed = 0.1f;
 
-        float dist;
-
+        float distance;
         int groupSize = 0;
 
         foreach (GameObject fish in fishes) // fish in fishes
         {
             if (fish != gameObject)
             {
-                dist = Vector3.Distance(fish.transform.position, transform.position);
-                if (dist <= NeighbourDistance)
+                distance = Vector3.Distance(fish.transform.position, transform.position);
+                if (distance <= NeighbourDistance)
                 {
                     groupCentre += fish.transform.position;
                     groupSize++;
-                    if (dist < 1.0f)
+                    if (distance < 1.0f)
                     {
                         groupAvoid += (transform.position - fish.transform.position);
                     }
@@ -91,14 +80,14 @@ public class Flock : MonoBehaviour
 
         if (groupSize > 0)
         {
-            groupCentre = groupCentre / groupSize + (goalPos - transform.position);
+            groupCentre = groupCentre / groupSize + (goalPosition - transform.position);
             Speed = groupSpeed / groupSize;
 
             Vector3 direction = (groupCentre + groupAvoid) - transform.position;
-            if (direction != goalPos)
+
+            if (direction != goalPosition)
             {
                 transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(direction), RotationSpeed * Time.deltaTime);
-
             }
         }
     }
