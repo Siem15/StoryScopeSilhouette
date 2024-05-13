@@ -27,7 +27,7 @@ public class Character : MonoBehaviour
 
     private void Update()
     {
-        if (fidu.m_IsVisible && animator == null) GetAnimator();
+        if (/*fidu.m_IsVisible &&*/ animator == null) GetAnimator();
         CheckGrounded();
         Flip();
     }
@@ -81,7 +81,7 @@ public class Character : MonoBehaviour
         {
             speed = setSpeed;
             if (!animator) return;
-            if (fidu.m_IsVisible) animator.Play(animation);
+            /*if (fidu.m_IsVisible)*/ animator.Play(animation);
             check = animation;
         }
     }
