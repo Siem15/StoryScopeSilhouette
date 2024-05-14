@@ -123,6 +123,7 @@
     <Compile Include="Assets\Silhouette\Scripts\JZLoadFromExternalV2.cs" />
     <Compile Include="Assets\Silhouette\Scripts\JZReloadScene.cs" />
     <Compile Include="Assets\Silhouette\SpriteStuff\JZSpriteRoot.cs" />
+    <Compile Include="Assets\DebugExtensions.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

@@ -1,12 +1,117 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\larsd\\Unity\\StoryScopeSilhouette\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{1555FAD6-E65C-7B70-91C9-38BC86C5EFCA}|Assembly-CSharp.csproj|c:\\users\\larsd\\unity\\storyscopesilhouette\\assets\\silhouette\\debugextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1555FAD6-E65C-7B70-91C9-38BC86C5EFCA}|Assembly-CSharp.csproj|solutionrelative:assets\\silhouette\\debugextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1555FAD6-E65C-7B70-91C9-38BC86C5EFCA}|Assembly-CSharp.csproj|C:\\Users\\larsd\\Unity\\StoryScopeSilhouette\\assets\\silhouette\\scripts\\turnoneditorcharacter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1555FAD6-E65C-7B70-91C9-38BC86C5EFCA}|Assembly-CSharp.csproj|solutionrelative:assets\\silhouette\\scripts\\turnoneditorcharacter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1555FAD6-E65C-7B70-91C9-38BC86C5EFCA}|Assembly-CSharp.csproj|C:\\Users\\larsd\\Unity\\StoryScopeSilhouette\\assets\\silhouette\\scripts\\jzruninbackground.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1555FAD6-E65C-7B70-91C9-38BC86C5EFCA}|Assembly-CSharp.csproj|solutionrelative:assets\\silhouette\\scripts\\jzruninbackground.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1555FAD6-E65C-7B70-91C9-38BC86C5EFCA}|Assembly-CSharp.csproj|C:\\Users\\larsd\\Unity\\StoryScopeSilhouette\\assets\\silhouette\\scripts\\jzslides.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1555FAD6-E65C-7B70-91C9-38BC86C5EFCA}|Assembly-CSharp.csproj|solutionrelative:assets\\silhouette\\scripts\\jzslides.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1555FAD6-E65C-7B70-91C9-38BC86C5EFCA}|Assembly-CSharp.csproj|C:\\Users\\larsd\\Unity\\StoryScopeSilhouette\\assets\\silhouette\\scripts\\jzloadfromexternalv2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1555FAD6-E65C-7B70-91C9-38BC86C5EFCA}|Assembly-CSharp.csproj|solutionrelative:assets\\silhouette\\scripts\\jzloadfromexternalv2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1555FAD6-E65C-7B70-91C9-38BC86C5EFCA}|Assembly-CSharp.csproj|C:\\Users\\larsd\\Unity\\StoryScopeSilhouette\\assets\\jzvariables.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1555FAD6-E65C-7B70-91C9-38BC86C5EFCA}|Assembly-CSharp.csproj|solutionrelative:assets\\jzvariables.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "DebugExtensions.cs",
+              "DocumentMoniker": "C:\\Users\\larsd\\Unity\\StoryScopeSilhouette\\Assets\\Silhouette\\DebugExtensions.cs",
+              "RelativeDocumentMoniker": "Assets\\Silhouette\\DebugExtensions.cs",
+              "ToolTip": "C:\\Users\\larsd\\Unity\\StoryScopeSilhouette\\Assets\\Silhouette\\DebugExtensions.cs",
+              "RelativeToolTip": "Assets\\Silhouette\\DebugExtensions.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-14T08:26:58.497Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "TurnOnEditorCharacter.cs",
+              "DocumentMoniker": "C:\\Users\\larsd\\Unity\\StoryScopeSilhouette\\Assets\\Silhouette\\Scripts\\TurnOnEditorCharacter.cs",
+              "RelativeDocumentMoniker": "Assets\\Silhouette\\Scripts\\TurnOnEditorCharacter.cs",
+              "ToolTip": "C:\\Users\\larsd\\Unity\\StoryScopeSilhouette\\Assets\\Silhouette\\Scripts\\TurnOnEditorCharacter.cs",
+              "RelativeToolTip": "Assets\\Silhouette\\Scripts\\TurnOnEditorCharacter.cs",
+              "ViewState": "AQIAAAgAAAAAAAAAAAAAwBkAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-14T08:25:52.652Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "JZSlides.cs",
+              "DocumentMoniker": "C:\\Users\\larsd\\Unity\\StoryScopeSilhouette\\Assets\\Silhouette\\Scripts\\JZSlides.cs",
+              "RelativeDocumentMoniker": "Assets\\Silhouette\\Scripts\\JZSlides.cs",
+              "ToolTip": "C:\\Users\\larsd\\Unity\\StoryScopeSilhouette\\Assets\\Silhouette\\Scripts\\JZSlides.cs",
+              "RelativeToolTip": "Assets\\Silhouette\\Scripts\\JZSlides.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-14T08:24:47.409Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "JZRunInBackground.cs",
+              "DocumentMoniker": "C:\\Users\\larsd\\Unity\\StoryScopeSilhouette\\Assets\\Silhouette\\Scripts\\JZRunInBackground.cs",
+              "RelativeDocumentMoniker": "Assets\\Silhouette\\Scripts\\JZRunInBackground.cs",
+              "ToolTip": "C:\\Users\\larsd\\Unity\\StoryScopeSilhouette\\Assets\\Silhouette\\Scripts\\JZRunInBackground.cs",
+              "RelativeToolTip": "Assets\\Silhouette\\Scripts\\JZRunInBackground.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-14T08:24:43.65Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "JZLoadFromExternalV2.cs",
+              "DocumentMoniker": "C:\\Users\\larsd\\Unity\\StoryScopeSilhouette\\Assets\\Silhouette\\Scripts\\JZLoadFromExternalV2.cs",
+              "RelativeDocumentMoniker": "Assets\\Silhouette\\Scripts\\JZLoadFromExternalV2.cs",
+              "ToolTip": "C:\\Users\\larsd\\Unity\\StoryScopeSilhouette\\Assets\\Silhouette\\Scripts\\JZLoadFromExternalV2.cs",
+              "RelativeToolTip": "Assets\\Silhouette\\Scripts\\JZLoadFromExternalV2.cs",
+              "ViewState": "AQIAAGYAAAAAAAAAAAAowEEAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-14T08:24:29.937Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "JZVariables.cs",
+              "DocumentMoniker": "C:\\Users\\larsd\\Unity\\StoryScopeSilhouette\\Assets\\JZVariables.cs",
+              "RelativeDocumentMoniker": "Assets\\JZVariables.cs",
+              "ToolTip": "C:\\Users\\larsd\\Unity\\StoryScopeSilhouette\\Assets\\JZVariables.cs",
+              "RelativeToolTip": "Assets\\JZVariables.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-14T08:24:12.626Z"
+            }
+          ]
+        }
+      ]
     }
   ]
 }
