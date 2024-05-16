@@ -20,35 +20,33 @@ public class JZSceneSelectorManager : MonoBehaviour
 #endif
 
     public GameObject prefabSelector;
-    float startPos, endPos;
+    float startPosition, endPosition;
 
     // Start is called before the first frame update
     void Start()
     {
         otherScenesPath = new List<string>(Directory.GetDirectories(buildsFilePath));
 
-        float scenes = otherScenesPath.Count;
-        if (scenes < 4) SceneManagerButtons.threshold = true;
-        else SceneManagerButtons.threshold = false;
+        float numOfScenes = otherScenesPath.Count;
+        SceneManagerButtons.Threshold = numOfScenes < 4;
 
-        SceneManagerButtons.threshold = scenes < 4 ? true : false;
-
-        for (int i = 0; i < scenes; i++)
+        for (int i = 0; i < numOfScenes; i++)
         {
             GameObject levelSelectorObject = Instantiate(prefabSelector, transform);
             JZSceneSelector jzSceneSelector = levelSelectorObject.GetComponent<JZSceneSelector>();
             Vector3 tempTransform = levelSelectorObject.transform.position;
 
-            tempTransform.x = (-(scenes * levelSelectorObject.transform.localScale.x + (scenes - 1) * 2) / 2) + 4 + (i * 10);
+            tempTransform.x = (-(numOfScenes * levelSelectorObject.transform.localScale.x 
+                + (numOfScenes - 1) * 2) / 2) + 4 + (i * 10);
 
             if (i == 0)
             {
-                startPos = tempTransform.x - 4f;
-                endPos = startPos * -1 + 2;
+                startPosition = tempTransform.x - 4f;
+                endPosition = startPosition * -1 + 2;
             }
 
-            jzSceneSelector.startPos = startPos;
-            jzSceneSelector.endPos = endPos;
+            jzSceneSelector.startPosition = startPosition;
+            jzSceneSelector.endPosition = endPosition;
             levelSelectorObject.transform.position = tempTransform;
 
             jzSceneSelector.pathToImage = otherScenesPath[i];
@@ -58,6 +56,6 @@ public class JZSceneSelectorManager : MonoBehaviour
 
 public static class SceneManagerButtons
 {
-    public static float speed;
-    public static bool threshold;
+    public static float Speed;
+    public static bool Threshold;
 }

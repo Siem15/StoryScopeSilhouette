@@ -9,9 +9,9 @@ public class JZSceneDirectionButton : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (!SceneManagerButtons.threshold)
+        if (!SceneManagerButtons.Threshold)
         {
-            SceneManagerButtons.speed = speed ? 0.5f : -0.5f;
+            SceneManagerButtons.Speed = speed ? 0.5f : -0.5f;
 
             // NOTE: Uncomment these if-statements if above statement does not work
             //if (speed) SceneManagerButtons.speed = 0.5f;
@@ -20,5 +20,5 @@ public class JZSceneDirectionButton : MonoBehaviour
         }
     }
 
-    private void OnTriggerExit2D(Collider2D collision) => SceneManagerButtons.speed = 0;
+    private void OnTriggerExit2D(Collider2D collision) => SceneManagerButtons.Speed = 0;
 }

@@ -35,12 +35,16 @@ public class JZLoadFromExternalV2 : MonoBehaviour
 #endif
 
     public string folder;
+
     [SerializeField]
     string path;
+
     public List<Texture2D> images = new List<Texture2D>();
     readonly List<string> videoURL = new List<string>();
-    VideoPlayer vp;
-    Renderer jzrenderer = null;
+
+    VideoPlayer videoPlayer;
+    Renderer jzRenderer = null;
+
     int currentItem = 0;
 
     private void Start()
@@ -55,11 +59,11 @@ public class JZLoadFromExternalV2 : MonoBehaviour
         switch (sourceType) 
         { 
             case SourceElementType.Video:
-                vp = GetComponent<VideoPlayer>();
+                videoPlayer = GetComponent<VideoPlayer>();
                 //extension = "mp4";
                 break;
             case SourceElementType.Texture:
-                jzrenderer = GetComponent<Renderer>();
+                jzRenderer = GetComponent<Renderer>();
                 //extension = "png";
                 break;
         }
@@ -114,13 +118,13 @@ public class JZLoadFromExternalV2 : MonoBehaviour
         {
             if (currentItem < 0) currentItem = videoURL.Count - 1;
             currentItem %= videoURL.Count;
-            vp.url = videoURL[currentItem];
+            videoPlayer.url = videoURL[currentItem];
         }
         if (sourceType == SourceElementType.Texture)
         {
             if (currentItem < 0) currentItem = images.Count - 1;
             currentItem %= images.Count;
-            jzrenderer.material.mainTexture = images[currentItem];
+            jzRenderer.material.mainTexture = images[currentItem];
         }
     }
 

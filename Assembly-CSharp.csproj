@@ -8,7 +8,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <RootNamespace></RootNamespace>
+    <RootNamespace>
+    </RootNamespace>
     <ProjectGuid>{1555FAD6-E65C-7B70-91C9-38BC86C5EFCA}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -72,7 +73,7 @@
     <Compile Include="Assets\JZVariables.cs" />
     <Compile Include="Assets\Silhouette\Scripts\webcamDevices.cs" />
     <Compile Include="Assets\Silhouette\Scripts\JZSlides.cs" />
-    <Compile Include="Assets\JZdatabaseStuff.cs" />
+    <Compile Include="Assets\JZDatabaseStuff.cs" />
     <Compile Include="Assets\Silhouette\Scripts\JZCanScale.cs" />
     <Compile Include="Assets\Silhouette\draw\JZGetBase64.cs" />
     <Compile Include="Assets\ThirdParty\FiducialFolder\Uniducial\FiducialController.cs" />

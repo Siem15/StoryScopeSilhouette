@@ -10,7 +10,7 @@ public class JZSceneSelector : MonoBehaviour
 {
     public string pathToImage;
     public float speed;
-    public float startPos, endPos;
+    public float startPosition, endPosition;
     public Texture2D icon;
     string scenePath;
 
@@ -28,18 +28,18 @@ public class JZSceneSelector : MonoBehaviour
 
     private void Update()
     {
-        if (SceneManagerButtons.threshold)
+        if (SceneManagerButtons.Threshold)
         {
-            if (transform.position.x > endPos) transform.position = new Vector3(endPos, transform.position.y, 0);
-            if (transform.position.x < startPos) transform.position = new Vector3(startPos, transform.position.y, 0);
+            if (transform.position.x > endPosition) transform.position = new Vector3(endPosition, transform.position.y, 0);
+            if (transform.position.x < startPosition) transform.position = new Vector3(startPosition, transform.position.y, 0);
         }
         else
         {
-            if (transform.position.x > endPos) transform.position = new Vector3(startPos, transform.position.y, 0);
-            if (transform.position.x < startPos) transform.position = new Vector3(endPos, transform.position.y, 0);
+            if (transform.position.x > endPosition) transform.position = new Vector3(startPosition, transform.position.y, 0);
+            if (transform.position.x < startPosition) transform.position = new Vector3(endPosition, transform.position.y, 0);
         }
 
-        transform.Translate(Vector3.right * SceneManagerButtons.speed / 10);
+        transform.Translate(Vector3.right * SceneManagerButtons.Speed / 10);
     }
 
     private void OnTriggerEnter2D(Collider2D collision) => StartCoroutine(GoToScene());

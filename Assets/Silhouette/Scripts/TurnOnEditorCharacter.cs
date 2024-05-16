@@ -5,7 +5,7 @@
 /// </summary>
 public class TurnOnEditorCharacter : MonoBehaviour
 {
-#if (UNITY_EDITOR)
+#if UNITY_EDITOR
     FiducialController fiducialController;
     public bool show = false;
 
