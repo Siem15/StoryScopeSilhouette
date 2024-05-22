@@ -8,7 +8,6 @@ using UnityEngine.Networking;
 /// 
 /// - Siem Wesseling, 08/05/2024
 /// </summary>
-
 public class JZLoadSingle : MonoBehaviour
 {
 #if UNITY_STANDALONE_WIN
@@ -29,24 +28,38 @@ public class JZLoadSingle : MonoBehaviour
 
     private void OnEnable()
     {
+        // Get external image files stored on computer.
         StartCoroutine(GetExternalImages(Directory.GetFiles(filesLocation)));
     }
 
-    public IEnumerator GetExternalImages(string[] filePaths) //Load paths 
+    public IEnumerator GetExternalImages(string[] filePaths)
     {
-        foreach (string filePath in filePaths) //check img to texturelist
+        // Load image files from file paths.
+        foreach (string filePath in filePaths)
         {
-            UnityWebRequest uwr = UnityWebRequestTexture.GetTexture("file:///" + filePath);
+            UnityWebRequest unityWebRequest = UnityWebRequestTexture.GetTexture("file:///" + filePath);
+            yield return unityWebRequest.SendWebRequest();
 
-            yield return uwr.SendWebRequest();
-            if (uwr.result != UnityWebRequest.Result.Success) Debug.Log(uwr.error);
-            else AddImgFile(filePath, uwr);
+            if (unityWebRequest.result != UnityWebRequest.Result.Success)
+            {
+                Debug.Log(unityWebRequest.error);
+            }
+            else 
+            {
+                AddImageFile(filePath, unityWebRequest);
+            }            
         }
     }
 
-    private void AddImgFile(string filePath, UnityWebRequest uwr)
+    private void AddImageFile(string filePath, UnityWebRequest unityWebRequest)
     {
-        if (filePath.ToLower().Contains(gameObject.name.ToLower())) image = (DownloadHandlerTexture.GetContent(uwr));
+        // Get texture file for object if name is included in file path.
+        if (filePath.ToLower().Contains(gameObject.name.ToLower())) 
+        {
+            image = (DownloadHandlerTexture.GetContent(unityWebRequest));
+        }
+        
+        // Set main texture to downloaded image.
         GetComponent<Renderer>().material.mainTexture = image;
     }
 }
