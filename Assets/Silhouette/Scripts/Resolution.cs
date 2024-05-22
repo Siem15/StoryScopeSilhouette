@@ -10,6 +10,7 @@ public class Resolution : MonoBehaviour
 
     private void Start()
     {
+        // Set screen resolution of application.
         StartCoroutine(SetScreenResolution());
     }
 
@@ -17,18 +18,14 @@ public class Resolution : MonoBehaviour
     {
         while (!correctResolution)
         {
-            if (WidthAndHeight())
+            if (Screen.currentResolution.width == 1920
+                && Screen.currentResolution.height == 1080)
             {
                 correctResolution = true;
             }
 
-            yield return new WaitForSeconds(5);
+            yield return new WaitForSeconds(5.0f);
             Screen.SetResolution(1920, 1080, true);
         }
-    }
-
-    public bool WidthAndHeight()
-    {
-        return Screen.currentResolution.width == 1920 && Screen.currentResolution.height == 1080;        
     }
 }
