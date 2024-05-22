@@ -1,8 +1,11 @@
 using UnityEngine;
 
 /// <summary>
+/// This script searches the system for a microphone and creates functions to record said microphone.
 /// 
+/// - Siem Wesseling, 13/05/2024
 /// </summary>
+
 public class JZMicrophone : MonoBehaviour
 {
     AudioSource audioSource;

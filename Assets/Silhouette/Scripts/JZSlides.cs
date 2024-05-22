@@ -1,8 +1,11 @@
 using UnityEngine;
 
 /// <summary>
+/// This script makes a specific background-fiducial able to scroll through different backgrounds like slides.
 /// 
+/// - Siem Wesseling, 13/05/2024
 /// </summary>
+
 public class JZSlides : MonoBehaviour
 {
     int nextSlide = 0;
