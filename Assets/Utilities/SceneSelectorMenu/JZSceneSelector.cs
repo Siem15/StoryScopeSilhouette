@@ -20,7 +20,7 @@ public class JZSceneSelector : MonoBehaviour
         scenePath = pathToImage + "/StoryScope.exe";
 #endif
 #if UNITY_STANDALONE_LINUX
-        pathToScene = pathToImage + "/StoryScope.x86_64";
+        scenePath = pathToImage + "/StoryScope.x86_64";
 #endif
 
         StartCoroutine(LoadAll(Directory.GetFiles(pathToImage + "/icon/")));
