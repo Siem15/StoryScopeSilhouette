@@ -71,7 +71,7 @@
     <Compile Include="Assets\Silhouette\Scripts\ScanCamSize.cs" />
     <Compile Include="Assets\ThirdParty\FiducialFolder\TUIOConnector\TuioObject.cs" />
     <Compile Include="Assets\JZVariables.cs" />
-    <Compile Include="Assets\Silhouette\Scripts\webcamDevices.cs" />
+    <Compile Include="Assets\Silhouette\Scripts\WebcamDevices.cs" />
     <Compile Include="Assets\Silhouette\Scripts\JZSlides.cs" />
     <Compile Include="Assets\JZDatabaseStuff.cs" />
     <Compile Include="Assets\Silhouette\Scripts\JZCanScale.cs" />

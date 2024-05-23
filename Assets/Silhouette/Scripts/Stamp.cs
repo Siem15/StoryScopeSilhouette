@@ -39,8 +39,7 @@ public class Stamp : MonoBehaviour
                 tempStamp.GetComponent<SpriteRenderer>().enabled = true;
             }
         }
-
-        if (!fiducialController.m_IsVisible && cloned)
+        else if (!fiducialController.m_IsVisible && cloned)
         {
             StartCoroutine(DeleteStamps());
             cloned = false;
@@ -49,7 +48,7 @@ public class Stamp : MonoBehaviour
 
     IEnumerator DeleteStamps()
     {
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(2.0f);
 
         foreach (GameObject stamp in stamps)
         {

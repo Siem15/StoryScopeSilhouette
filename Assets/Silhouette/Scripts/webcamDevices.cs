@@ -9,7 +9,10 @@ public class WebcamDevices : MonoBehaviour
     void Start()
     {
         WebCamDevice[] devices = WebCamTexture.devices;
-        for (int i = 0; i < devices.Length; i++)
+
+        for (int i = 0; i < devices.Length; i++) 
+        {
             Debug.Log(devices[i].name + i);
+        }        
     }
 }

@@ -14,19 +14,23 @@ public class JZShutdown_111 : FiducialController
     {
         base.Start();
 #if !UNITY_EDITOR //TODO: why does UNITY_STANDALONE not work
-        startup = DateTime.Now;
-        if(PlayerPrefs.HasKey("power") && GetPPPower("power") == "on")
-        {
+        onStartUp = DateTime.Now;
+
+        if (PlayerPrefs.HasKey("power") && GetPlayerPrefsPower("power") == "on")
             Debug.Log("Didn't shutdown correctly" + "  Date: " + DateTime.Now);
-        }
-        SetPPPower("power", "on");
+
+        SetPlayerPrefsPower("power", "on");
 #endif
     }
+
     public void SetPlayerPrefsPower(string power, string toggle)
     {
 #if !UNITY_EDITOR //TODO: why does UNITY_STANDALONE not work
         Debug.Log("Power: " + toggle + "  Date: " + DateTime.Now);
-        if (toggle == "off") Debug.Log("On " + DateTime.Now + " ran for " + (DateTime.Now - startup));
+
+        if (toggle == "off")
+            Debug.Log("On " + DateTime.Now + " ran for " + (DateTime.Now - onStartUp));
+
         PlayerPrefs.SetString(power, toggle);
         PlayerPrefs.Save();
 #endif
