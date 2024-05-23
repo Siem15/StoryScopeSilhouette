@@ -4,15 +4,22 @@ using UnityEngine;
 
 public class RotateProperties : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public int propertyIndex = 0;
+    [SerializeField] int propertiesAmount = 10;
+
+    //NOTE: this function should be called with the OnRotateForward and OnRotateBackward with te corresponding direction
+    public void NextProperty(int direction)
     {
+        propertyIndex += direction;
+
+        //Resets to top when below 0
+        if (propertyIndex < 0)
+        propertyIndex = propertiesAmount;
+        //Resets to 0 when higher than amount of properties
+        if (propertyIndex > propertiesAmount)
+            propertyIndex = 0;
         
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+
 }
