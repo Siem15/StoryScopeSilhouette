@@ -6172,12 +6172,12 @@ PrefabInstance:
     - target: {fileID: 7237394140725142442, guid: 952211db6a4a9b7408e45a68dcbf3c52,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7998680968566751479, guid: 952211db6a4a9b7408e45a68dcbf3c52,
         type: 3}
       propertyPath: AutoHideGO
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7998680968566751479, guid: 952211db6a4a9b7408e45a68dcbf3c52,
         type: 3}
