@@ -87,7 +87,7 @@ public class UniducialInspector : UnityEditor.Editor
             controller.grounded = EditorGUILayout.Toggle("Grounded", controller.grounded);
             EditorGUILayout.EndHorizontal();
 
-            if (!mainCamera.orthographic && !controller.isAttachedToGUIComponent())
+            if (!mainCamera.orthographic && !controller.IsAttachedToGUIComponent())
             {
                 EditorGUILayout.BeginHorizontal();
                 controller.CameraOffset = EditorGUILayout.Slider("Camera offset", controller.CameraOffset, mainCamera.nearClipPlane, mainCamera.farClipPlane);
@@ -97,7 +97,7 @@ public class UniducialInspector : UnityEditor.Editor
 
         EditorGUILayout.Separator();
 
-        if (!controller.isAttachedToGUIComponent())
+        if (!controller.IsAttachedToGUIComponent())
         {
             EditorGUILayout.BeginHorizontal();
             controller.IsRotationMapped = EditorGUILayout.Toggle("Control Rotation", controller.IsRotationMapped);
