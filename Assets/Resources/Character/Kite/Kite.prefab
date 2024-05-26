@@ -779,7 +779,6 @@ GameObject:
   - component: {fileID: 2867546479499321458}
   - component: {fileID: -3109856664537958353}
   - component: {fileID: 3803683299115109672}
-  - component: {fileID: 5479170827011582882}
   m_Layer: 0
   m_Name: Kite
   m_TagString: flying
@@ -893,32 +892,8 @@ MonoBehaviour:
   isWheel: 0
   isVehicle: 0
   reset: 0
---- !u!61 &5479170827011582882
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5829155172992474261}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.9436939, y: -0.16544369}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 7.988319, y: 1.3308871}
-  m_EdgeRadius: 0
+  isAlive: 0
+  connected: 0
 --- !u!1 &7237394140725142442
 GameObject:
   m_ObjectHideFlags: 0

@@ -2,15 +2,21 @@ using UnityEngine;
 
 public class Properties : MonoBehaviour
 {
+    public int currentPropertie;
+
     public bool isFood = false;
     public bool canEatFood = false;
     public bool isFlammable = false;
     public bool isFire = false;
     public bool isWheel = false;
     public bool isVehicle = false;
+
     public bool reset = false;
     public bool isAlive = false;
     public bool connected = true;
+
+    public Vector2 HitboxSize;
+    public Vector2 HitboxOffset;
 
     private Vector3 originalScale;
     private GameObject originalendmarker;
@@ -20,6 +26,39 @@ public class Properties : MonoBehaviour
 
     void Start()
     {
+        checkPropertie();
+
+        // Add a BoxCollider2D component if it doesn't already exist
+        BoxCollider2D boxCollider = gameObject.GetComponent<BoxCollider2D>();
+        if (boxCollider == null)
+        {
+            boxCollider = gameObject.AddComponent<BoxCollider2D>();
+        }
+
+        // Set the BoxCollider2D as a trigger
+        boxCollider.isTrigger = true;
+
+        // size of the BoxCollider2D
+        boxCollider.size *= HitboxSize;
+
+        // size of the BoxCollider2D
+        boxCollider.offset = HitboxOffset;
+
+        // turn off the BoxCollider2D
+        boxCollider.enabled = false;
+
+        // Add a Rigidbody2D component if it doesn't already exist
+        Rigidbody2D rigidbody2D = gameObject.GetComponent<Rigidbody2D>();
+        if (rigidbody2D == null)
+        {
+            rigidbody2D = gameObject.AddComponent<Rigidbody2D>();
+        }
+
+        // Set the gravity scale of the Rigidbody2D to 0
+        rigidbody2D.gravityScale = 0;
+        rigidbody2D.mass = 0.0001f;
+        rigidbody2D.angularDrag = 0;
+
         originalScale = transform.localScale;
         originalendmarker = this.GetComponent<Character>().endMarker;
         originalWalkingSpeed = this.GetComponent<Character>().WalkSpeed;
@@ -42,7 +81,6 @@ public class Properties : MonoBehaviour
 
         if (connected)
         {
-
             if (FC.m_IsVisible)
             {
                 if (!isAlive)
@@ -68,7 +106,6 @@ public class Properties : MonoBehaviour
         {
             transform.Rotate(Vector3.back, 5f); // Rotate if wheel and touches a vehicle
         }
-
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -95,7 +132,7 @@ public class Properties : MonoBehaviour
             }
             if (isWheel && otherObject.isVehicle)
             {
-                Debug.Log("atatch wheel");
+                Debug.Log("attach wheel");
                 transform.parent = otherObject.transform; // Stick to the vehicle
                 this.GetComponent<BoxCollider2D>().enabled = false;
                 thisCharacter.endMarker = otherCharacter.endMarker;
@@ -105,11 +142,47 @@ public class Properties : MonoBehaviour
         }
     }
 
+    public void checkPropertie()
+    {
+        if (currentPropertie != 0)
+        {
+            isFood = false;
+            canEatFood = false;
+            isFlammable = false;
+            isFire = false;
+            isWheel = false;
+            isVehicle = false;
+            switch (currentPropertie)
+            {
+                case 1:
+                    isFood = true;
+                    break;
+                case 2:
+                    canEatFood = true;
+                    break;
+                case 3:
+                    isFlammable = true;
+                    break;
+                case 4:
+                    isFire = true;
+                    break;
+                case 5:
+                    isWheel = true;
+                    break;
+                case 6:
+                    isVehicle = true;
+                    break;
+            }
+        }
+    }
     public void ResetObject()
     {
+        checkPropertie();
         transform.localScale = originalScale;
         transform.parent = null;
         this.GetComponent<BoxCollider2D>().enabled = true;
+        this.GetComponent<BoxCollider2D>().size *= HitboxSize;
+        this.GetComponent<BoxCollider2D>().offset = HitboxOffset;
         this.GetComponent<Character>().endMarker = originalendmarker;
         this.GetComponent<Character>().WalkSpeed = originalWalkingSpeed;
         this.GetComponent<Character>().RunSpeed = originalRunningSpeed;
