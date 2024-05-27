@@ -98,6 +98,8 @@ public class Properties : MonoBehaviour
                 isAlive = false;
             }
         }
+
+        isAlive = !FC.AutoHideGO; // temp
     }
 
     private void FixedUpdate()
@@ -171,6 +173,9 @@ public class Properties : MonoBehaviour
                     break;
                 case 6:
                     isVehicle = true;
+                    break;
+                case 7:
+                    currentPropertie = 0;
                     break;
             }
         }
