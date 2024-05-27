@@ -1,9 +1,13 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class Properties : MonoBehaviour
 {
     public int currentPropertie;
 
+    [SerializeField] List<bool> properties = new List<bool>();
+
+    bool enpty;
     public bool isFood = false;
     public bool canEatFood = false;
     public bool isFlammable = false;
@@ -24,8 +28,26 @@ public class Properties : MonoBehaviour
     private float originalWalkingSpeed;
     private float originalRunningSpeed;
 
+    enum Property
+    {
+        IsFood = 1,
+        CanEatFood = 2,
+        isFlammable = 3,
+        isFire = 4,
+        isWheel = 5,
+        isVehicle = 6,
+    }
+
     void Start()
     {
+        properties.Add(enpty);
+        properties.Add(isFood);
+        properties.Add(canEatFood);
+        properties.Add(isFlammable);
+        properties.Add(isFire);
+        properties.Add(isWheel);
+        properties.Add(isVehicle);
+
         checkPropertie();
 
         // Add a BoxCollider2D component if it doesn't already exist
@@ -118,13 +140,14 @@ public class Properties : MonoBehaviour
         Character otherCharacter = collision.GetComponent<Character>();
         if (otherObject != null)
         {
-            if (isFood && otherObject.canEatFood)
+            // Vriendelijke vriend, 2 is ISFood
+            if (properties[(int)Property.IsFood] && otherObject.properties[(int)Property.CanEatFood])
             {
                 Debug.Log("eat");
                 transform.localScale *= 0.9f; // Shrink
                 otherObject.transform.localScale *= 1.1f; // Grow
             }
-            if (isFlammable && otherObject.isFire)
+            if (properties[(int)Property.isFlammable] && otherObject.properties[(int)Property.isFire])
             {
                 Debug.Log("flame");
                 if (transform.childCount > 0)
@@ -132,7 +155,7 @@ public class Properties : MonoBehaviour
                     transform.GetChild(0).gameObject.SetActive(false);
                 }
             }
-            if (isWheel && otherObject.isVehicle)
+            if (properties[(int)Property.isWheel] && otherObject.properties[(int)Property.isVehicle])
             {
                 Debug.Log("attach wheel");
                 transform.parent = otherObject.transform; // Stick to the vehicle
@@ -148,36 +171,17 @@ public class Properties : MonoBehaviour
     {
         if (currentPropertie != 0)
         {
-            isFood = false;
-            canEatFood = false;
-            isFlammable = false;
-            isFire = false;
-            isWheel = false;
-            isVehicle = false;
-            switch (currentPropertie)
+            foreach (bool prop in properties)
             {
-                case 1:
-                    isFood = true;
-                    break;
-                case 2:
-                    canEatFood = true;
-                    break;
-                case 3:
-                    isFlammable = true;
-                    break;
-                case 4:
-                    isFire = true;
-                    break;
-                case 5:
-                    isWheel = true;
-                    break;
-                case 6:
-                    isVehicle = true;
-                    break;
-                case 7:
-                    currentPropertie = 0;
-                    break;
+                prop.Equals(false);
             }
+
+            if (currentPropertie <= properties.Count || currentPropertie < 0)
+            {
+                properties[currentPropertie] = true;
+            }
+            else
+                currentPropertie = 0;
         }
     }
     public void ResetObject()
@@ -186,7 +190,7 @@ public class Properties : MonoBehaviour
         transform.localScale = originalScale;
         transform.parent = null;
         this.GetComponent<BoxCollider2D>().enabled = true;
-        this.GetComponent<BoxCollider2D>().size *= HitboxSize;
+        this.GetComponent<BoxCollider2D>().size = HitboxSize;
         this.GetComponent<BoxCollider2D>().offset = HitboxOffset;
         this.GetComponent<Character>().endMarker = originalendmarker;
         this.GetComponent<Character>().WalkSpeed = originalWalkingSpeed;

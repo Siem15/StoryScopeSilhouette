@@ -6257,6 +6257,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3803683299115109672, guid: 952211db6a4a9b7408e45a68dcbf3c52,
         type: 3}
+      propertyPath: isVehicle
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3803683299115109672, guid: 952211db6a4a9b7408e45a68dcbf3c52,
+        type: 3}
       propertyPath: HitboxSize.x
       value: 5
       objectReference: {fileID: 0}
