@@ -2,10 +2,11 @@ using UnityEngine;
 
 public class RotateProperties : MonoBehaviour
 {
-    public int propertyIndex = 0;
     [SerializeField] int propertiesAmount = 10;
     Properties[] propertyObjects;
-    [SerializeField]  Properties clostestObject;
+    [SerializeField] Properties clostestObject;
+    [SerializeField] GameObject icon;
+
 
 
     private void FixedUpdate()
@@ -22,6 +23,7 @@ public class RotateProperties : MonoBehaviour
                 clostestObject = property;
             }
         }
+        icon.transform.position = new Vector3(clostestObject.transform.position.x, clostestObject.transform.position.y, -20);
     }
 
 
@@ -29,6 +31,7 @@ public class RotateProperties : MonoBehaviour
     public void NextProperty(int direction)
     {
         clostestObject.currentPropertie += direction;
+        
 
         //Resets to top when below 0
         if (clostestObject.currentPropertie < 0)
