@@ -119,15 +119,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 980e2241d71a6b543b1152cf0758f890, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentPropertie: 0
+  properties: 
   isFood: 0
   canEatFood: 0
   isFlammable: 0
   isFire: 0
   isWheel: 0
-  isVehicle: 0
+  isVehicle: 1
   reset: 0
   isAlive: 0
   connected: 1
+  HitboxSize: {x: 15, y: 15}
+  HitboxOffset: {x: 0, y: 10}
 --- !u!1 &3667742059650357228
 GameObject:
   m_ObjectHideFlags: 0

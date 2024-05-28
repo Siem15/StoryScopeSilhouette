@@ -215,6 +215,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 980e2241d71a6b543b1152cf0758f890, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentPropertie: 0
+  properties: 
   isFood: 0
   canEatFood: 0
   isFlammable: 1
@@ -224,6 +226,8 @@ MonoBehaviour:
   reset: 0
   isAlive: 0
   connected: 1
+  HitboxSize: {x: 3, y: 4}
+  HitboxOffset: {x: 0, y: 2.5}
 --- !u!1 &1089099323045388288
 GameObject:
   m_ObjectHideFlags: 0

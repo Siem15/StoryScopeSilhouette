@@ -120,6 +120,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentPropertie: 0
+  properties: 
   isFood: 0
   canEatFood: 0
   isFlammable: 0
@@ -129,7 +130,7 @@ MonoBehaviour:
   reset: 0
   isAlive: 0
   connected: 1
-  HitboxSize: {x: 0, y: 0}
+  HitboxSize: {x: 4, y: 4}
   HitboxOffset: {x: 0, y: 0}
 --- !u!1 &753088353636653956
 GameObject:
