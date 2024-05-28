@@ -23,9 +23,8 @@ THE SOFTWARE.
 using UnityEditor;
 using UnityEngine;
 
-public class UniducialMenu : UnityEditor.Editor
+public class UniducialMenu : Editor
 {
-
     private const string FICUCIAL_COMPONENT_NAME = "FiducialController";
 
     [MenuItem("GameObject/Create Other/Fiducial Object")]
@@ -41,13 +40,12 @@ public class UniducialMenu : UnityEditor.Editor
     //attaches a fiducial input component to all selected Game Objects
     public static void AttachFiducialController()
     {
-
         foreach (GameObject gameObject in Selection.gameObjects)
         {
             //make sure a GameObject can only be controlled by one marker
             if (gameObject.GetComponent(FICUCIAL_COMPONENT_NAME) != null)
             {
-                Debug.LogWarning("Game Object " + gameObject.name + " already has a fiducial controller attached");
+                Debug.LogWarning($"Game Object {gameObject.name} already has a fiducial controller attached");
             }
             else
             {

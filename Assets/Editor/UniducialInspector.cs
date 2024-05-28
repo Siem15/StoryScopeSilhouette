@@ -24,110 +24,110 @@ using UnityEditor;
 using UnityEngine;
 
 [CustomEditor(typeof(FiducialController))]
-public class UniducialInspector : UnityEditor.Editor
+public class UniducialInspector : Editor
 {
-    private SerializedProperty m_RotateBack;
-    private FiducialController controller;
-
-    public UniducialInspector()
-    {
-
-    }
-
-    private void OnEnable()
-    {
-        m_RotateBack = serializedObject.FindProperty("RotateBack");
-    }
+    private FiducialController fiducialController;
 
     public override void OnInspectorGUI()
     {
-        controller = target as FiducialController;
+        fiducialController = target as FiducialController;
         Camera mainCamera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
 
+        EditorGUILayout.TextField("Game Object", EditorStyles.boldLabel);
+
         EditorGUILayout.BeginHorizontal();
-        controller.MarkerID = EditorGUILayout.IntField("Marker ID", controller.MarkerID);
+        fiducialController.MarkerID = EditorGUILayout.IntField("Marker ID", fiducialController.MarkerID);
         EditorGUILayout.EndHorizontal();
 
         EditorGUILayout.BeginHorizontal();
-        controller.AutoHideGO = EditorGUILayout.Toggle("Auto-hide GameObject", controller.AutoHideGO);
+        fiducialController.AutoHideGO = EditorGUILayout.Toggle("Auto-Hide GameObject", fiducialController.AutoHideGO);
+        EditorGUILayout.EndHorizontal();
+
+        EditorGUILayout.Space();
+        EditorGUILayout.TextField("Camera", EditorStyles.boldLabel);
+
+        EditorGUILayout.BeginHorizontal();
+        fiducialController.camX = EditorGUILayout.FloatField("Camera X", fiducialController.camX);
         EditorGUILayout.EndHorizontal();
 
         EditorGUILayout.BeginHorizontal();
-        controller.camX = EditorGUILayout.FloatField("Cam x", controller.camX);
+        fiducialController.camY = EditorGUILayout.FloatField("Camera Z", fiducialController.camY);
         EditorGUILayout.EndHorizontal();
+
+        EditorGUILayout.Space();
+        EditorGUILayout.TextField("Delay", EditorStyles.boldLabel);
 
         EditorGUILayout.BeginHorizontal();
-        controller.camY = EditorGUILayout.FloatField("Cam z", controller.camY);
+        fiducialController.hideDelay = EditorGUILayout.FloatField("Hide Delay", fiducialController.hideDelay);
         EditorGUILayout.EndHorizontal();
-        EditorGUILayout.Separator();
+        EditorGUILayout.Space();
+
+        EditorGUILayout.TextField("Position", EditorStyles.boldLabel);
 
         EditorGUILayout.BeginHorizontal();
-        controller.hideDelay = EditorGUILayout.FloatField("Hide Delay", controller.hideDelay);
-        EditorGUILayout.EndHorizontal();
-        EditorGUILayout.Separator();
-
-        EditorGUILayout.Separator();
-
-        EditorGUILayout.BeginHorizontal();
-        controller.IsPositionMapped
-        = EditorGUILayout.Toggle("Control Position", controller.IsPositionMapped);
+        fiducialController.IsPositionMapped = EditorGUILayout.Toggle("Control Position", fiducialController.IsPositionMapped);
         EditorGUILayout.EndHorizontal();
 
-        if (controller.IsPositionMapped)
+        if (fiducialController.IsPositionMapped)
         {
             EditorGUILayout.BeginHorizontal();
-            controller.InvertX = EditorGUILayout.Toggle("Invert X-Axis", controller.InvertX);
+            fiducialController.InvertX = EditorGUILayout.Toggle("Invert X-Axis", fiducialController.InvertX);
             EditorGUILayout.EndHorizontal();
 
             EditorGUILayout.BeginHorizontal();
-            controller.InvertY = EditorGUILayout.Toggle("Invert Y-Axis", controller.InvertY);
+            fiducialController.InvertY = EditorGUILayout.Toggle("Invert Y-Axis", fiducialController.InvertY);
             EditorGUILayout.EndHorizontal();
 
             EditorGUILayout.BeginHorizontal();
-            controller.grounded = EditorGUILayout.Toggle("Grounded", controller.grounded);
+            fiducialController.grounded = EditorGUILayout.Toggle("Grounded", fiducialController.grounded);
             EditorGUILayout.EndHorizontal();
 
-            if (!mainCamera.orthographic && !controller.IsAttachedToGUIComponent())
+            if (!mainCamera.orthographic && !fiducialController.IsAttachedToGUIComponent())
             {
                 EditorGUILayout.BeginHorizontal();
-                controller.CameraOffset = EditorGUILayout.Slider("Camera offset", controller.CameraOffset, mainCamera.nearClipPlane, mainCamera.farClipPlane);
+                fiducialController.CameraOffset = EditorGUILayout.Slider("Camera offset", 
+                    fiducialController.CameraOffset, mainCamera.nearClipPlane, mainCamera.farClipPlane);
                 EditorGUILayout.EndHorizontal();
             }
         }
 
-        EditorGUILayout.Separator();
+        EditorGUILayout.Space();
 
-        if (!controller.IsAttachedToGUIComponent())
+        EditorGUILayout.TextField("Rotation", EditorStyles.boldLabel);
+
+        if (!fiducialController.IsAttachedToGUIComponent())
         {
             EditorGUILayout.BeginHorizontal();
-            controller.IsRotationMapped = EditorGUILayout.Toggle("Control Rotation", controller.IsRotationMapped);
+            fiducialController.IsRotationMapped = EditorGUILayout.Toggle("Control Rotation", fiducialController.IsRotationMapped);
             EditorGUILayout.EndHorizontal();
 
-            if (controller.IsRotationMapped)
+            if (fiducialController.IsRotationMapped)
             {
                 EditorGUILayout.BeginHorizontal();
-                controller.RotateAround = (FiducialController.RotationAxis)EditorGUILayout.EnumPopup("Rotation Axis", controller.RotateAround);
+                fiducialController.RotateAround = (FiducialController.RotationAxis)EditorGUILayout.EnumPopup(
+                    "Rotation Axis", fiducialController.RotateAround);
                 EditorGUILayout.EndHorizontal();
 
                 EditorGUILayout.BeginHorizontal();
-                controller.RotationMultiplier = EditorGUILayout.Slider("Rotation Factor", controller.RotationMultiplier, 0.01f, 5f);
+                fiducialController.RotationMultiplier = EditorGUILayout.Slider("Rotation Factor", 
+                    fiducialController.RotationMultiplier, 0.01f, 5f);
                 EditorGUILayout.EndHorizontal();
             }
 
             EditorGUILayout.BeginHorizontal();
-            controller.UseRotation = EditorGUILayout.Toggle("Use Rotation", controller.UseRotation);
+            fiducialController.UseRotation = EditorGUILayout.Toggle("Use Rotation", fiducialController.UseRotation);
             EditorGUILayout.EndHorizontal();
 
-            if (controller.UseRotation)
+            if (fiducialController.UseRotation)
             {
                 EditorGUILayout.BeginHorizontal();
-                controller.DegreesToAction = EditorGUILayout.FloatField("Degrees To Action", controller.DegreesToAction);
+                fiducialController.DegreesToAction = EditorGUILayout.FloatField("Degrees To Action", 
+                    fiducialController.DegreesToAction);
                 EditorGUILayout.EndHorizontal();
 
                 serializedObject.Update();
                 EditorGUILayout.PropertyField(serializedObject.FindProperty("onRotateForward"), true);
                 serializedObject.ApplyModifiedProperties();
-
 
                 serializedObject.Update();
                 EditorGUILayout.PropertyField(serializedObject.FindProperty("onRotateBackward"), true);
@@ -137,7 +137,7 @@ public class UniducialInspector : UnityEditor.Editor
 
         if (GUI.changed) 
         {
-            EditorUtility.SetDirty(controller);
+            EditorUtility.SetDirty(fiducialController);
         }        
     }
 }
