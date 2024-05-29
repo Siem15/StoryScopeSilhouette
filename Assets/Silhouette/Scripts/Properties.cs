@@ -1,16 +1,26 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class Properties : MonoBehaviour
 {
+    public int currentPropertie;
+
+    [SerializeField] List<bool> properties = new List<bool>();
+
+    bool enpty;
     public bool isFood = false;
     public bool canEatFood = false;
     public bool isFlammable = false;
     public bool isFire = false;
     public bool isWheel = false;
     public bool isVehicle = false;
+
     public bool reset = false;
     public bool isAlive = false;
     public bool connected = true;
+
+    public Vector2 HitboxSize;
+    public Vector2 HitboxOffset;
 
     private Vector3 originalScale;
     private GameObject originalendmarker;
@@ -18,8 +28,59 @@ public class Properties : MonoBehaviour
     private float originalWalkingSpeed;
     private float originalRunningSpeed;
 
+    enum Property
+    {
+        IsFood = 1,
+        CanEatFood = 2,
+        isFlammable = 3,
+        isFire = 4,
+        isWheel = 5,
+        isVehicle = 6,
+    }
+
     void Start()
     {
+        properties.Add(enpty);
+        properties.Add(isFood);
+        properties.Add(canEatFood);
+        properties.Add(isFlammable);
+        properties.Add(isFire);
+        properties.Add(isWheel);
+        properties.Add(isVehicle);
+
+        checkPropertie();
+
+        // Add a BoxCollider2D component if it doesn't already exist
+        BoxCollider2D boxCollider = gameObject.GetComponent<BoxCollider2D>();
+        if (boxCollider == null)
+        {
+            boxCollider = gameObject.AddComponent<BoxCollider2D>();
+        }
+
+        // Set the BoxCollider2D as a trigger
+        boxCollider.isTrigger = true;
+
+        // size of the BoxCollider2D
+        boxCollider.size *= HitboxSize;
+
+        // size of the BoxCollider2D
+        boxCollider.offset = HitboxOffset;
+
+        // turn off the BoxCollider2D
+        boxCollider.enabled = false;
+
+        // Add a Rigidbody2D component if it doesn't already exist
+        Rigidbody2D rigidbody2D = gameObject.GetComponent<Rigidbody2D>();
+        if (rigidbody2D == null)
+        {
+            rigidbody2D = gameObject.AddComponent<Rigidbody2D>();
+        }
+
+        // Set the gravity scale of the Rigidbody2D to 0
+        rigidbody2D.gravityScale = 0;
+        rigidbody2D.mass = 0.0001f;
+        rigidbody2D.angularDrag = 0;
+
         originalScale = transform.localScale;
         originalendmarker = this.GetComponent<Character>().endMarker;
         originalWalkingSpeed = this.GetComponent<Character>().WalkSpeed;
@@ -42,7 +103,6 @@ public class Properties : MonoBehaviour
 
         if (connected)
         {
-
             if (FC.m_IsVisible)
             {
                 if (!isAlive)
@@ -60,15 +120,16 @@ public class Properties : MonoBehaviour
                 isAlive = false;
             }
         }
+
+        isAlive = !FC.AutoHideGO; // temp
     }
 
     private void FixedUpdate()
     {
-        if (isWheel)
+        if (properties[(int)Property.isWheel])
         {
             transform.Rotate(Vector3.back, 5f); // Rotate if wheel and touches a vehicle
         }
-
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -79,13 +140,14 @@ public class Properties : MonoBehaviour
         Character otherCharacter = collision.GetComponent<Character>();
         if (otherObject != null)
         {
-            if (isFood && otherObject.canEatFood)
+            // Vriendelijke vriend, 2 is ISFood
+            if (properties[(int)Property.IsFood] && otherObject.properties[(int)Property.CanEatFood])
             {
                 Debug.Log("eat");
                 transform.localScale *= 0.9f; // Shrink
                 otherObject.transform.localScale *= 1.1f; // Grow
             }
-            if (isFlammable && otherObject.isFire)
+            if (properties[(int)Property.isFlammable] && otherObject.properties[(int)Property.isFire])
             {
                 Debug.Log("flame");
                 if (transform.childCount > 0)
@@ -93,9 +155,9 @@ public class Properties : MonoBehaviour
                     transform.GetChild(0).gameObject.SetActive(false);
                 }
             }
-            if (isWheel && otherObject.isVehicle)
+            if (properties[(int)Property.isWheel] && otherObject.properties[(int)Property.isVehicle])
             {
-                Debug.Log("atatch wheel");
+                Debug.Log("attach wheel");
                 transform.parent = otherObject.transform; // Stick to the vehicle
                 this.GetComponent<BoxCollider2D>().enabled = false;
                 thisCharacter.endMarker = otherCharacter.endMarker;
@@ -105,11 +167,31 @@ public class Properties : MonoBehaviour
         }
     }
 
+    public void checkPropertie()
+    {
+        if (currentPropertie != 0)
+        {
+            foreach (bool prop in properties)
+            {
+                prop.Equals(false);
+            }
+
+            if (currentPropertie <= properties.Count || currentPropertie < 0)
+            {
+                properties[currentPropertie] = true;
+            }
+            else
+                currentPropertie = 0;
+        }
+    }
     public void ResetObject()
     {
+        checkPropertie();
         transform.localScale = originalScale;
         transform.parent = null;
         this.GetComponent<BoxCollider2D>().enabled = true;
+        this.GetComponent<BoxCollider2D>().size = HitboxSize;
+        this.GetComponent<BoxCollider2D>().offset = HitboxOffset;
         this.GetComponent<Character>().endMarker = originalendmarker;
         this.GetComponent<Character>().WalkSpeed = originalWalkingSpeed;
         this.GetComponent<Character>().RunSpeed = originalRunningSpeed;

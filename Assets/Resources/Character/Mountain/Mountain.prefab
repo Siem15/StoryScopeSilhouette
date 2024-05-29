@@ -12,8 +12,6 @@ GameObject:
   - component: {fileID: 504651331086416406}
   - component: {fileID: 45911580421262890}
   - component: {fileID: 4061723544520754148}
-  - component: {fileID: 1543087292449363811}
-  - component: {fileID: 2794398222874294007}
   - component: {fileID: 1589358794842724055}
   m_Layer: 0
   m_Name: Mountain
@@ -109,53 +107,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   images: []
---- !u!61 &1543087292449363811
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 504651331086416403}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.40641117, y: 9.424971}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 11.638811, y: 13.727158}
-  m_EdgeRadius: 0
---- !u!50 &2794398222874294007
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 504651331086416403}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 0.0001
-  m_LinearDrag: 0
-  m_AngularDrag: 0
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!114 &1589358794842724055
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -168,13 +119,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 980e2241d71a6b543b1152cf0758f890, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentPropertie: 0
+  properties: 
   isFood: 0
   canEatFood: 0
   isFlammable: 0
   isFire: 0
   isWheel: 0
-  isVehicle: 0
+  isVehicle: 1
   reset: 0
+  isAlive: 0
+  connected: 1
+  HitboxSize: {x: 15, y: 15}
+  HitboxOffset: {x: 0, y: 10}
 --- !u!1 &3667742059650357228
 GameObject:
   m_ObjectHideFlags: 0
