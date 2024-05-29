@@ -126,7 +126,7 @@ public class Properties : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (isWheel)
+        if (properties[(int)Property.isWheel])
         {
             transform.Rotate(Vector3.back, 5f); // Rotate if wheel and touches a vehicle
         }
