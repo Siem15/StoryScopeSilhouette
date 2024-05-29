@@ -2386,7 +2386,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 604274831}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -15, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2406,7 +2406,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   propertiesAmount: 7
   clostestObject: {fileID: 0}
-  icon: {fileID: 574732211}
+  icon: {fileID: 574732213}
+  icons:
+  - {fileID: 21300000, guid: 3f45b3a422518484bb2c9e78723c0d2a, type: 3}
+  - {fileID: 21300000, guid: f179dcabe10b4e0478edefc419de0835, type: 3}
+  - {fileID: 21300000, guid: 7a5ccef75fb50f74fb471d1404482e5f, type: 3}
+  - {fileID: 21300000, guid: 6c44d4bc94a03e54d83abe1f727b0317, type: 3}
+  - {fileID: 21300000, guid: f7f986dd94a0786468a331e5e9a1f2f3, type: 3}
+  - {fileID: 21300000, guid: 62a3e0a7f7de2de4f87e70bd32391488, type: 3}
+  - {fileID: 21300000, guid: 0d07c88b00f277141b12e4cef528e867, type: 3}
 --- !u!114 &604274834
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6270,6 +6278,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3803683299115109672, guid: 952211db6a4a9b7408e45a68dcbf3c52,
+        type: 3}
+      propertyPath: isFood
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5775549500191137371, guid: 952211db6a4a9b7408e45a68dcbf3c52,
         type: 3}
       propertyPath: m_RootOrder
@@ -6338,7 +6351,7 @@ PrefabInstance:
     - target: {fileID: 7998680968566751479, guid: 952211db6a4a9b7408e45a68dcbf3c52,
         type: 3}
       propertyPath: AutoHideGO
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7998680968566751479, guid: 952211db6a4a9b7408e45a68dcbf3c52,
         type: 3}

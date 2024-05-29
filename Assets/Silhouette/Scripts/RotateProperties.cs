@@ -1,11 +1,14 @@
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class RotateProperties : MonoBehaviour
 {
     [SerializeField] int propertiesAmount = 10;
     Properties[] propertyObjects;
     [SerializeField] Properties clostestObject;
-    [SerializeField] GameObject icon;
+    [SerializeField] Image icon;
+    [SerializeField] List<Sprite> icons = new List<Sprite>();
     private Camera cam;
     private FiducialController FC;
 
@@ -13,7 +16,7 @@ public class RotateProperties : MonoBehaviour
     {
         cam = FindObjectOfType<Camera>();
         FC = GetComponent<FiducialController>();
-        icon.SetActive(false);
+        icon.enabled = false;
     }
 
 
@@ -40,13 +43,21 @@ public class RotateProperties : MonoBehaviour
     {
         if (clostestObject != null && (FC.IsVisible || !FC.AutoHideGO))
         {
-            icon.SetActive(true);
+            icon.enabled = true;
             icon.transform.position = cam.WorldToScreenPoint(clostestObject.transform.position);
             //TODO: change image of icon based on selected property
+            if(clostestObject.currentPropertie < icons.Count)
+            {
+                icon.sprite = icons[clostestObject.currentPropertie];
+            }
+            else
+            {
+                icon.sprite = icons[0];
+            }
         }
         else
         {
-            icon.SetActive(false);
+            icon.enabled = false;
         }
     }
 
