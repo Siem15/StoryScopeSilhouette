@@ -26,6 +26,7 @@ public class RotateProperties : MonoBehaviour
         propertyObjects = FindObjectsOfType<Properties>();
         float shortestDistance = 100f;
 
+        //Looks for the closest object that has properties and selects it 
         foreach (Properties property in propertyObjects)
         {
             float currentDistance = Vector3.Distance(this.transform.position, property.transform.position);
@@ -65,16 +66,19 @@ public class RotateProperties : MonoBehaviour
     //NOTE: this function should be called with the OnRotateForward and OnRotateBackward with te corresponding direction
     public void NextProperty(int direction)
     {
-        clostestObject.currentPropertie += direction;
-        
+        if (clostestObject != null)
+        {
+            clostestObject.currentPropertie += direction;
 
-        //Resets to top when below 0
-        if (clostestObject.currentPropertie < 0)
-            clostestObject.currentPropertie = propertiesAmount;
-        //Resets to 0 when higher than amount of properties
-        if (clostestObject.currentPropertie > propertiesAmount)
-            clostestObject.currentPropertie = 0;
 
-        clostestObject.ResetObject();
+            //Resets to top when below 0
+            if (clostestObject.currentPropertie < 0)
+                clostestObject.currentPropertie = propertiesAmount;
+            //Resets to 0 when higher than amount of properties
+            if (clostestObject.currentPropertie > propertiesAmount)
+                clostestObject.currentPropertie = 0;
+
+            clostestObject.ResetObject();
+        }
     }
 }

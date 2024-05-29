@@ -2488,8 +2488,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a47fc9bd19013984e89d30bff1d554a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  WalkSpeed: 5
-  RunSpeed: 5
+  WalkSpeed: 10
+  RunSpeed: 10
   stopRunningUntilThisDist: 1
   singleSprite: 0
   controlRotation: 0
@@ -6351,7 +6351,7 @@ PrefabInstance:
     - target: {fileID: 7998680968566751479, guid: 952211db6a4a9b7408e45a68dcbf3c52,
         type: 3}
       propertyPath: AutoHideGO
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7998680968566751479, guid: 952211db6a4a9b7408e45a68dcbf3c52,
         type: 3}
