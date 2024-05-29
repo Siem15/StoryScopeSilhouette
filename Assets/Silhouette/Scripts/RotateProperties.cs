@@ -6,6 +6,15 @@ public class RotateProperties : MonoBehaviour
     Properties[] propertyObjects;
     [SerializeField] Properties clostestObject;
     [SerializeField] GameObject icon;
+    private Camera cam;
+    private FiducialController FC;
+
+    private void Start()
+    {
+        cam = FindObjectOfType<Camera>();
+        FC = GetComponent<FiducialController>();
+        icon.SetActive(false);
+    }
 
 
 
@@ -23,7 +32,22 @@ public class RotateProperties : MonoBehaviour
                 clostestObject = property;
             }
         }
-        icon.transform.position = new Vector3(clostestObject.transform.position.x, clostestObject.transform.position.y, -20);
+        ManageUI();
+    }
+
+    //This function should manage how the icons for selected object and properties work
+    void ManageUI()
+    {
+        if (clostestObject != null && (FC.IsVisible || !FC.AutoHideGO))
+        {
+            icon.SetActive(true);
+            icon.transform.position = cam.WorldToScreenPoint(clostestObject.transform.position);
+            //TODO: change image of icon based on selected property
+        }
+        else
+        {
+            icon.SetActive(false);
+        }
     }
 
 
