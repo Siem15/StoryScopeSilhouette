@@ -25,7 +25,7 @@ public class JZSceneSelectorManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        otherScenesPath = new List<string>(Directory.GetDirectories(filesLocation));
+        otherScenesPath = new List<string>(Directory.GetDirectories(buildsFilePath));
 
         float numOfScenes = otherScenesPath.Count;
         SceneManagerButtons.Threshold = numOfScenes < 4;
