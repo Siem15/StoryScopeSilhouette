@@ -1,23 +1,30 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\Github Repositories\\StoryScopeSilhouette\\",
+  "WorkspaceRootPath": "C:\\Users\\fabio\\Documents\\GitHub\\CrosswordExample\\StoryScopeSilhouette\\",
   "Documents": [
     {
-<<<<<<< Updated upstream
-      "AbsoluteMoniker": "D:0:0:{5F66AEAB-65C9-7AA2-E478-4DA806B30003}|Assembly-CSharp-Editor.csproj|c:\\users\\larsd\\unity\\storyscopesilhouette\\assets\\editor\\uniducialinspector.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5F66AEAB-65C9-7AA2-E478-4DA806B30003}|Assembly-CSharp-Editor.csproj|solutionrelative:assets\\editor\\uniducialinspector.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\fabio\\Documents\\GitHub\\CrosswordExample\\StoryScopeSilhouette\\Assets\\Silhouette\\Scripts\\RotateProperties.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Silhouette\\Scripts\\RotateProperties.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1555FAD6-E65C-7B70-91C9-38BC86C5EFCA}|Assembly-CSharp.csproj|c:\\users\\larsd\\unity\\storyscopesilhouette\\assets\\restartunity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1555FAD6-E65C-7B70-91C9-38BC86C5EFCA}|Assembly-CSharp.csproj|solutionrelative:assets\\restartunity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-=======
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|d:\\github repositories\\storyscopesilhouette\\assets\\silhouette\\scripts\\shadermanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:assets\\silhouette\\scripts\\shadermanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1555FAD6-E65C-7B70-91C9-38BC86C5EFCA}|Assembly-CSharp.csproj|C:\\Users\\fabio\\Documents\\GitHub\\CrosswordExample\\StoryScopeSilhouette\\assets\\silhouette\\scripts\\properties.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1555FAD6-E65C-7B70-91C9-38BC86C5EFCA}|Assembly-CSharp.csproj|solutionrelative:assets\\silhouette\\scripts\\properties.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1555FAD6-E65C-7B70-91C9-38BC86C5EFCA}|Assembly-CSharp.csproj|D:\\Github Repositories\\StoryScopeSilhouette\\assets\\thirdparty\\fiducialfolder\\uniducial\\fiducialcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1555FAD6-E65C-7B70-91C9-38BC86C5EFCA}|Assembly-CSharp.csproj|solutionrelative:assets\\thirdparty\\fiducialfolder\\uniducial\\fiducialcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
->>>>>>> Stashed changes
+      "AbsoluteMoniker": "D:0:0:{1555FAD6-E65C-7B70-91C9-38BC86C5EFCA}|Assembly-CSharp.csproj|C:\\Users\\fabio\\Documents\\GitHub\\CrosswordExample\\StoryScopeSilhouette\\assets\\utilities\\consolestandalone\\consoletogui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1555FAD6-E65C-7B70-91C9-38BC86C5EFCA}|Assembly-CSharp.csproj|solutionrelative:assets\\utilities\\consolestandalone\\consoletogui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1555FAD6-E65C-7B70-91C9-38BC86C5EFCA}|Assembly-CSharp.csproj|C:\\Users\\fabio\\Documents\\GitHub\\CrosswordExample\\StoryScopeSilhouette\\assets\\silhouette\\spritestuff\\jzspriteroot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1555FAD6-E65C-7B70-91C9-38BC86C5EFCA}|Assembly-CSharp.csproj|solutionrelative:assets\\silhouette\\spritestuff\\jzspriteroot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1555FAD6-E65C-7B70-91C9-38BC86C5EFCA}|Assembly-CSharp.csproj|C:\\Users\\fabio\\Documents\\GitHub\\CrosswordExample\\StoryScopeSilhouette\\assets\\jzbgturncontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1555FAD6-E65C-7B70-91C9-38BC86C5EFCA}|Assembly-CSharp.csproj|solutionrelative:assets\\jzbgturncontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1555FAD6-E65C-7B70-91C9-38BC86C5EFCA}|Assembly-CSharp.csproj|C:\\Users\\fabio\\Documents\\GitHub\\CrosswordExample\\StoryScopeSilhouette\\assets\\silhouette\\scripts\\character.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1555FAD6-E65C-7B70-91C9-38BC86C5EFCA}|Assembly-CSharp.csproj|solutionrelative:assets\\silhouette\\scripts\\character.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -27,56 +34,81 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ConsoleToGUI.cs",
+              "DocumentMoniker": "C:\\Users\\fabio\\Documents\\GitHub\\CrosswordExample\\StoryScopeSilhouette\\Assets\\Utilities\\ConsoleStandAlone\\ConsoleToGUI.cs",
+              "RelativeDocumentMoniker": "Assets\\Utilities\\ConsoleStandAlone\\ConsoleToGUI.cs",
+              "ToolTip": "C:\\Users\\fabio\\Documents\\GitHub\\CrosswordExample\\StoryScopeSilhouette\\Assets\\Utilities\\ConsoleStandAlone\\ConsoleToGUI.cs",
+              "RelativeToolTip": "Assets\\Utilities\\ConsoleStandAlone\\ConsoleToGUI.cs",
+              "ViewState": "AQIAABYAAAAAAAAAAAAuwCEAAAARAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-29T12:12:18.489Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "JZSpriteRoot.cs",
+              "DocumentMoniker": "C:\\Users\\fabio\\Documents\\GitHub\\CrosswordExample\\StoryScopeSilhouette\\Assets\\Silhouette\\SpriteStuff\\JZSpriteRoot.cs",
+              "RelativeDocumentMoniker": "Assets\\Silhouette\\SpriteStuff\\JZSpriteRoot.cs",
+              "ToolTip": "C:\\Users\\fabio\\Documents\\GitHub\\CrosswordExample\\StoryScopeSilhouette\\Assets\\Silhouette\\SpriteStuff\\JZSpriteRoot.cs",
+              "RelativeToolTip": "Assets\\Silhouette\\SpriteStuff\\JZSpriteRoot.cs",
+              "ViewState": "AQIAAAoAAAAAAAAAAAAmwBIAAABNAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-29T12:11:27.17Z"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
-<<<<<<< Updated upstream
-              "Title": "UniducialInspector.cs",
-              "DocumentMoniker": "C:\\Users\\larsd\\Unity\\StoryScopeSilhouette\\Assets\\Editor\\UniducialInspector.cs",
-              "RelativeDocumentMoniker": "Assets\\Editor\\UniducialInspector.cs",
-              "ToolTip": "C:\\Users\\larsd\\Unity\\StoryScopeSilhouette\\Assets\\Editor\\UniducialInspector.cs",
-              "RelativeToolTip": "Assets\\Editor\\UniducialInspector.cs",
-              "ViewState": "AQIAAAwAAAAAAAAAAAAAABcAAAASAAAA",
+              "Title": "RotateProperties.cs",
+              "DocumentMoniker": "C:\\Users\\fabio\\Documents\\GitHub\\CrosswordExample\\StoryScopeSilhouette\\Assets\\Silhouette\\Scripts\\RotateProperties.cs",
+              "RelativeDocumentMoniker": "Assets\\Silhouette\\Scripts\\RotateProperties.cs",
+              "ToolTip": "C:\\Users\\fabio\\Documents\\GitHub\\CrosswordExample\\StoryScopeSilhouette\\Assets\\Silhouette\\Scripts\\RotateProperties.cs",
+              "RelativeToolTip": "Assets\\Silhouette\\Scripts\\RotateProperties.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAEQAAAAQAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-28T08:30:06.002Z",
+              "WhenOpened": "2024-05-23T09:21:26.587Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "RestartUnity.cs",
-              "DocumentMoniker": "C:\\Users\\larsd\\Unity\\StoryScopeSilhouette\\Assets\\RestartUnity.cs",
-              "RelativeDocumentMoniker": "Assets\\RestartUnity.cs",
-              "ToolTip": "C:\\Users\\larsd\\Unity\\StoryScopeSilhouette\\Assets\\RestartUnity.cs",
-              "RelativeToolTip": "Assets\\RestartUnity.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAABAAAA",
+              "DocumentIndex": 5,
+              "Title": "Character.cs",
+              "DocumentMoniker": "C:\\Users\\fabio\\Documents\\GitHub\\CrosswordExample\\StoryScopeSilhouette\\Assets\\Silhouette\\Scripts\\Character.cs",
+              "RelativeDocumentMoniker": "Assets\\Silhouette\\Scripts\\Character.cs",
+              "ToolTip": "C:\\Users\\fabio\\Documents\\GitHub\\CrosswordExample\\StoryScopeSilhouette\\Assets\\Silhouette\\Scripts\\Character.cs",
+              "RelativeToolTip": "Assets\\Silhouette\\Scripts\\Character.cs",
+              "ViewState": "AQIAACYAAAAAAAAAAAAgwAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-27T12:40:39.718Z",
-=======
-              "Title": "ShaderManager.cs",
-              "DocumentMoniker": "D:\\Github Repositories\\StoryScopeSilhouette\\Assets\\Silhouette\\Scripts\\ShaderManager.cs",
-              "RelativeDocumentMoniker": "Assets\\Silhouette\\Scripts\\ShaderManager.cs",
-              "ToolTip": "D:\\Github Repositories\\StoryScopeSilhouette\\Assets\\Silhouette\\Scripts\\ShaderManager.cs",
-              "RelativeToolTip": "Assets\\Silhouette\\Scripts\\ShaderManager.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAASAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-29T09:16:27.186Z",
->>>>>>> Stashed changes
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-23T08:27:53.452Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "FiducialController.cs",
-              "DocumentMoniker": "D:\\Github Repositories\\StoryScopeSilhouette\\Assets\\ThirdParty\\FiducialFolder\\Uniducial\\FiducialController.cs",
-              "RelativeDocumentMoniker": "Assets\\ThirdParty\\FiducialFolder\\Uniducial\\FiducialController.cs",
-              "ToolTip": "D:\\Github Repositories\\StoryScopeSilhouette\\Assets\\ThirdParty\\FiducialFolder\\Uniducial\\FiducialController.cs",
-              "RelativeToolTip": "Assets\\ThirdParty\\FiducialFolder\\Uniducial\\FiducialController.cs",
-              "ViewState": "AQIAAEMBAAAAAAAAAAAAAIEBAAABAAAA",
+              "Title": "Properties.cs",
+              "DocumentMoniker": "C:\\Users\\fabio\\Documents\\GitHub\\CrosswordExample\\StoryScopeSilhouette\\Assets\\Silhouette\\Scripts\\Properties.cs",
+              "RelativeDocumentMoniker": "Assets\\Silhouette\\Scripts\\Properties.cs",
+              "ToolTip": "C:\\Users\\fabio\\Documents\\GitHub\\CrosswordExample\\StoryScopeSilhouette\\Assets\\Silhouette\\Scripts\\Properties.cs",
+              "RelativeToolTip": "Assets\\Silhouette\\Scripts\\Properties.cs",
+              "ViewState": "AQIAACgAAAAAAAAAAAAQwBIAAAAUAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-24T09:09:14.131Z"
+              "WhenOpened": "2024-05-23T08:17:16.085Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "JZBGTurnControl.cs",
+              "DocumentMoniker": "C:\\Users\\fabio\\Documents\\GitHub\\CrosswordExample\\StoryScopeSilhouette\\Assets\\JZBGTurnControl.cs",
+              "RelativeDocumentMoniker": "Assets\\JZBGTurnControl.cs",
+              "ToolTip": "C:\\Users\\fabio\\Documents\\GitHub\\CrosswordExample\\StoryScopeSilhouette\\Assets\\JZBGTurnControl.cs",
+              "RelativeToolTip": "Assets\\JZBGTurnControl.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAADQAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-16T08:47:39.479Z"
             }
           ]
         }

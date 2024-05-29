@@ -2427,7 +2427,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ecb9180c6b21554caec21446f888543, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MarkerID: 222
+  MarkerID: 54
   IsPositionMapped: 0
   InvertX: 0
   InvertY: 0
@@ -6351,7 +6351,7 @@ PrefabInstance:
     - target: {fileID: 7998680968566751479, guid: 952211db6a4a9b7408e45a68dcbf3c52,
         type: 3}
       propertyPath: AutoHideGO
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7998680968566751479, guid: 952211db6a4a9b7408e45a68dcbf3c52,
         type: 3}
@@ -6683,7 +6683,7 @@ PrefabInstance:
     - target: {fileID: 5309552146759384028, guid: 663491b471a153c4c91f0a1f739558f8,
         type: 3}
       propertyPath: AutoHideGO
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5309552146759384029, guid: 663491b471a153c4c91f0a1f739558f8,
         type: 3}
