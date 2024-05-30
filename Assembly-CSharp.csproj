@@ -60,6 +60,7 @@
     <Compile Include="Assets\ThirdParty\FiducialFolder\TUIOConnector\TuioPoint.cs" />
     <Compile Include="Assets\Silhouette\Scripts\Webcam.cs" />
     <Compile Include="Assets\DebugExtensions.cs" />
+    <Compile Include="Assets\Silhouette\Scripts\RotateProperties.cs" />
     <Compile Include="Assets\ThirdParty\FiducialFolder\TUIOConnector\TuioContainer.cs" />
     <Compile Include="Assets\Silhouette\Scripts\SO\Manager.cs" />
     <Compile Include="Assets\ThirdParty\Aran\TekenPackage\Drawable.cs" />
@@ -74,11 +75,11 @@
     <Compile Include="Assets\Silhouette\Scripts\ScanCamSize.cs" />
     <Compile Include="Assets\ThirdParty\FiducialFolder\TUIOConnector\TuioObject.cs" />
     <Compile Include="Assets\JZVariables.cs" />
-    <Compile Include="Assets\Silhouette\Scripts\WebcamDevices.cs" />
+    <Compile Include="Assets\Silhouette\Scripts\webcamDevices.cs" />
     <Compile Include="Assets\Silhouette\Scripts\JZSlides.cs" />
-    <Compile Include="Assets\JZDatabaseStuff.cs" />
+    <Compile Include="Assets\JZdatabaseStuff.cs" />
     <Compile Include="Assets\Silhouette\Scripts\JZCanScale.cs" />
-    <Compile Include="Assets\Silhouette\draw\JZGetBase64.cs" />
+    <Compile Include="Assets\Silhouette\draw\JZgetbase64.cs" />
     <Compile Include="Assets\ThirdParty\FiducialFolder\Uniducial\FiducialController.cs" />
     <Compile Include="Assets\Silhouette\Scripts\CameraSnap.cs" />
     <Compile Include="Assets\ThirdParty\FiducialFolder\TUIOConnector\TuioTime.cs" />
@@ -110,7 +111,7 @@
     <Compile Include="Assets\ThirdParty\FiducialFolder\TUIOConnector\OSCMessage.cs" />
     <Compile Include="Assets\ThirdParty\Aran\TekenPackage\StoryScopePen.cs" />
     <Compile Include="Assets\Silhouette\Scripts\JZTurnSpriteCounter.cs" />
-    <Compile Include="Assets\RestartUnity.cs" />
+    <Compile Include="Assets\restartUnity.cs" />
     <Compile Include="Assets\Utilities\SceneSelectorMenu\JZSceneSelectorManager.cs" />
     <Compile Include="Assets\Utilities\TestScipt.cs" />
     <Compile Include="Assets\JZSpriteParticle.cs" />

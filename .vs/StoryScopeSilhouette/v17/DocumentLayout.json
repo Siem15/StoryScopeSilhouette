@@ -3,11 +3,15 @@
   "WorkspaceRootPath": "C:\\Users\\larsd\\Unity\\StoryScopeSilhouette\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{5F66AEAB-65C9-7AA2-E478-4DA806B30003}|Assembly-CSharp-Editor.csproj|c:\\users\\larsd\\unity\\storyscopesilhouette\\assets\\editor\\uniducialinspector.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{1555FAD6-E65C-7B70-91C9-38BC86C5EFCA}|Assembly-CSharp.csproj|c:\\users\\larsd\\unity\\storyscopesilhouette\\assets\\utilities\\sceneselectormenu\\jzsceneselectormanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1555FAD6-E65C-7B70-91C9-38BC86C5EFCA}|Assembly-CSharp.csproj|solutionrelative:assets\\utilities\\sceneselectormenu\\jzsceneselectormanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5F66AEAB-65C9-7AA2-E478-4DA806B30003}|Assembly-CSharp-Editor.csproj|C:\\Users\\larsd\\Unity\\StoryScopeSilhouette\\assets\\editor\\uniducialinspector.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5F66AEAB-65C9-7AA2-E478-4DA806B30003}|Assembly-CSharp-Editor.csproj|solutionrelative:assets\\editor\\uniducialinspector.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1555FAD6-E65C-7B70-91C9-38BC86C5EFCA}|Assembly-CSharp.csproj|c:\\users\\larsd\\unity\\storyscopesilhouette\\assets\\restartunity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{1555FAD6-E65C-7B70-91C9-38BC86C5EFCA}|Assembly-CSharp.csproj|C:\\Users\\larsd\\Unity\\StoryScopeSilhouette\\assets\\restartunity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1555FAD6-E65C-7B70-91C9-38BC86C5EFCA}|Assembly-CSharp.csproj|solutionrelative:assets\\restartunity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -23,19 +27,31 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "UniducialInspector.cs",
-              "DocumentMoniker": "C:\\Users\\larsd\\Unity\\StoryScopeSilhouette\\Assets\\Editor\\UniducialInspector.cs",
-              "RelativeDocumentMoniker": "Assets\\Editor\\UniducialInspector.cs",
-              "ToolTip": "C:\\Users\\larsd\\Unity\\StoryScopeSilhouette\\Assets\\Editor\\UniducialInspector.cs",
-              "RelativeToolTip": "Assets\\Editor\\UniducialInspector.cs",
-              "ViewState": "AQIAAAwAAAAAAAAAAAAAABcAAAASAAAA",
+              "Title": "JZSceneSelectorManager.cs",
+              "DocumentMoniker": "C:\\Users\\larsd\\Unity\\StoryScopeSilhouette\\Assets\\Utilities\\SceneSelectorMenu\\JZSceneSelectorManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Utilities\\SceneSelectorMenu\\JZSceneSelectorManager.cs",
+              "ToolTip": "C:\\Users\\larsd\\Unity\\StoryScopeSilhouette\\Assets\\Utilities\\SceneSelectorMenu\\JZSceneSelectorManager.cs",
+              "RelativeToolTip": "Assets\\Utilities\\SceneSelectorMenu\\JZSceneSelectorManager.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAAAGAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-28T08:30:06.002Z",
+              "WhenOpened": "2024-05-29T12:03:26.855Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "UniducialInspector.cs",
+              "DocumentMoniker": "C:\\Users\\larsd\\Unity\\StoryScopeSilhouette\\Assets\\Editor\\UniducialInspector.cs",
+              "RelativeDocumentMoniker": "Assets\\Editor\\UniducialInspector.cs",
+              "ToolTip": "C:\\Users\\larsd\\Unity\\StoryScopeSilhouette\\Assets\\Editor\\UniducialInspector.cs",
+              "RelativeToolTip": "Assets\\Editor\\UniducialInspector.cs",
+              "ViewState": "AQIAAAkAAAAAAAAAAIBJwBcAAAASAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-28T08:30:06.002Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "RestartUnity.cs",
               "DocumentMoniker": "C:\\Users\\larsd\\Unity\\StoryScopeSilhouette\\Assets\\RestartUnity.cs",
               "RelativeDocumentMoniker": "Assets\\RestartUnity.cs",
@@ -43,8 +59,7 @@
               "RelativeToolTip": "Assets\\RestartUnity.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-27T12:40:39.718Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-27T12:40:39.718Z"
             }
           ]
         }
