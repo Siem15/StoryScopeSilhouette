@@ -8,7 +8,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <RootNamespace></RootNamespace>
+    <RootNamespace>
+    </RootNamespace>
     <ProjectGuid>{1555FAD6-E65C-7B70-91C9-38BC86C5EFCA}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -76,7 +77,7 @@
     <Compile Include="Assets\Silhouette\Scripts\JZSlides.cs" />
     <Compile Include="Assets\JZdatabaseStuff.cs" />
     <Compile Include="Assets\Silhouette\Scripts\JZCanScale.cs" />
-    <Compile Include="Assets\Silhouette\draw\JZgetbase64.cs" />
+    <Compile Include="Assets\Silhouette\draw\JZGetBase64.cs" />
     <Compile Include="Assets\ThirdParty\FiducialFolder\Uniducial\FiducialController.cs" />
     <Compile Include="Assets\Silhouette\Scripts\CameraSnap.cs" />
     <Compile Include="Assets\ThirdParty\FiducialFolder\TUIOConnector\TuioTime.cs" />
@@ -108,7 +109,7 @@
     <Compile Include="Assets\ThirdParty\FiducialFolder\TUIOConnector\OSCMessage.cs" />
     <Compile Include="Assets\ThirdParty\Aran\TekenPackage\StoryScopePen.cs" />
     <Compile Include="Assets\Silhouette\Scripts\JZTurnSpriteCounter.cs" />
-    <Compile Include="Assets\restartUnity.cs" />
+    <Compile Include="Assets\RestartUnity.cs" />
     <Compile Include="Assets\Utilities\SceneSelectorMenu\JZSceneSelectorManager.cs" />
     <Compile Include="Assets\Utilities\TestScipt.cs" />
     <Compile Include="Assets\JZSpriteParticle.cs" />
