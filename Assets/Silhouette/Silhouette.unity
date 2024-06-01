@@ -6024,6 +6024,26 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7951071278748759119, guid: ddecfd26d3d1d0c43b8b3a02c106bb1f,
+        type: 3}
+      propertyPath: isFire
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7951071278748759119, guid: ddecfd26d3d1d0c43b8b3a02c106bb1f,
+        type: 3}
+      propertyPath: isFood
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7951071278748759119, guid: ddecfd26d3d1d0c43b8b3a02c106bb1f,
+        type: 3}
+      propertyPath: canEatFood
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7951071278748759119, guid: ddecfd26d3d1d0c43b8b3a02c106bb1f,
+        type: 3}
+      propertyPath: isFlammable
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ddecfd26d3d1d0c43b8b3a02c106bb1f, type: 3}
 --- !u!1001 &1586667757
