@@ -53,12 +53,12 @@
     <UnityVersion>2020.3.17f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Assets\Editor\PropertiesEditor.cs" />
     <Compile Include="Assets\Editor\JZRunOnPrefabs.cs" />
     <Compile Include="Assets\ThirdParty\AutoSave\Editor\AutoSaveExtension.cs" />
     <Compile Include="Assets\Editor\UniducialInspector.cs" />
     <Compile Include="Assets\Editor\UniducialMenu.cs" />
     <Compile Include="Assets\Editor\AnimeStudioFBXImporter.cs" />
-    <Compile Include="Assets\Editor\PropertiesEditor.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Editor\Readme.txt" />
