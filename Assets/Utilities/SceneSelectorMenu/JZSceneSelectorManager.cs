@@ -13,10 +13,10 @@ public class JZSceneSelectorManager : MonoBehaviour
     readonly string buildsFilePath = "C:/StoryScopeMedia/Builds/";
 #endif
 #if UNITY_STANDALONE_LINUX
-    readonly string filesLocation = "/home/InteractiveCulture/Builds/";
+    string filesLocation = "/home/InteractiveCulture/Builds/";
 #endif
 #if UNITY_STANDALONE_OSX
-    readonly string filesLocation = "";
+    string filesLocation = "";
 #endif
 
     public GameObject prefabSelector;

@@ -32,7 +32,7 @@ public class ConsoleToGUI : MonoBehaviour
         //sceneCanvas.SetActive(doShow);
 
 #if !UNITY_EDITOR
-        Debug.Log(System.DateTime.Now);
+        Debug.Log(DateTime.Now);
 #endif
     }
 
