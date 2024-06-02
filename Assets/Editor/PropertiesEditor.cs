@@ -21,7 +21,7 @@ public class PropertiesEditor : Editor
             propertiesScript.properties[i] = EditorGUILayout.Toggle(label, propertiesScript.properties[i]);
         }
 
-        // Save any changes made in the inspector
+        // Save any changes made in the inspectorr
         if (GUI.changed)
         {
             EditorUtility.SetDirty(target);
