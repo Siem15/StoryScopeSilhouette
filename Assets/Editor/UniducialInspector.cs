@@ -92,7 +92,6 @@ public class UniducialInspector : Editor
         }
 
         EditorGUILayout.Space();
-
         EditorGUILayout.TextField("Rotation", EditorStyles.boldLabel);
 
         if (!fiducialController.IsAttachedToGUIComponent())
