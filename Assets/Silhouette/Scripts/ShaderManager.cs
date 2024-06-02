@@ -10,20 +10,31 @@ using UnityEngine;
 
 public class ShaderManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private Material onPlacementEffectShader;
+    [SerializeField] private Material onFireEffectShader;
+    [SerializeField] private Material dissolveShader;
+
+    private Material CurrentObjectMaterial;
+
+    private void Start()
     {
-        
+        CurrentObjectMaterial = this.gameObject.GetComponent<Renderer>().material;
     }
 
-    // Update is called once per frame
-    void Update()
+    //This function adds the specific shader that is called for in the propertyscript
+    public void AddShader(string InteractionName)
     {
-        
-    }
-
-    public void AddShader()
-    {
-
+        switch (InteractionName)
+        {
+            case "OnPlacementEffectShader":
+                CurrentObjectMaterial = onPlacementEffectShader;  //Add ripple effect upon placing object
+                break;
+            case "onFireEffectShader":
+                CurrentObjectMaterial = onFireEffectShader;   //Add fire effect shader onto current object upon interaction
+                break;
+            case "dissolveShader":
+                CurrentObjectMaterial = dissolveShader;   //Add dissolve effect upon having burned for x amount of time
+                break;
+        }
     }
 }

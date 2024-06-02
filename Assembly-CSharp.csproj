@@ -57,6 +57,7 @@
     <Compile Include="Assets\ThirdParty\FiducialFolder\TUIOConnector\TuioPoint.cs" />
     <Compile Include="Assets\Silhouette\Scripts\Webcam.cs" />
     <Compile Include="Assets\DebugExtensions.cs" />
+    <Compile Include="Assets\Silhouette\Scripts\RotateProperties.cs" />
     <Compile Include="Assets\ThirdParty\FiducialFolder\TUIOConnector\TuioContainer.cs" />
     <Compile Include="Assets\Silhouette\Scripts\SO\Manager.cs" />
     <Compile Include="Assets\ThirdParty\Aran\TekenPackage\Drawable.cs" />
@@ -119,12 +120,12 @@
     <Compile Include="Assets\Silhouette\Scripts\Flicker.cs" />
     <Compile Include="Assets\Silhouette\Scripts\Distance.cs" />
     <Compile Include="Assets\Silhouette\Scripts\JZCamActive.cs" />
+    <Compile Include="Assets\Silhouette\Scripts\ShaderManager.cs" />
     <Compile Include="Assets\ThirdParty\FiducialFolder\TUIOConnector\OSCReceiver.cs" />
     <Compile Include="Assets\Silhouette\Scripts\JZLoadSingle.cs" />
     <Compile Include="Assets\Silhouette\Scripts\JZLoadFromExternalV2.cs" />
     <Compile Include="Assets\Silhouette\Scripts\JZReloadScene.cs" />
     <Compile Include="Assets\Silhouette\SpriteStuff\JZSpriteRoot.cs" />
-    <Compile Include="Assets\Silhouette\Scripts\ShaderManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
