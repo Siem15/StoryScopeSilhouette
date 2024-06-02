@@ -3,17 +3,19 @@ using UnityEngine;
 
 public class Properties : MonoBehaviour
 {
+    [SerializeField] private bool fixedProperties;
+
     public int currentPropertie;
 
-    [SerializeField] List<bool> properties = new List<bool>();
+    [SerializeField] public List<bool> properties = new List<bool>();
 
-    bool enpty;
-    public bool isFood = false;
-    public bool canEatFood = false;
-    public bool isFlammable = false;
-    public bool isFire = false;
-    public bool isWheel = false;
-    public bool isVehicle = false;
+    private bool enpty;
+    [SerializeField] private bool isFood = false;
+    [SerializeField] private bool canEatFood = false;
+    [SerializeField] private bool isFlammable = false;
+    [SerializeField] private bool isFire = false;
+    [SerializeField] private bool isWheel = false;
+    [SerializeField] private bool isVehicle = false;
 
     public bool reset = false;
     public bool isAlive = false;
@@ -28,14 +30,15 @@ public class Properties : MonoBehaviour
     private float originalWalkingSpeed;
     private float originalRunningSpeed;
 
-    enum Property
+    public enum Property
     {
-        IsFood = 1,
-        CanEatFood = 2,
-        isFlammable = 3,
-        isFire = 4,
-        isWheel = 5,
-        isVehicle = 6,
+        Empty,
+        IsFood,
+        CanEatFood,
+        IsFlammable,
+        IsFire,
+        IsWheel,
+        IsVehicle,
     }
 
     void Start()
@@ -126,7 +129,7 @@ public class Properties : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (properties[(int)Property.isWheel])
+        if (properties[(int)Property.IsWheel])
         {
             transform.Rotate(Vector3.back, 5f); // Rotate if wheel and touches a vehicle
         }
@@ -147,7 +150,7 @@ public class Properties : MonoBehaviour
                 transform.localScale *= 0.9f; // Shrink
                 otherObject.transform.localScale *= 1.1f; // Grow
             }
-            if (properties[(int)Property.isFlammable] && otherObject.properties[(int)Property.isFire])
+            if (properties[(int)Property.IsFlammable] && otherObject.properties[(int)Property.IsFire])
             {
                 Debug.Log("flame");
                 if (transform.childCount > 0)
@@ -155,7 +158,7 @@ public class Properties : MonoBehaviour
                     transform.GetChild(0).gameObject.SetActive(false);
                 }
             }
-            if (properties[(int)Property.isWheel] && otherObject.properties[(int)Property.isVehicle])
+            if (properties[(int)Property.IsWheel] && otherObject.properties[(int)Property.IsVehicle])
             {
                 Debug.Log("attach wheel");
                 transform.parent = otherObject.transform; // Stick to the vehicle
@@ -169,21 +172,24 @@ public class Properties : MonoBehaviour
 
     public void checkPropertie()
     {
-        if (currentPropertie != 0)
+        if (!fixedProperties)
         {
-            foreach (bool prop in properties)
+            for (int i = 0; i < properties.Count; i++)
             {
-                prop.Equals(false);
+                properties[i] = false;
             }
 
-            if (currentPropertie <= properties.Count || currentPropertie < 0)
+            if (currentPropertie <= properties.Count)
             {
                 properties[currentPropertie] = true;
             }
-            else
+            else if (currentPropertie > properties.Count || currentPropertie < 0)
+            {
                 currentPropertie = 0;
+            }
         }
     }
+
     public void ResetObject()
     {
         checkPropertie();
