@@ -105,7 +105,7 @@ public class Properties : MonoBehaviour
     {
         if (reset)
         {
-            ResetObject();
+            checkPropertie();
             reset = false;
         }
 
