@@ -12,7 +12,7 @@ public class PropertiesEditor : Editor
     SerializedProperty isWheelProp;
     SerializedProperty isVehicleProp;
 
-    bool showFixedProperties = true; // To control the foldout state
+    bool showFixedProperties = false; // To control the foldout state
 
     void OnEnable()
     {

@@ -25,6 +25,7 @@ public class Properties : MonoBehaviour
     public Vector2 HitboxOffset;
 
     private Vector3 originalScale;
+    private Vector3 originalRoration;
     private GameObject originalendmarker;
     private FiducialController FC;
     private float originalWalkingSpeed;
@@ -51,7 +52,6 @@ public class Properties : MonoBehaviour
         properties.Add(isWheel);
         properties.Add(isVehicle);
 
-        checkPropertie();
 
         // Add a BoxCollider2D component if it doesn't already exist
         BoxCollider2D boxCollider = gameObject.GetComponent<BoxCollider2D>();
@@ -85,6 +85,7 @@ public class Properties : MonoBehaviour
         rigidbody2D.angularDrag = 0;
 
         originalScale = transform.localScale;
+        originalRoration = transform.eulerAngles;
         originalendmarker = this.GetComponent<Character>().endMarker;
         originalWalkingSpeed = this.GetComponent<Character>().WalkSpeed;
         originalRunningSpeed = this.GetComponent<Character>().RunSpeed;
@@ -93,7 +94,11 @@ public class Properties : MonoBehaviour
         {
             reset = true;
             connected = false;
+            Debug.Log(this.gameObject.name+" is not connected");
         }
+        Debug.Log(this.gameObject.name + " is connected");
+
+        checkPropertie();
     }
 
     private void Update()
@@ -110,6 +115,8 @@ public class Properties : MonoBehaviour
             {
                 if (!isAlive)
                 {
+                    Debug.Log(this.gameObject.name + " is alive");
+                    this.GetComponent<BoxCollider2D>().enabled = true;
                     ResetObject();
                 }
                 isAlive = true;
@@ -118,18 +125,19 @@ public class Properties : MonoBehaviour
             {
                 if (isAlive)
                 {
+                    Debug.Log(this.gameObject.name + " is not alive");
                     this.GetComponent<BoxCollider2D>().enabled = false;
                 }
                 isAlive = false;
             }
         }
 
-        isAlive = !FC.AutoHideGO; // temp
+        //isAlive = !FC.AutoHideGO; temp
     }
 
     private void FixedUpdate()
     {
-        if (properties[(int)Property.IsWheel])
+        if (properties[(int)Property.IsWheel] && isAlive)
         {
             transform.Rotate(Vector3.back, 5f); // Rotate if wheel and touches a vehicle
         }
@@ -137,30 +145,29 @@ public class Properties : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("trigger enter");
+        Debug.Log(this.gameObject.name + " trigger enter");
         Properties otherObject = collision.GetComponent<Properties>();
         Character thisCharacter = this.GetComponent<Character>();
         Character otherCharacter = collision.GetComponent<Character>();
         if (otherObject != null)
         {
-            // Vriendelijke vriend, 2 is ISFood
             if (properties[(int)Property.IsFood] && otherObject.properties[(int)Property.CanEatFood])
             {
-                Debug.Log("eat");
+                Debug.Log(this.gameObject.name + " eat");
                 transform.localScale *= 0.9f; // Shrink
                 otherObject.transform.localScale *= 1.1f; // Grow
             }
             if (properties[(int)Property.IsFlammable] && otherObject.properties[(int)Property.IsFire])
             {
-                Debug.Log("flame");
+                Debug.Log(this.gameObject.name + " flame");
                 if (transform.childCount > 0)
                 {
-                    transform.GetChild(0).gameObject.SetActive(false);
+                    transform.GetChild(0).gameObject.SetActive(false); // destroy
                 }
             }
             if (properties[(int)Property.IsWheel] && otherObject.properties[(int)Property.IsVehicle])
             {
-                Debug.Log("attach wheel");
+                Debug.Log(this.gameObject.name + " attach wheel");
                 transform.parent = otherObject.transform; // Stick to the vehicle
                 this.GetComponent<BoxCollider2D>().enabled = false;
                 thisCharacter.endMarker = otherCharacter.endMarker;
@@ -172,6 +179,7 @@ public class Properties : MonoBehaviour
 
     public void checkPropertie()
     {
+        ResetObject();
         if (!fixedProperties)
         {
             for (int i = 0; i < properties.Count; i++)
@@ -192,10 +200,9 @@ public class Properties : MonoBehaviour
 
     public void ResetObject()
     {
-        checkPropertie();
         transform.localScale = originalScale;
+        transform.eulerAngles = originalRoration;
         transform.parent = null;
-        this.GetComponent<BoxCollider2D>().enabled = true;
         this.GetComponent<BoxCollider2D>().size = HitboxSize;
         this.GetComponent<BoxCollider2D>().offset = HitboxOffset;
         this.GetComponent<Character>().endMarker = originalendmarker;
