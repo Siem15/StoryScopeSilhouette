@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class Properties : MonoBehaviour
 {
+    [SerializeField] private bool fixedProperties;
+
     public int currentPropertie;
 
     [SerializeField] List<bool> properties = new List<bool>();
@@ -169,19 +171,21 @@ public class Properties : MonoBehaviour
 
     public void checkPropertie()
     {
-        if (currentPropertie != 0)
+        if (!fixedProperties)
         {
             foreach (bool prop in properties)
             {
                 prop.Equals(false);
             }
 
-            if (currentPropertie <= properties.Count || currentPropertie < 0)
+            if (currentPropertie <= properties.Count)
             {
                 properties[currentPropertie] = true;
             }
-            else
+            else if (currentPropertie > properties.Count || currentPropertie < 0)
+            {
                 currentPropertie = 0;
+            }
         }
     }
     public void ResetObject()
