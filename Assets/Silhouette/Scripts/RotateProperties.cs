@@ -66,7 +66,7 @@ public class RotateProperties : MonoBehaviour
     //NOTE: this function should be called with the OnRotateForward and OnRotateBackward with te corresponding direction
     public void NextProperty(int direction)
     {
-        if (clostestObject != null)
+        if (clostestObject != null && !clostestObject.fixedProperties)
         {
             clostestObject.currentPropertie += direction;
 
@@ -78,7 +78,7 @@ public class RotateProperties : MonoBehaviour
             if (clostestObject.currentPropertie > propertiesAmount)
                 clostestObject.currentPropertie = 0;
 
-            clostestObject.ResetObject();
+            clostestObject.checkPropertie();
         }
     }
 }

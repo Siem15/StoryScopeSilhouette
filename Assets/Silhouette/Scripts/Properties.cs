@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class Properties : MonoBehaviour
 {
-    [SerializeField] private bool fixedProperties;
+    [SerializeField] public bool fixedProperties;
 
     public int currentPropertie;
 
