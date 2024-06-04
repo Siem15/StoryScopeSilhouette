@@ -65,7 +65,7 @@ public class ConsoleToGUI : MonoBehaviour
         }
     }
 
-    void OnGUI()
+    private void OnGUI()
     {
         if (!showOptions) 
         { 

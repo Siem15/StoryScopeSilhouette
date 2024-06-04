@@ -25,8 +25,6 @@ using UnityEngine;
 
 public class UniducialMenu : Editor
 {
-    private const string FICUCIAL_COMPONENT_NAME = "FiducialController";
-
     [MenuItem("GameObject/Create Other/Fiducial Object")]
     //creates a new GameObject with a Fiducial Input component
     public static void CreateFiducialObject()
@@ -43,7 +41,7 @@ public class UniducialMenu : Editor
         foreach (GameObject gameObject in Selection.gameObjects)
         {
             //make sure a GameObject can only be controlled by one marker
-            if (gameObject.GetComponent(FICUCIAL_COMPONENT_NAME) != null)
+            if (gameObject.GetComponent("FiducialController") != null)
             {
                 Debug.LogWarning($"Game Object {gameObject.name} already has a fiducial controller attached");
             }
@@ -54,7 +52,7 @@ public class UniducialMenu : Editor
         }
     }
 
-    private static bool SceneContaintsTUIO()
+    private static bool SceneContainsTUIO()
     {
         GameObject tuioGO = GameObject.Find("TUIO");
         return tuioGO != null;

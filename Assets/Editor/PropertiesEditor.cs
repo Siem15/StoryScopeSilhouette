@@ -14,7 +14,7 @@ public class PropertiesEditor : Editor
 
     bool showFixedProperties = false; // To control the foldout state
 
-    void OnEnable()
+    private void OnEnable()
     {
         propertiesList = serializedObject.FindProperty("properties");
         isFoodProp = serializedObject.FindProperty("isFood");
@@ -32,6 +32,7 @@ public class PropertiesEditor : Editor
         // Draw properties list at the top
         EditorGUILayout.Space();
         EditorGUILayout.LabelField("Properties", EditorStyles.boldLabel);
+
         for (int i = 0; i < propertiesList.arraySize; i++)
         {
             SerializedProperty property = propertiesList.GetArrayElementAtIndex(i);
@@ -43,6 +44,7 @@ public class PropertiesEditor : Editor
 
         // Draw foldout for fixed properties
         showFixedProperties = EditorGUILayout.Foldout(showFixedProperties, "Fixed Properties");
+
         if (showFixedProperties)
         {
             EditorGUI.indentLevel++;

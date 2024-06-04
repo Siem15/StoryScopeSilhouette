@@ -5,25 +5,21 @@ using UnityEngine;
 public class JZRunOnPrefabs : Editor
 {
     [MenuItem("GameObject/Silhouette/addSpriteCode", false, -1)]
-    public static void SendSprites()
+    public static void CreateSprites()
     {
-        List<Component> _renderers = new List<Component>();
+        List<Component> renderers = new List<Component>();
+        Component[] childRenderers = Selection.activeGameObject.GetComponentsInChildren(typeof(SpriteRenderer));
 
-        Component[] _childRenderers = Selection.activeGameObject.GetComponentsInChildren(typeof(SpriteRenderer));
         Selection.activeGameObject.AddComponent<JZSpriteRoot>();
         Selection.activeGameObject.transform.GetChild(0).gameObject.SetActive(true);
-        _renderers.AddRange(_childRenderers);
 
-        AddScripts(_renderers);
-    }
+        renderers.AddRange(childRenderers);
 
-    private static void AddScripts(List<Component> _renderers)
-    {
-        foreach (var rend in _renderers)
+        foreach (Component renderer in renderers)
         {
-            if (rend != null && !rend.gameObject.name.Contains("eye"))
+            if (renderer != null && !renderer.gameObject.name.Contains("eye"))
             {
-                rend.gameObject.AddComponent<JZSpriteChild>();
+                renderer.gameObject.AddComponent<JZSpriteChild>();
             }
         }
     }
