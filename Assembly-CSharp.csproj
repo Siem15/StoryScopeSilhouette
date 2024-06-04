@@ -84,14 +84,14 @@
     <Compile Include="Assets\Silhouette\Scripts\TextureExtension.cs" />
     <Compile Include="Assets\Dependencies\Aran\TekenPackage\DrawingSettings.cs" />
     <Compile Include="Assets\Silhouette\Scripts\Stamp.cs" />
-    <Compile Include="Assets\Silhouette\SpriteStuff\JZRotateToNextChild.cs" />
+    <Compile Include="Assets\Silhouette\Sprites\JZRotateToNextChild.cs" />
     <Compile Include="Assets\Utilities\Loading\LoadingScene.cs" />
     <Compile Include="Assets\Dependencies\FiducialFolder\TUIOConnector\OSCTransmitter.cs" />
     <Compile Include="Assets\Silhouette\Scripts\JZMicrophone.cs" />
     <Compile Include="Assets\Silhouette\Scripts\SO\JZSOCameraActive.cs" />
     <Compile Include="Assets\Utilities\ShutDownCanvas\ShutdownCor.cs" />
     <Compile Include="Assets\Utilities\SceneSelectorMenu\JZSceneDirectionButton.cs" />
-    <Compile Include="Assets\Silhouette\SpriteStuff\JZSpriteChild.cs" />
+    <Compile Include="Assets\Silhouette\Sprites\JZSpriteChild.cs" />
     <Compile Include="Assets\Utilities\ConsoleStandAlone\ConsoleToGUI.cs" />
     <Compile Include="Assets\Silhouette\Scripts\JZRunInBackground.cs" />
     <Compile Include="Assets\Dependencies\Aran\TekenPackage\PenManager.cs" />
@@ -111,7 +111,7 @@
     <Compile Include="Assets\Unused Scripts\RestartUnity.cs" />
     <Compile Include="Assets\Utilities\SceneSelectorMenu\JZSceneSelectorManager.cs" />
     <Compile Include="Assets\Unused Scripts\TestScipt.cs" />
-    <Compile Include="Assets\Silhouette\SpriteStuff\JZSpriteParticle.cs" />
+    <Compile Include="Assets\Silhouette\Sprites\JZSpriteParticle.cs" />
     <Compile Include="Assets\Silhouette\Scripts\GlobalFlock.cs" />
     <Compile Include="Assets\Dependencies\FiducialFolder\TUIOConnector\OSCPacket.cs" />
     <Compile Include="Assets\Silhouette\Scripts\Scan.cs" />
@@ -125,12 +125,12 @@
     <Compile Include="Assets\Silhouette\Scripts\JZLoadSingle.cs" />
     <Compile Include="Assets\Silhouette\Scripts\JZLoadFromExternalV2.cs" />
     <Compile Include="Assets\Silhouette\Scripts\JZReloadScene.cs" />
-    <Compile Include="Assets\Silhouette\SpriteStuff\JZSpriteRoot.cs" />
+    <Compile Include="Assets\Silhouette\Sprites\JZSpriteRoot.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
-    <None Include="Assets\Silhouette\2D\Shader\Posterize.shader" />
+    <None Include="Assets\Silhouette\Shaders\Posterize.shader" />
     <None Include="Assets\Dependencies\AutoSave\ReadMe.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Mobile.cginc" />
