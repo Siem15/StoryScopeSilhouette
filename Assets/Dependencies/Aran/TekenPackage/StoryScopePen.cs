@@ -10,22 +10,27 @@ public class StoryScopePen : MonoBehaviour
     public int PenWidth;
 
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         drawable = GameObject.Find("TekenVlak").GetComponent<FreeDraw.Drawable>();
         drawable.PenSpriteRef = (GetComponent<SpriteRenderer>());
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        if (GetComponent<SpriteRenderer>().enabled) drawable.PenPos = transform.position;
-        float PenScale = penSize(transform.rotation.eulerAngles.z);
+        if (GetComponent<SpriteRenderer>().enabled)
+        {
+            drawable.PenPos = transform.position;
+        }
+
+        float PenScale = PenSize(transform.rotation.eulerAngles.z);
         PenWidth = (int)PenScale;
+
         transform.localScale = new Vector3(PenScale / 5, PenScale / 5, PenScale / 5);
     }
 
-    float penSize(float rotation)
+    private float PenSize(float rotation)
     {
         //Debug.Log(rotation);
         if (rotation < 45) return 3;

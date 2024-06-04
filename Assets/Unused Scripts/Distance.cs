@@ -15,14 +15,14 @@ public class Distance : MonoBehaviour
     ParticleSystem.EmissionModule emissionModule;
 
     // Use this for initialization
-    void Start()
+    private void Start()
     {
         emissionModule = ps.emission;
         partner = GameObject.Find("PlantVase(Clone)").transform;
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
         if (partner != null)
         {

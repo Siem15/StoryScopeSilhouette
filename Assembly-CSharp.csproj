@@ -54,39 +54,39 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Assets\Silhouette\Scripts\TurnOnEditorCharacter.cs" />
-    <Compile Include="Assets\ThirdParty\FiducialFolder\TUIOConnector\TuioPoint.cs" />
+    <Compile Include="Assets\Dependencies\FiducialFolder\TUIOConnector\TuioPoint.cs" />
     <Compile Include="Assets\Silhouette\Scripts\Webcam.cs" />
-    <Compile Include="Assets\DebugExtensions.cs" />
+    <Compile Include="Assets\Debug\DebugExtensions.cs" />
     <Compile Include="Assets\Silhouette\Scripts\RotateProperties.cs" />
-    <Compile Include="Assets\ThirdParty\FiducialFolder\TUIOConnector\TuioContainer.cs" />
+    <Compile Include="Assets\Dependencies\FiducialFolder\TUIOConnector\TuioContainer.cs" />
     <Compile Include="Assets\Silhouette\Scripts\SO\Manager.cs" />
-    <Compile Include="Assets\ThirdParty\Aran\TekenPackage\Drawable.cs" />
+    <Compile Include="Assets\Dependencies\Aran\TekenPackage\Drawable.cs" />
     <Compile Include="Assets\Silhouette\Scripts\Character.cs" />
     <Compile Include="Assets\Silhouette\Scripts\Resolution.cs" />
     <Compile Include="Assets\Silhouette\Scripts\WebCamera.cs" />
-    <Compile Include="Assets\RamonSwitchScene.cs" />
-    <Compile Include="Assets\ThirdParty\FiducialFolder\TUIOConnector\TuioClient.cs" />
+    <Compile Include="Assets\Silhouette\Scripts\RamonSwitchScene.cs" />
+    <Compile Include="Assets\Dependencies\FiducialFolder\TUIOConnector\TuioClient.cs" />
     <Compile Include="Assets\Utilities\SceneSelectorMenu\JZSceneSelector.cs" />
     <Compile Include="Assets\Silhouette\Scripts\Flock.cs" />
-    <Compile Include="Assets\ThirdParty\FiducialFolder\TUIOConnector\TuioListener.cs" />
+    <Compile Include="Assets\Dependencies\FiducialFolder\TUIOConnector\TuioListener.cs" />
     <Compile Include="Assets\Silhouette\Scripts\ScanCamSize.cs" />
-    <Compile Include="Assets\ThirdParty\FiducialFolder\TUIOConnector\TuioObject.cs" />
-    <Compile Include="Assets\JZVariables.cs" />
+    <Compile Include="Assets\Dependencies\FiducialFolder\TUIOConnector\TuioObject.cs" />
+    <Compile Include="Assets\Unused Scripts\JZVariables.cs" />
     <Compile Include="Assets\Silhouette\Scripts\webcamDevices.cs" />
     <Compile Include="Assets\Silhouette\Scripts\JZSlides.cs" />
-    <Compile Include="Assets\JZdatabaseStuff.cs" />
+    <Compile Include="Assets\Unused Scripts\JZdatabaseStuff.cs" />
     <Compile Include="Assets\Silhouette\Scripts\JZCanScale.cs" />
-    <Compile Include="Assets\Silhouette\draw\JZgetbase64.cs" />
-    <Compile Include="Assets\ThirdParty\FiducialFolder\Uniducial\FiducialController.cs" />
+    <Compile Include="Assets\Unused Scripts\JZGetBase64.cs" />
+    <Compile Include="Assets\Dependencies\FiducialFolder\Uniducial\FiducialController.cs" />
     <Compile Include="Assets\Silhouette\Scripts\CameraSnap.cs" />
-    <Compile Include="Assets\ThirdParty\FiducialFolder\TUIOConnector\TuioTime.cs" />
-    <Compile Include="Assets\ThirdParty\Aran\TekenPackage\StoryScopeGum.cs" />
+    <Compile Include="Assets\Dependencies\FiducialFolder\TUIOConnector\TuioTime.cs" />
+    <Compile Include="Assets\Dependencies\Aran\TekenPackage\StoryScopeGum.cs" />
     <Compile Include="Assets\Silhouette\Scripts\TextureExtension.cs" />
-    <Compile Include="Assets\ThirdParty\Aran\TekenPackage\DrawingSettings.cs" />
+    <Compile Include="Assets\Dependencies\Aran\TekenPackage\DrawingSettings.cs" />
     <Compile Include="Assets\Silhouette\Scripts\Stamp.cs" />
-    <Compile Include="Assets\JZRotateToNextChild.cs" />
+    <Compile Include="Assets\Silhouette\SpriteStuff\JZRotateToNextChild.cs" />
     <Compile Include="Assets\Utilities\Loading\LoadingScene.cs" />
-    <Compile Include="Assets\ThirdParty\FiducialFolder\TUIOConnector\OSCTransmitter.cs" />
+    <Compile Include="Assets\Dependencies\FiducialFolder\TUIOConnector\OSCTransmitter.cs" />
     <Compile Include="Assets\Silhouette\Scripts\JZMicrophone.cs" />
     <Compile Include="Assets\Silhouette\Scripts\SO\JZSOCameraActive.cs" />
     <Compile Include="Assets\Utilities\ShutDownCanvas\ShutdownCor.cs" />
@@ -94,34 +94,34 @@
     <Compile Include="Assets\Silhouette\SpriteStuff\JZSpriteChild.cs" />
     <Compile Include="Assets\Utilities\ConsoleStandAlone\ConsoleToGUI.cs" />
     <Compile Include="Assets\Silhouette\Scripts\JZRunInBackground.cs" />
-    <Compile Include="Assets\ThirdParty\Aran\TekenPackage\PenManager.cs" />
-    <Compile Include="Assets\ThirdParty\FiducialFolder\TUIOConnector\OSCBundle.cs" />
-    <Compile Include="Assets\Silhouette\draw\JZDatabaseAccess.cs" />
-    <Compile Include="Assets\ThirdParty\FiducialFolder\FiducialExamples\Parameters.cs" />
+    <Compile Include="Assets\Dependencies\Aran\TekenPackage\PenManager.cs" />
+    <Compile Include="Assets\Dependencies\FiducialFolder\TUIOConnector\OSCBundle.cs" />
+    <Compile Include="Assets\Silhouette\Database\JZDatabaseAccess.cs" />
+    <Compile Include="Assets\Dependencies\FiducialFolder\FiducialExamples\Parameters.cs" />
     <Compile Include="Assets\Silhouette\Scripts\Properties.cs" />
-    <Compile Include="Assets\ThirdParty\FiducialFolder\TUIOConnector\TuioCursor.cs" />
-    <Compile Include="Assets\ThirdParty\FiducialFolder\TUIOConnector\TuioManager.cs" />
+    <Compile Include="Assets\Dependencies\FiducialFolder\TUIOConnector\TuioCursor.cs" />
+    <Compile Include="Assets\Dependencies\FiducialFolder\TUIOConnector\TuioManager.cs" />
     <Compile Include="Assets\Silhouette\Scripts\ScaleStamp.cs" />
-    <Compile Include="Assets\JZSetActiveOnRotation.cs" />
+    <Compile Include="Assets\Unused Scripts\JZSetActiveOnRotation.cs" />
     <Compile Include="Assets\Utilities\ShutDownCanvas\JZShutdown_111.cs" />
-    <Compile Include="Assets\ThirdParty\FiducialFolder\FiducialExamples\Compass.cs" />
-    <Compile Include="Assets\ThirdParty\FiducialFolder\TUIOConnector\OSCMessage.cs" />
-    <Compile Include="Assets\ThirdParty\Aran\TekenPackage\StoryScopePen.cs" />
+    <Compile Include="Assets\Dependencies\FiducialFolder\FiducialExamples\Compass.cs" />
+    <Compile Include="Assets\Dependencies\FiducialFolder\TUIOConnector\OSCMessage.cs" />
+    <Compile Include="Assets\Dependencies\Aran\TekenPackage\StoryScopePen.cs" />
     <Compile Include="Assets\Silhouette\Scripts\JZTurnSpriteCounter.cs" />
-    <Compile Include="Assets\restartUnity.cs" />
+    <Compile Include="Assets\Unused Scripts\RestartUnity.cs" />
     <Compile Include="Assets\Utilities\SceneSelectorMenu\JZSceneSelectorManager.cs" />
-    <Compile Include="Assets\Utilities\TestScipt.cs" />
-    <Compile Include="Assets\JZSpriteParticle.cs" />
+    <Compile Include="Assets\Unused Scripts\TestScipt.cs" />
+    <Compile Include="Assets\Silhouette\SpriteStuff\JZSpriteParticle.cs" />
     <Compile Include="Assets\Silhouette\Scripts\GlobalFlock.cs" />
-    <Compile Include="Assets\ThirdParty\FiducialFolder\TUIOConnector\OSCPacket.cs" />
+    <Compile Include="Assets\Dependencies\FiducialFolder\TUIOConnector\OSCPacket.cs" />
     <Compile Include="Assets\Silhouette\Scripts\Scan.cs" />
     <Compile Include="Assets\Utilities\SceneSelectorMenu\JZButtonSequence.cs" />
-    <Compile Include="Assets\JZBGTurnControl.cs" />
+    <Compile Include="Assets\Unused Scripts\JZBGTurnControl.cs" />
     <Compile Include="Assets\Silhouette\Scripts\Flicker.cs" />
-    <Compile Include="Assets\Silhouette\Scripts\Distance.cs" />
+    <Compile Include="Assets\Unused Scripts\Distance.cs" />
     <Compile Include="Assets\Silhouette\Scripts\JZCamActive.cs" />
     <Compile Include="Assets\Silhouette\Scripts\ShaderManager.cs" />
-    <Compile Include="Assets\ThirdParty\FiducialFolder\TUIOConnector\OSCReceiver.cs" />
+    <Compile Include="Assets\Dependencies\FiducialFolder\TUIOConnector\OSCReceiver.cs" />
     <Compile Include="Assets\Silhouette\Scripts\JZLoadSingle.cs" />
     <Compile Include="Assets\Silhouette\Scripts\JZLoadFromExternalV2.cs" />
     <Compile Include="Assets\Silhouette\Scripts\JZReloadScene.cs" />
@@ -131,7 +131,7 @@
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
     <None Include="Assets\Silhouette\2D\Shader\Posterize.shader" />
-    <None Include="Assets\ThirdParty\AutoSave\ReadMe.txt" />
+    <None Include="Assets\Dependencies\AutoSave\ReadMe.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Mobile.cginc" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF SSD.shader" />
@@ -156,7 +156,7 @@
     <None Include="Assets\TextMesh Pro\Fonts\LiberationSans - OFL.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile.shader" />
     <None Include="Assets\Database\Plugins\DnsClient.dll" />
-    <None Include="Assets\ThirdParty\FiducialFolder\Uniducial\UniducialLibrary.dll" />
+    <None Include="Assets\Dependencies\FiducialFolder\Uniducial\UniducialLibrary.dll" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Sprite.shader" />
   </ItemGroup>
   <ItemGroup>
@@ -775,9 +775,6 @@
     <Reference Include="Unity.2D.IK.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.2D.IK.Editor.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEditor.UI">
-      <HintPath>Library\ScriptAssemblies\UnityEditor.UI.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.Rider.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.Rider.Editor.dll</HintPath>
     </Reference>
@@ -786,9 +783,6 @@
     </Reference>
     <Reference Include="Analytics">
       <HintPath>Library\ScriptAssemblies\Analytics.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.UI">
-      <HintPath>Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.SpatialTracking">
       <HintPath>Library\ScriptAssemblies\UnityEngine.SpatialTracking.dll</HintPath>
@@ -826,9 +820,6 @@
     <Reference Include="Unity.2D.Animation.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.2D.Animation.Editor.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.2D.Tilemap.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.2D.Tilemap.Editor.dll</HintPath>
-    </Reference>
     <Reference Include="com.unity.multiplayer-hlapi.Editor">
       <HintPath>Library\ScriptAssemblies\com.unity.multiplayer-hlapi.Editor.dll</HintPath>
     </Reference>
@@ -849,9 +840,6 @@
     </Reference>
     <Reference Include="Unity.Burst.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.Burst.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.2D.Sprite.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.2D.Sprite.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.InternalAPIEditorBridge.001">
       <HintPath>Library\ScriptAssemblies\Unity.InternalAPIEditorBridge.001.dll</HintPath>
@@ -915,6 +903,22 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="UnityEditor.UI.csproj">
+      <Project>{1C1604F8-B1D4-DCE3-352A-0DD854F42B2D}</Project>
+      <Name>UnityEditor.UI</Name>
+    </ProjectReference>
+    <ProjectReference Include="UnityEngine.UI.csproj">
+      <Project>{B7B8A609-7A27-9614-BDE1-0D2F7C175390}</Project>
+      <Name>UnityEngine.UI</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.2D.Tilemap.Editor.csproj">
+      <Project>{941B9DAC-D963-3059-64B5-643C7AD017C7}</Project>
+      <Name>Unity.2D.Tilemap.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.2D.Sprite.Editor.csproj">
+      <Project>{96F1074D-956A-EB81-F1F0-9FCFB5F3C8D5}</Project>
+      <Name>Unity.2D.Sprite.Editor</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />

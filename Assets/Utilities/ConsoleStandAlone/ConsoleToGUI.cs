@@ -39,7 +39,7 @@ public class ConsoleToGUI : MonoBehaviour
     public void Log(string logString, string stackTrace, LogType type)
     {
         // for onscreen...
-        myLog = myLog + "\n" + logString;
+        myLog = $"{myLog}\n{logString}";
 
         if (myLog.Length > kChars) 
         {
@@ -47,20 +47,21 @@ public class ConsoleToGUI : MonoBehaviour
         }
 
         // for the file ...
-        if (fileName == "")
+        if (fileName == string.Empty)
         {
-            string d = "C:/StoryScopeMedia/Scene" + "/YOUR_LOGS";
-            System.IO.Directory.CreateDirectory(d);
-            string r = UnityEngine.Random.Range(1000, 9999).ToString();
-            fileName = d + "/log-" + r + ".txt";
+            string directory = "C:/StoryScopeMedia/Scene/YOUR_LOGS";
+            System.IO.Directory.CreateDirectory(directory);
+            string randomInteger = Random.Range(1000, 9999).ToString();
+            fileName = $"{directory}/log-{randomInteger}.txt";
         }
 
         try 
         { 
-            System.IO.File.AppendAllText(fileName, logString + "\n"); 
+            System.IO.File.AppendAllText(fileName, $"{logString}\n"); 
         }
         catch 
         { 
+
         }
     }
 
