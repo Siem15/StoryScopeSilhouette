@@ -47,9 +47,9 @@ public class RotateProperties : MonoBehaviour
             icon.enabled = true;
             icon.transform.position = cam.WorldToScreenPoint(clostestObject.transform.position);
             //TODO: change image of icon based on selected property
-            if(clostestObject.currentPropertie < icons.Count)
+            if(clostestObject.currentProperty < icons.Count)
             {
-                icon.sprite = icons[clostestObject.currentPropertie];
+                icon.sprite = icons[clostestObject.currentProperty];
             }
             else
             {
@@ -68,17 +68,17 @@ public class RotateProperties : MonoBehaviour
     {
         if (clostestObject != null && !clostestObject.fixedProperties)
         {
-            clostestObject.currentPropertie += direction;
+            clostestObject.currentProperty += direction;
 
 
             //Resets to top when below 0
-            if (clostestObject.currentPropertie < 0)
-                clostestObject.currentPropertie = propertiesAmount;
+            if (clostestObject.currentProperty < 0)
+                clostestObject.currentProperty = propertiesAmount;
             //Resets to 0 when higher than amount of properties
-            if (clostestObject.currentPropertie > propertiesAmount)
-                clostestObject.currentPropertie = 0;
+            if (clostestObject.currentProperty > propertiesAmount)
+                clostestObject.currentProperty = 0;
 
-            clostestObject.checkPropertie();
+            clostestObject.CheckProperty();
         }
     }
 }

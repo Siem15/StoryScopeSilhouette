@@ -5,11 +5,12 @@ public class Properties : MonoBehaviour
 {
     [SerializeField] public bool fixedProperties;
 
-    public int currentPropertie;
+    public int currentProperty;
 
     [SerializeField] public List<bool> properties = new List<bool>();
 
-    private bool enpty;
+    private bool empty;
+
     [SerializeField] private bool isFood = false;
     [SerializeField] private bool canEatFood = false;
     [SerializeField] private bool isFlammable = false;
@@ -27,7 +28,7 @@ public class Properties : MonoBehaviour
     private Vector3 originalScale;
     private Vector3 originalRoration;
     private GameObject originalendmarker;
-    private FiducialController FC;
+    private FiducialController fiducialController;
     private float originalWalkingSpeed;
     private float originalRunningSpeed;
 
@@ -44,7 +45,7 @@ public class Properties : MonoBehaviour
 
     void Start()
     {
-        properties.Add(enpty);
+        properties.Add(empty);
         properties.Add(isFood);
         properties.Add(canEatFood);
         properties.Add(isFlammable);
@@ -52,9 +53,9 @@ public class Properties : MonoBehaviour
         properties.Add(isWheel);
         properties.Add(isVehicle);
 
-
         // Add a BoxCollider2D component if it doesn't already exist
         BoxCollider2D boxCollider = gameObject.GetComponent<BoxCollider2D>();
+
         if (boxCollider == null)
         {
             boxCollider = gameObject.AddComponent<BoxCollider2D>();
@@ -74,6 +75,7 @@ public class Properties : MonoBehaviour
 
         // Add a Rigidbody2D component if it doesn't already exist
         Rigidbody2D rigidbody2D = gameObject.GetComponent<Rigidbody2D>();
+
         if (rigidbody2D == null)
         {
             rigidbody2D = gameObject.AddComponent<Rigidbody2D>();
@@ -86,37 +88,40 @@ public class Properties : MonoBehaviour
 
         originalScale = transform.localScale;
         originalRoration = transform.eulerAngles;
-        originalendmarker = this.GetComponent<Character>().endMarker;
-        originalWalkingSpeed = this.GetComponent<Character>().WalkSpeed;
-        originalRunningSpeed = this.GetComponent<Character>().RunSpeed;
-        FC = this.GetComponent<FiducialController>();
-        if (!FC.AutoHideGO)
+        originalendmarker = GetComponent<Character>().endMarker;
+        originalWalkingSpeed = GetComponent<Character>().WalkSpeed;
+        originalRunningSpeed = GetComponent<Character>().RunSpeed;
+
+        fiducialController = GetComponent<FiducialController>();
+
+        if (!fiducialController.AutoHideGO)
         {
             reset = true;
             connected = false;
-            Debug.Log(this.gameObject.name+" is not connected");
+            Debug.Log($"{gameObject.name} is not connected");
         }
-        Debug.Log(this.gameObject.name + " is connected");
 
-        checkPropertie();
+        Debug.Log($"{gameObject.name} is connected");
+
+        CheckProperty();
     }
 
     private void Update()
     {
         if (reset)
         {
-            checkPropertie();
+            CheckProperty();
             reset = false;
         }
 
         if (connected)
         {
-            if (FC.m_IsVisible)
+            if (fiducialController.m_IsVisible)
             {
                 if (!isAlive)
                 {
-                    Debug.Log(this.gameObject.name + " is alive");
-                    this.GetComponent<BoxCollider2D>().enabled = true;
+                    Debug.Log(gameObject.name + " is alive");
+                    GetComponent<BoxCollider2D>().enabled = true;
                     ResetObject();
                 }
                 isAlive = true;
@@ -125,14 +130,14 @@ public class Properties : MonoBehaviour
             {
                 if (isAlive)
                 {
-                    Debug.Log(this.gameObject.name + " is not alive");
-                    this.GetComponent<BoxCollider2D>().enabled = false;
+                    Debug.Log(gameObject.name + " is not alive");
+                    GetComponent<BoxCollider2D>().enabled = false;
                 }
                 isAlive = false;
             }
         }
 
-        //isAlive = !FC.AutoHideGO; temp
+        //isAlive = !fiducialController.AutoHideGO; temp
     }
 
     private void FixedUpdate()
@@ -145,41 +150,47 @@ public class Properties : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log(this.gameObject.name + " trigger enter");
+        Debug.Log(gameObject.name + " trigger enter");
+
         Properties otherObject = collision.GetComponent<Properties>();
-        Character thisCharacter = this.GetComponent<Character>();
+
+        Character character = GetComponent<Character>();
         Character otherCharacter = collision.GetComponent<Character>();
+
         if (otherObject != null)
         {
             if (properties[(int)Property.IsFood] && otherObject.properties[(int)Property.CanEatFood])
             {
-                Debug.Log(this.gameObject.name + " eat");
+                Debug.Log($"{gameObject.name} eat");
                 transform.localScale *= 0.9f; // Shrink
                 otherObject.transform.localScale *= 1.1f; // Grow
             }
+
             if (properties[(int)Property.IsFlammable] && otherObject.properties[(int)Property.IsFire])
             {
-                Debug.Log(this.gameObject.name + " flame");
+                Debug.Log(gameObject.name + " flame");
                 if (transform.childCount > 0)
                 {
                     transform.GetChild(0).gameObject.SetActive(false); // destroy
                 }
             }
+
             if (properties[(int)Property.IsWheel] && otherObject.properties[(int)Property.IsVehicle])
             {
-                Debug.Log(this.gameObject.name + " attach wheel");
+                Debug.Log($"{gameObject.name} attach wheel");
                 transform.parent = otherObject.transform; // Stick to the vehicle
-                this.GetComponent<BoxCollider2D>().enabled = false;
-                thisCharacter.endMarker = otherCharacter.endMarker;
-                thisCharacter.WalkSpeed = 0;
-                thisCharacter.RunSpeed = 0;
+                GetComponent<BoxCollider2D>().enabled = false;
+                character.endMarker = otherCharacter.endMarker;
+                character.WalkSpeed = 0;
+                character.RunSpeed = 0;
             }
         }
     }
 
-    public void checkPropertie()
+    public void CheckProperty()
     {
         ResetObject();
+
         if (!fixedProperties)
         {
             for (int i = 0; i < properties.Count; i++)
@@ -187,13 +198,13 @@ public class Properties : MonoBehaviour
                 properties[i] = false;
             }
 
-            if (currentPropertie <= properties.Count)
+            if (currentProperty <= properties.Count)
             {
-                properties[currentPropertie] = true;
+                properties[currentProperty] = true;
             }
-            else if (currentPropertie > properties.Count || currentPropertie < 0)
+            else if (currentProperty > properties.Count || currentProperty < 0)
             {
-                currentPropertie = 0;
+                currentProperty = 0;
             }
         }
     }
@@ -203,11 +214,16 @@ public class Properties : MonoBehaviour
         transform.localScale = originalScale;
         transform.eulerAngles = originalRoration;
         transform.parent = null;
-        this.GetComponent<BoxCollider2D>().size = HitboxSize;
-        this.GetComponent<BoxCollider2D>().offset = HitboxOffset;
-        this.GetComponent<Character>().endMarker = originalendmarker;
-        this.GetComponent<Character>().WalkSpeed = originalWalkingSpeed;
-        this.GetComponent<Character>().RunSpeed = originalRunningSpeed;
+
+        BoxCollider2D boxCollider2D = GetComponent<BoxCollider2D>();
+        boxCollider2D.size = HitboxSize;
+        boxCollider2D.offset = HitboxOffset;
+
+        Character character = GetComponent<Character>();
+        character.endMarker = originalendmarker;
+        character.WalkSpeed = originalWalkingSpeed;
+        character.RunSpeed = originalRunningSpeed;
+
         if (transform.childCount > 0)
         {
             transform.GetChild(0).gameObject.SetActive(true);
