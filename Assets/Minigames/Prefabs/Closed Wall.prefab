@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 212885984146638746}
   - component: {fileID: 61051904294884614}
   - component: {fileID: 50427897063347392}
+  - component: {fileID: 8550735120212198797}
   m_Layer: 0
   m_Name: Closed Wall
   m_TagString: Untagged
@@ -28,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 1586528034238900}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 25, y: 0, z: 0}
-  m_LocalScale: {x: 1.1, y: 1.1, z: 0.1}
+  m_LocalScale: {x: 1.05, y: 1.05, z: 0.1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -131,3 +132,15 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &8550735120212198797
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1586528034238900}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09702ef603e36db4aa760986ca61e6a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
