@@ -10,16 +10,14 @@ public class RotateProperties : MonoBehaviour
     [SerializeField] Image icon;
     [SerializeField] List<Sprite> icons = new List<Sprite>();
     private Camera cam;
-    private FiducialController FC;
+    private FiducialController fiducialController;
 
     private void Start()
     {
         cam = FindObjectOfType<Camera>();
-        FC = GetComponent<FiducialController>();
+        fiducialController = GetComponent<FiducialController>();
         icon.enabled = false;
     }
-
-
 
     private void FixedUpdate()
     {
@@ -42,10 +40,11 @@ public class RotateProperties : MonoBehaviour
     //This function should manage how the icons for selected object and properties work
     void ManageUI()
     {
-        if (clostestObject != null && (FC.IsVisible || !FC.AutoHideGO))
+        if (clostestObject != null && (fiducialController.IsVisible || !fiducialController.AutoHideGO))
         {
             icon.enabled = true;
             icon.transform.position = cam.WorldToScreenPoint(clostestObject.transform.position);
+
             //TODO: change image of icon based on selected property
             if(clostestObject.currentProperty < icons.Count)
             {
@@ -62,7 +61,6 @@ public class RotateProperties : MonoBehaviour
         }
     }
 
-
     //NOTE: this function should be called with the OnRotateForward and OnRotateBackward with te corresponding direction
     public void NextProperty(int direction)
     {
@@ -70,13 +68,17 @@ public class RotateProperties : MonoBehaviour
         {
             clostestObject.currentProperty += direction;
 
-
             //Resets to top when below 0
             if (clostestObject.currentProperty < 0)
+            {
                 clostestObject.currentProperty = propertiesAmount;
+            }
+
             //Resets to 0 when higher than amount of properties
             if (clostestObject.currentProperty > propertiesAmount)
+            {
                 clostestObject.currentProperty = 0;
+            }
 
             clostestObject.CheckProperty();
         }
