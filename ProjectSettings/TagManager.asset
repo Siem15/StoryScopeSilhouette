@@ -127,6 +127,3 @@ TagManager:
   - name: Robot
     uniqueID: 2400675463
     locked: 0
-  - name: CameraSortingLayer
-    uniqueID: 2477292765
-    locked: 0
