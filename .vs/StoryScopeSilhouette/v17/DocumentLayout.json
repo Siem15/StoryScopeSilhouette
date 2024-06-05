@@ -7,7 +7,7 @@
       "RelativeMoniker": "D:0:0:{5F66AEAB-65C9-7AA2-E478-4DA806B30003}|Assembly-CSharp-Editor.csproj|solutionrelative:assets\\editor\\animestudiofbximporter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1555FAD6-E65C-7B70-91C9-38BC86C5EFCA}|Assembly-CSharp.csproj|c:\\users\\larsd\\unity\\storyscopesilhouette\\assets\\utilities\\shutdowncanvas\\shutdowncor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{1555FAD6-E65C-7B70-91C9-38BC86C5EFCA}|Assembly-CSharp.csproj|C:\\Users\\larsd\\Unity\\StoryScopeSilhouette\\assets\\utilities\\shutdowncanvas\\shutdowncor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1555FAD6-E65C-7B70-91C9-38BC86C5EFCA}|Assembly-CSharp.csproj|solutionrelative:assets\\utilities\\shutdowncanvas\\shutdowncor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -28,7 +28,7 @@
               "RelativeDocumentMoniker": "Assets\\Editor\\AnimeStudioFBXImporter.cs",
               "ToolTip": "C:\\Users\\larsd\\Unity\\StoryScopeSilhouette\\Assets\\Editor\\AnimeStudioFBXImporter.cs",
               "RelativeToolTip": "Assets\\Editor\\AnimeStudioFBXImporter.cs",
-              "ViewState": "AQIAADUAAAAAAAAAAADgv1cAAAAFAAAA",
+              "ViewState": "AQIAADwAAAAAAAAAAAAtwFIAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-04T14:00:40.535Z",
               "EditorCaption": ""
@@ -43,8 +43,7 @@
               "RelativeToolTip": "Assets\\Utilities\\ShutDownCanvas\\ShutdownCor.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAIApwDcAAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-04T13:59:46.843Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-04T13:59:46.843Z"
             }
           ]
         }

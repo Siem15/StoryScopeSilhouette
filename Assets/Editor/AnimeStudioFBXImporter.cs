@@ -72,7 +72,7 @@ public class AnimeStudioPostProcessor : AssetPostprocessor
 
             if (renderer.name.Contains("|"))
             {
-                string[] stringSeparators = ["|"];
+                string[] stringSeparators = new string[] { "|" };
                 string[] parts = renderer.name.Split(stringSeparators, StringSplitOptions.None);
 
                 if (int.TryParse(parts[parts.Length - 1], out int j))
