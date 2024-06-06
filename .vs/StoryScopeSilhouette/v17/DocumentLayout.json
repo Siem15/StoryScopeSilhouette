@@ -1,13 +1,17 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\larsd\\Unity\\StoryScopeSilhouette\\",
+  "WorkspaceRootPath": "C:\\Users\\fabio\\Documents\\GitHub\\CrosswordExample\\StoryScopeSilhouette\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{5F66AEAB-65C9-7AA2-E478-4DA806B30003}|Assembly-CSharp-Editor.csproj|c:\\users\\larsd\\unity\\storyscopesilhouette\\assets\\editor\\animestudiofbximporter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{5F66AEAB-65C9-7AA2-E478-4DA806B30003}|Assembly-CSharp-Editor.csproj|c:\\users\\fabio\\documents\\github\\crosswordexample\\storyscopesilhouette\\assets\\editor\\animestudiofbximporter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5F66AEAB-65C9-7AA2-E478-4DA806B30003}|Assembly-CSharp-Editor.csproj|solutionrelative:assets\\editor\\animestudiofbximporter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1555FAD6-E65C-7B70-91C9-38BC86C5EFCA}|Assembly-CSharp.csproj|C:\\Users\\larsd\\Unity\\StoryScopeSilhouette\\assets\\utilities\\shutdowncanvas\\shutdowncor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{1555FAD6-E65C-7B70-91C9-38BC86C5EFCA}|Assembly-CSharp.csproj|c:\\users\\fabio\\documents\\github\\crosswordexample\\storyscopesilhouette\\assets\\silhouette\\scripts\\properties.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1555FAD6-E65C-7B70-91C9-38BC86C5EFCA}|Assembly-CSharp.csproj|solutionrelative:assets\\silhouette\\scripts\\properties.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1555FAD6-E65C-7B70-91C9-38BC86C5EFCA}|Assembly-CSharp.csproj|C:\\Users\\fabio\\Documents\\GitHub\\CrosswordExample\\StoryScopeSilhouette\\assets\\utilities\\shutdowncanvas\\shutdowncor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1555FAD6-E65C-7B70-91C9-38BC86C5EFCA}|Assembly-CSharp.csproj|solutionrelative:assets\\utilities\\shutdowncanvas\\shutdowncor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -18,28 +22,41 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Properties.cs",
+              "DocumentMoniker": "C:\\Users\\fabio\\Documents\\GitHub\\CrosswordExample\\StoryScopeSilhouette\\Assets\\Silhouette\\Scripts\\Properties.cs",
+              "RelativeDocumentMoniker": "Assets\\Silhouette\\Scripts\\Properties.cs",
+              "ToolTip": "C:\\Users\\fabio\\Documents\\GitHub\\CrosswordExample\\StoryScopeSilhouette\\Assets\\Silhouette\\Scripts\\Properties.cs",
+              "RelativeToolTip": "Assets\\Silhouette\\Scripts\\Properties.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-05T12:04:36.453Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "AnimeStudioFBXImporter.cs",
-              "DocumentMoniker": "C:\\Users\\larsd\\Unity\\StoryScopeSilhouette\\Assets\\Editor\\AnimeStudioFBXImporter.cs",
+              "DocumentMoniker": "C:\\Users\\fabio\\Documents\\GitHub\\CrosswordExample\\StoryScopeSilhouette\\Assets\\Editor\\AnimeStudioFBXImporter.cs",
               "RelativeDocumentMoniker": "Assets\\Editor\\AnimeStudioFBXImporter.cs",
-              "ToolTip": "C:\\Users\\larsd\\Unity\\StoryScopeSilhouette\\Assets\\Editor\\AnimeStudioFBXImporter.cs",
+              "ToolTip": "C:\\Users\\fabio\\Documents\\GitHub\\CrosswordExample\\StoryScopeSilhouette\\Assets\\Editor\\AnimeStudioFBXImporter.cs",
               "RelativeToolTip": "Assets\\Editor\\AnimeStudioFBXImporter.cs",
-              "ViewState": "AQIAADwAAAAAAAAAAAAtwFIAAAAAAAAA",
+              "ViewState": "AQIAADgAAAAAAAAAAAAuwEcAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-04T14:00:40.535Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "ShutdownCor.cs",
-              "DocumentMoniker": "C:\\Users\\larsd\\Unity\\StoryScopeSilhouette\\Assets\\Utilities\\ShutDownCanvas\\ShutdownCor.cs",
+              "DocumentMoniker": "C:\\Users\\fabio\\Documents\\GitHub\\CrosswordExample\\StoryScopeSilhouette\\Assets\\Utilities\\ShutDownCanvas\\ShutdownCor.cs",
               "RelativeDocumentMoniker": "Assets\\Utilities\\ShutDownCanvas\\ShutdownCor.cs",
-              "ToolTip": "C:\\Users\\larsd\\Unity\\StoryScopeSilhouette\\Assets\\Utilities\\ShutDownCanvas\\ShutdownCor.cs",
+              "ToolTip": "C:\\Users\\fabio\\Documents\\GitHub\\CrosswordExample\\StoryScopeSilhouette\\Assets\\Utilities\\ShutDownCanvas\\ShutdownCor.cs",
               "RelativeToolTip": "Assets\\Utilities\\ShutDownCanvas\\ShutdownCor.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAIApwDcAAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
