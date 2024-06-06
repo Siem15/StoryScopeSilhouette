@@ -19,64 +19,90 @@ namespace OSC.NET
 
         public OSCMessage(string address)
         {
-            this.typeTag = ",";
-            this.Address = address;
+            typeTag = ",";
+            Address = address;
         }
+
         public OSCMessage(string address, object value)
         {
-            this.typeTag = ",";
-            this.Address = address;
+            typeTag = ",";
+            Address = address;
             Append(value);
         }
 
-        override protected void pack()
+        override protected void Pack()
         {
             ArrayList data = new ArrayList();
 
-            addBytes(data, packString(this.address));
-            padNull(data);
-            addBytes(data, packString(this.typeTag));
-            padNull(data);
+            AddBytes(data, PackString(address));
+            PadNull(data);
+            AddBytes(data, PackString(typeTag));
+            PadNull(data);
 
-            foreach (object value in this.Values)
+            foreach (object value in Values)
             {
-                if (value is int) addBytes(data, packInt((int)value));
-                else if (value is long) addBytes(data, packLong((long)value));
-                else if (value is float) addBytes(data, packFloat((float)value));
-                else if (value is double) addBytes(data, packDouble((double)value));
-                else if (value is string)
+                switch (value) 
                 {
-                    addBytes(data, packString((string)value));
-                    padNull(data);
-                }
-                else
-                {
-                    // TODO
+                    case int:
+                        AddBytes(data, packInt((int)value));
+                        break;
+                    case long:
+                        AddBytes(data, PackLong((long)value));
+                        break;
+                    case float:
+                        AddBytes(data, PackFloat((float)value));
+                        break;
+                    case double:
+                        AddBytes(data, PackDouble((double)value));
+                        break;
+                    case string:
+                        AddBytes(data, PackString((string)value));
+                        PadNull(data);
+                        break;
+                    default:
+                        // TODO
+                        break;
                 }
             }
 
-            this.binaryData = (byte[])data.ToArray(typeof(byte));
+            binaryData = (byte[])data.ToArray(typeof(byte));
         }
-
 
         public static OSCMessage Unpack(byte[] bytes, ref int start)
         {
-            string address = unpackString(bytes, ref start);
+            string address = UnpackString(bytes, ref start);
             //Console.WriteLine("address: " + address);
             OSCMessage msg = new OSCMessage(address);
 
-            char[] tags = unpackString(bytes, ref start).ToCharArray();
+            char[] tags = UnpackString(bytes, ref start).ToCharArray();
             //Console.WriteLine("tags: " + new string(tags));
             foreach (char tag in tags)
             {
                 //Console.WriteLine("tag: " + tag + " @ "+start);
-                if (tag == ',') continue;
-                else if (tag == INTEGER) msg.Append(unpackInt(bytes, ref start));
-                else if (tag == LONG) msg.Append(unpackLong(bytes, ref start));
-                else if (tag == DOUBLE) msg.Append(unpackDouble(bytes, ref start));
-                else if (tag == FLOAT) msg.Append(unpackFloat(bytes, ref start));
-                else if (tag == STRING || tag == SYMBOL) msg.Append(unpackString(bytes, ref start));
-                else Console.WriteLine("unknown tag: " + tag);
+                switch (tag)
+                {
+                    case ',':
+                        continue;
+                    case INTEGER:
+                        msg.Append(UnpackInt(bytes, ref start));
+                        break;
+                    case LONG:
+                        msg.Append(UnpackLong(bytes, ref start));
+                        break;
+                    case DOUBLE:
+                        msg.Append(unpackDouble(bytes, ref start));
+                        break;
+                    case FLOAT:
+                        msg.Append(UnpackFloat(bytes, ref start));
+                        break;
+                    case STRING:
+                    case SYMBOL:
+                        msg.Append(UnpackString(bytes, ref start));
+                        break;
+                    default:
+                        Console.WriteLine("unknown tag: " + tag);
+                        break;
+                }
             }
 
             return msg;
@@ -84,40 +110,35 @@ namespace OSC.NET
 
         override public void Append(object value)
         {
-            if (value is int)
+            switch (value) 
             {
-                AppendTag(INTEGER);
+                case int:
+                    AppendTag(INTEGER);
+                    break;
+                case long:
+                    AppendTag(LONG);
+                    break;
+                case float:
+                    AppendTag(FLOAT);
+                    break;
+                case double:
+                    AppendTag(DOUBLE);
+                    break;
+                case string:
+                    AppendTag(STRING);
+                    break;
+                default:
+                    // TODO: exception
+                    break;
             }
-            else if (value is long)
-            {
-                AppendTag(LONG);
-            }
-            else if (value is float)
-            {
-                AppendTag(FLOAT);
-            }
-            else if (value is double)
-            {
-                AppendTag(DOUBLE);
-            }
-            else if (value is string)
-            {
-                AppendTag(STRING);
-            }
-            else
-            {
-                // TODO: exception
-            }
+
             values.Add(value);
         }
 
         protected string typeTag;
-        protected void AppendTag(char type)
-        {
-            typeTag += type;
-        }
 
+        protected void AppendTag(char type) => typeTag += type;
 
-        override public bool IsBundle() { return false; }
+        override public bool IsBundle() => false;
     }
 }
