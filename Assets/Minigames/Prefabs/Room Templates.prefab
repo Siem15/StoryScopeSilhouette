@@ -96,7 +96,8 @@ MonoBehaviour:
   closedRoom: {fileID: 1586528034238900, guid: 71addd1db0904154d960002486bf6a2b, type: 3}
   StartRoom: {fileID: 1384366362914734, guid: 10c65f0c164d2e04e9c3daf97304609a, type: 3}
   rooms: []
-  waitTime: 5
+  closeRooms: []
+  waitTime: 1
   waitTimeReset: 0
   boss: {fileID: 1898445321837384, guid: 09e14c596e782a742829f1166838514d, type: 3}
   door: {fileID: 6382581847999808719, guid: 82e776fd4263d9042b84e8fb9f6d62de, type: 3}

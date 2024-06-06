@@ -32,7 +32,7 @@ public class RoomTemplates : MonoBehaviour
 
     void Update()
     {
-        if (resetbutton && Input.GetMouseButton(0))
+        if (resetbutton || Input.GetMouseButton(0))
         {
             var mouse = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             mouse.z = 0f;
