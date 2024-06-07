@@ -2321,7 +2321,22 @@ PrefabInstance:
     - target: {fileID: 4359827659742209915, guid: 78b74fd16e4934647a2ba8de56436244,
         type: 3}
       propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4379370295723882895, guid: 78b74fd16e4934647a2ba8de56436244,
+        type: 3}
+      propertyPath: isFood
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4379370295723882895, guid: 78b74fd16e4934647a2ba8de56436244,
+        type: 3}
+      propertyPath: canEatFood
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4379370295723882895, guid: 78b74fd16e4934647a2ba8de56436244,
+        type: 3}
+      propertyPath: fixedProperties
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5914274967855788379, guid: 78b74fd16e4934647a2ba8de56436244,
         type: 3}
@@ -2797,7 +2812,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: ab0a89077db523b4b997f62c6fef42d9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -3551,6 +3566,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1497556326}
+  - component: {fileID: 1497556327}
   m_Layer: 0
   m_Name: Character
   m_TagString: Untagged
@@ -3574,6 +3590,25 @@ Transform:
   m_Father: {fileID: 1607148677}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &1497556327
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1497556325}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 62537ae55e780ad4c99dd5714898ed25, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1507587370
 GameObject:
   m_ObjectHideFlags: 0
@@ -3726,6 +3761,7 @@ GameObject:
   - component: {fileID: 1607148677}
   - component: {fileID: 1607148676}
   - component: {fileID: 1607148678}
+  - component: {fileID: 1607148679}
   m_Layer: 0
   m_Name: Eater
   m_TagString: Untagged
@@ -3799,7 +3835,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   WalkSpeed: 5
   RunSpeed: 5
-  stopRunningUntilThisDist: 0
+  stopRunningUntilThisDist: 1000
   singleSprite: 0
   controlRotation: 0
   controlPosition: 1
@@ -3807,6 +3843,32 @@ MonoBehaviour:
   endMarkerPrefab: {fileID: 441084473105571446, guid: 2f7ed94a83a05a140be209a9a062c607,
     type: 3}
   endMarker: {fileID: 0}
+--- !u!114 &1607148679
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1607148675}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 980e2241d71a6b543b1152cf0758f890, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fixedProperties: 1
+  currentProperty: 0
+  properties: 
+  isFood: 0
+  canEatFood: 1
+  isFlammable: 0
+  isFire: 0
+  isWheel: 0
+  isVehicle: 0
+  reset: 0
+  isAlive: 0
+  connected: 1
+  HitboxSize: {x: 5, y: 5}
+  HitboxOffset: {x: 0, y: 0}
 --- !u!1 &1682633529
 GameObject:
   m_ObjectHideFlags: 0
@@ -4522,7 +4584,7 @@ GameObject:
   - component: {fileID: 1915178374}
   - component: {fileID: 1915178375}
   m_Layer: 0
-  m_Name: UpperTeeth (1)
+  m_Name: 'LowerTeeth '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4897,7 +4959,7 @@ GameObject:
   - component: {fileID: 2129703681}
   - component: {fileID: 2129703682}
   m_Layer: 0
-  m_Name: UpperTeeth
+  m_Name: Arms
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5099,10 +5161,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6440885934930667635, guid: c41cfb5f09ba195488aee2052e20865f,
+        type: 3}
+      propertyPath: stopRunningUntilThisDist
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6440885934930667636, guid: c41cfb5f09ba195488aee2052e20865f,
         type: 3}
       propertyPath: m_Name
       value: TestObject
+      objectReference: {fileID: 0}
+    - target: {fileID: 6440885934930667636, guid: c41cfb5f09ba195488aee2052e20865f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c41cfb5f09ba195488aee2052e20865f, type: 3}
