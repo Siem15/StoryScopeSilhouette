@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class RoomTemplates : MonoBehaviour
 {
+    public GameObject Player;
     public bool resetbutton = false;
     public GameObject[] bottomRooms;
     public GameObject[] topRooms;
@@ -18,26 +19,30 @@ public class RoomTemplates : MonoBehaviour
 
     public float waitTime;
     public float waitTimeReset;
-    private bool spawnedBoss;
-    private bool spawnedDoor;
-    private bool spawnedKey;
+    public bool spawnedBoss;
+    public bool spawnedDoor;
+    public bool spawnedKey;
     public GameObject boss;
     public GameObject door;
     public GameObject key;
 
+    private FiducialController fiducialController;
+
+    private bool setDungion;
+
     private void Start()
     {
         waitTimeReset = waitTime;
+        fiducialController = Player.GetComponent<FiducialController>();
+        setDungion = fiducialController.m_IsVisible;
     }
 
     void Update()
     {
-        if (resetbutton || Input.GetMouseButton(0))
+        if (resetbutton || Input.GetMouseButton(0) || fiducialController.m_IsVisible != setDungion)
         {
-            var mouse = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            mouse.z = 0f;
-            Resett();
-            Instantiate(StartRoom,mouse,Quaternion.identity);
+            Resett(fiducialController.m_IsVisible);
+            setDungion = fiducialController.m_IsVisible;
             resetbutton = false;
         }
 
@@ -49,7 +54,7 @@ public class RoomTemplates : MonoBehaviour
                 {
                     Instantiate(boss, rooms[i].transform.position, Quaternion.identity);
                     checkDoor(i);
-                    int keyRoom = Random.Range(0, i - (CurrentRoom+1));
+                    int keyRoom = Random.Range(0, i - (CurrentRoom + 1));
                     Instantiate(key, rooms[keyRoom].transform.position, Quaternion.identity);
                     spawnedBoss = true;
                     spawnedDoor = true;
@@ -78,7 +83,7 @@ public class RoomTemplates : MonoBehaviour
         }
     }
 
-    public void Resett()
+    public void Resett(bool active)
     {
         foreach (GameObject item in rooms)
         {
@@ -95,12 +100,16 @@ public class RoomTemplates : MonoBehaviour
         CurrentRoom = 1;
         waitTime = waitTimeReset;
 
-        Destroy(GameObject.Find(door.name+"(Clone)"));
+        Destroy(GameObject.Find(door.name + "(Clone)"));
         Destroy(GameObject.Find(boss.name + "(Clone)"));
         Destroy(GameObject.Find(key.name + "(Clone)"));
 
         spawnedBoss = false;
         spawnedDoor = false;
         spawnedKey = false;
+        if (active)
+        {
+            Instantiate(StartRoom, Player.transform.position, Quaternion.identity);
+        }
     }
 }
