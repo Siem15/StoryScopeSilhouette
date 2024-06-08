@@ -39,24 +39,24 @@ namespace OSC.NET
             AddBytes(data, PackString(typeTag));
             PadNull(data);
 
-            foreach (object value in Values)
+            foreach (object v in Values)
             {
-                switch (value) 
+                switch (v)
                 {
-                    case int:
-                        AddBytes(data, packInt((int)value));
+                    case int value:
+                        AddBytes(data, packInt(value));
                         break;
-                    case long:
-                        AddBytes(data, PackLong((long)value));
+                    case long value:
+                        AddBytes(data, PackLong(value));
                         break;
-                    case float:
-                        AddBytes(data, PackFloat((float)value));
+                    case float value:
+                        AddBytes(data, PackFloat(value));
                         break;
-                    case double:
-                        AddBytes(data, PackDouble((double)value));
+                    case double value:
+                        AddBytes(data, PackDouble(value));
                         break;
-                    case string:
-                        AddBytes(data, PackString((string)value));
+                    case string value:
+                        AddBytes(data, PackString(value));
                         PadNull(data);
                         break;
                     default:
@@ -100,7 +100,7 @@ namespace OSC.NET
                         msg.Append(UnpackString(bytes, ref start));
                         break;
                     default:
-                        Console.WriteLine("unknown tag: " + tag);
+                        Console.WriteLine($"unknown tag: {tag}");
                         break;
                 }
             }
@@ -108,23 +108,23 @@ namespace OSC.NET
             return msg;
         }
 
-        override public void Append(object value)
+        override public void Append(object v)
         {
-            switch (value) 
+            switch (v)
             {
-                case int:
+                case int value:
                     AppendTag(INTEGER);
                     break;
-                case long:
+                case long value:
                     AppendTag(LONG);
                     break;
-                case float:
+                case float value:
                     AppendTag(FLOAT);
                     break;
-                case double:
+                case double value:
                     AppendTag(DOUBLE);
                     break;
-                case string:
+                case string value:
                     AppendTag(STRING);
                     break;
                 default:
@@ -132,7 +132,7 @@ namespace OSC.NET
                     break;
             }
 
-            values.Add(value);
+            values.Add(v);
         }
 
         protected string typeTag;

@@ -194,7 +194,14 @@ namespace OSC.NET
 
         public static OSCPacket Unpack(byte[] bytes, ref int start, int end)
         {
-            return bytes[start] == '#' ? OSCBundle.Unpack(bytes, ref start, end) : OSCMessage.Unpack(bytes, ref start);
+            if (bytes[start] == '#')
+            {
+                return OSCBundle.Unpack(bytes, ref start, end);
+            }
+            else
+            {
+                return OSCMessage.Unpack(bytes, ref start);
+            }
         }
 
         protected string address;
