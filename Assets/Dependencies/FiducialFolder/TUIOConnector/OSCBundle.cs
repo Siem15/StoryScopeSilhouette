@@ -12,31 +12,31 @@ namespace OSC.NET
 
         public OSCBundle(long ts)
         {
-            this.address = BUNDLE;
-            this.timestamp = ts;
+            address = BUNDLE;
+            timestamp = ts;
         }
 
         public OSCBundle()
         {
-            this.address = BUNDLE;
-            this.timestamp = 0;
+            address = BUNDLE;
+            timestamp = 0;
         }
 
-        override protected void pack()
+        override protected void Pack()
         {
             ArrayList data = new ArrayList();
 
-            addBytes(data, packString(this.Address));
-            padNull(data);
-            addBytes(data, packLong(0)); // TODO
+            AddBytes(data, PackString(Address));
+            PadNull(data);
+            AddBytes(data, PackLong(0)); // TODO
 
-            foreach (object value in this.Values)
+            foreach (object value in Values)
             {
                 if (value is OSCPacket)
                 {
                     byte[] bs = ((OSCPacket)value).BinaryData;
-                    addBytes(data, packInt(bs.Length));
-                    addBytes(data, bs);
+                    AddBytes(data, packInt(bs.Length));
+                    AddBytes(data, bs);
                 }
                 else
                 {
@@ -44,22 +44,21 @@ namespace OSC.NET
                 }
             }
 
-            this.binaryData = (byte[])data.ToArray(typeof(byte));
+            binaryData = (byte[])data.ToArray(typeof(byte));
         }
 
         public static new OSCBundle Unpack(byte[] bytes, ref int start, int end)
         {
-
-            string address = unpackString(bytes, ref start);
+            string address = UnpackString(bytes, ref start);
             //Console.WriteLine("bundle: " + address);
             if (!address.Equals(BUNDLE)) return null; // TODO
 
-            long timestamp = unpackLong(bytes, ref start);
+            long timestamp = UnpackLong(bytes, ref start);
             OSCBundle bundle = new OSCBundle(timestamp);
 
             while (start < end)
             {
-                int length = unpackInt(bytes, ref start);
+                int length = UnpackInt(bytes, ref start);
                 int sub_end = start + length;
                 //Console.WriteLine(bytes.Length +" "+ start+" "+length+" "+sub_end);
                 bundle.Append(OSCPacket.Unpack(bytes, ref start, sub_end));
@@ -69,10 +68,7 @@ namespace OSC.NET
             return bundle;
         }
 
-        public long getTimeStamp()
-        {
-            return timestamp;
-        }
+        public long GetTimeStamp() => timestamp;
 
         override public void Append(object value)
         {
@@ -86,7 +82,6 @@ namespace OSC.NET
             }
         }
 
-        override public bool IsBundle() { return true; }
+        override public bool IsBundle() => true;
     }
 }
-
