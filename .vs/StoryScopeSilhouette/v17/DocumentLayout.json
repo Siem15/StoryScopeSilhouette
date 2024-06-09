@@ -1,13 +1,17 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\larsd\\Unity\\StoryScopeSilhouette\\",
+  "WorkspaceRootPath": "C:\\Users\\Siem\\Documents\\GitHub\\StoryScopeSilhouette\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{5F66AEAB-65C9-7AA2-E478-4DA806B30003}|Assembly-CSharp-Editor.csproj|c:\\users\\larsd\\unity\\storyscopesilhouette\\assets\\editor\\animestudiofbximporter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{1555FAD6-E65C-7B70-91C9-38BC86C5EFCA}|Assembly-CSharp.csproj|c:\\users\\siem\\documents\\github\\storyscopesilhouette\\assets\\utilities\\sceneselectormenu\\jzsceneselectormanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1555FAD6-E65C-7B70-91C9-38BC86C5EFCA}|Assembly-CSharp.csproj|solutionrelative:assets\\utilities\\sceneselectormenu\\jzsceneselectormanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5F66AEAB-65C9-7AA2-E478-4DA806B30003}|Assembly-CSharp-Editor.csproj|c:\\users\\siem\\documents\\github\\storyscopesilhouette\\assets\\editor\\animestudiofbximporter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5F66AEAB-65C9-7AA2-E478-4DA806B30003}|Assembly-CSharp-Editor.csproj|solutionrelative:assets\\editor\\animestudiofbximporter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1555FAD6-E65C-7B70-91C9-38BC86C5EFCA}|Assembly-CSharp.csproj|C:\\Users\\larsd\\Unity\\StoryScopeSilhouette\\assets\\utilities\\shutdowncanvas\\shutdowncor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{1555FAD6-E65C-7B70-91C9-38BC86C5EFCA}|Assembly-CSharp.csproj|C:\\Users\\Siem\\Documents\\GitHub\\StoryScopeSilhouette\\assets\\utilities\\shutdowncanvas\\shutdowncor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1555FAD6-E65C-7B70-91C9-38BC86C5EFCA}|Assembly-CSharp.csproj|solutionrelative:assets\\utilities\\shutdowncanvas\\shutdowncor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -23,10 +27,23 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "JZSceneSelectorManager.cs",
+              "DocumentMoniker": "C:\\Users\\Siem\\Documents\\GitHub\\StoryScopeSilhouette\\Assets\\Utilities\\SceneSelectorMenu\\JZSceneSelectorManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Utilities\\SceneSelectorMenu\\JZSceneSelectorManager.cs",
+              "ToolTip": "C:\\Users\\Siem\\Documents\\GitHub\\StoryScopeSilhouette\\Assets\\Utilities\\SceneSelectorMenu\\JZSceneSelectorManager.cs",
+              "RelativeToolTip": "Assets\\Utilities\\SceneSelectorMenu\\JZSceneSelectorManager.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAcAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-05T12:54:29.376Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "AnimeStudioFBXImporter.cs",
-              "DocumentMoniker": "C:\\Users\\larsd\\Unity\\StoryScopeSilhouette\\Assets\\Editor\\AnimeStudioFBXImporter.cs",
+              "DocumentMoniker": "C:\\Users\\Siem\\Documents\\GitHub\\StoryScopeSilhouette\\Assets\\Editor\\AnimeStudioFBXImporter.cs",
               "RelativeDocumentMoniker": "Assets\\Editor\\AnimeStudioFBXImporter.cs",
-              "ToolTip": "C:\\Users\\larsd\\Unity\\StoryScopeSilhouette\\Assets\\Editor\\AnimeStudioFBXImporter.cs",
+              "ToolTip": "C:\\Users\\Siem\\Documents\\GitHub\\StoryScopeSilhouette\\Assets\\Editor\\AnimeStudioFBXImporter.cs",
               "RelativeToolTip": "Assets\\Editor\\AnimeStudioFBXImporter.cs",
               "ViewState": "AQIAADwAAAAAAAAAAAAtwFIAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -35,11 +52,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "ShutdownCor.cs",
-              "DocumentMoniker": "C:\\Users\\larsd\\Unity\\StoryScopeSilhouette\\Assets\\Utilities\\ShutDownCanvas\\ShutdownCor.cs",
+              "DocumentMoniker": "C:\\Users\\Siem\\Documents\\GitHub\\StoryScopeSilhouette\\Assets\\Utilities\\ShutDownCanvas\\ShutdownCor.cs",
               "RelativeDocumentMoniker": "Assets\\Utilities\\ShutDownCanvas\\ShutdownCor.cs",
-              "ToolTip": "C:\\Users\\larsd\\Unity\\StoryScopeSilhouette\\Assets\\Utilities\\ShutDownCanvas\\ShutdownCor.cs",
+              "ToolTip": "C:\\Users\\Siem\\Documents\\GitHub\\StoryScopeSilhouette\\Assets\\Utilities\\ShutDownCanvas\\ShutdownCor.cs",
               "RelativeToolTip": "Assets\\Utilities\\ShutDownCanvas\\ShutdownCor.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAIApwDcAAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
