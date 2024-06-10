@@ -126,6 +126,12 @@
     <Compile Include="Assets\Silhouette\Scripts\JZLoadFromExternalV2.cs" />
     <Compile Include="Assets\Silhouette\Scripts\JZReloadScene.cs" />
     <Compile Include="Assets\Silhouette\Sprites\JZSpriteRoot.cs" />
+    <Compile Include="Assets\Minigames\Scripts\RoomSpawner.cs" />
+    <Compile Include="Assets\Minigames\Scripts\RoomTemplates.cs" />
+    <Compile Include="Assets\Minigames\Scripts\AddCloseRoom.cs" />
+    <Compile Include="Assets\Minigames\Scripts\Destroyer.cs" />
+    <Compile Include="Assets\Minigames\Scripts\LockKeyBoss.cs" />
+    <Compile Include="Assets\Minigames\Scripts\AddRoom.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
