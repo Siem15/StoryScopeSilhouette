@@ -27,6 +27,10 @@ TagManager:
   - bee
   - harvest
   - sliders
+  - Rooms
+  - SpawnPoint
+  - Destroyer
+  - wall
   layers:
   - Default
   - TransparentFX
