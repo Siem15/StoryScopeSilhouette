@@ -41,6 +41,7 @@ public class RoomTemplates : MonoBehaviour
     {
         if (resetbutton || Input.GetMouseButton(0) || fiducialController.m_IsVisible != setDungion)
         {
+            Player.transform.position = Player.GetComponent<Character>().endMarker.transform.position;
             Resett(fiducialController.m_IsVisible);
             setDungion = fiducialController.m_IsVisible;
             resetbutton = false;

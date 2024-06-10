@@ -66,6 +66,7 @@
     <Compile Include="Assets\Silhouette\Scripts\Resolution.cs" />
     <Compile Include="Assets\Silhouette\Scripts\WebCamera.cs" />
     <Compile Include="Assets\Silhouette\Scripts\RamonSwitchScene.cs" />
+    <Compile Include="Assets\Minigames\Scripts\LockKeyBoss.cs" />
     <Compile Include="Assets\Dependencies\FiducialFolder\TUIOConnector\TuioClient.cs" />
     <Compile Include="Assets\Utilities\SceneSelectorMenu\JZSceneSelector.cs" />
     <Compile Include="Assets\Silhouette\Scripts\Flock.cs" />
@@ -131,7 +132,6 @@
     <Compile Include="Assets\Silhouette\Scripts\JZLoadFromExternalV2.cs" />
     <Compile Include="Assets\Silhouette\Scripts\JZReloadScene.cs" />
     <Compile Include="Assets\Silhouette\Sprites\JZSpriteRoot.cs" />
-    <Compile Include="Assets\Minigames\Scripts\LockKeyBoss.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
