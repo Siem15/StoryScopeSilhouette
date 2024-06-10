@@ -55,7 +55,7 @@ MonoBehaviour:
   full: 0
   IsRotationMapped: 0
   UseRotation: 0
-  AutoHideGO: 0
+  AutoHideGO: 1
   DegreesToAction: 0
   hideDelay: 1
   CameraOffset: 10
