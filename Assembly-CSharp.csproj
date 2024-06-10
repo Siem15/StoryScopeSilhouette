@@ -22,7 +22,7 @@
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>Temp\Bin\Debug\</OutputPath>
-    <DefineConstants>UNITY_2020_3_17;UNITY_2020_3;UNITY_2020;UNITY_5_3_OR_NEWER;UNITY_5_4_OR_NEWER;UNITY_5_5_OR_NEWER;UNITY_5_6_OR_NEWER;UNITY_2017_1_OR_NEWER;UNITY_2017_2_OR_NEWER;UNITY_2017_3_OR_NEWER;UNITY_2017_4_OR_NEWER;UNITY_2018_1_OR_NEWER;UNITY_2018_2_OR_NEWER;UNITY_2018_3_OR_NEWER;UNITY_2018_4_OR_NEWER;UNITY_2019_1_OR_NEWER;UNITY_2019_2_OR_NEWER;UNITY_2019_3_OR_NEWER;UNITY_2019_4_OR_NEWER;UNITY_2020_1_OR_NEWER;UNITY_2020_2_OR_NEWER;UNITY_2020_3_OR_NEWER;PLATFORM_ARCH_64;UNITY_64;UNITY_INCLUDE_TESTS;USE_SEARCH_ENGINE_API;SCENE_TEMPLATE_MODULE;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_TEXTURE_STREAMING;ENABLE_VIRTUALTEXTURING;ENABLE_UNET;ENABLE_LZMA;ENABLE_UNITYEVENTS;ENABLE_VR;ENABLE_WEBCAM;ENABLE_UNITYWEBREQUEST;ENABLE_WWW;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_COLLAB;ENABLE_CLOUD_SERVICES_COLLAB_SOFTLOCKS;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_SERVICES_USE_WEBREQUEST;ENABLE_CLOUD_SERVICES_CRASH_REPORTING;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_HUB_LICENSE;ENABLE_WEBSOCKET_CLIENT;ENABLE_DIRECTOR_AUDIO;ENABLE_DIRECTOR_TEXTURE;ENABLE_MANAGED_JOBS;ENABLE_MANAGED_TRANSFORM_JOBS;ENABLE_MANAGED_ANIMATION_JOBS;ENABLE_MANAGED_AUDIO_JOBS;INCLUDE_DYNAMIC_GI;ENABLE_MONO_BDWGC;ENABLE_SCRIPTING_GC_WBARRIERS;PLATFORM_SUPPORTS_MONO;RENDER_SOFTWARE_CURSOR;ENABLE_VIDEO;PLATFORM_STANDALONE;PLATFORM_STANDALONE_LINUX;UNITY_STANDALONE_LINUX;UNITY_STANDALONE;UNITY_STANDALONE_LINUX_API;ENABLE_RUNTIME_GI;ENABLE_MOVIES;ENABLE_NETWORK;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_CLUSTER_SYNC;ENABLE_CLUSTERINPUT;ENABLE_SPATIALTRACKING;ENABLE_MODULAR_UNITYENGINE_ASSEMBLIES;ENABLE_WEBSOCKET_HOST;ENABLE_MONO;NET_STANDARD_2_0;ENABLE_PROFILER;DEBUG;TRACE;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN;ENABLE_UNITY_COLLECTIONS_CHECKS;ENABLE_BURST_AOT;UNITY_TEAM_LICENSE;ENABLE_CUSTOM_RENDER_TEXTURE;ENABLE_DIRECTOR;ENABLE_LOCALIZATION;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_TILEMAP;ENABLE_TIMELINE;ENABLE_INPUT_SYSTEM;ENABLE_LEGACY_INPUT_MANAGER;CROSS_PLATFORM_INPUT;UNITY_POST_PROCESSING_STACK_V2;CSHARP_7_OR_LATER;CSHARP_7_3_OR_NEWER</DefineConstants>
+    <DefineConstants>UNITY_2020_3_17;UNITY_2020_3;UNITY_2020;UNITY_5_3_OR_NEWER;UNITY_5_4_OR_NEWER;UNITY_5_5_OR_NEWER;UNITY_5_6_OR_NEWER;UNITY_2017_1_OR_NEWER;UNITY_2017_2_OR_NEWER;UNITY_2017_3_OR_NEWER;UNITY_2017_4_OR_NEWER;UNITY_2018_1_OR_NEWER;UNITY_2018_2_OR_NEWER;UNITY_2018_3_OR_NEWER;UNITY_2018_4_OR_NEWER;UNITY_2019_1_OR_NEWER;UNITY_2019_2_OR_NEWER;UNITY_2019_3_OR_NEWER;UNITY_2019_4_OR_NEWER;UNITY_2020_1_OR_NEWER;UNITY_2020_2_OR_NEWER;UNITY_2020_3_OR_NEWER;PLATFORM_ARCH_64;UNITY_64;UNITY_INCLUDE_TESTS;USE_SEARCH_ENGINE_API;SCENE_TEMPLATE_MODULE;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_TEXTURE_STREAMING;ENABLE_VIRTUALTEXTURING;ENABLE_UNET;ENABLE_LZMA;ENABLE_UNITYEVENTS;ENABLE_VR;ENABLE_WEBCAM;ENABLE_UNITYWEBREQUEST;ENABLE_WWW;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_COLLAB;ENABLE_CLOUD_SERVICES_COLLAB_SOFTLOCKS;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_SERVICES_USE_WEBREQUEST;ENABLE_CLOUD_SERVICES_CRASH_REPORTING;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_HUB_LICENSE;ENABLE_WEBSOCKET_CLIENT;ENABLE_DIRECTOR_AUDIO;ENABLE_DIRECTOR_TEXTURE;ENABLE_MANAGED_JOBS;ENABLE_MANAGED_TRANSFORM_JOBS;ENABLE_MANAGED_ANIMATION_JOBS;ENABLE_MANAGED_AUDIO_JOBS;INCLUDE_DYNAMIC_GI;ENABLE_MONO_BDWGC;ENABLE_SCRIPTING_GC_WBARRIERS;PLATFORM_SUPPORTS_MONO;RENDER_SOFTWARE_CURSOR;ENABLE_VIDEO;PLATFORM_STANDALONE;PLATFORM_STANDALONE_LINUX;UNITY_STANDALONE_LINUX;UNITY_STANDALONE;UNITY_STANDALONE_LINUX_API;ENABLE_RUNTIME_GI;ENABLE_MOVIES;ENABLE_NETWORK;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_CLUSTER_SYNC;ENABLE_CLUSTERINPUT;ENABLE_SPATIALTRACKING;ENABLE_MODULAR_UNITYENGINE_ASSEMBLIES;ENABLE_WEBSOCKET_HOST;ENABLE_MONO;NET_STANDARD_2_0;ENABLE_PROFILER;DEBUG;TRACE;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN;ENABLE_UNITY_COLLECTIONS_CHECKS;ENABLE_BURST_AOT;UNITY_TEAM_LICENSE;UNITY_PRO_LICENSE;ENABLE_CUSTOM_RENDER_TEXTURE;ENABLE_DIRECTOR;ENABLE_LOCALIZATION;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_TILEMAP;ENABLE_TIMELINE;ENABLE_INPUT_SYSTEM;ENABLE_LEGACY_INPUT_MANAGER;CROSS_PLATFORM_INPUT;UNITY_POST_PROCESSING_STACK_V2;CSHARP_7_OR_LATER;CSHARP_7_3_OR_NEWER</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <NoWarn>0169</NoWarn>
@@ -56,7 +56,6 @@
     <Compile Include="Assets\Silhouette\Scripts\TurnOnEditorCharacter.cs" />
     <Compile Include="Assets\Dependencies\FiducialFolder\TUIOConnector\TuioPoint.cs" />
     <Compile Include="Assets\Silhouette\Scripts\Webcam.cs" />
-    <Compile Include="Assets\Minigames\Scripts\RoomSpawner.cs" />
     <Compile Include="Assets\Debug\DebugExtensions.cs" />
     <Compile Include="Assets\Silhouette\Scripts\RotateProperties.cs" />
     <Compile Include="Assets\Dependencies\FiducialFolder\TUIOConnector\TuioContainer.cs" />
@@ -66,7 +65,6 @@
     <Compile Include="Assets\Silhouette\Scripts\Resolution.cs" />
     <Compile Include="Assets\Silhouette\Scripts\WebCamera.cs" />
     <Compile Include="Assets\Silhouette\Scripts\RamonSwitchScene.cs" />
-    <Compile Include="Assets\Minigames\Scripts\LockKeyBoss.cs" />
     <Compile Include="Assets\Dependencies\FiducialFolder\TUIOConnector\TuioClient.cs" />
     <Compile Include="Assets\Utilities\SceneSelectorMenu\JZSceneSelector.cs" />
     <Compile Include="Assets\Silhouette\Scripts\Flock.cs" />
@@ -88,7 +86,6 @@
     <Compile Include="Assets\Silhouette\Scripts\Stamp.cs" />
     <Compile Include="Assets\Silhouette\Sprites\JZRotateToNextChild.cs" />
     <Compile Include="Assets\Utilities\Loading\LoadingScene.cs" />
-    <Compile Include="Assets\Minigames\Scripts\RoomTemplates.cs" />
     <Compile Include="Assets\Dependencies\FiducialFolder\TUIOConnector\OSCTransmitter.cs" />
     <Compile Include="Assets\Silhouette\Scripts\JZMicrophone.cs" />
     <Compile Include="Assets\Silhouette\Scripts\SO\JZSOCameraActive.cs" />
@@ -103,7 +100,6 @@
     <Compile Include="Assets\Dependencies\FiducialFolder\FiducialExamples\Parameters.cs" />
     <Compile Include="Assets\Silhouette\Scripts\Properties.cs" />
     <Compile Include="Assets\Dependencies\FiducialFolder\TUIOConnector\TuioCursor.cs" />
-    <Compile Include="Assets\Minigames\Scripts\Destroyer.cs" />
     <Compile Include="Assets\Dependencies\FiducialFolder\TUIOConnector\TuioManager.cs" />
     <Compile Include="Assets\Silhouette\Scripts\ScaleStamp.cs" />
     <Compile Include="Assets\Unused Scripts\JZSetActiveOnRotation.cs" />
@@ -111,7 +107,6 @@
     <Compile Include="Assets\Dependencies\FiducialFolder\FiducialExamples\Compass.cs" />
     <Compile Include="Assets\Dependencies\FiducialFolder\TUIOConnector\OSCMessage.cs" />
     <Compile Include="Assets\Dependencies\Aran\TekenPackage\StoryScopePen.cs" />
-    <Compile Include="Assets\Minigames\Scripts\AddCloseRoom.cs" />
     <Compile Include="Assets\Silhouette\Scripts\JZTurnSpriteCounter.cs" />
     <Compile Include="Assets\Unused Scripts\RestartUnity.cs" />
     <Compile Include="Assets\Utilities\SceneSelectorMenu\JZSceneSelectorManager.cs" />
@@ -125,13 +120,18 @@
     <Compile Include="Assets\Silhouette\Scripts\Flicker.cs" />
     <Compile Include="Assets\Unused Scripts\Distance.cs" />
     <Compile Include="Assets\Silhouette\Scripts\JZCamActive.cs" />
-    <Compile Include="Assets\Minigames\Scripts\AddRoom.cs" />
     <Compile Include="Assets\Silhouette\Scripts\ShaderManager.cs" />
     <Compile Include="Assets\Dependencies\FiducialFolder\TUIOConnector\OSCReceiver.cs" />
     <Compile Include="Assets\Silhouette\Scripts\JZLoadSingle.cs" />
     <Compile Include="Assets\Silhouette\Scripts\JZLoadFromExternalV2.cs" />
     <Compile Include="Assets\Silhouette\Scripts\JZReloadScene.cs" />
     <Compile Include="Assets\Silhouette\Sprites\JZSpriteRoot.cs" />
+    <Compile Include="Assets\Minigames\Scripts\RoomSpawner.cs" />
+    <Compile Include="Assets\Minigames\Scripts\RoomTemplates.cs" />
+    <Compile Include="Assets\Minigames\Scripts\AddCloseRoom.cs" />
+    <Compile Include="Assets\Minigames\Scripts\Destroyer.cs" />
+    <Compile Include="Assets\Minigames\Scripts\LockKeyBoss.cs" />
+    <Compile Include="Assets\Minigames\Scripts\AddRoom.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
