@@ -6514,7 +6514,7 @@ PrefabInstance:
     - target: {fileID: 847195706022308197, guid: 9ef2ba016b4bdb64cb4b773f7613fb3a,
         type: 3}
       propertyPath: AutoHideGO
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 847195706115221636, guid: 9ef2ba016b4bdb64cb4b773f7613fb3a,
         type: 3}
