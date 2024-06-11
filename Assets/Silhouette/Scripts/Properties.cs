@@ -29,12 +29,10 @@ public class Properties : MonoBehaviour
     private Vector3 originalScale;
     private Vector3 originalRoration;
     private GameObject originalendmarker;
-    private FiducialController fiducialController;
+    private FiducialController fiducialController;    
     private float originalWalkingSpeed;
     private float originalRunningSpeed;
-
-    private int wheelsAttached;
-
+    
     public enum Property
     {
         Empty,
@@ -93,8 +91,7 @@ public class Properties : MonoBehaviour
         originalRoration = transform.eulerAngles;
         originalendmarker = GetComponent<Character>().endMarker;
         originalWalkingSpeed = GetComponent<Character>().WalkSpeed;
-        originalRunningSpeed = GetComponent<Character>().RunSpeed;
-        wheelsAttached = 0;
+        originalRunningSpeed = GetComponent<Character>().RunSpeed;        
 
         fiducialController = GetComponent<FiducialController>();
 
@@ -181,31 +178,10 @@ public class Properties : MonoBehaviour
             }
 
             if (properties[(int)Property.IsWheel] && otherObject.properties[(int)Property.IsVehicle])
-            {
-                Debug.Log($"{gameObject.name} attached as wheel");
-                transform.parent = otherObject.transform; // Stick to the vehicle
+            {                                
+                ModularSystem modularSystem = collision.gameObject.GetComponent<ModularSystem>();
+                modularSystem.AddChild(gameObject);
 
-                Vector3 firstWheelPosition = otherObject.transform.position + new Vector3(-5, 0, 0);
-                Vector3 secondWheelPosition = otherObject.transform.position + new Vector3(5, 0, 0);
-
-                // Check how many wheels are attached
-                switch (otherObject.wheelsAttached) 
-                {
-                    case 0:
-                        transform.parent.position = firstWheelPosition;
-                        otherObject.wheelsAttached++;
-                        Debug.Log("One wheel attached");
-                        break;
-                    case 1:
-                        transform.parent.position = secondWheelPosition;
-                        otherObject.wheelsAttached++;
-                        Debug.Log("Two wheels attached");
-                        break;
-                    case 2:
-                        Debug.Log("No more room for wheels");
-                        break;
-                }
-                
                 GetComponent<BoxCollider2D>().enabled = false;
                 character.endMarker = otherCharacter.endMarker;
                 character.WalkSpeed = 0;

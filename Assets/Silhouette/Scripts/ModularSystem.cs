@@ -1,34 +1,54 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class ModularSystem : MonoBehaviour
 {
-    private int wheelsAttached;
-
-    private Vector3 firstWheelPosition, secondWheelPosition;
-
+    // List of offsets for child objects
     [SerializeField]
-    private Vector3 firstWheelOffset;
+    private Vector3[] offsets;
 
+    // List of all child objects
     [SerializeField]
-    private Vector3 secondWheelOffset;
+    private List<GameObject> childObjects;
 
-    // Start is called before the first frame update
-    void Start()
+    // Sets if parent object is a child only (and thus cannot have children itself)
+    [field: SerializeField]
+    public bool IsChildOnly { get; private set; } = false;
+
+    private void Start()
     {
-        wheelsAttached = 0;
+        // Log an error if no offsets have been added
+        if (offsets.Length <= 0) 
+        {
+            Debug.LogError("Modular system has no offsets; please add one or more offsets");
+        }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    public void AttachParentTo(GameObject other, Vector3 offset) 
+    {        
+        transform.parent = other.transform; // Assign other object as parent
+        transform.parent.position = other.transform.position + offset; // Set new position with offset
+        Debug.Log($"'{gameObject.name}' attached as a child of '{other.name}'");
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    public void AddChild(GameObject other)
     {
-        Properties otherObject = collision.GetComponent<Properties>();
+        // Exit function if parent is child only
+        if (IsChildOnly)
+        {
+            return;
+        }        
 
-        firstWheelPosition = otherObject.transform.position + firstWheelOffset;
-        secondWheelPosition = otherObject.transform.position + secondWheelOffset;
+        // Check number of child objects and attach if possible
+        if (childObjects.Count < offsets.Length)
+        {
+            ModularSystem modularSystem = other.GetComponent<ModularSystem>();
+            modularSystem.AttachParentTo(gameObject, offsets[childObjects.Count + 1]);
+            childObjects.Add(other);
+        }
+        else
+        {
+            Debug.LogError("ERROR: Max number of children reached");
+        }
     }
 }

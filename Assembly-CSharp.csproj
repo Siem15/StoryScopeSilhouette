@@ -89,6 +89,7 @@
     <Compile Include="Assets\Silhouette\Sprites\JZRotateToNextChild.cs" />
     <Compile Include="Assets\Utilities\Loading\LoadingScene.cs" />
     <Compile Include="Assets\Minigames\Scripts\RoomTemplates.cs" />
+    <Compile Include="Assets\Silhouette\Scripts\ModularSystem.cs" />
     <Compile Include="Assets\Dependencies\FiducialFolder\TUIOConnector\OSCTransmitter.cs" />
     <Compile Include="Assets\Silhouette\Scripts\JZMicrophone.cs" />
     <Compile Include="Assets\Silhouette\Scripts\SO\JZSOCameraActive.cs" />
@@ -132,7 +133,6 @@
     <Compile Include="Assets\Silhouette\Scripts\JZLoadFromExternalV2.cs" />
     <Compile Include="Assets\Silhouette\Scripts\JZReloadScene.cs" />
     <Compile Include="Assets\Silhouette\Sprites\JZSpriteRoot.cs" />
-    <Compile Include="Assets\Silhouette\Scripts\ModularSystem.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
