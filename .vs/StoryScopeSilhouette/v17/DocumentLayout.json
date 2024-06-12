@@ -1,18 +1,14 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\fabio\\Documents\\GitHub\\CrosswordExample\\StoryScopeSilhouette\\",
+  "WorkspaceRootPath": "C:\\Users\\Siem\\Documents\\GitHub\\StoryScopeSilhouette\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{1555FAD6-E65C-7B70-91C9-38BC86C5EFCA}|Assembly-CSharp.csproj|c:\\users\\fabio\\documents\\github\\crosswordexample\\storyscopesilhouette\\assets\\utilities\\sceneselectormenu\\jzsceneselectormanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1555FAD6-E65C-7B70-91C9-38BC86C5EFCA}|Assembly-CSharp.csproj|solutionrelative:assets\\utilities\\sceneselectormenu\\jzsceneselectormanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1555FAD6-E65C-7B70-91C9-38BC86C5EFCA}|Assembly-CSharp.csproj|c:\\users\\siem\\documents\\github\\storyscopesilhouette\\assets\\silhouette\\scripts\\properties.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1555FAD6-E65C-7B70-91C9-38BC86C5EFCA}|Assembly-CSharp.csproj|solutionrelative:assets\\silhouette\\scripts\\properties.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1555FAD6-E65C-7B70-91C9-38BC86C5EFCA}|Assembly-CSharp.csproj|C:\\Users\\fabio\\Documents\\GitHub\\CrosswordExample\\StoryScopeSilhouette\\assets\\silhouette\\scripts\\jzloadfromexternalv2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1555FAD6-E65C-7B70-91C9-38BC86C5EFCA}|Assembly-CSharp.csproj|solutionrelative:assets\\silhouette\\scripts\\jzloadfromexternalv2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1555FAD6-E65C-7B70-91C9-38BC86C5EFCA}|Assembly-CSharp.csproj|C:\\Users\\fabio\\Documents\\GitHub\\CrosswordExample\\StoryScopeSilhouette\\assets\\dependencies\\fiducialfolder\\tuioconnector\\oscpacket.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1555FAD6-E65C-7B70-91C9-38BC86C5EFCA}|Assembly-CSharp.csproj|solutionrelative:assets\\dependencies\\fiducialfolder\\tuioconnector\\oscpacket.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1555FAD6-E65C-7B70-91C9-38BC86C5EFCA}|Assembly-CSharp.csproj|c:\\users\\siem\\documents\\github\\storyscopesilhouette\\assets\\silhouette\\scripts\\shadermanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1555FAD6-E65C-7B70-91C9-38BC86C5EFCA}|Assembly-CSharp.csproj|solutionrelative:assets\\silhouette\\scripts\\shadermanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -27,39 +23,28 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "JZSceneSelectorManager.cs",
-              "DocumentMoniker": "C:\\Users\\fabio\\Documents\\GitHub\\CrosswordExample\\StoryScopeSilhouette\\Assets\\Utilities\\SceneSelectorMenu\\JZSceneSelectorManager.cs",
-              "RelativeDocumentMoniker": "Assets\\Utilities\\SceneSelectorMenu\\JZSceneSelectorManager.cs",
-              "ToolTip": "C:\\Users\\fabio\\Documents\\GitHub\\CrosswordExample\\StoryScopeSilhouette\\Assets\\Utilities\\SceneSelectorMenu\\JZSceneSelectorManager.cs",
-              "RelativeToolTip": "Assets\\Utilities\\SceneSelectorMenu\\JZSceneSelectorManager.cs",
-              "ViewState": "AQIAAAgAAAAAAAAAAAAmwCAAAAAtAAAA",
+              "Title": "Properties.cs",
+              "DocumentMoniker": "C:\\Users\\Siem\\Documents\\GitHub\\StoryScopeSilhouette\\Assets\\Silhouette\\Scripts\\Properties.cs",
+              "RelativeDocumentMoniker": "Assets\\Silhouette\\Scripts\\Properties.cs",
+              "ToolTip": "C:\\Users\\Siem\\Documents\\GitHub\\StoryScopeSilhouette\\Assets\\Silhouette\\Scripts\\Properties.cs",
+              "RelativeToolTip": "Assets\\Silhouette\\Scripts\\Properties.cs",
+              "ViewState": "AQIAAJQAAAAAAAAAAAAQwK4AAABuAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-10T09:59:54.814Z",
+              "WhenOpened": "2024-06-12T08:54:08.477Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "JZLoadFromExternalV2.cs",
-              "DocumentMoniker": "C:\\Users\\fabio\\Documents\\GitHub\\CrosswordExample\\StoryScopeSilhouette\\Assets\\Silhouette\\Scripts\\JZLoadFromExternalV2.cs",
-              "RelativeDocumentMoniker": "Assets\\Silhouette\\Scripts\\JZLoadFromExternalV2.cs",
-              "ToolTip": "C:\\Users\\fabio\\Documents\\GitHub\\CrosswordExample\\StoryScopeSilhouette\\Assets\\Silhouette\\Scripts\\JZLoadFromExternalV2.cs",
-              "RelativeToolTip": "Assets\\Silhouette\\Scripts\\JZLoadFromExternalV2.cs",
-              "ViewState": "AQIAAHUAAAAAAAAAAAAowB4AAAARAAAA",
+              "Title": "ShaderManager.cs",
+              "DocumentMoniker": "C:\\Users\\Siem\\Documents\\GitHub\\StoryScopeSilhouette\\Assets\\Silhouette\\Scripts\\ShaderManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Silhouette\\Scripts\\ShaderManager.cs",
+              "ToolTip": "C:\\Users\\Siem\\Documents\\GitHub\\StoryScopeSilhouette\\Assets\\Silhouette\\Scripts\\ShaderManager.cs",
+              "RelativeToolTip": "Assets\\Silhouette\\Scripts\\ShaderManager.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAACAAAABYAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-10T09:54:50.068Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "OSCPacket.cs",
-              "DocumentMoniker": "C:\\Users\\fabio\\Documents\\GitHub\\CrosswordExample\\StoryScopeSilhouette\\Assets\\Dependencies\\FiducialFolder\\TUIOConnector\\OSCPacket.cs",
-              "RelativeDocumentMoniker": "Assets\\Dependencies\\FiducialFolder\\TUIOConnector\\OSCPacket.cs",
-              "ToolTip": "C:\\Users\\fabio\\Documents\\GitHub\\CrosswordExample\\StoryScopeSilhouette\\Assets\\Dependencies\\FiducialFolder\\TUIOConnector\\OSCPacket.cs",
-              "RelativeToolTip": "Assets\\Dependencies\\FiducialFolder\\TUIOConnector\\OSCPacket.cs",
-              "ViewState": "AQIAAL0AAAAAAAAAAAARwN4AAAABAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-08T13:44:52.796Z"
+              "WhenOpened": "2024-06-12T08:54:01.803Z",
+              "EditorCaption": ""
             }
           ]
         }
