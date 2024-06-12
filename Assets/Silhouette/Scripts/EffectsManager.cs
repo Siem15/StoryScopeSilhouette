@@ -8,7 +8,7 @@ using UnityEngine;
 /// - Siem Wesseling, 29/05/2024
 /// </summary>
 
-public class ShaderManager : MonoBehaviour
+public class EffectsManager : MonoBehaviour
 {
     [SerializeField] private Material onPlacementEffectShader;
     [SerializeField] private Material onFireEffectShader;
@@ -16,6 +16,8 @@ public class ShaderManager : MonoBehaviour
 
     [SerializeField] private GameObject FoodParticleSystem;
 
+    [SerializeField] private GameObject InstantiationVFX;
+    
     private Material CurrentObjectMaterial;
 
     private void Start()
@@ -29,18 +31,21 @@ public class ShaderManager : MonoBehaviour
         switch (InteractionName)
         {
             case "onFireEffectShader":
-                AddShader(InteractionName);
+                AddShader(InteractionName, caster);
                 break;
             case "dissolveShader":
-                AddShader(InteractionName);
+                AddShader(InteractionName, caster);
                 break;
             case "GetsEaten":
                 AddParticleSystem(InteractionName, caster);
                 break;
+            case "Removed":
+                AddVisualFX(InteractionName, caster);
+                break;
         }
     }
 
-    private void AddShader(string ShaderName)
+    private void AddShader(string ShaderName, GameObject caster)
     {
          
     }
@@ -59,8 +64,12 @@ public class ShaderManager : MonoBehaviour
 
     }
 
-    private void AddVisualFX(string VisualFXName)
+    private void AddVisualFX(string VisualFXName, GameObject caster)
     {
-        
+        GameObject Child = Instantiate(InstantiationVFX);
+        Child.transform.parent = caster.transform;
+        Child.transform.localPosition = Vector3.zero;
+        Child.transform.localRotation = Quaternion.identity;
+        Child.transform.localScale = Vector3.one;
     }
 }

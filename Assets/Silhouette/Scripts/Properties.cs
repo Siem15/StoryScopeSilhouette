@@ -167,7 +167,7 @@ public class Properties : MonoBehaviour
             if (properties[(int)Property.IsFood] && otherObject.properties[(int)Property.CanEatFood])
             {
                 //TODO: spawn edible particle system on place of currently being eaten object
-                EffectsManager.GetComponent<ShaderManager>().AddEffect("GetsEaten", this.gameObject);
+                EffectsManager.GetComponent<EffectsManager>().AddEffect("GetsEaten", this.gameObject);
                 Debug.Log($"{gameObject.name} eat");
                 transform.localScale *= 0.9f; // Shrink
                 otherObject.transform.localScale *= 1.1f; // Grow
@@ -175,11 +175,11 @@ public class Properties : MonoBehaviour
 
             if (properties[(int)Property.IsFlammable] && otherObject.properties[(int)Property.IsFire])
             {
-                //shaderManager.AddEffect("OnFireEffectShader");  // Go to ShaderManager and use the fire shader on object being lit on fire
+                //shaderManager.AddEffect("OnFireEffectShader");  // Go to EffectsManager and use the fire shader on object being lit on fire
                 Debug.Log(gameObject.name + " flame");
                 if (transform.childCount > 0)
                 {
-                    //shaderManager.AddEffect("dissolveShader");  // Go to ShaderManager and use the dissolve shader on object being destroyed
+                    //shaderManager.AddEffect("dissolveShader");  // Go to EffectsManager and use the dissolve shader on object being destroyed
                     //TODO: remove fire shader
                     transform.GetChild(0).gameObject.SetActive(false); // destroy
                 }

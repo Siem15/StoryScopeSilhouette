@@ -126,7 +126,7 @@
     <Compile Include="Assets\Unused Scripts\Distance.cs" />
     <Compile Include="Assets\Silhouette\Scripts\JZCamActive.cs" />
     <Compile Include="Assets\Minigames\Scripts\AddRoom.cs" />
-    <Compile Include="Assets\Silhouette\Scripts\ShaderManager.cs" />
+    <Compile Include="Assets\Silhouette\Scripts\EffectsManager.cs" />
     <Compile Include="Assets\Dependencies\FiducialFolder\TUIOConnector\OSCReceiver.cs" />
     <Compile Include="Assets\Silhouette\Scripts\JZLoadSingle.cs" />
     <Compile Include="Assets\Silhouette\Scripts\JZLoadFromExternalV2.cs" />
