@@ -18,6 +18,8 @@ public class Properties : MonoBehaviour
     [SerializeField] private bool isWheel = false;
     [SerializeField] private bool isVehicle = false;
 
+    private GameObject EffectsManager;
+
     public bool reset = false;
     public bool isAlive = false;
     public bool connected = true;
@@ -52,6 +54,9 @@ public class Properties : MonoBehaviour
         properties.Add(isFire);
         properties.Add(isWheel);
         properties.Add(isVehicle);
+
+        // Add shadermanager to get shaders from shadermanager component
+        EffectsManager = GameObject.Find("EffectsManager");
 
         // Add a BoxCollider2D component if it doesn't already exist
         BoxCollider2D boxCollider = gameObject.GetComponent<BoxCollider2D>();
@@ -157,14 +162,12 @@ public class Properties : MonoBehaviour
         Character character = GetComponent<Character>();
         Character otherCharacter = collision.GetComponent<Character>();
 
-        // Add shadermanager to get shaders from shadermanager component
-        ShaderManager shaderManager = GetComponent<ShaderManager>();
-
         if (otherObject != null)
         {
             if (properties[(int)Property.IsFood] && otherObject.properties[(int)Property.CanEatFood])
             {
-                //TODO: spawn edible particle system
+                //TODO: spawn edible particle system on place of currently being eaten object
+                EffectsManager.GetComponent<ShaderManager>().AddEffect("GetsEaten", this.gameObject);
                 Debug.Log($"{gameObject.name} eat");
                 transform.localScale *= 0.9f; // Shrink
                 otherObject.transform.localScale *= 1.1f; // Grow
@@ -172,11 +175,11 @@ public class Properties : MonoBehaviour
 
             if (properties[(int)Property.IsFlammable] && otherObject.properties[(int)Property.IsFire])
             {
-                shaderManager.AddShader("OnFireEffectShader");  // Go to ShaderManager and use the fire shader
+                //shaderManager.AddEffect("OnFireEffectShader");  // Go to ShaderManager and use the fire shader on object being lit on fire
                 Debug.Log(gameObject.name + " flame");
                 if (transform.childCount > 0)
                 {
-                    //TODO: shaderManager.AddShader("dissolveShader")
+                    //shaderManager.AddEffect("dissolveShader");  // Go to ShaderManager and use the dissolve shader on object being destroyed
                     //TODO: remove fire shader
                     transform.GetChild(0).gameObject.SetActive(false); // destroy
                 }
