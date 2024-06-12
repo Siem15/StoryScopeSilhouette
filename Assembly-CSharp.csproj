@@ -56,6 +56,7 @@
     <Compile Include="Assets\Silhouette\Scripts\TurnOnEditorCharacter.cs" />
     <Compile Include="Assets\Dependencies\FiducialFolder\TUIOConnector\TuioPoint.cs" />
     <Compile Include="Assets\Silhouette\Scripts\Webcam.cs" />
+    <Compile Include="Assets\Minigames\Scripts\RoomSpawner.cs" />
     <Compile Include="Assets\Debug\DebugExtensions.cs" />
     <Compile Include="Assets\Silhouette\Scripts\RotateProperties.cs" />
     <Compile Include="Assets\Dependencies\FiducialFolder\TUIOConnector\TuioContainer.cs" />
@@ -65,6 +66,7 @@
     <Compile Include="Assets\Silhouette\Scripts\Resolution.cs" />
     <Compile Include="Assets\Silhouette\Scripts\WebCamera.cs" />
     <Compile Include="Assets\Silhouette\Scripts\RamonSwitchScene.cs" />
+    <Compile Include="Assets\Minigames\Scripts\LockKeyBoss.cs" />
     <Compile Include="Assets\Dependencies\FiducialFolder\TUIOConnector\TuioClient.cs" />
     <Compile Include="Assets\Utilities\SceneSelectorMenu\JZSceneSelector.cs" />
     <Compile Include="Assets\Silhouette\Scripts\Flock.cs" />
@@ -86,6 +88,7 @@
     <Compile Include="Assets\Silhouette\Scripts\Stamp.cs" />
     <Compile Include="Assets\Silhouette\Sprites\JZRotateToNextChild.cs" />
     <Compile Include="Assets\Utilities\Loading\LoadingScene.cs" />
+    <Compile Include="Assets\Minigames\Scripts\RoomTemplates.cs" />
     <Compile Include="Assets\Dependencies\FiducialFolder\TUIOConnector\OSCTransmitter.cs" />
     <Compile Include="Assets\Silhouette\Scripts\JZMicrophone.cs" />
     <Compile Include="Assets\Silhouette\Scripts\SO\JZSOCameraActive.cs" />
@@ -100,6 +103,7 @@
     <Compile Include="Assets\Dependencies\FiducialFolder\FiducialExamples\Parameters.cs" />
     <Compile Include="Assets\Silhouette\Scripts\Properties.cs" />
     <Compile Include="Assets\Dependencies\FiducialFolder\TUIOConnector\TuioCursor.cs" />
+    <Compile Include="Assets\Minigames\Scripts\Destroyer.cs" />
     <Compile Include="Assets\Dependencies\FiducialFolder\TUIOConnector\TuioManager.cs" />
     <Compile Include="Assets\Silhouette\Scripts\ScaleStamp.cs" />
     <Compile Include="Assets\Unused Scripts\JZSetActiveOnRotation.cs" />
@@ -107,6 +111,7 @@
     <Compile Include="Assets\Dependencies\FiducialFolder\FiducialExamples\Compass.cs" />
     <Compile Include="Assets\Dependencies\FiducialFolder\TUIOConnector\OSCMessage.cs" />
     <Compile Include="Assets\Dependencies\Aran\TekenPackage\StoryScopePen.cs" />
+    <Compile Include="Assets\Minigames\Scripts\AddCloseRoom.cs" />
     <Compile Include="Assets\Silhouette\Scripts\JZTurnSpriteCounter.cs" />
     <Compile Include="Assets\Unused Scripts\RestartUnity.cs" />
     <Compile Include="Assets\Utilities\SceneSelectorMenu\JZSceneSelectorManager.cs" />
@@ -120,18 +125,14 @@
     <Compile Include="Assets\Silhouette\Scripts\Flicker.cs" />
     <Compile Include="Assets\Unused Scripts\Distance.cs" />
     <Compile Include="Assets\Silhouette\Scripts\JZCamActive.cs" />
+    <Compile Include="Assets\Minigames\Scripts\AddRoom.cs" />
     <Compile Include="Assets\Silhouette\Scripts\ShaderManager.cs" />
     <Compile Include="Assets\Dependencies\FiducialFolder\TUIOConnector\OSCReceiver.cs" />
     <Compile Include="Assets\Silhouette\Scripts\JZLoadSingle.cs" />
     <Compile Include="Assets\Silhouette\Scripts\JZLoadFromExternalV2.cs" />
     <Compile Include="Assets\Silhouette\Scripts\JZReloadScene.cs" />
     <Compile Include="Assets\Silhouette\Sprites\JZSpriteRoot.cs" />
-    <Compile Include="Assets\Minigames\Scripts\RoomSpawner.cs" />
-    <Compile Include="Assets\Minigames\Scripts\RoomTemplates.cs" />
-    <Compile Include="Assets\Minigames\Scripts\AddCloseRoom.cs" />
-    <Compile Include="Assets\Minigames\Scripts\Destroyer.cs" />
-    <Compile Include="Assets\Minigames\Scripts\LockKeyBoss.cs" />
-    <Compile Include="Assets\Minigames\Scripts\AddRoom.cs" />
+    <Compile Include="Assets\Silhouette\Scripts\BananaPeel.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
