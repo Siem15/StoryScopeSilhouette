@@ -157,10 +157,14 @@ public class Properties : MonoBehaviour
         Character character = GetComponent<Character>();
         Character otherCharacter = collision.GetComponent<Character>();
 
+        // Add shadermanager to get shaders from shadermanager component
+        ShaderManager shaderManager = GetComponent<ShaderManager>();
+
         if (otherObject != null)
         {
             if (properties[(int)Property.IsFood] && otherObject.properties[(int)Property.CanEatFood])
             {
+                //TODO: spawn edible particle system
                 Debug.Log($"{gameObject.name} eat");
                 transform.localScale *= 0.9f; // Shrink
                 otherObject.transform.localScale *= 1.1f; // Grow
@@ -168,9 +172,12 @@ public class Properties : MonoBehaviour
 
             if (properties[(int)Property.IsFlammable] && otherObject.properties[(int)Property.IsFire])
             {
+                shaderManager.AddShader("OnFireEffectShader");  // Go to ShaderManager and use the fire shader
                 Debug.Log(gameObject.name + " flame");
                 if (transform.childCount > 0)
                 {
+                    //TODO: shaderManager.AddShader("dissolveShader")
+                    //TODO: remove fire shader
                     transform.GetChild(0).gameObject.SetActive(false); // destroy
                 }
             }
