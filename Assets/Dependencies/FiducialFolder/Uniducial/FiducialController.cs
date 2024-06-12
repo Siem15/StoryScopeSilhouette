@@ -67,7 +67,7 @@ public class FiducialController : MonoBehaviour
     public ExampleEvent onRotateForward = new ExampleEvent();
     public ExampleEvent onRotateBackward = new ExampleEvent();
 
-    private float JZAxisZ;
+    private float zAxis;
 
     // Member variabes...
     public Vector2 m_ScreenPosition;
@@ -90,7 +90,7 @@ public class FiducialController : MonoBehaviour
      RotateAround = RotationAxis.Forward;
 #endif
 
-        JZAxisZ = transform.position.z;
+        zAxis = transform.position.z;
         m_TuioManager = UniducialLibrary.TuioManager.Instance;
 
         // Uncomment next line to set port explicitly (default is 3333).
@@ -141,7 +141,7 @@ public class FiducialController : MonoBehaviour
         {
             TUIO.TuioObject marker = m_TuioManager.GetMarker(MarkerID);
 
-            //update parameters
+            // Update parameters
             m_ScreenPosition.x = marker.getX();
             m_ScreenPosition.y = marker.getY();
             m_Angle = marker.getAngle() * RotationMultiplier;
@@ -153,13 +153,16 @@ public class FiducialController : MonoBehaviour
             m_Direction.x = marker.getXSpeed();
             m_Direction.y = marker.getYSpeed();
             m_IsVisible = true;
-            //set game object to visible, if it was hidden before
+
+            // Set game object to visible, if it was hidden before
             ShowGameObject();
-            //update transform component
+
+            // Update transform component
             UpdateTransform();
         }
-        else // Automatically hide game object when marker is not visible.
+        else 
         {
+            // Automatically hide game object when marker is not visible.
             if (AutoHideGO)
             {
                 StartCoroutine(HideDelay(hideDelay));
@@ -210,7 +213,7 @@ public class FiducialController : MonoBehaviour
                 Vector3 position = new Vector3(xPosition * Screen.width, (1 - yPosition) * Screen.height, CameraOffset);
                 m_WorldPosition = m_MainCamera.ScreenToWorldPoint(position);
                 //worldPosition += cameraOffset * mainCamera.transform.forward;
-                m_WorldPosition = new Vector3(m_WorldPosition.x, m_WorldPosition.y, JZAxisZ);
+                m_WorldPosition = new Vector3(m_WorldPosition.x, m_WorldPosition.y, zAxis);
                 transform.position = m_WorldPosition;
             }
         }

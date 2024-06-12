@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class Properties : MonoBehaviour
@@ -28,10 +29,10 @@ public class Properties : MonoBehaviour
     private Vector3 originalScale;
     private Vector3 originalRoration;
     private GameObject originalendmarker;
-    private FiducialController fiducialController;
+    private FiducialController fiducialController;    
     private float originalWalkingSpeed;
     private float originalRunningSpeed;
-
+    
     public enum Property
     {
         Empty,
@@ -90,7 +91,7 @@ public class Properties : MonoBehaviour
         originalRoration = transform.eulerAngles;
         originalendmarker = GetComponent<Character>().endMarker;
         originalWalkingSpeed = GetComponent<Character>().WalkSpeed;
-        originalRunningSpeed = GetComponent<Character>().RunSpeed;
+        originalRunningSpeed = GetComponent<Character>().RunSpeed;        
 
         fiducialController = GetComponent<FiducialController>();
 
@@ -150,7 +151,7 @@ public class Properties : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log(gameObject.name + " trigger enter");
+        Debug.Log($"{gameObject.name} trigger enter");
 
         Properties otherObject = collision.GetComponent<Properties>();
 
@@ -168,7 +169,8 @@ public class Properties : MonoBehaviour
 
             if (properties[(int)Property.IsFlammable] && otherObject.properties[(int)Property.IsFire])
             {
-                Debug.Log(gameObject.name + " flame");
+                Debug.Log($"{gameObject.name} flame");
+
                 if (transform.childCount > 0)
                 {
                     transform.GetChild(0).gameObject.SetActive(false); // destroy
@@ -176,9 +178,10 @@ public class Properties : MonoBehaviour
             }
 
             if (properties[(int)Property.IsWheel] && otherObject.properties[(int)Property.IsVehicle])
-            {
-                Debug.Log($"{gameObject.name} attach wheel");
-                transform.parent = otherObject.transform; // Stick to the vehicle
+            {                                
+                ModularSystem modularSystem = collision.gameObject.GetComponent<ModularSystem>();
+                modularSystem.AddChild(gameObject);
+
                 GetComponent<BoxCollider2D>().enabled = false;
                 character.endMarker = otherCharacter.endMarker;
                 character.WalkSpeed = 0;
