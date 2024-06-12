@@ -3,10 +3,10 @@ using UnityEngine;
 
 public class ModularSystem : MonoBehaviour
 {
-    // List of offsets for child objects
+    // List of attach points for child objects
     [SerializeField]
-    private Vector3[] offsets;
-
+    private Transform[] attachPoints;
+    
     // List of all child objects
     [SerializeField]
     private List<GameObject> childObjects;
@@ -18,16 +18,16 @@ public class ModularSystem : MonoBehaviour
     private void Start()
     {
         // Log an error if no offsets have been added
-        if (offsets.Length <= 0) 
+        if (attachPoints.Length <= 0) 
         {
             Debug.LogError("Modular system has no offsets; please add one or more offsets");
         }
     }
-
-    public void AttachParentTo(GameObject other, Vector3 offset) 
+    
+    public void AttachParentTo(GameObject other, Transform attachPoint) 
     {        
         transform.parent = other.transform; // Assign other object as parent
-        transform.parent.position = other.transform.position + offset; // Set new position with offset
+        transform.parent.position = other.transform.position + attachPoint.position; // Set new position with offset
         Debug.Log($"'{gameObject.name}' attached as a child of '{other.name}'");
     }
 
@@ -40,10 +40,10 @@ public class ModularSystem : MonoBehaviour
         }        
 
         // Check number of child objects and attach if possible
-        if (childObjects.Count < offsets.Length)
+        if (childObjects.Count < attachPoints.Length)
         {
             ModularSystem modularSystem = other.GetComponent<ModularSystem>();
-            modularSystem.AttachParentTo(gameObject, offsets[childObjects.Count + 1]);
+            modularSystem.AttachParentTo(gameObject, attachPoints[childObjects.Count + 1]);
             childObjects.Add(other);
         }
         else
