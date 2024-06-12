@@ -11,10 +11,10 @@ namespace OSC.NET
     {
         public OSCPacket()
         {
-            values = new ArrayList();
+            this.values = new ArrayList();
         }
 
-        protected static void AddBytes(ArrayList data, byte[] bytes)
+        protected static void addBytes(ArrayList data, byte[] bytes)
         {
             foreach (byte b in bytes)
             {
@@ -22,11 +22,10 @@ namespace OSC.NET
             }
         }
 
-        protected static void PadNull(ArrayList data)
+        protected static void padNull(ArrayList data)
         {
             byte zero = 0;
             int pad = 4 - (data.Count % 4);
-
             for (int i = 0; i < pad; i++)
             {
                 data.Add(zero);
@@ -36,150 +35,93 @@ namespace OSC.NET
         protected static byte[] swapEndian(byte[] data)
         {
             byte[] swapped = new byte[data.Length];
-
             for (int i = data.Length - 1, j = 0; i >= 0; i--, j++)
             {
                 swapped[j] = data[i];
             }
-
             return swapped;
         }
 
         protected static byte[] packInt(int value)
         {
             byte[] data = BitConverter.GetBytes(value);
-
-            if (BitConverter.IsLittleEndian)
-            {
-                data = swapEndian(data);
-            }
-
+            if (BitConverter.IsLittleEndian) data = swapEndian(data);
             return data;
         }
 
-        protected static byte[] PackLong(long value)
+        protected static byte[] packLong(long value)
         {
             byte[] data = BitConverter.GetBytes(value);
-
-            if (BitConverter.IsLittleEndian)
-            {
-                data = swapEndian(data);
-            }
-
+            if (BitConverter.IsLittleEndian) data = swapEndian(data);
             return data;
         }
 
-        protected static byte[] PackFloat(float value)
+        protected static byte[] packFloat(float value)
         {
             byte[] data = BitConverter.GetBytes(value);
-
-            if (BitConverter.IsLittleEndian)
-            {
-                data = swapEndian(data);
-            }
-
+            if (BitConverter.IsLittleEndian) data = swapEndian(data);
             return data;
         }
 
-        protected static byte[] PackDouble(double value)
+        protected static byte[] packDouble(double value)
         {
             byte[] data = BitConverter.GetBytes(value);
-
-            if (BitConverter.IsLittleEndian)
-            {
-                data = swapEndian(data);
-            }
-
+            if (BitConverter.IsLittleEndian) data = swapEndian(data);
             return data;
         }
 
-        protected static byte[] PackString(string value) => Encoding.ASCII.GetBytes(value);
+        protected static byte[] packString(string value)
+        {
+            return System.Text.Encoding.ASCII.GetBytes(value);
+        }
 
-        abstract protected void Pack();
-
+        abstract protected void pack();
         protected byte[] binaryData;
-
         public byte[] BinaryData
         {
             get
             {
-                Pack();
+                pack();
                 return binaryData;
             }
         }
 
-        protected static int UnpackInt(byte[] bytes, ref int start)
+        protected static int unpackInt(byte[] bytes, ref int start)
         {
             byte[] data = new byte[4];
-
-            for (int i = 0; i < 4; i++, start++)
-            {
-                data[i] = bytes[start];
-            }
-
-            if (BitConverter.IsLittleEndian)
-            {
-                data = swapEndian(data);
-            }
-
+            for (int i = 0; i < 4; i++, start++) data[i] = bytes[start];
+            if (BitConverter.IsLittleEndian) data = swapEndian(data);
             return BitConverter.ToInt32(data, 0);
         }
 
-        protected static long UnpackLong(byte[] bytes, ref int start)
+        protected static long unpackLong(byte[] bytes, ref int start)
         {
             byte[] data = new byte[8];
-
-            for (int i = 0; i < 8; i++, start++)
-            {
-                data[i] = bytes[start];
-            }
-
-            if (BitConverter.IsLittleEndian)
-            {
-                data = swapEndian(data);
-            }
-
+            for (int i = 0; i < 8; i++, start++) data[i] = bytes[start];
+            if (BitConverter.IsLittleEndian) data = swapEndian(data);
             return BitConverter.ToInt64(data, 0);
         }
 
-        protected static float UnpackFloat(byte[] bytes, ref int start)
+        protected static float unpackFloat(byte[] bytes, ref int start)
         {
             byte[] data = new byte[4];
-
-            for (int i = 0; i < 4; i++, start++)
-            {
-                data[i] = bytes[start];
-            }
-
-            if (BitConverter.IsLittleEndian)
-            {
-                data = swapEndian(data);
-            }
-
+            for (int i = 0; i < 4; i++, start++) data[i] = bytes[start];
+            if (BitConverter.IsLittleEndian) data = swapEndian(data);
             return BitConverter.ToSingle(data, 0);
         }
 
         protected static double unpackDouble(byte[] bytes, ref int start)
         {
             byte[] data = new byte[8];
-
-            for (int i = 0; i < 8; i++, start++)
-            {
-                data[i] = bytes[start];
-            }
-
-            if (BitConverter.IsLittleEndian)
-            {
-                data = swapEndian(data);
-            }
-
+            for (int i = 0; i < 8; i++, start++) data[i] = bytes[start];
+            if (BitConverter.IsLittleEndian) data = swapEndian(data);
             return BitConverter.ToDouble(data, 0);
         }
 
-        protected static string UnpackString(byte[] bytes, ref int start)
+        protected static string unpackString(byte[] bytes, ref int start)
         {
             int count = 0;
-            //for (int index = start; bytes[index] != 0; index++, count++) {}
+            for (int index = start; bytes[index] != 0; index++, count++) ;
             string s = Encoding.ASCII.GetString(bytes, start, count);
             start += count + 1;
             start = (start + 3) / 4 * 4;
@@ -194,28 +136,27 @@ namespace OSC.NET
 
         public static OSCPacket Unpack(byte[] bytes, ref int start, int end)
         {
-            if (bytes[start] == '#')
-            {
-                return OSCBundle.Unpack(bytes, ref start, end);
-            }
-            else
-            {
-                return OSCMessage.Unpack(bytes, ref start);
-            }
+            if (bytes[start] == '#') return OSCBundle.Unpack(bytes, ref start, end);
+            else return OSCMessage.Unpack(bytes, ref start);
         }
 
-        protected string address;
 
+        protected string address;
         public string Address
         {
-            get => address;
-            set => address = value; // TODO: validate
+            get { return address; }
+            set
+            {
+                // TODO: validate
+                address = value;
+            }
         }
 
         protected ArrayList values;
-
-        public ArrayList Values => (ArrayList)values.Clone();
-
+        public ArrayList Values
+        {
+            get { return (ArrayList)values.Clone(); }
+        }
         abstract public void Append(object value);
 
         abstract public bool IsBundle();

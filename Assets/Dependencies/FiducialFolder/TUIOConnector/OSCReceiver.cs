@@ -20,18 +20,14 @@ namespace OSC.NET
 
         public void Connect()
         {
-            if (udpClient != null)
-            {
-                Close();
-            }
-
-            udpClient = new UdpClient(localPort);
+            if (this.udpClient != null) Close();
+            this.udpClient = new UdpClient(this.localPort);
         }
 
         public void Close()
         {
-            udpClient?.Close();
-            udpClient = null;
+            if (this.udpClient != null) this.udpClient.Close();
+            this.udpClient = null;
         }
 
         public OSCPacket Receive()
@@ -39,12 +35,10 @@ namespace OSC.NET
             try
             {
                 IPEndPoint ip = null;
-                byte[] bytes = udpClient.Receive(ref ip);
-
+                byte[] bytes = this.udpClient.Receive(ref ip);
                 if (bytes != null && bytes.Length > 0)
-                {
                     return OSCPacket.Unpack(bytes);
-                }
+
             }
             catch (Exception e)
             {

@@ -21,28 +21,23 @@ namespace OSC.NET
 
         public void Connect()
         {
-            if (udpClient != null)
-            {
-                Close();
-            }
-
-            udpClient = new UdpClient(remoteHost, remotePort);
+            if (this.udpClient != null) Close();
+            this.udpClient = new UdpClient(this.remoteHost, this.remotePort);
         }
 
         public void Close()
         {
-            udpClient.Close();
-            udpClient = null;
+            this.udpClient.Close();
+            this.udpClient = null;
         }
 
         public int Send(OSCPacket packet)
         {
             int byteNum = 0;
             byte[] data = packet.BinaryData;
-
             try
             {
-                byteNum = udpClient.Send(data, data.Length);
+                byteNum = this.udpClient.Send(data, data.Length);
             }
             catch (Exception e)
             {
