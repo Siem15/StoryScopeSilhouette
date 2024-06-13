@@ -30,7 +30,7 @@ public class RotateProperties : MonoBehaviour
         foreach (Properties property in propertyObjects)
         {
             float currentDistance = Vector3.Distance(this.transform.position, property.transform.position);
-            if (currentDistance < shortestDistance && property.isAlive)
+            if (currentDistance < shortestDistance && property.isAlive && !property.fixedProperties)
             {
                 shortestDistance = currentDistance;
                 clostestObject = property;

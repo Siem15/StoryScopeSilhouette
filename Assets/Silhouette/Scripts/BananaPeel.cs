@@ -7,9 +7,14 @@ public class BananaPeel : MonoBehaviour
     [SerializeField] float spinDuration = 1f;
     FiducialController FC;
 
+    private void Start()
+    {
+        FC = GetComponent<FiducialController>();    
+    }
+
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision != null && FC.IsVisible)
+        if (collision != null && (FC.IsVisible|| !FC.AutoHideGO))
         {
             StartCoroutine(Rotate(collision.gameObject, spinDuration));
         }
