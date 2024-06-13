@@ -2106,7 +2106,7 @@ PrefabInstance:
     - target: {fileID: 4359827659742209914, guid: 78b74fd16e4934647a2ba8de56436244,
         type: 3}
       propertyPath: AutoHideGO
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4359827659742209914, guid: 78b74fd16e4934647a2ba8de56436244,
         type: 3}
@@ -4531,6 +4531,11 @@ PrefabInstance:
     - target: {fileID: 4726248619259016772, guid: 095c4830b8aff1f47b5b1ecf69f50b1c,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4726248619259016773, guid: 095c4830b8aff1f47b5b1ecf69f50b1c,
+        type: 3}
+      propertyPath: AutoHideGO
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4726248619259016774, guid: 095c4830b8aff1f47b5b1ecf69f50b1c,

@@ -5,10 +5,11 @@ using UnityEngine;
 public class BananaPeel : MonoBehaviour
 {
     [SerializeField] float spinDuration = 1f;
+    FiducialController FC;
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision != null)
+        if (collision != null && FC.IsVisible)
         {
             StartCoroutine(Rotate(collision.gameObject, spinDuration));
         }
