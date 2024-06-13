@@ -50,13 +50,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MarkerID: 66
-  IsPositionMapped: 1
+  IsPositionMapped: 0
   InvertX: 0
   InvertY: 0
   grounded: 1
   templateCam: 0
   full: 0
-  IsRotationMapped: 1
+  IsRotationMapped: 0
   UseRotation: 0
   AutoHideGO: 1
   DegreesToAction: 0
@@ -163,12 +163,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a47fc9bd19013984e89d30bff1d554a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  WalkSpeed: 0
-  RunSpeed: 0
+  WalkSpeed: 6
+  RunSpeed: 6
   stopRunningUntilThisDist: 0
   singleSprite: 0
   controlRotation: 0
-  controlPosition: 0
+  controlPosition: 1
   facingRight: 0
   endMarkerPrefab: {fileID: 441084473105571446, guid: 2f7ed94a83a05a140be209a9a062c607,
     type: 3}
