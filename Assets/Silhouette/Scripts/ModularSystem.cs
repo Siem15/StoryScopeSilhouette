@@ -18,17 +18,16 @@ public class ModularSystem : MonoBehaviour
     private void Start()
     {
         // Log an error if no offsets have been added
-        if (attachPoints.Length <= 0) 
+        if (attachPoints.Length <= 0 && !IsChildOnly) 
         {
-            Debug.LogError("Modular system has no offsets; please add one or more offsets");
+            Debug.LogError($"'{gameObject.name}' has no attach points; please add one or more attach points");
         }
     }
     
-    public void AttachParentTo(GameObject other, Transform attachPoint) 
+    public void AttachParentTo(Transform attachPoint) 
     {        
-        transform.parent = other.transform; // Assign other object as parent
-        transform.parent.position = other.transform.position + attachPoint.position; // Set new position with offset
-        Debug.Log($"'{gameObject.name}' attached as a child of '{other.name}'");
+        transform.parent = attachPoint.transform; // Assign attach point as parent
+        transform.position = attachPoint.position; // Set position to that of attach point
     }
 
     public void AddChild(GameObject other)
@@ -43,8 +42,9 @@ public class ModularSystem : MonoBehaviour
         if (childObjects.Count < attachPoints.Length)
         {
             ModularSystem modularSystem = other.GetComponent<ModularSystem>();
-            modularSystem.AttachParentTo(gameObject, attachPoints[childObjects.Count + 1]);
+            modularSystem.AttachParentTo(attachPoints[childObjects.Count]);
             childObjects.Add(other);
+            Debug.Log($"'{gameObject.name}' attached as a child of '{other.name}'");
         }
         else
         {
