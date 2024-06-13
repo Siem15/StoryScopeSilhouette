@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <LangVersion>8.0</LangVersion>
+    <LangVersion>latest</LangVersion>
   </PropertyGroup>
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -53,9 +53,6 @@
     <UnityVersion>2020.3.17f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
-    <Analyzer Include="C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="Assets\Silhouette\Scripts\TurnOnEditorCharacter.cs" />
     <Compile Include="Assets\Dependencies\FiducialFolder\TUIOConnector\TuioPoint.cs" />
     <Compile Include="Assets\Silhouette\Scripts\Webcam.cs" />
@@ -92,6 +89,7 @@
     <Compile Include="Assets\Silhouette\Sprites\JZRotateToNextChild.cs" />
     <Compile Include="Assets\Utilities\Loading\LoadingScene.cs" />
     <Compile Include="Assets\Minigames\Scripts\RoomTemplates.cs" />
+    <Compile Include="Assets\Silhouette\Scripts\ModularSystem.cs" />
     <Compile Include="Assets\Dependencies\FiducialFolder\TUIOConnector\OSCTransmitter.cs" />
     <Compile Include="Assets\Silhouette\Scripts\JZMicrophone.cs" />
     <Compile Include="Assets\Silhouette\Scripts\SO\JZSOCameraActive.cs" />
@@ -836,6 +834,9 @@
     <Reference Include="Unity.2D.Animation.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.2D.Animation.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.VisualEffectGraph.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.VisualEffectGraph.Editor.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.2D.Tilemap.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.2D.Tilemap.Editor.dll</HintPath>
     </Reference>
@@ -850,6 +851,9 @@
     </Reference>
     <Reference Include="Unity.Sysroot.Linux_x86_64">
       <HintPath>Library\ScriptAssemblies\Unity.Sysroot.Linux_x86_64.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.VisualEffectGraph.Runtime">
+      <HintPath>Library\ScriptAssemblies\Unity.VisualEffectGraph.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline">
       <HintPath>Library\ScriptAssemblies\Unity.Timeline.dll</HintPath>

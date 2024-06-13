@@ -3,32 +3,36 @@
   "WorkspaceRootPath": "C:\\Users\\fabio\\Documents\\GitHub\\CrosswordExample\\StoryScopeSilhouette\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\fabio\\Documents\\GitHub\\CrosswordExample\\StoryScopeSilhouette\\Assets\\Silhouette\\Scripts\\BananaPeel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Silhouette\\Scripts\\BananaPeel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{81F3232A-BC0B-AD8A-2391-624EF666FDB2}|Assembly-CSharp.Player.csproj|c:\\users\\fabio\\documents\\github\\crosswordexample\\storyscopesilhouette\\assets\\silhouette\\scripts\\character.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{81F3232A-BC0B-AD8A-2391-624EF666FDB2}|Assembly-CSharp.Player.csproj|solutionrelative:assets\\silhouette\\scripts\\character.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\fabio\\Documents\\GitHub\\CrosswordExample\\StoryScopeSilhouette\\Assets\\Silhouette\\Scripts\\Properties.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Silhouette\\Scripts\\Properties.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{81F3232A-BC0B-AD8A-2391-624EF666FDB2}|Assembly-CSharp.Player.csproj|C:\\Users\\fabio\\Documents\\GitHub\\CrosswordExample\\StoryScopeSilhouette\\assets\\silhouette\\scripts\\bananapeel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{81F3232A-BC0B-AD8A-2391-624EF666FDB2}|Assembly-CSharp.Player.csproj|solutionrelative:assets\\silhouette\\scripts\\bananapeel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\fabio\\Documents\\GitHub\\CrosswordExample\\StoryScopeSilhouette\\Assets\\Dependencies\\FiducialFolder\\Uniducial\\FiducialController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Dependencies\\FiducialFolder\\Uniducial\\FiducialController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{81F3232A-BC0B-AD8A-2391-624EF666FDB2}|Assembly-CSharp.Player.csproj|C:\\Users\\fabio\\Documents\\GitHub\\CrosswordExample\\StoryScopeSilhouette\\Assets\\Silhouette\\Scripts\\RotateProperties.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{81F3232A-BC0B-AD8A-2391-624EF666FDB2}|Assembly-CSharp.Player.csproj|solutionrelative:Assets\\Silhouette\\Scripts\\RotateProperties.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\fabio\\Documents\\GitHub\\CrosswordExample\\StoryScopeSilhouette\\Assets\\Silhouette\\Scripts\\RotateProperties.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Silhouette\\Scripts\\RotateProperties.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{81F3232A-BC0B-AD8A-2391-624EF666FDB2}|Assembly-CSharp.Player.csproj|C:\\Users\\fabio\\Documents\\GitHub\\CrosswordExample\\StoryScopeSilhouette\\Assets\\Dependencies\\FiducialFolder\\Uniducial\\FiducialController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{81F3232A-BC0B-AD8A-2391-624EF666FDB2}|Assembly-CSharp.Player.csproj|solutionrelative:Assets\\Dependencies\\FiducialFolder\\Uniducial\\FiducialController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\fabio\\Documents\\GitHub\\CrosswordExample\\StoryScopeSilhouette\\Assets\\Utilities\\SceneSelectorMenu\\JZSceneSelectorManager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Utilities\\SceneSelectorMenu\\JZSceneSelectorManager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{81F3232A-BC0B-AD8A-2391-624EF666FDB2}|Assembly-CSharp.Player.csproj|C:\\Users\\fabio\\Documents\\GitHub\\CrosswordExample\\StoryScopeSilhouette\\Assets\\Silhouette\\Scripts\\Properties.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{81F3232A-BC0B-AD8A-2391-624EF666FDB2}|Assembly-CSharp.Player.csproj|solutionrelative:Assets\\Silhouette\\Scripts\\Properties.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\fabio\\Documents\\GitHub\\CrosswordExample\\StoryScopeSilhouette\\Assets\\Silhouette\\Scripts\\JZLoadFromExternalV2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Silhouette\\Scripts\\JZLoadFromExternalV2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{81F3232A-BC0B-AD8A-2391-624EF666FDB2}|Assembly-CSharp.Player.csproj|C:\\Users\\fabio\\Documents\\GitHub\\CrosswordExample\\StoryScopeSilhouette\\Assets\\Utilities\\SceneSelectorMenu\\JZSceneSelectorManager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{81F3232A-BC0B-AD8A-2391-624EF666FDB2}|Assembly-CSharp.Player.csproj|solutionrelative:Assets\\Utilities\\SceneSelectorMenu\\JZSceneSelectorManager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\fabio\\Documents\\GitHub\\CrosswordExample\\StoryScopeSilhouette\\Assets\\Dependencies\\FiducialFolder\\TUIOConnector\\OSCPacket.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Dependencies\\FiducialFolder\\TUIOConnector\\OSCPacket.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{81F3232A-BC0B-AD8A-2391-624EF666FDB2}|Assembly-CSharp.Player.csproj|C:\\Users\\fabio\\Documents\\GitHub\\CrosswordExample\\StoryScopeSilhouette\\Assets\\Silhouette\\Scripts\\JZLoadFromExternalV2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{81F3232A-BC0B-AD8A-2391-624EF666FDB2}|Assembly-CSharp.Player.csproj|solutionrelative:Assets\\Silhouette\\Scripts\\JZLoadFromExternalV2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{81F3232A-BC0B-AD8A-2391-624EF666FDB2}|Assembly-CSharp.Player.csproj|C:\\Users\\fabio\\Documents\\GitHub\\CrosswordExample\\StoryScopeSilhouette\\Assets\\Dependencies\\FiducialFolder\\TUIOConnector\\OSCPacket.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{81F3232A-BC0B-AD8A-2391-624EF666FDB2}|Assembly-CSharp.Player.csproj|solutionrelative:Assets\\Dependencies\\FiducialFolder\\TUIOConnector\\OSCPacket.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -38,23 +42,36 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
+              "Title": "Character.cs",
+              "DocumentMoniker": "C:\\Users\\fabio\\Documents\\GitHub\\CrosswordExample\\StoryScopeSilhouette\\Assets\\Silhouette\\Scripts\\Character.cs",
+              "RelativeDocumentMoniker": "Assets\\Silhouette\\Scripts\\Character.cs",
+              "ToolTip": "C:\\Users\\fabio\\Documents\\GitHub\\CrosswordExample\\StoryScopeSilhouette\\Assets\\Silhouette\\Scripts\\Character.cs",
+              "RelativeToolTip": "Assets\\Silhouette\\Scripts\\Character.cs",
+              "ViewState": "AQIAAEMAAAAAAAAAAAAewFMAAAA/AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-13T09:10:40.853Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "RotateProperties.cs",
               "DocumentMoniker": "C:\\Users\\fabio\\Documents\\GitHub\\CrosswordExample\\StoryScopeSilhouette\\Assets\\Silhouette\\Scripts\\RotateProperties.cs",
               "RelativeDocumentMoniker": "Assets\\Silhouette\\Scripts\\RotateProperties.cs",
               "ToolTip": "C:\\Users\\fabio\\Documents\\GitHub\\CrosswordExample\\StoryScopeSilhouette\\Assets\\Silhouette\\Scripts\\RotateProperties.cs",
               "RelativeToolTip": "Assets\\Silhouette\\Scripts\\RotateProperties.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "ViewState": "AQIAABYAAAAAAAAAAAAQwCUAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-13T08:35:09.393Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "FiducialController.cs",
               "DocumentMoniker": "C:\\Users\\fabio\\Documents\\GitHub\\CrosswordExample\\StoryScopeSilhouette\\Assets\\Dependencies\\FiducialFolder\\Uniducial\\FiducialController.cs",
               "RelativeDocumentMoniker": "Assets\\Dependencies\\FiducialFolder\\Uniducial\\FiducialController.cs",
@@ -66,7 +83,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
               "Title": "Properties.cs",
               "DocumentMoniker": "C:\\Users\\fabio\\Documents\\GitHub\\CrosswordExample\\StoryScopeSilhouette\\Assets\\Silhouette\\Scripts\\Properties.cs",
               "RelativeDocumentMoniker": "Assets\\Silhouette\\Scripts\\Properties.cs",
@@ -78,20 +95,19 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "BananaPeel.cs",
               "DocumentMoniker": "C:\\Users\\fabio\\Documents\\GitHub\\CrosswordExample\\StoryScopeSilhouette\\Assets\\Silhouette\\Scripts\\BananaPeel.cs",
               "RelativeDocumentMoniker": "Assets\\Silhouette\\Scripts\\BananaPeel.cs",
               "ToolTip": "C:\\Users\\fabio\\Documents\\GitHub\\CrosswordExample\\StoryScopeSilhouette\\Assets\\Silhouette\\Scripts\\BananaPeel.cs",
               "RelativeToolTip": "Assets\\Silhouette\\Scripts\\BananaPeel.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAaAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAA0AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-12T12:33:37.714Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-12T12:33:37.714Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "JZSceneSelectorManager.cs",
               "DocumentMoniker": "C:\\Users\\fabio\\Documents\\GitHub\\CrosswordExample\\StoryScopeSilhouette\\Assets\\Utilities\\SceneSelectorMenu\\JZSceneSelectorManager.cs",
               "RelativeDocumentMoniker": "Assets\\Utilities\\SceneSelectorMenu\\JZSceneSelectorManager.cs",
@@ -103,7 +119,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "JZLoadFromExternalV2.cs",
               "DocumentMoniker": "C:\\Users\\fabio\\Documents\\GitHub\\CrosswordExample\\StoryScopeSilhouette\\Assets\\Silhouette\\Scripts\\JZLoadFromExternalV2.cs",
               "RelativeDocumentMoniker": "Assets\\Silhouette\\Scripts\\JZLoadFromExternalV2.cs",
@@ -115,7 +131,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "OSCPacket.cs",
               "DocumentMoniker": "C:\\Users\\fabio\\Documents\\GitHub\\CrosswordExample\\StoryScopeSilhouette\\Assets\\Dependencies\\FiducialFolder\\TUIOConnector\\OSCPacket.cs",
               "RelativeDocumentMoniker": "Assets\\Dependencies\\FiducialFolder\\TUIOConnector\\OSCPacket.cs",
