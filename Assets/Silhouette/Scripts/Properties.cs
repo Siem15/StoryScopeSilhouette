@@ -192,7 +192,10 @@ public class Properties : MonoBehaviour
             if (properties[(int)Property.IsFood] && otherObject.properties[(int)Property.CanEatFood])
             {
                 //TODO: spawn edible particle system on place of currently being eaten object
-                EffectsManager.GetComponent<EffectsManager>().AddEffect("GetsEaten", this.gameObject);
+                if (EffectsManager != null)
+                {
+                    EffectsManager.GetComponent<EffectsManager>().AddEffect("GetsEaten", this.gameObject);
+                }
                 Debug.Log($"{gameObject.name} eat");
                 transform.localScale *= 0.9f; // Shrink
                 otherObject.transform.localScale *= 1.1f; // Grow
