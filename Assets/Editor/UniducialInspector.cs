@@ -26,6 +26,7 @@ using UnityEngine;
 [CustomEditor(typeof(FiducialController))]
 public class UniducialInspector : Editor
 {
+    // Used to store the fiducial controller of the object
     private FiducialController fiducialController;
 
     public override void OnInspectorGUI()
@@ -33,9 +34,9 @@ public class UniducialInspector : Editor
         fiducialController = target as FiducialController;
         Camera mainCamera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
 
-        EditorGUILayout.TextField("Game Object", EditorStyles.boldLabel);
+        EditorGUILayout.TextField("Game Object", EditorStyles.boldLabel); // Header attribute
 
-        EditorGUILayout.BeginHorizontal();
+        EditorGUILayout.BeginHorizontal(); // Begin horizontal UI group to show variables
         fiducialController.MarkerID = EditorGUILayout.IntField("Marker ID", fiducialController.MarkerID);
         EditorGUILayout.EndHorizontal();
 
@@ -43,7 +44,7 @@ public class UniducialInspector : Editor
         fiducialController.AutoHideGO = EditorGUILayout.Toggle("Auto-Hide GameObject", fiducialController.AutoHideGO);
         EditorGUILayout.EndHorizontal();
 
-        EditorGUILayout.Space();
+        EditorGUILayout.Space(); // Put some space between previous and next field
         EditorGUILayout.TextField("Camera", EditorStyles.boldLabel);
 
         EditorGUILayout.BeginHorizontal();
@@ -60,6 +61,7 @@ public class UniducialInspector : Editor
         EditorGUILayout.BeginHorizontal();
         fiducialController.hideDelay = EditorGUILayout.FloatField("Hide Delay", fiducialController.hideDelay);
         EditorGUILayout.EndHorizontal();
+
         EditorGUILayout.Space();
 
         EditorGUILayout.TextField("Position", EditorStyles.boldLabel);
@@ -68,6 +70,7 @@ public class UniducialInspector : Editor
         fiducialController.IsPositionMapped = EditorGUILayout.Toggle("Control Position", fiducialController.IsPositionMapped);
         EditorGUILayout.EndHorizontal();
 
+        // Use if-statement check on fiducial controller to create drop-down fields
         if (fiducialController.IsPositionMapped)
         {
             EditorGUILayout.BeginHorizontal();
@@ -92,24 +95,26 @@ public class UniducialInspector : Editor
         }
 
         EditorGUILayout.Space();
+
         EditorGUILayout.TextField("Rotation", EditorStyles.boldLabel);
 
         if (!fiducialController.IsAttachedToGUIComponent())
         {
             EditorGUILayout.BeginHorizontal();
-            fiducialController.IsRotationMapped = EditorGUILayout.Toggle("Control Rotation", fiducialController.IsRotationMapped);
+            fiducialController.IsRotationMapped = EditorGUILayout
+                .Toggle("Control Rotation", fiducialController.IsRotationMapped);
             EditorGUILayout.EndHorizontal();
 
             if (fiducialController.IsRotationMapped)
             {
                 EditorGUILayout.BeginHorizontal();
-                fiducialController.RotateAround = (FiducialController.RotationAxis)EditorGUILayout.EnumPopup(
-                    "Rotation Axis", fiducialController.RotateAround);
+                fiducialController.RotateAround = (FiducialController.RotationAxis)EditorGUILayout
+                    .EnumPopup("Rotation Axis", fiducialController.RotateAround);
                 EditorGUILayout.EndHorizontal();
 
                 EditorGUILayout.BeginHorizontal();
-                fiducialController.RotationMultiplier = EditorGUILayout.Slider("Rotation Factor", 
-                    fiducialController.RotationMultiplier, 0.01f, 5f);
+                fiducialController.RotationMultiplier = EditorGUILayout
+                    .Slider("Rotation Factor", fiducialController.RotationMultiplier, 0.01f, 5f);
                 EditorGUILayout.EndHorizontal();
             }
 
@@ -120,8 +125,8 @@ public class UniducialInspector : Editor
             if (fiducialController.UseRotation)
             {
                 EditorGUILayout.BeginHorizontal();
-                fiducialController.DegreesToAction = EditorGUILayout.FloatField("Degrees To Action", 
-                    fiducialController.DegreesToAction);
+                fiducialController.DegreesToAction = EditorGUILayout
+                    .FloatField("Degrees To Action", fiducialController.DegreesToAction);
                 EditorGUILayout.EndHorizontal();
 
                 serializedObject.Update();
