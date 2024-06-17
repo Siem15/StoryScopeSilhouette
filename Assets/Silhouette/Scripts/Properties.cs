@@ -34,6 +34,8 @@ public class Properties : MonoBehaviour
     private float originalWalkingSpeed;
     private float originalRunningSpeed;
     private bool originalControlRotation;
+    private bool originalFiducialRotation;
+    private bool originalFiducialPos;
 
     public enum Property
     {
@@ -101,6 +103,8 @@ public class Properties : MonoBehaviour
         originalWalkingSpeed = character.WalkSpeed;
         originalRunningSpeed = character.RunSpeed;
         originalControlRotation = character.controlRotation;
+        originalFiducialRotation = fiducialController.IsRotationMapped;
+        originalFiducialPos = fiducialController.IsPositionMapped;
 
 
         if (!isAtached)
@@ -158,6 +162,8 @@ public class Properties : MonoBehaviour
         {
             transform.Rotate(Vector3.back, 5f); // Rotate if wheel and touches a vehicle
             character.controlRotation = false;
+            fiducialController.IsRotationMapped = false;
+            fiducialController.IsPositionMapped = false;
         }
 
         if (isAtached)
@@ -191,16 +197,14 @@ public class Properties : MonoBehaviour
 
                 if (transform.childCount > 0)
                 {
-                    transform.GetChild(0).gameObject.transform.localScale = new Vector3(0.001f, 0.001f, 0.001f); //hide
+                    this.gameObject.transform.localScale = new Vector3(0.001f, 0.001f, 0.001f); //hide
                     transform.GetComponent<BoxCollider2D>().enabled = false;
                 }
             }
 
             if (properties[(int)Property.IsWheel] && otherObject.properties[(int)Property.IsVehicle])
             {
-                Debug.Log($"{gameObject.name} atach wheel");
 
-                transform.eulerAngles = originalRoration;
                 GameObject duplicatedObject = Instantiate(this.gameObject);
 
                 duplicatedObject.GetComponent<JZSpriteRoot>().images = this.gameObject.GetComponent<JZSpriteRoot>().images;
@@ -266,6 +270,8 @@ public class Properties : MonoBehaviour
         character.WalkSpeed = originalWalkingSpeed;
         character.RunSpeed = originalRunningSpeed;
         character.controlRotation = originalControlRotation;
+        fiducialController.IsRotationMapped = originalFiducialRotation;
+        fiducialController.IsPositionMapped = originalFiducialRotation;
         //character.facingRight = !character.facingRight;
 
         if (transform.childCount > 0)
