@@ -10,19 +10,52 @@ using UnityEngine;
 
 public class EffectsManager : MonoBehaviour
 {
-    [SerializeField] private Material onPlacementEffectShader;
-    [SerializeField] private Material onFireEffectShader;
-    [SerializeField] private Material dissolveShader;
+    //Shaders
+    [SerializeField] private List<Material> materialsList;      //List of materials to be managed
+    private Dictionary<string, Material> materialsDictionary;   //Dictionary to store materials with names as keys
 
+    //Particle Systems
     [SerializeField] private GameObject FoodParticleSystem;
 
+    //VisualFX
     [SerializeField] private GameObject InstantiationVFX;
-    
-    private Material CurrentObjectMaterial;
 
-    private void Start()
+    private void Awake()
     {
-        //CurrentObjectMaterial = this.gameObject.GetComponent<Renderer>().material;
+        // Initialize the dictionary
+        materialsDictionary = new Dictionary<string, Material>();
+
+        // Populate the dictionary with materials
+        foreach (Material material in materialsList)
+        {
+            if (material != null)
+            {
+                materialsDictionary[material.name] = material;
+            }
+        }
+    }
+    private void Start()
+    { 
+
+    }
+
+    private void FixedUpdate()
+    {
+        
+    }
+
+    // Method to get a material by name
+    private Material GetMaterialByName(string materialName)
+    {
+        if (materialsDictionary.ContainsKey(materialName))
+        {
+            return materialsDictionary[materialName];
+        }
+        else
+        {
+            Debug.LogError("Material not found: " + materialName);
+            return null;
+        }
     }
 
     //This function adds the specific shader that is called for in the propertyscript
@@ -47,7 +80,29 @@ public class EffectsManager : MonoBehaviour
 
     private void AddShader(string ShaderName, GameObject caster)
     {
-         
+        if (caster == null)
+        {
+            Debug.LogError("Target GameObject is not assigned.");
+            return;
+        }
+
+        // Get the material by name
+        Material requestedMaterial = GetMaterialByName(ShaderName);
+
+        if (requestedMaterial != null)
+        {
+            // Get the MeshRenderer component
+            MeshRenderer meshRenderer = caster.GetComponent<MeshRenderer>();
+            if (meshRenderer != null)
+            {
+                // Assign the requested material
+                meshRenderer.material = requestedMaterial;
+            }
+            else
+            {
+                Debug.LogError("MeshRenderer component is missing on the target GameObject.");
+            }
+        }
     }
 
     private void AddParticleSystem(string ParticleSystemName, GameObject caster)
@@ -57,10 +112,6 @@ public class EffectsManager : MonoBehaviour
         Child.transform.localPosition = Vector3.zero;
         Child.transform.localRotation = Quaternion.identity;
         Child.transform.localScale = Vector3.one;
-        //transfer particle system naar nieuwe parent
-        //set child position to current position of parent
-
-
 
     }
 
