@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using UnityEditor;
 using UnityEngine;
 
 public class Properties : MonoBehaviour
@@ -22,6 +21,7 @@ public class Properties : MonoBehaviour
     public bool reset = false;
     public bool isAlive = false;
     public bool connected = true;
+    [SerializeField] private bool isAtached = false;
 
     public Vector2 HitboxSize;
     public Vector2 HitboxOffset;
@@ -29,10 +29,12 @@ public class Properties : MonoBehaviour
     private Vector3 originalScale;
     private Vector3 originalRoration;
     private GameObject originalendmarker;
-    private FiducialController fiducialController;    
+    private FiducialController fiducialController;
+    private Character character;
     private float originalWalkingSpeed;
     private float originalRunningSpeed;
-    
+    private bool originalControlRotation;
+
     public enum Property
     {
         Empty,
@@ -46,13 +48,16 @@ public class Properties : MonoBehaviour
 
     void Start()
     {
-        properties.Add(empty);
-        properties.Add(isFood);
-        properties.Add(canEatFood);
-        properties.Add(isFlammable);
-        properties.Add(isFire);
-        properties.Add(isWheel);
-        properties.Add(isVehicle);
+        if (!isAtached)
+        {
+            properties.Add(empty);
+            properties.Add(isFood);
+            properties.Add(canEatFood);
+            properties.Add(isFlammable);
+            properties.Add(isFire);
+            properties.Add(isWheel);
+            properties.Add(isVehicle);
+        }
 
         // Add a BoxCollider2D component if it doesn't already exist
         BoxCollider2D boxCollider = gameObject.GetComponent<BoxCollider2D>();
@@ -66,7 +71,7 @@ public class Properties : MonoBehaviour
         boxCollider.isTrigger = true;
 
         // size of the BoxCollider2D
-        boxCollider.size *= HitboxSize;
+        boxCollider.size = HitboxSize;
 
         // size of the BoxCollider2D
         boxCollider.offset = HitboxOffset;
@@ -87,24 +92,30 @@ public class Properties : MonoBehaviour
         rigidbody2D.mass = 0.0001f;
         rigidbody2D.angularDrag = 0;
 
-        originalScale = transform.localScale;
-        originalRoration = transform.eulerAngles;
-        originalendmarker = GetComponent<Character>().endMarker;
-        originalWalkingSpeed = GetComponent<Character>().WalkSpeed;
-        originalRunningSpeed = GetComponent<Character>().RunSpeed;        
-
+        character = GetComponent<Character>();
         fiducialController = GetComponent<FiducialController>();
 
-        if (!fiducialController.AutoHideGO)
+        originalScale = transform.localScale;
+        originalRoration = transform.eulerAngles;
+        originalendmarker = character.endMarker;
+        originalWalkingSpeed = character.WalkSpeed;
+        originalRunningSpeed = character.RunSpeed;
+        originalControlRotation = character.controlRotation;
+
+
+        if (!isAtached)
         {
-            reset = true;
-            connected = false;
-            Debug.Log($"{gameObject.name} is not connected");
+            if (!fiducialController.AutoHideGO)
+            {
+                reset = true;
+                connected = false;
+                Debug.Log($"{gameObject.name} is not connected");
+            }
+
+            Debug.Log($"{gameObject.name} is connected");
+
+            CheckProperty();
         }
-
-        Debug.Log($"{gameObject.name} is connected");
-
-        CheckProperty();
     }
 
     private void Update()
@@ -146,6 +157,14 @@ public class Properties : MonoBehaviour
         if (properties[(int)Property.IsWheel] && isAlive)
         {
             transform.Rotate(Vector3.back, 5f); // Rotate if wheel and touches a vehicle
+            character.controlRotation = false;
+        }
+
+        if (isAtached)
+        {
+            //character.endMarker = null;
+            character.WalkSpeed = 0;
+            character.RunSpeed = 0;
         }
     }
 
@@ -155,7 +174,6 @@ public class Properties : MonoBehaviour
 
         Properties otherObject = collision.GetComponent<Properties>();
 
-        Character character = GetComponent<Character>();
         Character otherCharacter = collision.GetComponent<Character>();
 
         if (otherObject != null)
@@ -173,19 +191,39 @@ public class Properties : MonoBehaviour
 
                 if (transform.childCount > 0)
                 {
-                    transform.GetChild(0).gameObject.SetActive(false); // destroy
+                    transform.GetChild(0).gameObject.transform.localScale = new Vector3(0.001f, 0.001f, 0.001f); //hide
+                    transform.GetComponent<BoxCollider2D>().enabled = false;
                 }
             }
 
             if (properties[(int)Property.IsWheel] && otherObject.properties[(int)Property.IsVehicle])
-            {                                
-                ModularSystem modularSystem = collision.gameObject.GetComponent<ModularSystem>();
-                modularSystem.AddChild(gameObject);
+            {
+                Debug.Log($"{gameObject.name} atach wheel");
 
-                GetComponent<BoxCollider2D>().enabled = false;
-                character.endMarker = otherCharacter.endMarker;
-                character.WalkSpeed = 0;
-                character.RunSpeed = 0;
+                transform.eulerAngles = originalRoration;
+                GameObject duplicatedObject = Instantiate(this.gameObject);
+
+                duplicatedObject.GetComponent<JZSpriteRoot>().images = this.gameObject.GetComponent<JZSpriteRoot>().images;
+
+                //Destroy(duplicatedObject.GetComponent<FiducialController>());
+                //Destroy(duplicatedObject.GetComponent<Character>());
+                Destroy(this.gameObject.GetComponent<Properties>());
+                Destroy(this.gameObject.GetComponent<BoxCollider2D>());
+                Destroy(this.gameObject.GetComponent<Rigidbody2D>());
+
+                this.gameObject.AddComponent<IsWheel>();
+                this.gameObject.GetComponent<Character>().WalkSpeed = 0;
+                this.gameObject.GetComponent<Character>().RunSpeed = 0;
+                this.gameObject.GetComponent<Character>().endMarker = otherCharacter.endMarker;
+
+                Vector3 TempPos = this.gameObject.transform.position;
+
+                this.gameObject.transform.parent = otherObject.transform;
+
+                this.gameObject.transform.position = TempPos;
+
+                duplicatedObject.transform.position = new Vector3(Random.Range(1000, 10000), Random.Range(1000, 10000), Random.Range(1000, 10000));
+                duplicatedObject.GetComponent<Properties>().isAtached = true;
             }
         }
     }
@@ -214,22 +252,50 @@ public class Properties : MonoBehaviour
 
     public void ResetObject()
     {
+        transform.parent = null;
         transform.localScale = originalScale;
         transform.eulerAngles = originalRoration;
-        transform.parent = null;
+        isAtached = false;
 
         BoxCollider2D boxCollider2D = GetComponent<BoxCollider2D>();
         boxCollider2D.size = HitboxSize;
         boxCollider2D.offset = HitboxOffset;
 
-        Character character = GetComponent<Character>();
         character.endMarker = originalendmarker;
+        this.transform.position = character.endMarker.transform.position;
         character.WalkSpeed = originalWalkingSpeed;
         character.RunSpeed = originalRunningSpeed;
+        character.controlRotation = originalControlRotation;
+        //character.facingRight = !character.facingRight;
 
         if (transform.childCount > 0)
         {
             transform.GetChild(0).gameObject.SetActive(true);
         }
+
+        if (properties[(int)Property.IsVehicle])
+        {
+            List<GameObject> children = GetChildren();
+
+            foreach (var item in children)
+            {
+                if (item.name != "Character")
+                {
+                    Destroy(item);
+                }
+            }
+        }
+    }
+
+    public List<GameObject> GetChildren()
+    {
+        List<GameObject> children = new List<GameObject>();
+
+        foreach (Transform child in transform)
+        {
+            children.Add(child.gameObject);
+        }
+
+        return children;
     }
 }

@@ -12,7 +12,7 @@ public class PropertiesEditor : Editor
     SerializedProperty isWheelProp;
     SerializedProperty isVehicleProp;
 
-    bool showFixedProperties = false; // To control the foldout state
+    SerializedProperty fixedProperties;
 
     private void OnEnable()
     {
@@ -23,29 +23,30 @@ public class PropertiesEditor : Editor
         isFireProp = serializedObject.FindProperty("isFire");
         isWheelProp = serializedObject.FindProperty("isWheel");
         isVehicleProp = serializedObject.FindProperty("isVehicle");
+        fixedProperties = serializedObject.FindProperty("fixedProperties");
     }
 
     public override void OnInspectorGUI()
     {
         serializedObject.Update();
 
-        // Draw properties list at the top
-        EditorGUILayout.Space();
-        EditorGUILayout.LabelField("Properties", EditorStyles.boldLabel);
-
-        for (int i = 0; i < propertiesList.arraySize; i++)
+        if (!fixedProperties.boolValue)
         {
-            SerializedProperty property = propertiesList.GetArrayElementAtIndex(i);
-            string label = ((Properties.Property)i).ToString();
-            property.boolValue = EditorGUILayout.Toggle(label, property.boolValue);
+            EditorGUILayout.LabelField("Properties", EditorStyles.boldLabel);
+
+            for (int i = 0; i < propertiesList.arraySize; i++)
+            {
+                SerializedProperty property = propertiesList.GetArrayElementAtIndex(i);
+                string label = ((Properties.Property)i).ToString();
+                property.boolValue = EditorGUILayout.Toggle(label, property.boolValue);
+            }
+
+            EditorGUILayout.Space();
         }
 
-        EditorGUILayout.Space();
+        EditorGUILayout.PropertyField(fixedProperties, new GUIContent("Use Fixed Properties"));
 
-        // Draw foldout for fixed properties
-        showFixedProperties = EditorGUILayout.Foldout(showFixedProperties, "Fixed Properties");
-
-        if (showFixedProperties)
+        if (fixedProperties.boolValue)
         {
             EditorGUI.indentLevel++;
             EditorGUILayout.PropertyField(isFoodProp, new GUIContent("Is Food"));
@@ -57,8 +58,10 @@ public class PropertiesEditor : Editor
             EditorGUI.indentLevel--;
         }
 
+        EditorGUILayout.Space();
+
         // Draw the rest of the default inspector excluding the properties we've manually drawn
-        DrawPropertiesExcluding(serializedObject, "m_Script", "properties", "isFood", "canEatFood", "isFlammable", "isFire", "isWheel", "isVehicle");
+        DrawPropertiesExcluding(serializedObject, "m_Script", "fixedProperties", "properties", "isFood", "canEatFood", "isFlammable", "isFire", "isWheel", "isVehicle");
 
         serializedObject.ApplyModifiedProperties();
     }
