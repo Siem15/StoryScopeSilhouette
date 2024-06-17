@@ -322,6 +322,8 @@ public class FiducialController : MonoBehaviour
             return;
         }
 
+        GameObject.Find("EffectsManager").GetComponent<EffectsManager>().AddEffect("Removed", this.gameObject);
+
         m_IsVisible = false;
 
         if (m_ControlsGUIElement)

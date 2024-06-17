@@ -18,6 +18,8 @@ public class Properties : MonoBehaviour
     [SerializeField] private bool isWheel = false;
     [SerializeField] private bool isVehicle = false;
 
+    private GameObject EffectsManager;
+
     public bool reset = false;
     public bool isAlive = false;
     public bool connected = true;
@@ -60,6 +62,9 @@ public class Properties : MonoBehaviour
             properties.Add(isWheel);
             properties.Add(isVehicle);
         }
+
+        // Add shadermanager to get shaders from shadermanager component
+        EffectsManager = GameObject.Find("EffectsManager");
 
         // Add a BoxCollider2D component if it doesn't already exist
         BoxCollider2D boxCollider = gameObject.GetComponent<BoxCollider2D>();
@@ -186,6 +191,8 @@ public class Properties : MonoBehaviour
         {
             if (properties[(int)Property.IsFood] && otherObject.properties[(int)Property.CanEatFood])
             {
+                //TODO: spawn edible particle system on place of currently being eaten object
+                EffectsManager.GetComponent<EffectsManager>().AddEffect("GetsEaten", this.gameObject);
                 Debug.Log($"{gameObject.name} eat");
                 transform.localScale *= 0.9f; // Shrink
                 otherObject.transform.localScale *= 1.1f; // Grow
