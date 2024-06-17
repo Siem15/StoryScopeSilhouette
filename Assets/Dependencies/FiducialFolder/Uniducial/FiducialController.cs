@@ -86,8 +86,8 @@ public class FiducialController : MonoBehaviour
     public virtual void Awake()
     {
 #if UNITY_STANDALONE_LINUX
-     InvertX = true;
-     RotateAround = RotationAxis.Forward;
+        InvertX = true;
+        RotateAround = RotationAxis.Forward;
 #endif
 
         zAxis = transform.position.z;
@@ -160,7 +160,7 @@ public class FiducialController : MonoBehaviour
             // Update transform component
             UpdateTransform();
         }
-        else 
+        else
         {
             // Automatically hide game object when marker is not visible.
             if (AutoHideGO)
@@ -177,8 +177,8 @@ public class FiducialController : MonoBehaviour
         yield return null;
     }
 
-    void OnApplicationQuit() 
-    { 
+    void OnApplicationQuit()
+    {
         if (m_TuioManager.IsConnected)
         {
             m_TuioManager.Disconnect();
@@ -204,7 +204,7 @@ public class FiducialController : MonoBehaviour
                 yPosition = 1 - yPosition;
             }
 
-            if (m_ControlsGUIElement) 
+            if (m_ControlsGUIElement)
             {
                 transform.position = new Vector3(xPosition, 1 - yPosition, 0);
             }
@@ -287,7 +287,7 @@ public class FiducialController : MonoBehaviour
             {
                 text.enabled = true;
             }
-            
+
             if (image != null && !image.enabled)
             {
                 image.enabled = true;
@@ -322,7 +322,10 @@ public class FiducialController : MonoBehaviour
             return;
         }
 
-        GameObject.Find("EffectsManager").GetComponent<EffectsManager>().AddEffect("Removed", this.gameObject);
+        if (GameObject.Find("EffectsManager") != null)
+        {
+            GameObject.Find("EffectsManager").GetComponent<EffectsManager>().AddEffect("Removed", this.gameObject);
+        }
 
         m_IsVisible = false;
 

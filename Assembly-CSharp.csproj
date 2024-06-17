@@ -105,6 +105,7 @@
     <Compile Include="Assets\Silhouette\Scripts\Properties.cs" />
     <Compile Include="Assets\Dependencies\FiducialFolder\TUIOConnector\TuioCursor.cs" />
     <Compile Include="Assets\Minigames\Scripts\Destroyer.cs" />
+    <Compile Include="Assets\Silhouette\Scripts\IsWheel.cs" />
     <Compile Include="Assets\Dependencies\FiducialFolder\TUIOConnector\TuioManager.cs" />
     <Compile Include="Assets\Silhouette\Scripts\ScaleStamp.cs" />
     <Compile Include="Assets\Unused Scripts\JZSetActiveOnRotation.cs" />
@@ -134,7 +135,6 @@
     <Compile Include="Assets\Silhouette\Scripts\JZLoadFromExternalV2.cs" />
     <Compile Include="Assets\Silhouette\Scripts\JZReloadScene.cs" />
     <Compile Include="Assets\Silhouette\Sprites\JZSpriteRoot.cs" />
-    <Compile Include="Assets\Silhouette\Scripts\IsWheel.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
