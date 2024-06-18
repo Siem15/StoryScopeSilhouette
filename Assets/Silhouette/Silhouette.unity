@@ -6281,7 +6281,7 @@ PrefabInstance:
     - target: {fileID: -1946749165847445664, guid: ddecfd26d3d1d0c43b8b3a02c106bb1f,
         type: 3}
       propertyPath: AutoHideGO
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -1946749165847445664, guid: ddecfd26d3d1d0c43b8b3a02c106bb1f,
         type: 3}
@@ -6371,7 +6371,7 @@ PrefabInstance:
     - target: {fileID: 6136626448342462720, guid: ddecfd26d3d1d0c43b8b3a02c106bb1f,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7951071278748759119, guid: ddecfd26d3d1d0c43b8b3a02c106bb1f,
         type: 3}
@@ -6381,7 +6381,7 @@ PrefabInstance:
     - target: {fileID: 7951071278748759119, guid: ddecfd26d3d1d0c43b8b3a02c106bb1f,
         type: 3}
       propertyPath: isFood
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7951071278748759119, guid: ddecfd26d3d1d0c43b8b3a02c106bb1f,
         type: 3}
@@ -6392,6 +6392,11 @@ PrefabInstance:
         type: 3}
       propertyPath: canEatFood
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7951071278748759119, guid: ddecfd26d3d1d0c43b8b3a02c106bb1f,
+        type: 3}
+      propertyPath: currentProperty
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7951071278748759119, guid: ddecfd26d3d1d0c43b8b3a02c106bb1f,
         type: 3}
@@ -7034,6 +7039,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: EffectsManager
       objectReference: {fileID: 0}
+    - target: {fileID: 1870798437314450394, guid: 1df3488745592f245b7918bdc590c4bc,
+        type: 3}
+      propertyPath: waitTime
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1870798437314450394, guid: 1df3488745592f245b7918bdc590c4bc,
+        type: 3}
+      propertyPath: fireStarter
+      value: 
+      objectReference: {fileID: 3983854121946317881, guid: ee8709fc02d52dc47bdca2cedc67a385,
+        type: 3}
     - target: {fileID: 1870798437314450395, guid: 1df3488745592f245b7918bdc590c4bc,
         type: 3}
       propertyPath: m_RootOrder

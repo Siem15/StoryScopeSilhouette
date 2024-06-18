@@ -209,6 +209,7 @@ public class Properties : MonoBehaviour
                 {
                     this.gameObject.transform.localScale = new Vector3(0.001f, 0.001f, 0.001f); //hide
                     transform.GetComponent<BoxCollider2D>().enabled = false;
+                    //TODO: add shader siem
                 }
             }
 
@@ -287,6 +288,41 @@ public class Properties : MonoBehaviour
         if (transform.childCount > 0)
         {
             transform.GetChild(0).gameObject.SetActive(true);
+        }
+
+        //TODO: leg dit uit siem
+        if (properties[(int)Property.IsFire])
+        {
+            List<GameObject> children = GetChildren();
+
+            bool hasFire = false;
+
+            foreach (var item in children)
+            {
+                if (item.name == "Fire")
+                {
+                    hasFire = true;
+                }
+            }
+            if (hasFire == false)
+            {
+                EffectsManager.GetComponent<EffectsManager>().AddEffect("onFireEffectShader", this.gameObject);
+            }
+
+
+        }
+        //TODO: waarom doe je dit siem
+        else
+        {
+            List<GameObject> children = GetChildren();
+
+            foreach (var item in children)
+            {
+                if (item.name != "Character")
+                {
+                    Destroy(item);
+                }
+            }
         }
 
         if (properties[(int)Property.IsVehicle])
