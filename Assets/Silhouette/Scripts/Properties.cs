@@ -308,7 +308,7 @@ public class Properties : MonoBehaviour
         {
             children.Add(child.gameObject);
         }
-
+        
         return children;
     }
 }

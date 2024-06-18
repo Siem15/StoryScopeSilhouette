@@ -1,37 +1,42 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class BananaPeel : MonoBehaviour
 {
-    [SerializeField] float spinDuration = 1f;
-    FiducialController FC;
+    [SerializeField] 
+    float spinDuration = 1f;
+
+    FiducialController fiducialContoller;
 
     private void Start()
     {
-        FC = GetComponent<FiducialController>();    
+        fiducialContoller = GetComponent<FiducialController>();    
     }
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision != null && (FC.IsVisible|| !FC.AutoHideGO))
+        if (collision != null && (fiducialContoller.IsVisible || !fiducialContoller.AutoHideGO))
         {
             StartCoroutine(Rotate(collision.gameObject, spinDuration));
         }
     }
 
-    IEnumerator Rotate(GameObject rObject, float duration)
+    IEnumerator Rotate(GameObject gameObject, float duration)
     {
-        float startRotation = rObject.transform.eulerAngles.z;
+        float startRotation = gameObject.transform.eulerAngles.z;
         float endRotation = startRotation + 360.0f;
-        float t = 0.0f;
-        while (t < duration)
+        float time = 0.0f;
+
+        while (time < duration)
         {
-            t += Time.deltaTime;
-            float zRotation = Mathf.Lerp(startRotation, endRotation, t / duration) % 360.0f;
-            rObject.transform.eulerAngles = new Vector3(rObject.transform.eulerAngles.x, rObject.transform.eulerAngles.y, zRotation);
+            time += Time.deltaTime;
+            float zRotation = Mathf.Lerp(startRotation, endRotation, time / duration) % 360.0f;
+            gameObject.transform.eulerAngles = 
+                new Vector3(gameObject.transform.eulerAngles.x, gameObject.transform.eulerAngles.y, zRotation);
             yield return null;
         }
-        rObject.transform.eulerAngles = new Vector3(rObject.transform.eulerAngles.x, rObject.transform.eulerAngles.y, 0);
+
+        gameObject.transform.eulerAngles = 
+            new Vector3(gameObject.transform.eulerAngles.x, gameObject.transform.eulerAngles.y, 0);
     }
 }
