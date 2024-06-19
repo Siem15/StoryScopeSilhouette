@@ -54,22 +54,24 @@ public class EffectsManager : MonoBehaviour
                 List<GameObject> children = GetChildren(caster);
                 foreach (var item in children)
                 {
-                    Material shaderGraphMaterial = ;       
+                    Material shaderGraphMaterial = DissolveShader;       
                     SpriteRenderer spriteRenderer;
                     Renderer objectRenderer;
 
 
                     // Get the SpriteRenderer component from the current GameObject
-                    spriteRenderer = GetComponent<SpriteRenderer>();
+                    spriteRenderer = item.GetComponent<SpriteRenderer>();
 
                     // Get the Renderer component (can be MeshRenderer or other types)
-                    objectRenderer = GetComponent<Renderer>();
+                    objectRenderer = item.GetComponent<Renderer>();
 
                     if (spriteRenderer != null && objectRenderer != null && shaderGraphMaterial != null)
                     {
                         // Assign the ShaderGraph material to the object
                         objectRenderer.material = shaderGraphMaterial;
 
+                        shaderGraphMaterial.SetFloat("ResetTime", Time.time);
+                        
                         // Get the texture from the SpriteRenderer's sprite
                         Texture2D spriteTexture = spriteRenderer.sprite.texture;
 

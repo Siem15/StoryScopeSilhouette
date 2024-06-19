@@ -135,6 +135,11 @@ public class Properties : MonoBehaviour
             reset = false;
         }
 
+        if(Input.GetKeyDown(KeyCode.Space))
+        {
+            EffectsManager.GetComponent<EffectsManager>().AddEffect("dissolveShader", this.gameObject);
+        }
+
         if (connected)
         {
             if (fiducialController.m_IsVisible)
@@ -306,7 +311,10 @@ public class Properties : MonoBehaviour
             }
             if (hasFire == false)
             {
-                EffectsManager.GetComponent<EffectsManager>().AddEffect("onFireEffectShader", this.gameObject);
+                if (EffectsManager != null)
+                {
+                    EffectsManager.GetComponent<EffectsManager>().AddEffect("onFireEffectShader", this.gameObject);
+                }
             }
 
 
