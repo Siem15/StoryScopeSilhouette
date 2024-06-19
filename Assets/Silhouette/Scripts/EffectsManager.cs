@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -14,7 +15,7 @@ public class EffectsManager : MonoBehaviour
 
     //Shaders
     [SerializeField] private GameObject fireStarter;
-    [SerializeField] private Material DissolveShader; 
+    [SerializeField] private Material DissolveShader;
 
     //Particle Systems
     [SerializeField] private GameObject FoodParticleSystem;
@@ -54,10 +55,10 @@ public class EffectsManager : MonoBehaviour
                 List<GameObject> children = GetChildren(caster);
                 foreach (var item in children)
                 {
-                    Material shaderGraphMaterial = DissolveShader;       
+                    Material shaderGraphMaterial = DissolveShader;
+                    Material oldMaterial;
                     SpriteRenderer spriteRenderer;
                     Renderer objectRenderer;
-
 
                     // Get the SpriteRenderer component from the current GameObject
                     spriteRenderer = item.GetComponent<SpriteRenderer>();
@@ -65,24 +66,36 @@ public class EffectsManager : MonoBehaviour
                     // Get the Renderer component (can be MeshRenderer or other types)
                     objectRenderer = item.GetComponent<Renderer>();
 
+
                     if (spriteRenderer != null && objectRenderer != null && shaderGraphMaterial != null)
                     {
+                        oldMaterial = objectRenderer.material;
                         // Assign the ShaderGraph material to the object
                         objectRenderer.material = shaderGraphMaterial;
 
                         shaderGraphMaterial.SetFloat("ResetTime", Time.time);
-                        
+
                         // Get the texture from the SpriteRenderer's sprite
                         Texture2D spriteTexture = spriteRenderer.sprite.texture;
 
                         // Set the texture on the ShaderGraph material
                         objectRenderer.material.SetTexture("_MainTex", spriteTexture);
+                        if (oldMaterial != null)
+                        {
+                            StartCoroutine(ResetOldMaterial(oldMaterial, objectRenderer));
+                        }
                     }
                 }
                 break;
 
                 //TODO: make the shader same size as object
         }
+    }
+
+    IEnumerator ResetOldMaterial(Material oldMaterial, Renderer objectRenderer)
+    {
+        yield return new WaitForSeconds(waitTime-2f);
+        objectRenderer.material = oldMaterial;
     }
 
     private void AddParticleSystem(string ParticleSystemName, GameObject caster)
