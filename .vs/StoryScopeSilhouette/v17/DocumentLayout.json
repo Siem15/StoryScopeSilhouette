@@ -1,51 +1,22 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Siem\\Documents\\GitHub\\StoryScopeSilhouette\\",
+  "WorkspaceRootPath": "C:\\Users\\fabio\\Documents\\GitHub\\CrosswordExample\\StoryScopeSilhouette\\",
   "Documents": [
     {
-<<<<<<< HEAD
-      "AbsoluteMoniker": "D:0:0:{81F3232A-BC0B-AD8A-2391-624EF666FDB2}|Assembly-CSharp.Player.csproj|c:\\users\\fabio\\documents\\github\\crosswordexample\\storyscopesilhouette\\assets\\silhouette\\scripts\\character.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{81F3232A-BC0B-AD8A-2391-624EF666FDB2}|Assembly-CSharp.Player.csproj|solutionrelative:assets\\silhouette\\scripts\\character.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{81F3232A-BC0B-AD8A-2391-624EF666FDB2}|Assembly-CSharp.Player.csproj|C:\\Users\\fabio\\Documents\\GitHub\\CrosswordExample\\StoryScopeSilhouette\\assets\\silhouette\\scripts\\bananapeel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{81F3232A-BC0B-AD8A-2391-624EF666FDB2}|Assembly-CSharp.Player.csproj|solutionrelative:assets\\silhouette\\scripts\\bananapeel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{81F3232A-BC0B-AD8A-2391-624EF666FDB2}|Assembly-CSharp.Player.csproj|C:\\Users\\fabio\\Documents\\GitHub\\CrosswordExample\\StoryScopeSilhouette\\Assets\\Silhouette\\Scripts\\RotateProperties.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{81F3232A-BC0B-AD8A-2391-624EF666FDB2}|Assembly-CSharp.Player.csproj|solutionrelative:Assets\\Silhouette\\Scripts\\RotateProperties.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{81F3232A-BC0B-AD8A-2391-624EF666FDB2}|Assembly-CSharp.Player.csproj|C:\\Users\\fabio\\Documents\\GitHub\\CrosswordExample\\StoryScopeSilhouette\\Assets\\Dependencies\\FiducialFolder\\Uniducial\\FiducialController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{81F3232A-BC0B-AD8A-2391-624EF666FDB2}|Assembly-CSharp.Player.csproj|solutionrelative:Assets\\Dependencies\\FiducialFolder\\Uniducial\\FiducialController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{81F3232A-BC0B-AD8A-2391-624EF666FDB2}|Assembly-CSharp.Player.csproj|C:\\Users\\fabio\\Documents\\GitHub\\CrosswordExample\\StoryScopeSilhouette\\Assets\\Silhouette\\Scripts\\Properties.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{81F3232A-BC0B-AD8A-2391-624EF666FDB2}|Assembly-CSharp.Player.csproj|solutionrelative:Assets\\Silhouette\\Scripts\\Properties.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{81F3232A-BC0B-AD8A-2391-624EF666FDB2}|Assembly-CSharp.Player.csproj|C:\\Users\\fabio\\Documents\\GitHub\\CrosswordExample\\StoryScopeSilhouette\\Assets\\Utilities\\SceneSelectorMenu\\JZSceneSelectorManager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{81F3232A-BC0B-AD8A-2391-624EF666FDB2}|Assembly-CSharp.Player.csproj|solutionrelative:Assets\\Utilities\\SceneSelectorMenu\\JZSceneSelectorManager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{81F3232A-BC0B-AD8A-2391-624EF666FDB2}|Assembly-CSharp.Player.csproj|C:\\Users\\fabio\\Documents\\GitHub\\CrosswordExample\\StoryScopeSilhouette\\Assets\\Silhouette\\Scripts\\JZLoadFromExternalV2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{81F3232A-BC0B-AD8A-2391-624EF666FDB2}|Assembly-CSharp.Player.csproj|solutionrelative:Assets\\Silhouette\\Scripts\\JZLoadFromExternalV2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{81F3232A-BC0B-AD8A-2391-624EF666FDB2}|Assembly-CSharp.Player.csproj|C:\\Users\\fabio\\Documents\\GitHub\\CrosswordExample\\StoryScopeSilhouette\\Assets\\Dependencies\\FiducialFolder\\TUIOConnector\\OSCPacket.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{81F3232A-BC0B-AD8A-2391-624EF666FDB2}|Assembly-CSharp.Player.csproj|solutionrelative:Assets\\Dependencies\\FiducialFolder\\TUIOConnector\\OSCPacket.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-=======
-      "AbsoluteMoniker": "D:0:0:{1555FAD6-E65C-7B70-91C9-38BC86C5EFCA}|Assembly-CSharp.csproj|c:\\users\\siem\\documents\\github\\storyscopesilhouette\\assets\\silhouette\\scripts\\effectsmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1555FAD6-E65C-7B70-91C9-38BC86C5EFCA}|Assembly-CSharp.csproj|solutionrelative:assets\\silhouette\\scripts\\effectsmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1555FAD6-E65C-7B70-91C9-38BC86C5EFCA}|Assembly-CSharp.csproj|C:\\Users\\Siem\\Documents\\GitHub\\StoryScopeSilhouette\\assets\\silhouette\\scripts\\properties.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{1555FAD6-E65C-7B70-91C9-38BC86C5EFCA}|Assembly-CSharp.csproj|c:\\users\\fabio\\documents\\github\\crosswordexample\\storyscopesilhouette\\assets\\silhouette\\scripts\\properties.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1555FAD6-E65C-7B70-91C9-38BC86C5EFCA}|Assembly-CSharp.csproj|solutionrelative:assets\\silhouette\\scripts\\properties.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1555FAD6-E65C-7B70-91C9-38BC86C5EFCA}|Assembly-CSharp.csproj|C:\\Users\\Siem\\Documents\\GitHub\\StoryScopeSilhouette\\assets\\dependencies\\fiducialfolder\\uniducial\\fiducialcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1555FAD6-E65C-7B70-91C9-38BC86C5EFCA}|Assembly-CSharp.csproj|solutionrelative:assets\\dependencies\\fiducialfolder\\uniducial\\fiducialcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
->>>>>>> origin/Siem_Shaders_Branch
+      "AbsoluteMoniker": "D:0:0:{1555FAD6-E65C-7B70-91C9-38BC86C5EFCA}|Assembly-CSharp.csproj|c:\\users\\fabio\\documents\\github\\crosswordexample\\storyscopesilhouette\\assets\\silhouette\\scripts\\rotateproperties.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1555FAD6-E65C-7B70-91C9-38BC86C5EFCA}|Assembly-CSharp.csproj|solutionrelative:assets\\silhouette\\scripts\\rotateproperties.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1555FAD6-E65C-7B70-91C9-38BC86C5EFCA}|Assembly-CSharp.csproj|c:\\users\\fabio\\documents\\github\\crosswordexample\\storyscopesilhouette\\assets\\silhouette\\scripts\\bananapeel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1555FAD6-E65C-7B70-91C9-38BC86C5EFCA}|Assembly-CSharp.csproj|solutionrelative:assets\\silhouette\\scripts\\bananapeel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1555FAD6-E65C-7B70-91C9-38BC86C5EFCA}|Assembly-CSharp.csproj|C:\\Users\\fabio\\Documents\\GitHub\\CrosswordExample\\StoryScopeSilhouette\\assets\\silhouette\\scripts\\scan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1555FAD6-E65C-7B70-91C9-38BC86C5EFCA}|Assembly-CSharp.csproj|solutionrelative:assets\\silhouette\\scripts\\scan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -59,132 +30,54 @@
           "Children": [
             {
               "$type": "Document",
-<<<<<<< HEAD
-              "DocumentIndex": 0,
-              "Title": "Character.cs",
-              "DocumentMoniker": "C:\\Users\\fabio\\Documents\\GitHub\\CrosswordExample\\StoryScopeSilhouette\\Assets\\Silhouette\\Scripts\\Character.cs",
-              "RelativeDocumentMoniker": "Assets\\Silhouette\\Scripts\\Character.cs",
-              "ToolTip": "C:\\Users\\fabio\\Documents\\GitHub\\CrosswordExample\\StoryScopeSilhouette\\Assets\\Silhouette\\Scripts\\Character.cs",
-              "RelativeToolTip": "Assets\\Silhouette\\Scripts\\Character.cs",
-              "ViewState": "AQIAAEMAAAAAAAAAAAAewFMAAAA/AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-13T09:10:40.853Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "RotateProperties.cs",
               "DocumentMoniker": "C:\\Users\\fabio\\Documents\\GitHub\\CrosswordExample\\StoryScopeSilhouette\\Assets\\Silhouette\\Scripts\\RotateProperties.cs",
               "RelativeDocumentMoniker": "Assets\\Silhouette\\Scripts\\RotateProperties.cs",
               "ToolTip": "C:\\Users\\fabio\\Documents\\GitHub\\CrosswordExample\\StoryScopeSilhouette\\Assets\\Silhouette\\Scripts\\RotateProperties.cs",
               "RelativeToolTip": "Assets\\Silhouette\\Scripts\\RotateProperties.cs",
-              "ViewState": "AQIAABYAAAAAAAAAAAAQwCUAAAAJAAAA",
+              "ViewState": "AQIAACUAAAAAAAAAAAAqwCoAAAA7AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-13T08:35:09.393Z"
+              "WhenOpened": "2024-06-19T07:44:05.849Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "FiducialController.cs",
-              "DocumentMoniker": "C:\\Users\\fabio\\Documents\\GitHub\\CrosswordExample\\StoryScopeSilhouette\\Assets\\Dependencies\\FiducialFolder\\Uniducial\\FiducialController.cs",
-              "RelativeDocumentMoniker": "Assets\\Dependencies\\FiducialFolder\\Uniducial\\FiducialController.cs",
-              "ToolTip": "C:\\Users\\fabio\\Documents\\GitHub\\CrosswordExample\\StoryScopeSilhouette\\Assets\\Dependencies\\FiducialFolder\\Uniducial\\FiducialController.cs",
-              "RelativeToolTip": "Assets\\Dependencies\\FiducialFolder\\Uniducial\\FiducialController.cs",
-              "ViewState": "AQIAAAIAAAAAAAAAAAAqwB8AAAAfAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-12T12:51:40.329Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Properties.cs",
-              "DocumentMoniker": "C:\\Users\\fabio\\Documents\\GitHub\\CrosswordExample\\StoryScopeSilhouette\\Assets\\Silhouette\\Scripts\\Properties.cs",
-              "RelativeDocumentMoniker": "Assets\\Silhouette\\Scripts\\Properties.cs",
-              "ToolTip": "C:\\Users\\fabio\\Documents\\GitHub\\CrosswordExample\\StoryScopeSilhouette\\Assets\\Silhouette\\Scripts\\Properties.cs",
-              "RelativeToolTip": "Assets\\Silhouette\\Scripts\\Properties.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAUAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-12T12:36:03.687Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "BananaPeel.cs",
               "DocumentMoniker": "C:\\Users\\fabio\\Documents\\GitHub\\CrosswordExample\\StoryScopeSilhouette\\Assets\\Silhouette\\Scripts\\BananaPeel.cs",
               "RelativeDocumentMoniker": "Assets\\Silhouette\\Scripts\\BananaPeel.cs",
               "ToolTip": "C:\\Users\\fabio\\Documents\\GitHub\\CrosswordExample\\StoryScopeSilhouette\\Assets\\Silhouette\\Scripts\\BananaPeel.cs",
               "RelativeToolTip": "Assets\\Silhouette\\Scripts\\BananaPeel.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAA0AAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABkAAAA+AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-12T12:33:37.714Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "JZSceneSelectorManager.cs",
-              "DocumentMoniker": "C:\\Users\\fabio\\Documents\\GitHub\\CrosswordExample\\StoryScopeSilhouette\\Assets\\Utilities\\SceneSelectorMenu\\JZSceneSelectorManager.cs",
-              "RelativeDocumentMoniker": "Assets\\Utilities\\SceneSelectorMenu\\JZSceneSelectorManager.cs",
-              "ToolTip": "C:\\Users\\fabio\\Documents\\GitHub\\CrosswordExample\\StoryScopeSilhouette\\Assets\\Utilities\\SceneSelectorMenu\\JZSceneSelectorManager.cs",
-              "RelativeToolTip": "Assets\\Utilities\\SceneSelectorMenu\\JZSceneSelectorManager.cs",
-              "ViewState": "AQIAAAgAAAAAAAAAAAAmwCAAAAAtAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-10T09:59:54.814Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "JZLoadFromExternalV2.cs",
-              "DocumentMoniker": "C:\\Users\\fabio\\Documents\\GitHub\\CrosswordExample\\StoryScopeSilhouette\\Assets\\Silhouette\\Scripts\\JZLoadFromExternalV2.cs",
-              "RelativeDocumentMoniker": "Assets\\Silhouette\\Scripts\\JZLoadFromExternalV2.cs",
-              "ToolTip": "C:\\Users\\fabio\\Documents\\GitHub\\CrosswordExample\\StoryScopeSilhouette\\Assets\\Silhouette\\Scripts\\JZLoadFromExternalV2.cs",
-              "RelativeToolTip": "Assets\\Silhouette\\Scripts\\JZLoadFromExternalV2.cs",
-              "ViewState": "AQIAAHUAAAAAAAAAAAAowB4AAAARAAAA",
-=======
-              "DocumentIndex": 1,
-              "Title": "Properties.cs",
-              "DocumentMoniker": "C:\\Users\\Siem\\Documents\\GitHub\\StoryScopeSilhouette\\Assets\\Silhouette\\Scripts\\Properties.cs",
-              "RelativeDocumentMoniker": "Assets\\Silhouette\\Scripts\\Properties.cs",
-              "ToolTip": "C:\\Users\\Siem\\Documents\\GitHub\\StoryScopeSilhouette\\Assets\\Silhouette\\Scripts\\Properties.cs",
-              "RelativeToolTip": "Assets\\Silhouette\\Scripts\\Properties.cs",
-              "ViewState": "AQIAAKgAAAAAAAAAAAAowLYAAAAuAAAA",
->>>>>>> origin/Siem_Shaders_Branch
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-12T08:54:08.477Z"
-            },
-            {
-              "$type": "Document",
-<<<<<<< HEAD
-              "DocumentIndex": 7,
-              "Title": "OSCPacket.cs",
-              "DocumentMoniker": "C:\\Users\\fabio\\Documents\\GitHub\\CrosswordExample\\StoryScopeSilhouette\\Assets\\Dependencies\\FiducialFolder\\TUIOConnector\\OSCPacket.cs",
-              "RelativeDocumentMoniker": "Assets\\Dependencies\\FiducialFolder\\TUIOConnector\\OSCPacket.cs",
-              "ToolTip": "C:\\Users\\fabio\\Documents\\GitHub\\CrosswordExample\\StoryScopeSilhouette\\Assets\\Dependencies\\FiducialFolder\\TUIOConnector\\OSCPacket.cs",
-              "RelativeToolTip": "Assets\\Dependencies\\FiducialFolder\\TUIOConnector\\OSCPacket.cs",
-              "ViewState": "AQIAAL0AAAAAAAAAAAARwN4AAAABAAAA",
-=======
-              "DocumentIndex": 2,
-              "Title": "FiducialController.cs",
-              "DocumentMoniker": "C:\\Users\\Siem\\Documents\\GitHub\\StoryScopeSilhouette\\Assets\\Dependencies\\FiducialFolder\\Uniducial\\FiducialController.cs",
-              "RelativeDocumentMoniker": "Assets\\Dependencies\\FiducialFolder\\Uniducial\\FiducialController.cs",
-              "ToolTip": "C:\\Users\\Siem\\Documents\\GitHub\\StoryScopeSilhouette\\Assets\\Dependencies\\FiducialFolder\\Uniducial\\FiducialController.cs",
-              "RelativeToolTip": "Assets\\Dependencies\\FiducialFolder\\Uniducial\\FiducialController.cs",
-              "ViewState": "AQIAACoBAAAAAAAAAADwv0EBAABvAAAA",
->>>>>>> origin/Siem_Shaders_Branch
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-12T13:11:31.231Z"
+              "WhenOpened": "2024-06-19T07:42:10.663Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "EffectsManager.cs",
-              "DocumentMoniker": "C:\\Users\\Siem\\Documents\\GitHub\\StoryScopeSilhouette\\Assets\\Silhouette\\Scripts\\EffectsManager.cs",
-              "RelativeDocumentMoniker": "Assets\\Silhouette\\Scripts\\EffectsManager.cs",
-              "ToolTip": "C:\\Users\\Siem\\Documents\\GitHub\\StoryScopeSilhouette\\Assets\\Silhouette\\Scripts\\EffectsManager.cs",
-              "RelativeToolTip": "Assets\\Silhouette\\Scripts\\EffectsManager.cs",
-              "ViewState": "AQIAADQAAAAAAAAAAAAkwEwAAAAWAAAA",
+              "Title": "Properties.cs",
+              "DocumentMoniker": "C:\\Users\\fabio\\Documents\\GitHub\\CrosswordExample\\StoryScopeSilhouette\\Assets\\Silhouette\\Scripts\\Properties.cs",
+              "RelativeDocumentMoniker": "Assets\\Silhouette\\Scripts\\Properties.cs",
+              "ToolTip": "C:\\Users\\fabio\\Documents\\GitHub\\CrosswordExample\\StoryScopeSilhouette\\Assets\\Silhouette\\Scripts\\Properties.cs",
+              "RelativeToolTip": "Assets\\Silhouette\\Scripts\\Properties.cs",
+              "ViewState": "AQIAACsBAAAAAAAAAAAuwNkAAAAsAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-12T08:54:01.803Z",
+              "WhenOpened": "2024-06-18T09:48:33.791Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Scan.cs",
+              "DocumentMoniker": "C:\\Users\\fabio\\Documents\\GitHub\\CrosswordExample\\StoryScopeSilhouette\\Assets\\Silhouette\\Scripts\\Scan.cs",
+              "RelativeDocumentMoniker": "Assets\\Silhouette\\Scripts\\Scan.cs",
+              "ToolTip": "C:\\Users\\fabio\\Documents\\GitHub\\CrosswordExample\\StoryScopeSilhouette\\Assets\\Silhouette\\Scripts\\Scan.cs",
+              "RelativeToolTip": "Assets\\Silhouette\\Scripts\\Scan.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-18T09:49:00.658Z",
               "EditorCaption": ""
             }
           ]

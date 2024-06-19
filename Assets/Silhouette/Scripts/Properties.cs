@@ -104,10 +104,13 @@ public class Properties : MonoBehaviour
 
         originalScale = transform.localScale;
         originalRoration = transform.eulerAngles;
-        originalendmarker = character.endMarker;
-        originalWalkingSpeed = character.WalkSpeed;
-        originalRunningSpeed = character.RunSpeed;
-        originalControlRotation = character.controlRotation;
+        if (character != null)
+        {
+            originalendmarker = character.endMarker;
+            originalWalkingSpeed = character.WalkSpeed;
+            originalRunningSpeed = character.RunSpeed;
+            originalControlRotation = character.controlRotation;
+        }
         originalFiducialRotation = fiducialController.IsRotationMapped;
         originalFiducialPos = fiducialController.IsPositionMapped;
 
@@ -274,12 +277,16 @@ public class Properties : MonoBehaviour
         BoxCollider2D boxCollider2D = GetComponent<BoxCollider2D>();
         boxCollider2D.size = HitboxSize;
         boxCollider2D.offset = HitboxOffset;
-
-        character.endMarker = originalendmarker;
-        this.transform.position = character.endMarker.transform.position;
-        character.WalkSpeed = originalWalkingSpeed;
-        character.RunSpeed = originalRunningSpeed;
-        character.controlRotation = originalControlRotation;
+        DrawingColliderUpdate();
+        if(character != null)
+        {
+            character.endMarker = originalendmarker;
+            this.transform.position = character.endMarker.transform.position;
+            character.WalkSpeed = originalWalkingSpeed;
+            character.RunSpeed = originalRunningSpeed;
+            character.controlRotation = originalControlRotation;
+        }
+        
         fiducialController.IsRotationMapped = originalFiducialRotation;
         fiducialController.IsPositionMapped = originalFiducialRotation;
         //character.facingRight = !character.facingRight;
@@ -313,5 +320,20 @@ public class Properties : MonoBehaviour
         }
 
         return children;
+    }
+
+    //Sets the collider to the size of the drawing
+    void DrawingColliderUpdate()
+    {
+        if (this.gameObject.GetComponent<Scan>() != null)
+        {
+           
+            Renderer rend = GetComponent<Renderer>();
+            BoxCollider2D boxCollider2D = GetComponent<BoxCollider2D>();
+            
+            boxCollider2D.size = rend.material.GetTextureScale("_BaseMap") *1.4f;
+            boxCollider2D.offset = rend.material.GetTextureOffset("_BaseMap");
+        }
+        else return;
     }
 }
