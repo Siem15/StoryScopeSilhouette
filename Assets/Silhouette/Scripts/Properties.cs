@@ -168,11 +168,6 @@ public class Properties : MonoBehaviour
                     Debug.Log(gameObject.name + " is not alive");
                     GetComponent<BoxCollider2D>().enabled = false;
 
-                    if (EffectsManager != null && fiducialController.m_IsVisible == true)
-                    {
-                        EffectsManager.GetComponent<EffectsManager>().AddEffect("Removed", this.gameObject);
-                    }
-
                 }
                 isAlive = false;
             }
