@@ -169,9 +169,10 @@ public class Properties : MonoBehaviour
         if (properties[(int)Property.IsWheel] && isAlive)
         {
             transform.Rotate(Vector3.back, 5f); // Rotate if wheel and touches a vehicle
-            character.controlRotation = false;
+            if(character != null)
+                character.controlRotation = false;
             fiducialController.IsRotationMapped = false;
-            fiducialController.IsPositionMapped = false;
+            //fiducialController.IsPositionMapped = false;
         }
 
         if (isAtached)
@@ -220,7 +221,8 @@ public class Properties : MonoBehaviour
 
                 GameObject duplicatedObject = Instantiate(this.gameObject);
 
-                duplicatedObject.GetComponent<JZSpriteRoot>().images = this.gameObject.GetComponent<JZSpriteRoot>().images;
+                if(this.gameObject.GetComponent<JZSpriteRoot>() != null)
+                    duplicatedObject.GetComponent<JZSpriteRoot>().images = this.gameObject.GetComponent<JZSpriteRoot>().images;
 
                 //Destroy(duplicatedObject.GetComponent<FiducialController>());
                 //Destroy(duplicatedObject.GetComponent<Character>());
@@ -229,11 +231,15 @@ public class Properties : MonoBehaviour
                 Destroy(this.gameObject.GetComponent<Rigidbody2D>());
 
                 this.gameObject.AddComponent<IsWheel>();
-                this.gameObject.GetComponent<Character>().WalkSpeed = 0;
-                this.gameObject.GetComponent<Character>().RunSpeed = 0;
-                this.gameObject.GetComponent<Character>().controlPosition = true;
-                this.gameObject.GetComponent<Character>().endMarker = otherCharacter.endMarker;
-
+                this.gameObject.GetComponent<FiducialController>().IsPositionMapped = false;
+                this.gameObject.GetComponent<FiducialController>().IsRotationMapped = false;
+                if(this.gameObject.GetComponent<Character>() != null)
+                {
+                    this.gameObject.GetComponent<Character>().WalkSpeed = 0;
+                    this.gameObject.GetComponent<Character>().RunSpeed = 0;
+                    this.gameObject.GetComponent<Character>().controlPosition = true;
+                    this.gameObject.GetComponent<Character>().endMarker = otherCharacter.endMarker;
+                }
                 Vector3 TempPos = this.gameObject.transform.position;
 
                 this.gameObject.transform.parent = otherObject.transform;
