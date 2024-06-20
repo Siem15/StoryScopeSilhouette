@@ -208,7 +208,7 @@ public class Properties : MonoBehaviour
             {
                 Debug.Log($"{gameObject.name} flame");
 
-                if (transform.childCount > 0)
+                if (transform.childCount >= 0)
                 {
                     this.gameObject.transform.localScale = new Vector3(0.001f, 0.001f, 0.001f); //hide
                     transform.GetComponent<BoxCollider2D>().enabled = false;
@@ -231,6 +231,7 @@ public class Properties : MonoBehaviour
                 this.gameObject.AddComponent<IsWheel>();
                 this.gameObject.GetComponent<Character>().WalkSpeed = 0;
                 this.gameObject.GetComponent<Character>().RunSpeed = 0;
+                this.gameObject.GetComponent<Character>().controlPosition = true;
                 this.gameObject.GetComponent<Character>().endMarker = otherCharacter.endMarker;
 
                 Vector3 TempPos = this.gameObject.transform.position;
