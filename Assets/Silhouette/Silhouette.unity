@@ -281,28 +281,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1146122173}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &4054581
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4054580}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a47fc9bd19013984e89d30bff1d554a4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  WalkSpeed: 0
-  RunSpeed: 0
-  stopRunningUntilThisDist: 0
-  singleSprite: 0
-  controlRotation: 0
-  controlPosition: 0
-  facingRight: 0
-  endMarkerPrefab: {fileID: 441084473105571446, guid: 2f7ed94a83a05a140be209a9a062c607,
-    type: 3}
-  endMarker: {fileID: 0}
 --- !u!114 &4054586
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2818,33 +2796,11 @@ MonoBehaviour:
   isWheel: 0
   isVehicle: 0
   reset: 0
-  isAlive: 1
+  isAlive: 0
   connected: 1
   isAtached: 0
   HitboxSize: {x: 0, y: 0}
   HitboxOffset: {x: 0, y: 0}
---- !u!114 &611082145
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 611082143}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a47fc9bd19013984e89d30bff1d554a4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  WalkSpeed: 0
-  RunSpeed: 0
-  stopRunningUntilThisDist: 0
-  singleSprite: 0
-  controlRotation: 0
-  controlPosition: 0
-  facingRight: 0
-  endMarkerPrefab: {fileID: 441084473105571446, guid: 2f7ed94a83a05a140be209a9a062c607,
-    type: 3}
-  endMarker: {fileID: 0}
 --- !u!1 &613049191
 GameObject:
   m_ObjectHideFlags: 0
@@ -3620,28 +3576,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1146122173}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &842834758
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 842834757}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a47fc9bd19013984e89d30bff1d554a4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  WalkSpeed: 0
-  RunSpeed: 0
-  stopRunningUntilThisDist: 0
-  singleSprite: 0
-  controlRotation: 0
-  controlPosition: 0
-  facingRight: 0
-  endMarkerPrefab: {fileID: 441084473105571446, guid: 2f7ed94a83a05a140be209a9a062c607,
-    type: 3}
-  endMarker: {fileID: 0}
 --- !u!114 &842834763
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6021,55 +5955,11 @@ MonoBehaviour:
   isWheel: 0
   isVehicle: 0
   reset: 0
-  isAlive: 1
+  isAlive: 0
   connected: 1
   isAtached: 0
   HitboxSize: {x: 0, y: 0}
   HitboxOffset: {x: 0, y: 0}
---- !u!114 &1146122198
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1146122194}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a47fc9bd19013984e89d30bff1d554a4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  WalkSpeed: 0
-  RunSpeed: 0
-  stopRunningUntilThisDist: 0
-  singleSprite: 0
-  controlRotation: 0
-  controlPosition: 0
-  facingRight: 0
-  endMarkerPrefab: {fileID: 441084473105571446, guid: 2f7ed94a83a05a140be209a9a062c607,
-    type: 3}
-  endMarker: {fileID: 0}
---- !u!114 &1146122199
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1146122195}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a47fc9bd19013984e89d30bff1d554a4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  WalkSpeed: 0
-  RunSpeed: 0
-  stopRunningUntilThisDist: 0
-  singleSprite: 0
-  controlRotation: 0
-  controlPosition: 0
-  facingRight: 0
-  endMarkerPrefab: {fileID: 441084473105571446, guid: 2f7ed94a83a05a140be209a9a062c607,
-    type: 3}
-  endMarker: {fileID: 0}
 --- !u!1001 &1188091842
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6177,28 +6067,6 @@ MonoBehaviour:
   isAtached: 0
   HitboxSize: {x: 0, y: 0}
   HitboxOffset: {x: 0, y: 0}
---- !u!114 &1264743593
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1264743591}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a47fc9bd19013984e89d30bff1d554a4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  WalkSpeed: 0
-  RunSpeed: 0
-  stopRunningUntilThisDist: 0
-  singleSprite: 0
-  controlRotation: 0
-  controlPosition: 0
-  facingRight: 0
-  endMarkerPrefab: {fileID: 441084473105571446, guid: 2f7ed94a83a05a140be209a9a062c607,
-    type: 3}
-  endMarker: {fileID: 0}
 --- !u!20 &1299447885 stripped
 Camera:
   m_CorrespondingSourceObject: {fileID: 903847666132942999, guid: 29e8ad14ce6465048a90d3172982f16a,
@@ -7652,28 +7520,6 @@ MonoBehaviour:
   isAtached: 0
   HitboxSize: {x: 0, y: 0}
   HitboxOffset: {x: 0, y: 0}
---- !u!114 &1832401349
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1832401347}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a47fc9bd19013984e89d30bff1d554a4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  WalkSpeed: 0
-  RunSpeed: 0
-  stopRunningUntilThisDist: 0
-  singleSprite: 0
-  controlRotation: 0
-  controlPosition: 0
-  facingRight: 0
-  endMarkerPrefab: {fileID: 441084473105571446, guid: 2f7ed94a83a05a140be209a9a062c607,
-    type: 3}
-  endMarker: {fileID: 0}
 --- !u!1001 &1850868770
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7774,28 +7620,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1146122173}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1868388022
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1868388021}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a47fc9bd19013984e89d30bff1d554a4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  WalkSpeed: 0
-  RunSpeed: 0
-  stopRunningUntilThisDist: 0
-  singleSprite: 0
-  controlRotation: 0
-  controlPosition: 0
-  facingRight: 0
-  endMarkerPrefab: {fileID: 441084473105571446, guid: 2f7ed94a83a05a140be209a9a062c607,
-    type: 3}
-  endMarker: {fileID: 0}
 --- !u!114 &1868388027
 MonoBehaviour:
   m_ObjectHideFlags: 0
