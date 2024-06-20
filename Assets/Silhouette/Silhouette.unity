@@ -614,7 +614,7 @@ PrefabInstance:
     - target: {fileID: 4379370295723882895, guid: 78b74fd16e4934647a2ba8de56436244,
         type: 3}
       propertyPath: fixedProperties
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5003609304600709975, guid: 78b74fd16e4934647a2ba8de56436244,
         type: 3}
@@ -6994,6 +6994,11 @@ PrefabInstance:
     - target: {fileID: 847195706022308197, guid: 9ef2ba016b4bdb64cb4b773f7613fb3a,
         type: 3}
       propertyPath: AutoHideGO
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 847195706022308199, guid: 9ef2ba016b4bdb64cb4b773f7613fb3a,
+        type: 3}
+      propertyPath: facingRight
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 847195706115221636, guid: 9ef2ba016b4bdb64cb4b773f7613fb3a,

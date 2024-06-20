@@ -114,8 +114,6 @@ public class Properties : MonoBehaviour
             originalControlRotation = character.controlRotation;
         }
 
-        originalFiducialRotation = fiducialController.IsRotationMapped;
-        originalFiducialPos = fiducialController.IsPositionMapped;
 
         // maks sure he is not a duplicate to preovent exidents
         if (!isAtached)
@@ -126,8 +124,10 @@ public class Properties : MonoBehaviour
                 connected = false;
                 Debug.Log($"{gameObject.name} is not connected");
             }
-
             Debug.Log($"{gameObject.name} is connected");
+
+            originalFiducialRotation = fiducialController.IsRotationMapped;
+            originalFiducialPos = fiducialController.IsPositionMapped;
 
             CheckProperty();
         }
@@ -245,14 +245,23 @@ public class Properties : MonoBehaviour
             {
 
                 GameObject duplicatedObject = Instantiate(this.gameObject); // make a coppy
+                duplicatedObject.GetComponent<FiducialController>().IsPositionMapped = false;
 
-                if(this.gameObject.GetComponent<JZSpriteRoot>() != null )
+                duplicatedObject.GetComponent<Properties>().originalFiducialRotation = originalFiducialRotation;
+                duplicatedObject.GetComponent<Properties>().originalFiducialPos = originalFiducialPos;
+
+
+                if (this.gameObject.GetComponent<JZSpriteRoot>() != null )
                     duplicatedObject.GetComponent<JZSpriteRoot>().images = this.gameObject.GetComponent<JZSpriteRoot>().images; //inport the images vrom the original
 
                 // destroy stuff we dont need
                 Destroy(this.gameObject.GetComponent<Properties>());
                 Destroy(this.gameObject.GetComponent<BoxCollider2D>());
                 Destroy(this.gameObject.GetComponent<Rigidbody2D>());
+                Destroy(this.gameObject.GetComponent<FiducialController>());
+                if (character != null) 
+                    Destroy(this.gameObject.GetComponent<Character>());
+
 
                 this.gameObject.AddComponent<IsWheel>(); // make it spin
 
@@ -270,7 +279,7 @@ public class Properties : MonoBehaviour
 
                 this.gameObject.transform.parent = otherObject.transform; // make the wheel a child of the vehicle 
 
-                this.gameObject.transform.position = TempPos; // reset position
+                //this.gameObject.transform.position = TempPos; // reset position
 
                 duplicatedObject.transform.position = new Vector3(Random.Range(1000, 10000), Random.Range(1000, 10000), Random.Range(1000, 10000)); // remove the coppy from view
                 duplicatedObject.GetComponent<Properties>().isAtached = true;
@@ -285,8 +294,7 @@ public class Properties : MonoBehaviour
 
     public void CheckProperty()
     {
-        ResetObject();
-
+        
         if (!fixedProperties)
         {
             for (int i = 0; i < properties.Count; i++) // reset the properties
@@ -303,6 +311,8 @@ public class Properties : MonoBehaviour
                 currentProperty = 0;
             }
         }
+
+        ResetObject();
     }
 
     public void ResetObject()
