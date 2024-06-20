@@ -2726,6 +2726,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6992121691503016566, guid: 207d72de90afc4541a91f6a1b656972a,
         type: 3}
+      propertyPath: MarkerID
+      value: 45
+      objectReference: {fileID: 0}
+    - target: {fileID: 6992121691503016566, guid: 207d72de90afc4541a91f6a1b656972a,
+        type: 3}
       propertyPath: AutoHideGO
       value: 0
       objectReference: {fileID: 0}
@@ -4654,6 +4659,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6992121691503016566, guid: 207d72de90afc4541a91f6a1b656972a,
+        type: 3}
+      propertyPath: MarkerID
+      value: 67
       objectReference: {fileID: 0}
     - target: {fileID: 6992121691503016566, guid: 207d72de90afc4541a91f6a1b656972a,
         type: 3}

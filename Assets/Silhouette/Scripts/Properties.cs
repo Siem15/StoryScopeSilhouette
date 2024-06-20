@@ -184,7 +184,6 @@ public class Properties : MonoBehaviour
         Debug.Log($"{gameObject.name} trigger enter");
 
         Properties otherObject = collision.GetComponent<Properties>();
-
         Character otherCharacter = collision.GetComponent<Character>();
 
         if (otherObject != null)
@@ -192,13 +191,10 @@ public class Properties : MonoBehaviour
             if (properties[(int)Property.IsFood] && otherObject.properties[(int)Property.CanEatFood])
             {
                 //TODO: spawn edible particle system on place of currently being eaten object
-                if (EffectsManager != null)
-                {
-                    EffectsManager.GetComponent<EffectsManager>().AddEffect("GetsEaten", this.gameObject);
-                }
-                Debug.Log($"{gameObject.name} eat");
+                EffectsManager?.GetComponent<EffectsManager>().AddEffect("GetsEaten", gameObject);
                 transform.localScale *= 0.9f; // Shrink
                 otherObject.transform.localScale *= 1.1f; // Grow
+                Debug.Log($"{gameObject.name} eat");
             }
 
             if (properties[(int)Property.IsFlammable] && otherObject.properties[(int)Property.IsFire])
@@ -207,37 +203,37 @@ public class Properties : MonoBehaviour
 
                 if (transform.childCount > 0)
                 {
-                    this.gameObject.transform.localScale = new Vector3(0.001f, 0.001f, 0.001f); //hide
+                    gameObject.transform.localScale = new Vector3(0.001f, 0.001f, 0.001f); //hide
                     transform.GetComponent<BoxCollider2D>().enabled = false;
                 }
             }
 
             if (properties[(int)Property.IsWheel] && otherObject.properties[(int)Property.IsVehicle])
             {
+                ModularSystem modularSystem = collision.gameObject.GetComponent<ModularSystem>();
+                modularSystem.AddChild(gameObject);
 
-                GameObject duplicatedObject = Instantiate(this.gameObject);
-
-                duplicatedObject.GetComponent<JZSpriteRoot>().images = this.gameObject.GetComponent<JZSpriteRoot>().images;
+                GameObject duplicateObject = Instantiate(gameObject);
+                duplicateObject.GetComponent<JZSpriteRoot>().images = gameObject.GetComponent<JZSpriteRoot>().images;
 
                 //Destroy(duplicatedObject.GetComponent<FiducialController>());
                 //Destroy(duplicatedObject.GetComponent<Character>());
-                Destroy(this.gameObject.GetComponent<Properties>());
-                Destroy(this.gameObject.GetComponent<BoxCollider2D>());
-                Destroy(this.gameObject.GetComponent<Rigidbody2D>());
+                Destroy(gameObject.GetComponent<Properties>());
+                Destroy(gameObject.GetComponent<BoxCollider2D>());
+                Destroy(gameObject.GetComponent<Rigidbody2D>());
 
-                this.gameObject.AddComponent<IsWheel>();
-                this.gameObject.GetComponent<Character>().WalkSpeed = 0;
-                this.gameObject.GetComponent<Character>().RunSpeed = 0;
-                this.gameObject.GetComponent<Character>().endMarker = otherCharacter.endMarker;
+                gameObject.AddComponent<IsWheel>();
+                gameObject.GetComponent<Character>().WalkSpeed = 0;
+                gameObject.GetComponent<Character>().RunSpeed = 0;
+                gameObject.GetComponent<Character>().endMarker = otherCharacter.endMarker;
 
-                Vector3 TempPos = this.gameObject.transform.position;
+                Vector3 tempPosition = gameObject.transform.position;
+                gameObject.transform.parent = otherObject.transform;
+                gameObject.transform.position = tempPosition;
 
-                this.gameObject.transform.parent = otherObject.transform;
-
-                this.gameObject.transform.position = TempPos;
-
-                duplicatedObject.transform.position = new Vector3(Random.Range(1000, 10000), Random.Range(1000, 10000), Random.Range(1000, 10000));
-                duplicatedObject.GetComponent<Properties>().isAtached = true;
+                int randomPosition = Random.Range(1000, 10000);
+                duplicateObject.transform.position = new Vector3(randomPosition, randomPosition, randomPosition);
+                duplicateObject.GetComponent<Properties>().isAtached = true;
             }
         }
     }
