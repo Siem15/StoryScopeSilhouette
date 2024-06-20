@@ -1310,7 +1310,7 @@ GameObject:
   - component: {fileID: 6440885934930667634}
   - component: {fileID: 6440885934930667635}
   m_Layer: 0
-  m_Name: TestObject
+  m_Name: TubeMan
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

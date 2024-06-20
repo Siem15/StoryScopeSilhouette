@@ -11,7 +11,10 @@ public class IsWheel : MonoBehaviour
 
     public void Update()
     {
-        this.gameObject.GetComponent<Character>().WalkSpeed = 0;
-        this.gameObject.GetComponent<Character>().RunSpeed = 0;
+        if (gameObject.GetComponent<Character>() != null)
+        {
+            this.gameObject.GetComponent<Character>().WalkSpeed = 0;
+            this.gameObject.GetComponent<Character>().RunSpeed = 0;
+        }
     }
 }

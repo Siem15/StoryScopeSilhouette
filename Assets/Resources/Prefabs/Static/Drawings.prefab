@@ -107,6 +107,7 @@ MonoBehaviour:
   UseRotation: 0
   AutoHideGO: 1
   DegreesToAction: 0
+  hideDelay: 1
   CameraOffset: 10
   RotateAround: 1
   camY: 0
@@ -133,10 +134,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scanCam: {fileID: 0}
-  otherSide: {fileID: 8252287401612731718}
-  isEmpty: 1
-  cameraSnap: {fileID: 0}
   emptySprite: {fileID: 2800000, guid: 5bdfd9074d6419c4c9a50178b03ecf30, type: 3}
+  otherSide: {fileID: 0}
+  isEmpty: 1
 --- !u!114 &8252287400220434694
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -151,6 +151,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   jZSOCameraActive: {fileID: 11400000, guid: 7c23ebe8d412c27428cb89d4dde30839, type: 2}
   scaleFactor: 1
+  otherOnes: []
 --- !u!1 &8252287400319160383
 GameObject:
   m_ObjectHideFlags: 0
@@ -258,6 +259,7 @@ MonoBehaviour:
   UseRotation: 0
   AutoHideGO: 1
   DegreesToAction: 0
+  hideDelay: 1
   CameraOffset: 10
   RotateAround: 1
   camY: 0
@@ -284,10 +286,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scanCam: {fileID: 0}
-  otherSide: {fileID: 8252287400678114934}
-  isEmpty: 1
-  cameraSnap: {fileID: 0}
   emptySprite: {fileID: 2800000, guid: 5bdfd9074d6419c4c9a50178b03ecf30, type: 3}
+  otherSide: {fileID: 0}
+  isEmpty: 1
 --- !u!114 &8252287400319160378
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -302,6 +303,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   jZSOCameraActive: {fileID: 11400000, guid: 7c23ebe8d412c27428cb89d4dde30839, type: 2}
   scaleFactor: 1
+  otherOnes: []
 --- !u!1 &8252287400421216714
 GameObject:
   m_ObjectHideFlags: 0
@@ -409,6 +411,7 @@ MonoBehaviour:
   UseRotation: 0
   AutoHideGO: 1
   DegreesToAction: 0
+  hideDelay: 1
   CameraOffset: 10
   RotateAround: 1
   camY: 0
@@ -435,10 +438,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scanCam: {fileID: 0}
-  otherSide: {fileID: 8252287400835912264}
-  isEmpty: 1
-  cameraSnap: {fileID: 0}
   emptySprite: {fileID: 2800000, guid: 5bdfd9074d6419c4c9a50178b03ecf30, type: 3}
+  otherSide: {fileID: 0}
+  isEmpty: 1
 --- !u!114 &8252287400421216713
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -453,157 +455,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   jZSOCameraActive: {fileID: 11400000, guid: 7c23ebe8d412c27428cb89d4dde30839, type: 2}
   scaleFactor: 1
---- !u!1 &8252287400564686568
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 8252287400564686578}
-  - component: {fileID: 8252287400564686581}
-  - component: {fileID: 8252287400564686580}
-  - component: {fileID: 8252287400564686583}
-  - component: {fileID: 8252287400564686582}
-  - component: {fileID: 8252287400564686569}
-  m_Layer: 0
-  m_Name: ScanFi_054
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &8252287400564686578
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8252287400564686568}
-  m_LocalRotation: {x: -0, y: -0, z: -0.000000014901161, w: 1}
-  m_LocalPosition: {x: -11.164955, y: 19.083952, z: -7}
-  m_LocalScale: {x: -7.375565, y: 4.8764067, z: 4.8764057}
-  m_Children: []
-  m_Father: {fileID: 8252287401237506959}
-  m_RootOrder: 16
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &8252287400564686581
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8252287400564686568}
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
---- !u!23 &8252287400564686580
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8252287400564686568}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: 020dcc16066f5ee49bee7be196daac14, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &8252287400564686583
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8252287400564686568}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0ecb9180c6b21554caec21446f888543, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MarkerID: 54
-  IsPositionMapped: 1
-  InvertX: 0
-  InvertY: 0
-  grounded: 0
-  templateCam: 0
-  full: 0
-  IsRotationMapped: 1
-  UseRotation: 0
-  AutoHideGO: 1
-  DegreesToAction: 0
-  CameraOffset: 10
-  RotateAround: 1
-  camY: 0
-  camX: 0
-  onRotateForward:
-    m_PersistentCalls:
-      m_Calls: []
-  onRotateBackward:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ScreenPosition: {x: 0, y: 0}
-  m_IsVisible: 0
-  RotationMultiplier: 1
---- !u!114 &8252287400564686582
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8252287400564686568}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a8da55f80fbc15409dc4c0f8d348468, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scanCam: {fileID: 0}
-  otherSide: {fileID: 8252287401153160996}
-  isEmpty: 1
-  cameraSnap: {fileID: 0}
-  emptySprite: {fileID: 2800000, guid: 5bdfd9074d6419c4c9a50178b03ecf30, type: 3}
---- !u!114 &8252287400564686569
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8252287400564686568}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 472eb834453228a45bac98c2062c3093, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  jZSOCameraActive: {fileID: 11400000, guid: 7c23ebe8d412c27428cb89d4dde30839, type: 2}
-  scaleFactor: 1
+  otherOnes: []
 --- !u!1 &8252287400597435024
 GameObject:
   m_ObjectHideFlags: 0
@@ -711,6 +563,7 @@ MonoBehaviour:
   UseRotation: 0
   AutoHideGO: 1
   DegreesToAction: 0
+  hideDelay: 1
   CameraOffset: 10
   RotateAround: 1
   camY: 0
@@ -737,10 +590,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scanCam: {fileID: 0}
-  otherSide: {fileID: 8252287401314572726}
-  isEmpty: 1
-  cameraSnap: {fileID: 0}
   emptySprite: {fileID: 2800000, guid: 5bdfd9074d6419c4c9a50178b03ecf30, type: 3}
+  otherSide: {fileID: 0}
+  isEmpty: 1
 --- !u!114 &8252287400597435025
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -755,6 +607,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   jZSOCameraActive: {fileID: 11400000, guid: 7c23ebe8d412c27428cb89d4dde30839, type: 2}
   scaleFactor: 1
+  otherOnes: []
 --- !u!1 &8252287400678114934
 GameObject:
   m_ObjectHideFlags: 0
@@ -862,6 +715,7 @@ MonoBehaviour:
   UseRotation: 0
   AutoHideGO: 1
   DegreesToAction: 0
+  hideDelay: 1
   CameraOffset: 10
   RotateAround: 1
   camY: 0
@@ -888,10 +742,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scanCam: {fileID: 0}
-  otherSide: {fileID: 8252287400319160383}
-  isEmpty: 1
-  cameraSnap: {fileID: 0}
   emptySprite: {fileID: 2800000, guid: 5bdfd9074d6419c4c9a50178b03ecf30, type: 3}
+  otherSide: {fileID: 0}
+  isEmpty: 1
 --- !u!114 &8252287400678114933
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -906,6 +759,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   jZSOCameraActive: {fileID: 11400000, guid: 7c23ebe8d412c27428cb89d4dde30839, type: 2}
   scaleFactor: 1
+  otherOnes: []
 --- !u!1 &8252287400804118165
 GameObject:
   m_ObjectHideFlags: 0
@@ -939,7 +793,7 @@ Transform:
   m_LocalScale: {x: -7.375565, y: 4.8764067, z: 4.8764057}
   m_Children: []
   m_Father: {fileID: 8252287401237506959}
-  m_RootOrder: 18
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &8252287400804118174
 MeshFilter:
@@ -1013,6 +867,7 @@ MonoBehaviour:
   UseRotation: 0
   AutoHideGO: 1
   DegreesToAction: 0
+  hideDelay: 1
   CameraOffset: 10
   RotateAround: 1
   camY: 0
@@ -1039,10 +894,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scanCam: {fileID: 0}
-  otherSide: {fileID: 8252287401910392394}
-  isEmpty: 1
-  cameraSnap: {fileID: 0}
   emptySprite: {fileID: 2800000, guid: 5bdfd9074d6419c4c9a50178b03ecf30, type: 3}
+  otherSide: {fileID: 0}
+  isEmpty: 1
 --- !u!114 &8252287400804118162
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1057,6 +911,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   jZSOCameraActive: {fileID: 11400000, guid: 7c23ebe8d412c27428cb89d4dde30839, type: 2}
   scaleFactor: 1
+  otherOnes: []
 --- !u!1 &8252287400835912264
 GameObject:
   m_ObjectHideFlags: 0
@@ -1164,6 +1019,7 @@ MonoBehaviour:
   UseRotation: 0
   AutoHideGO: 1
   DegreesToAction: 0
+  hideDelay: 1
   CameraOffset: 10
   RotateAround: 1
   camY: 0
@@ -1190,10 +1046,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scanCam: {fileID: 0}
-  otherSide: {fileID: 8252287400421216714}
-  isEmpty: 1
-  cameraSnap: {fileID: 0}
   emptySprite: {fileID: 2800000, guid: 5bdfd9074d6419c4c9a50178b03ecf30, type: 3}
+  otherSide: {fileID: 0}
+  isEmpty: 1
 --- !u!114 &8252287400835912279
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1208,157 +1063,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   jZSOCameraActive: {fileID: 11400000, guid: 7c23ebe8d412c27428cb89d4dde30839, type: 2}
   scaleFactor: 1
---- !u!1 &8252287401153160996
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 8252287401153160997}
-  - component: {fileID: 8252287401153161006}
-  - component: {fileID: 8252287401153160993}
-  - component: {fileID: 8252287401153160992}
-  - component: {fileID: 8252287401153160995}
-  - component: {fileID: 8252287401153160994}
-  m_Layer: 0
-  m_Name: ScanFi_055
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &8252287401153160997
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8252287401153160996}
-  m_LocalRotation: {x: -0, y: -0, z: -0.000000014901161, w: 1}
-  m_LocalPosition: {x: -11.164955, y: 19.083952, z: -7}
-  m_LocalScale: {x: -7.375565, y: 4.8764067, z: 4.8764057}
-  m_Children: []
-  m_Father: {fileID: 8252287401237506959}
-  m_RootOrder: 17
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &8252287401153161006
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8252287401153160996}
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
---- !u!23 &8252287401153160993
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8252287401153160996}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: 020dcc16066f5ee49bee7be196daac14, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &8252287401153160992
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8252287401153160996}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0ecb9180c6b21554caec21446f888543, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MarkerID: 55
-  IsPositionMapped: 1
-  InvertX: 0
-  InvertY: 0
-  grounded: 0
-  templateCam: 0
-  full: 0
-  IsRotationMapped: 1
-  UseRotation: 0
-  AutoHideGO: 1
-  DegreesToAction: 0
-  CameraOffset: 10
-  RotateAround: 1
-  camY: 0
-  camX: 0
-  onRotateForward:
-    m_PersistentCalls:
-      m_Calls: []
-  onRotateBackward:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ScreenPosition: {x: 0, y: 0}
-  m_IsVisible: 0
-  RotationMultiplier: 1
---- !u!114 &8252287401153160995
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8252287401153160996}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a8da55f80fbc15409dc4c0f8d348468, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scanCam: {fileID: 0}
-  otherSide: {fileID: 8252287400564686568}
-  isEmpty: 1
-  cameraSnap: {fileID: 0}
-  emptySprite: {fileID: 2800000, guid: 5bdfd9074d6419c4c9a50178b03ecf30, type: 3}
---- !u!114 &8252287401153160994
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8252287401153160996}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 472eb834453228a45bac98c2062c3093, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  jZSOCameraActive: {fileID: 11400000, guid: 7c23ebe8d412c27428cb89d4dde30839, type: 2}
-  scaleFactor: 1
+  otherOnes: []
 --- !u!1 &8252287401162036102
 GameObject:
   m_ObjectHideFlags: 0
@@ -1466,6 +1171,7 @@ MonoBehaviour:
   UseRotation: 0
   AutoHideGO: 1
   DegreesToAction: 0
+  hideDelay: 1
   CameraOffset: 10
   RotateAround: 1
   camY: 0
@@ -1492,10 +1198,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scanCam: {fileID: 0}
-  otherSide: {fileID: 8252287401385480012}
-  isEmpty: 1
-  cameraSnap: {fileID: 0}
   emptySprite: {fileID: 2800000, guid: 5bdfd9074d6419c4c9a50178b03ecf30, type: 3}
+  otherSide: {fileID: 0}
+  isEmpty: 1
 --- !u!114 &8252287401162036101
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1510,6 +1215,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   jZSOCameraActive: {fileID: 11400000, guid: 7c23ebe8d412c27428cb89d4dde30839, type: 2}
   scaleFactor: 1
+  otherOnes: []
 --- !u!1 &8252287401237506958
 GameObject:
   m_ObjectHideFlags: 0
@@ -1553,8 +1259,6 @@ Transform:
   - {fileID: 8252287401431850518}
   - {fileID: 8252287401730407096}
   - {fileID: 8252287401266887198}
-  - {fileID: 8252287400564686578}
-  - {fileID: 8252287401153160997}
   - {fileID: 8252287400804118175}
   - {fileID: 8252287401910392395}
   m_Father: {fileID: 0}
@@ -1667,6 +1371,7 @@ MonoBehaviour:
   UseRotation: 0
   AutoHideGO: 1
   DegreesToAction: 0
+  hideDelay: 1
   CameraOffset: 10
   RotateAround: 1
   camY: 0
@@ -1693,10 +1398,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scanCam: {fileID: 0}
-  otherSide: {fileID: 8252287401730407102}
-  isEmpty: 1
-  cameraSnap: {fileID: 0}
   emptySprite: {fileID: 2800000, guid: 5bdfd9074d6419c4c9a50178b03ecf30, type: 3}
+  otherSide: {fileID: 0}
+  isEmpty: 1
 --- !u!114 &8252287401266887199
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1711,6 +1415,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   jZSOCameraActive: {fileID: 11400000, guid: 7c23ebe8d412c27428cb89d4dde30839, type: 2}
   scaleFactor: 1
+  otherOnes: []
 --- !u!1 &8252287401314572726
 GameObject:
   m_ObjectHideFlags: 0
@@ -1818,6 +1523,7 @@ MonoBehaviour:
   UseRotation: 0
   AutoHideGO: 1
   DegreesToAction: 0
+  hideDelay: 1
   CameraOffset: 10
   RotateAround: 1
   camY: 0
@@ -1844,10 +1550,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scanCam: {fileID: 0}
-  otherSide: {fileID: 8252287400597435024}
-  isEmpty: 1
-  cameraSnap: {fileID: 0}
   emptySprite: {fileID: 2800000, guid: 5bdfd9074d6419c4c9a50178b03ecf30, type: 3}
+  otherSide: {fileID: 0}
+  isEmpty: 1
 --- !u!114 &8252287401314572724
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1862,6 +1567,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   jZSOCameraActive: {fileID: 11400000, guid: 7c23ebe8d412c27428cb89d4dde30839, type: 2}
   scaleFactor: 1
+  otherOnes: []
 --- !u!1 &8252287401385480012
 GameObject:
   m_ObjectHideFlags: 0
@@ -1969,6 +1675,7 @@ MonoBehaviour:
   UseRotation: 0
   AutoHideGO: 1
   DegreesToAction: 0
+  hideDelay: 1
   CameraOffset: 10
   RotateAround: 1
   camY: 0
@@ -1995,10 +1702,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scanCam: {fileID: 0}
-  otherSide: {fileID: 8252287401162036102}
-  isEmpty: 1
-  cameraSnap: {fileID: 0}
   emptySprite: {fileID: 2800000, guid: 5bdfd9074d6419c4c9a50178b03ecf30, type: 3}
+  otherSide: {fileID: 0}
+  isEmpty: 1
 --- !u!114 &8252287401385480011
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2013,6 +1719,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   jZSOCameraActive: {fileID: 11400000, guid: 7c23ebe8d412c27428cb89d4dde30839, type: 2}
   scaleFactor: 1
+  otherOnes: []
 --- !u!1 &8252287401431850505
 GameObject:
   m_ObjectHideFlags: 0
@@ -2120,6 +1827,7 @@ MonoBehaviour:
   UseRotation: 0
   AutoHideGO: 1
   DegreesToAction: 0
+  hideDelay: 1
   CameraOffset: 10
   RotateAround: 1
   camY: 0
@@ -2146,10 +1854,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scanCam: {fileID: 0}
-  otherSide: {fileID: 8252287401480990377}
-  isEmpty: 1
-  cameraSnap: {fileID: 0}
   emptySprite: {fileID: 2800000, guid: 5bdfd9074d6419c4c9a50178b03ecf30, type: 3}
+  otherSide: {fileID: 0}
+  isEmpty: 1
 --- !u!114 &8252287401431850519
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2164,6 +1871,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   jZSOCameraActive: {fileID: 11400000, guid: 7c23ebe8d412c27428cb89d4dde30839, type: 2}
   scaleFactor: 1
+  otherOnes: []
 --- !u!1 &8252287401480990377
 GameObject:
   m_ObjectHideFlags: 0
@@ -2271,6 +1979,7 @@ MonoBehaviour:
   UseRotation: 0
   AutoHideGO: 1
   DegreesToAction: 0
+  hideDelay: 1
   CameraOffset: 10
   RotateAround: 1
   camY: 0
@@ -2297,10 +2006,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scanCam: {fileID: 0}
-  otherSide: {fileID: 8252287401431850505}
-  isEmpty: 1
-  cameraSnap: {fileID: 0}
   emptySprite: {fileID: 2800000, guid: 5bdfd9074d6419c4c9a50178b03ecf30, type: 3}
+  otherSide: {fileID: 0}
+  isEmpty: 1
 --- !u!114 &8252287401480990390
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2315,6 +2023,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   jZSOCameraActive: {fileID: 11400000, guid: 7c23ebe8d412c27428cb89d4dde30839, type: 2}
   scaleFactor: 1
+  otherOnes: []
 --- !u!1 &8252287401612731718
 GameObject:
   m_ObjectHideFlags: 0
@@ -2422,6 +2131,7 @@ MonoBehaviour:
   UseRotation: 0
   AutoHideGO: 1
   DegreesToAction: 0
+  hideDelay: 1
   CameraOffset: 10
   RotateAround: 1
   camY: 0
@@ -2448,10 +2158,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scanCam: {fileID: 0}
-  otherSide: {fileID: 8252287400220434747}
-  isEmpty: 1
-  cameraSnap: {fileID: 0}
   emptySprite: {fileID: 2800000, guid: 5bdfd9074d6419c4c9a50178b03ecf30, type: 3}
+  otherSide: {fileID: 0}
+  isEmpty: 1
 --- !u!114 &8252287401612731717
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2466,6 +2175,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   jZSOCameraActive: {fileID: 11400000, guid: 7c23ebe8d412c27428cb89d4dde30839, type: 2}
   scaleFactor: 1
+  otherOnes: []
 --- !u!1 &8252287401730407102
 GameObject:
   m_ObjectHideFlags: 0
@@ -2573,6 +2283,7 @@ MonoBehaviour:
   UseRotation: 0
   AutoHideGO: 1
   DegreesToAction: 0
+  hideDelay: 1
   CameraOffset: 10
   RotateAround: 1
   camY: 0
@@ -2599,10 +2310,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scanCam: {fileID: 0}
-  otherSide: {fileID: 8252287401266887185}
-  isEmpty: 1
-  cameraSnap: {fileID: 0}
   emptySprite: {fileID: 2800000, guid: 5bdfd9074d6419c4c9a50178b03ecf30, type: 3}
+  otherSide: {fileID: 0}
+  isEmpty: 1
 --- !u!114 &8252287401730407103
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2617,6 +2327,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   jZSOCameraActive: {fileID: 11400000, guid: 7c23ebe8d412c27428cb89d4dde30839, type: 2}
   scaleFactor: 1
+  otherOnes: []
 --- !u!1 &8252287401815157168
 GameObject:
   m_ObjectHideFlags: 0
@@ -2724,6 +2435,7 @@ MonoBehaviour:
   UseRotation: 0
   AutoHideGO: 1
   DegreesToAction: 0
+  hideDelay: 1
   CameraOffset: 10
   RotateAround: 1
   camY: 0
@@ -2750,10 +2462,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scanCam: {fileID: 0}
-  otherSide: {fileID: 8252287401989261303}
-  isEmpty: 1
-  cameraSnap: {fileID: 0}
   emptySprite: {fileID: 2800000, guid: 5bdfd9074d6419c4c9a50178b03ecf30, type: 3}
+  otherSide: {fileID: 0}
+  isEmpty: 1
 --- !u!114 &8252287401815157182
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2768,6 +2479,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   jZSOCameraActive: {fileID: 11400000, guid: 7c23ebe8d412c27428cb89d4dde30839, type: 2}
   scaleFactor: 1
+  otherOnes: []
 --- !u!1 &8252287401910392394
 GameObject:
   m_ObjectHideFlags: 0
@@ -2801,7 +2513,7 @@ Transform:
   m_LocalScale: {x: -7.375565, y: 4.8764067, z: 4.8764057}
   m_Children: []
   m_Father: {fileID: 8252287401237506959}
-  m_RootOrder: 19
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &8252287401910392404
 MeshFilter:
@@ -2875,6 +2587,7 @@ MonoBehaviour:
   UseRotation: 0
   AutoHideGO: 1
   DegreesToAction: 0
+  hideDelay: 1
   CameraOffset: 10
   RotateAround: 1
   camY: 0
@@ -2901,10 +2614,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scanCam: {fileID: 0}
-  otherSide: {fileID: 8252287400804118165}
-  isEmpty: 1
-  cameraSnap: {fileID: 0}
   emptySprite: {fileID: 2800000, guid: 5bdfd9074d6419c4c9a50178b03ecf30, type: 3}
+  otherSide: {fileID: 0}
+  isEmpty: 1
 --- !u!114 &8252287401910392392
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2919,6 +2631,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   jZSOCameraActive: {fileID: 11400000, guid: 7c23ebe8d412c27428cb89d4dde30839, type: 2}
   scaleFactor: 1
+  otherOnes: []
 --- !u!1 &8252287401989261303
 GameObject:
   m_ObjectHideFlags: 0
@@ -3026,6 +2739,7 @@ MonoBehaviour:
   UseRotation: 0
   AutoHideGO: 1
   DegreesToAction: 0
+  hideDelay: 1
   CameraOffset: 10
   RotateAround: 1
   camY: 0
@@ -3052,10 +2766,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scanCam: {fileID: 0}
-  otherSide: {fileID: 8252287401815157168}
-  isEmpty: 1
-  cameraSnap: {fileID: 0}
   emptySprite: {fileID: 2800000, guid: 5bdfd9074d6419c4c9a50178b03ecf30, type: 3}
+  otherSide: {fileID: 0}
+  isEmpty: 1
 --- !u!114 &8252287401989261310
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3070,3 +2783,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   jZSOCameraActive: {fileID: 11400000, guid: 7c23ebe8d412c27428cb89d4dde30839, type: 2}
   scaleFactor: 1
+  otherOnes: []

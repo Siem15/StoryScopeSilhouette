@@ -1,0 +1,11 @@
+fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Resources/Prefabs/Properties Objects/Properties controller.prefab.meta
+guid: 5e340b293ac97554c8c1500961722fa1
+========
+guid: ee8709fc02d52dc47bdca2cedc67a385
+>>>>>>>> siems-shaderbranch-3:Assets/Shaders/Fire.prefab.meta
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

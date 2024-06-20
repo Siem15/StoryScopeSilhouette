@@ -20,6 +20,7 @@ public class BananaPeel : MonoBehaviour
         }
     }
 
+    //Rotates object one time
     IEnumerator Rotate(GameObject rObject, float duration)
     {
         float startRotation = rObject.transform.eulerAngles.z;
@@ -32,6 +33,7 @@ public class BananaPeel : MonoBehaviour
             rObject.transform.eulerAngles = new Vector3(rObject.transform.eulerAngles.x, rObject.transform.eulerAngles.y, zRotation);
             yield return null;
         }
+        //Resets rotation in case spin doesn't finish properly
         rObject.transform.eulerAngles = new Vector3(rObject.transform.eulerAngles.x, rObject.transform.eulerAngles.y, 0);
     }
 }
