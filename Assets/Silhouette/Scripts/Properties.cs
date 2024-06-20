@@ -52,6 +52,7 @@ public class Properties : MonoBehaviour
 
     void Start()
     {
+        // Add properties to a list
         if (!isAtached)
         {
             properties.Add(empty);
@@ -104,6 +105,7 @@ public class Properties : MonoBehaviour
 
         originalScale = transform.localScale;
         originalRoration = transform.eulerAngles;
+
         if (character != null)
         {
             originalendmarker = character.endMarker;
@@ -111,10 +113,11 @@ public class Properties : MonoBehaviour
             originalRunningSpeed = character.RunSpeed;
             originalControlRotation = character.controlRotation;
         }
+
         originalFiducialRotation = fiducialController.IsRotationMapped;
         originalFiducialPos = fiducialController.IsPositionMapped;
 
-
+        // maks sure he is not a duplicate to preovent exidents
         if (!isAtached)
         {
             if (!fiducialController.AutoHideGO)
@@ -132,12 +135,20 @@ public class Properties : MonoBehaviour
 
     private void Update()
     {
+        // resetbuton
         if (reset)
         {
             CheckProperty();
             reset = false;
         }
 
+        //testing for effects with spase if needede
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            //EffectsManager.GetComponent<EffectsManager>().AddEffect("dissolveShader", this.gameObject);
+        }
+
+        // checkes if its in a build and makes resets the object when removed and plased
         if (connected)
         {
             if (fiducialController.m_IsVisible)
@@ -156,6 +167,12 @@ public class Properties : MonoBehaviour
                 {
                     Debug.Log(gameObject.name + " is not alive");
                     GetComponent<BoxCollider2D>().enabled = false;
+
+                    if (EffectsManager != null && fiducialController.m_IsVisible == true)
+                    {
+                        EffectsManager.GetComponent<EffectsManager>().AddEffect("Removed", this.gameObject);
+                    }
+
                 }
                 isAlive = false;
             }
@@ -166,20 +183,23 @@ public class Properties : MonoBehaviour
 
     private void FixedUpdate()
     {
+        // Rotate if wheel and touches a vehicle
         if (properties[(int)Property.IsWheel] && isAlive)
         {
-            transform.Rotate(Vector3.back, 5f); // Rotate if wheel and touches a vehicle
-            if(character != null)
+            transform.Rotate(Vector3.back, 5f);
+            if (character != null)
                 character.controlRotation = false;
             fiducialController.IsRotationMapped = false;
             //fiducialController.IsPositionMapped = false;
         }
 
-        if (isAtached)
+        // if het is atached stop moving
+        if (isAtached && character != null)
         {
             //character.endMarker = null;
             character.WalkSpeed = 0;
             character.RunSpeed = 0;
+            fiducialController.IsPositionMapped = false;
         }
     }
 
@@ -193,6 +213,7 @@ public class Properties : MonoBehaviour
 
         if (otherObject != null)
         {
+            // do eating stuff
             if (properties[(int)Property.IsFood] && otherObject.properties[(int)Property.CanEatFood])
             {
                 //TODO: spawn edible particle system on place of currently being eaten object
@@ -205,51 +226,61 @@ public class Properties : MonoBehaviour
                 otherObject.transform.localScale *= 1.1f; // Grow
             }
 
+            // do fire stuff
             if (properties[(int)Property.IsFlammable] && otherObject.properties[(int)Property.IsFire])
             {
                 Debug.Log($"{gameObject.name} flame");
 
                 if (transform.childCount >= 0)
                 {
-                    this.gameObject.transform.localScale = new Vector3(0.001f, 0.001f, 0.001f); //hide
+                    Invoke("hideBySize", 3f);
+                    EffectsManager.GetComponent<EffectsManager>().AddEffect("dissolveShader", this.gameObject);
                     transform.GetComponent<BoxCollider2D>().enabled = false;
+                    //TODO: add shader siem
                 }
             }
 
+            // do vehicle stuff and wheel stuff
             if (properties[(int)Property.IsWheel] && otherObject.properties[(int)Property.IsVehicle])
             {
 
-                GameObject duplicatedObject = Instantiate(this.gameObject);
+                GameObject duplicatedObject = Instantiate(this.gameObject); // make a coppy
 
-                if(this.gameObject.GetComponent<JZSpriteRoot>() != null)
-                    duplicatedObject.GetComponent<JZSpriteRoot>().images = this.gameObject.GetComponent<JZSpriteRoot>().images;
+                if(this.gameObject.GetComponent<JZSpriteRoot>() != null )
+                    duplicatedObject.GetComponent<JZSpriteRoot>().images = this.gameObject.GetComponent<JZSpriteRoot>().images; //inport the images vrom the original
 
-                //Destroy(duplicatedObject.GetComponent<FiducialController>());
-                //Destroy(duplicatedObject.GetComponent<Character>());
+                // destroy stuff we dont need
                 Destroy(this.gameObject.GetComponent<Properties>());
                 Destroy(this.gameObject.GetComponent<BoxCollider2D>());
                 Destroy(this.gameObject.GetComponent<Rigidbody2D>());
 
-                this.gameObject.AddComponent<IsWheel>();
-                this.gameObject.GetComponent<FiducialController>().IsPositionMapped = false;
-                this.gameObject.GetComponent<FiducialController>().IsRotationMapped = false;
-                if(this.gameObject.GetComponent<Character>() != null)
+                this.gameObject.AddComponent<IsWheel>(); // make it spin
+
+                if (character != null)
                 {
-                    this.gameObject.GetComponent<Character>().WalkSpeed = 0;
-                    this.gameObject.GetComponent<Character>().RunSpeed = 0;
-                    this.gameObject.GetComponent<Character>().controlPosition = true;
-                    this.gameObject.GetComponent<Character>().endMarker = otherCharacter.endMarker;
+                    character.WalkSpeed = 0;
+                    character.RunSpeed = 0;
+                    if (otherCharacter != null)
+                    {
+                        character.endMarker = otherCharacter.endMarker;
+                    }
                 }
-                Vector3 TempPos = this.gameObject.transform.position;
 
-                this.gameObject.transform.parent = otherObject.transform;
+                Vector3 TempPos = this.gameObject.transform.position; // save position
 
-                this.gameObject.transform.position = TempPos;
+                this.gameObject.transform.parent = otherObject.transform; // make the wheel a child of the vehicle 
 
-                duplicatedObject.transform.position = new Vector3(Random.Range(1000, 10000), Random.Range(1000, 10000), Random.Range(1000, 10000));
+                this.gameObject.transform.position = TempPos; // reset position
+
+                duplicatedObject.transform.position = new Vector3(Random.Range(1000, 10000), Random.Range(1000, 10000), Random.Range(1000, 10000)); // remove the coppy from view
                 duplicatedObject.GetComponent<Properties>().isAtached = true;
             }
         }
+    }
+
+    void hideBySize()
+    {
+        this.gameObject.transform.localScale = new Vector3(0.001f, 0.001f, 0.001f); //hide
     }
 
     public void CheckProperty()
@@ -258,16 +289,16 @@ public class Properties : MonoBehaviour
 
         if (!fixedProperties)
         {
-            for (int i = 0; i < properties.Count; i++)
+            for (int i = 0; i < properties.Count; i++) // reset the properties
             {
                 properties[i] = false;
             }
 
-            if (currentProperty <= properties.Count)
+            if (currentProperty <= properties.Count) // set the properties
             {
                 properties[currentProperty] = true;
             }
-            else if (currentProperty > properties.Count || currentProperty < 0)
+            else if (currentProperty > properties.Count || currentProperty < 0) // if the properties controller go's out of bounse reset to 0
             {
                 currentProperty = 0;
             }
@@ -285,24 +316,67 @@ public class Properties : MonoBehaviour
         boxCollider2D.size = HitboxSize;
         boxCollider2D.offset = HitboxOffset;
         DrawingColliderUpdate();
-        if(character != null)
+
+        if (character != null)
         {
             character.endMarker = originalendmarker;
             this.transform.position = character.endMarker.transform.position;
             character.WalkSpeed = originalWalkingSpeed;
             character.RunSpeed = originalRunningSpeed;
             character.controlRotation = originalControlRotation;
+            if (character.endMarker.transform.position.x >= transform.position.x)
+            {
+                character.facingRight = true;
+            }
         }
-        
+
         fiducialController.IsRotationMapped = originalFiducialRotation;
-        fiducialController.IsPositionMapped = originalFiducialRotation;
-        //character.facingRight = !character.facingRight;
+        fiducialController.IsPositionMapped = originalFiducialPos;
 
         if (transform.childCount > 0)
         {
             transform.GetChild(0).gameObject.SetActive(true);
         }
 
+        // add the fire effect 
+        if (properties[(int)Property.IsFire])
+        {
+            List<GameObject> children = GetChildren();
+
+            bool hasFire = false;
+             // add only one fire
+            foreach (var item in children)
+            {
+                if (item.name == "Fire")
+                {
+                    hasFire = true;
+                }
+            }
+
+            if (hasFire == false)
+            {
+                if (EffectsManager != null)
+                {
+                    EffectsManager.GetComponent<EffectsManager>().AddEffect("onFireEffectShader", this.gameObject);
+                }
+            }
+
+
+        }
+        // remove all the fire if you are not a fire
+        else
+        {
+            List<GameObject> children = GetChildren();
+
+            foreach (var item in children)
+            {
+                if (item.name != "Character")
+                {
+                    Destroy(item);
+                }
+            }
+        }
+        // remove alle the wheels 
         if (properties[(int)Property.IsVehicle])
         {
             List<GameObject> children = GetChildren();
@@ -316,10 +390,11 @@ public class Properties : MonoBehaviour
             }
         }
     }
-
+    // make a list of all the childeren
     public List<GameObject> GetChildren()
     {
         List<GameObject> children = new List<GameObject>();
+        //children.Add(gameObject);
 
         foreach (Transform child in transform)
         {

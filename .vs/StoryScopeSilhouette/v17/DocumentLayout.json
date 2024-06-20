@@ -3,20 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\fabio\\Documents\\GitHub\\CrosswordExample\\StoryScopeSilhouette\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{1555FAD6-E65C-7B70-91C9-38BC86C5EFCA}|Assembly-CSharp.csproj|c:\\users\\fabio\\documents\\github\\crosswordexample\\storyscopesilhouette\\assets\\silhouette\\scripts\\properties.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{1555FAD6-E65C-7B70-91C9-38BC86C5EFCA}|Assembly-CSharp.csproj|c:\\users\\siem\\documents\\github\\storyscopesilhouette\\assets\\silhouette\\scripts\\effectsmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1555FAD6-E65C-7B70-91C9-38BC86C5EFCA}|Assembly-CSharp.csproj|solutionrelative:assets\\silhouette\\scripts\\effectsmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1555FAD6-E65C-7B70-91C9-38BC86C5EFCA}|Assembly-CSharp.csproj|C:\\Users\\Siem\\Documents\\GitHub\\StoryScopeSilhouette\\assets\\silhouette\\scripts\\properties.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1555FAD6-E65C-7B70-91C9-38BC86C5EFCA}|Assembly-CSharp.csproj|solutionrelative:assets\\silhouette\\scripts\\properties.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1555FAD6-E65C-7B70-91C9-38BC86C5EFCA}|Assembly-CSharp.csproj|c:\\users\\fabio\\documents\\github\\crosswordexample\\storyscopesilhouette\\assets\\silhouette\\scripts\\rotateproperties.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1555FAD6-E65C-7B70-91C9-38BC86C5EFCA}|Assembly-CSharp.csproj|solutionrelative:assets\\silhouette\\scripts\\rotateproperties.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1555FAD6-E65C-7B70-91C9-38BC86C5EFCA}|Assembly-CSharp.csproj|c:\\users\\siem\\documents\\github\\storyscopesilhouette\\assets\\dependencies\\fiducialfolder\\uniducial\\fiducialcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1555FAD6-E65C-7B70-91C9-38BC86C5EFCA}|Assembly-CSharp.csproj|solutionrelative:assets\\dependencies\\fiducialfolder\\uniducial\\fiducialcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1555FAD6-E65C-7B70-91C9-38BC86C5EFCA}|Assembly-CSharp.csproj|c:\\users\\fabio\\documents\\github\\crosswordexample\\storyscopesilhouette\\assets\\silhouette\\scripts\\bananapeel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1555FAD6-E65C-7B70-91C9-38BC86C5EFCA}|Assembly-CSharp.csproj|solutionrelative:assets\\silhouette\\scripts\\bananapeel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1555FAD6-E65C-7B70-91C9-38BC86C5EFCA}|Assembly-CSharp.csproj|C:\\Users\\fabio\\Documents\\GitHub\\CrosswordExample\\StoryScopeSilhouette\\assets\\silhouette\\scripts\\scan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1555FAD6-E65C-7B70-91C9-38BC86C5EFCA}|Assembly-CSharp.csproj|solutionrelative:assets\\silhouette\\scripts\\scan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1555FAD6-E65C-7B70-91C9-38BC86C5EFCA}|Assembly-CSharp.csproj|C:\\Users\\Siem\\Documents\\GitHub\\StoryScopeSilhouette\\assets\\silhouette\\scripts\\modularsystem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1555FAD6-E65C-7B70-91C9-38BC86C5EFCA}|Assembly-CSharp.csproj|solutionrelative:assets\\silhouette\\scripts\\modularsystem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -39,6 +39,14 @@
               "ViewState": "AQIAACUAAAAAAAAAAAAqwCoAAAA7AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-19T07:44:05.849Z",
+              "Title": "Properties.cs",
+              "DocumentMoniker": "C:\\Users\\Siem\\Documents\\GitHub\\StoryScopeSilhouette\\Assets\\Silhouette\\Scripts\\Properties.cs",
+              "RelativeDocumentMoniker": "Assets\\Silhouette\\Scripts\\Properties.cs",
+              "ToolTip": "C:\\Users\\Siem\\Documents\\GitHub\\StoryScopeSilhouette\\Assets\\Silhouette\\Scripts\\Properties.cs",
+              "RelativeToolTip": "Assets\\Silhouette\\Scripts\\Properties.cs",
+              "ViewState": "AQIAAEYBAAAAAAAAAADwv1UBAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-17T13:01:45.577Z",
               "EditorCaption": ""
             },
             {
@@ -52,19 +60,27 @@
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABkAAAA+AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-19T07:42:10.663Z",
+              "Title": "FiducialController.cs",
+              "DocumentMoniker": "C:\\Users\\Siem\\Documents\\GitHub\\StoryScopeSilhouette\\Assets\\Dependencies\\FiducialFolder\\Uniducial\\FiducialController.cs",
+              "RelativeDocumentMoniker": "Assets\\Dependencies\\FiducialFolder\\Uniducial\\FiducialController.cs",
+              "ToolTip": "C:\\Users\\Siem\\Documents\\GitHub\\StoryScopeSilhouette\\Assets\\Dependencies\\FiducialFolder\\Uniducial\\FiducialController.cs",
+              "RelativeToolTip": "Assets\\Dependencies\\FiducialFolder\\Uniducial\\FiducialController.cs",
+              "ViewState": "AQIAAAABAAAAAAAAAAAgwEYBAAAdAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-18T11:01:45.604Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Properties.cs",
-              "DocumentMoniker": "C:\\Users\\fabio\\Documents\\GitHub\\CrosswordExample\\StoryScopeSilhouette\\Assets\\Silhouette\\Scripts\\Properties.cs",
-              "RelativeDocumentMoniker": "Assets\\Silhouette\\Scripts\\Properties.cs",
-              "ToolTip": "C:\\Users\\fabio\\Documents\\GitHub\\CrosswordExample\\StoryScopeSilhouette\\Assets\\Silhouette\\Scripts\\Properties.cs",
-              "RelativeToolTip": "Assets\\Silhouette\\Scripts\\Properties.cs",
-              "ViewState": "AQIAACsBAAAAAAAAAAAuwNkAAAAsAAAA",
+              "Title": "EffectsManager.cs",
+              "DocumentMoniker": "C:\\Users\\Siem\\Documents\\GitHub\\StoryScopeSilhouette\\Assets\\Silhouette\\Scripts\\EffectsManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Silhouette\\Scripts\\EffectsManager.cs",
+              "ToolTip": "C:\\Users\\Siem\\Documents\\GitHub\\StoryScopeSilhouette\\Assets\\Silhouette\\Scripts\\EffectsManager.cs",
+              "RelativeToolTip": "Assets\\Silhouette\\Scripts\\EffectsManager.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAA0AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-18T09:48:33.791Z",
+              "WhenOpened": "2024-06-17T13:39:06.025Z",
               "EditorCaption": ""
             },
             {
@@ -78,6 +94,14 @@
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-18T09:49:00.658Z",
+              "Title": "ModularSystem.cs",
+              "DocumentMoniker": "C:\\Users\\Siem\\Documents\\GitHub\\StoryScopeSilhouette\\Assets\\Silhouette\\Scripts\\ModularSystem.cs",
+              "RelativeDocumentMoniker": "Assets\\Silhouette\\Scripts\\ModularSystem.cs",
+              "ToolTip": "C:\\Users\\Siem\\Documents\\GitHub\\StoryScopeSilhouette\\Assets\\Silhouette\\Scripts\\ModularSystem.cs",
+              "RelativeToolTip": "Assets\\Silhouette\\Scripts\\ModularSystem.cs",
+              "ViewState": "AQIAACEAAAAAAAAAAAAYwDUAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-17T13:01:44.943Z",
               "EditorCaption": ""
             }
           ]
