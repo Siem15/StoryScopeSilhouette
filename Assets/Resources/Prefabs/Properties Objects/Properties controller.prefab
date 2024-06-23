@@ -1,0 +1,141 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1549430739157256865
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1549430739157256894}
+  - component: {fileID: 1549430739157256892}
+  - component: {fileID: 1549430739157256895}
+  - component: {fileID: 1549430739157256893}
+  m_Layer: 0
+  m_Name: Properties controller
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1549430739157256894
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1549430739157256865}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1549430739157256892
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1549430739157256865}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ecb9180c6b21554caec21446f888543, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MarkerID: 54
+  IsPositionMapped: 0
+  InvertX: 0
+  InvertY: 0
+  grounded: 0
+  templateCam: 0
+  full: 0
+  IsRotationMapped: 0
+  UseRotation: 1
+  AutoHideGO: 1
+  DegreesToAction: 25
+  hideDelay: 1
+  CameraOffset: 10
+  RotateAround: 1
+  camY: 0
+  camX: 0
+  onRotateForward:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1549430739157256895}
+        m_TargetAssemblyTypeName: RotateProperties, Assembly-CSharp
+        m_MethodName: NextProperty
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onRotateBackward:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1549430739157256895}
+        m_TargetAssemblyTypeName: RotateProperties, Assembly-CSharp
+        m_MethodName: NextProperty
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: -1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  m_ScreenPosition: {x: 0, y: 0}
+  m_IsVisible: 0
+  RotationMultiplier: 1
+--- !u!114 &1549430739157256895
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1549430739157256865}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef55a85624ba796439d00a2a1336d428, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  propertiesAmount: 7
+  clostestObject: {fileID: 0}
+  icon: {fileID: 0}
+  icons:
+  - {fileID: 21300000, guid: 3f45b3a422518484bb2c9e78723c0d2a, type: 3}
+  - {fileID: 21300000, guid: f179dcabe10b4e0478edefc419de0835, type: 3}
+  - {fileID: 21300000, guid: 7a5ccef75fb50f74fb471d1404482e5f, type: 3}
+  - {fileID: 21300000, guid: 6c44d4bc94a03e54d83abe1f727b0317, type: 3}
+  - {fileID: 21300000, guid: f7f986dd94a0786468a331e5e9a1f2f3, type: 3}
+  - {fileID: 21300000, guid: 62a3e0a7f7de2de4f87e70bd32391488, type: 3}
+  - {fileID: 21300000, guid: 0d07c88b00f277141b12e4cef528e867, type: 3}
+--- !u!114 &1549430739157256893
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1549430739157256865}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a47fc9bd19013984e89d30bff1d554a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  WalkSpeed: 10
+  RunSpeed: 10
+  stopRunningUntilThisDist: 1
+  singleSprite: 0
+  controlRotation: 0
+  controlPosition: 1
+  facingRight: 0
+  endMarkerPrefab: {fileID: 441084473105571446, guid: 2f7ed94a83a05a140be209a9a062c607,
+    type: 3}
+  endMarker: {fileID: 0}

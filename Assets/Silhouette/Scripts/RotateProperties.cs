@@ -45,7 +45,6 @@ public class RotateProperties : MonoBehaviour
             icon.enabled = true;
             icon.transform.position = cam.WorldToScreenPoint(clostestObject.transform.position);
 
-            //TODO: change image of icon based on selected property
             if(clostestObject.currentProperty < icons.Count)
             {
                 icon.sprite = icons[clostestObject.currentProperty];

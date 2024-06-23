@@ -277,6 +277,8 @@ public class FiducialController : MonoBehaviour
     {
         StopAllCoroutines();
 
+        //TODO: doe funny haha shader siem
+
         if (m_ControlsGUIElement)
         {
             // Show GUI components.
@@ -320,11 +322,6 @@ public class FiducialController : MonoBehaviour
         if (!AutoHideGO)
         {
             return;
-        }
-
-        if (GameObject.Find("EffectsManager") != null)
-        {
-            GameObject.Find("EffectsManager").GetComponent<EffectsManager>().AddEffect("Removed", this.gameObject);
         }
 
         m_IsVisible = false;

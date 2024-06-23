@@ -10,53 +10,18 @@ using UnityEngine;
 
 public class EffectsManager : MonoBehaviour
 {
+    //Local Variables
+    [SerializeField] private float waitTime;
+
     //Shaders
-    [SerializeField] private List<Material> materialsList;      //List of materials to be managed
-    private Dictionary<string, Material> materialsDictionary;   //Dictionary to store materials with names as keys
+    [SerializeField] private GameObject fireStarter;
+    [SerializeField] private Material DissolveShader;
 
     //Particle Systems
     [SerializeField] private GameObject FoodParticleSystem;
 
     //VisualFX
     [SerializeField] private GameObject InstantiationVFX;
-
-    private void Awake()
-    {
-        // Initialize the dictionary
-        materialsDictionary = new Dictionary<string, Material>();
-
-        // Populate the dictionary with materials
-        foreach (Material material in materialsList)
-        {
-            if (material != null)
-            {
-                materialsDictionary[material.name] = material;
-            }
-        }
-    }
-    private void Start()
-    { 
-
-    }
-
-    private void FixedUpdate()
-    {
-        
-    }
-
-    // Method to get a material by name
-    private Material GetMaterialByName(string materialName)
-    {
-        if (materialsDictionary.ContainsKey(materialName))
-        {
-            return materialsDictionary[materialName];
-        }
-        else
-        {
-            Debug.LogError("Material not found: " + materialName);
-            return null;
-        }
-    }
 
     //This function adds the specific shader that is called for in the propertyscript
     public void AddEffect(string InteractionName, GameObject caster)
@@ -80,47 +45,98 @@ public class EffectsManager : MonoBehaviour
 
     private void AddShader(string ShaderName, GameObject caster)
     {
-        if (caster == null)
+        switch (ShaderName)
         {
-            Debug.LogError("Target GameObject is not assigned.");
-            return;
-        }
+            case "onFireEffectShader":
+                GameObject Child_0 = Instantiate(fireStarter);
+                MakeChildDoParentsThing(Child_0, caster);
+                break;
+            case "dissolveShader":
+                List<GameObject> children = GetChildren(caster);
+                foreach (var item in children)
+                {
+                    Material shaderGraphMaterial = DissolveShader;
+                    Material oldMaterial;
+                    SpriteRenderer spriteRenderer;
+                    Renderer objectRenderer;
 
-        // Get the material by name
-        Material requestedMaterial = GetMaterialByName(ShaderName);
+                    // Get the SpriteRenderer component from the current GameObject
+                    spriteRenderer = item.GetComponent<SpriteRenderer>();
 
-        if (requestedMaterial != null)
-        {
-            // Get the MeshRenderer component
-            MeshRenderer meshRenderer = caster.GetComponent<MeshRenderer>();
-            if (meshRenderer != null)
-            {
-                // Assign the requested material
-                meshRenderer.material = requestedMaterial;
-            }
-            else
-            {
-                Debug.LogError("MeshRenderer component is missing on the target GameObject.");
-            }
+                    // Get the Renderer component (can be MeshRenderer or other types)
+                    objectRenderer = item.GetComponent<Renderer>();
+
+
+                    if (spriteRenderer != null && objectRenderer != null && shaderGraphMaterial != null)
+                    {
+                        oldMaterial = objectRenderer.material;
+                        // Assign the ShaderGraph material to the object
+                        objectRenderer.material = shaderGraphMaterial;
+
+                        shaderGraphMaterial.SetFloat("ResetTime", Time.time);
+
+                        // Get the texture from the SpriteRenderer's sprite
+                        Texture2D spriteTexture = spriteRenderer.sprite.texture;
+
+                        // Set the texture on the ShaderGraph material
+                        objectRenderer.material.SetTexture("_MainTex", spriteTexture);
+                        if (oldMaterial != null)
+                        {
+                            StartCoroutine(ResetOldMaterial(oldMaterial, objectRenderer));
+                        }
+                    }
+                }
+                break;
+
+                //TODO: make the shader same size as object
         }
+    }
+
+    IEnumerator ResetOldMaterial(Material oldMaterial, Renderer objectRenderer)
+    {
+        yield return new WaitForSeconds(waitTime-2f);
+        objectRenderer.material = oldMaterial;
     }
 
     private void AddParticleSystem(string ParticleSystemName, GameObject caster)
     {
         GameObject Child = Instantiate(FoodParticleSystem);
-        Child.transform.parent = caster.transform;
-        Child.transform.localPosition = Vector3.zero;
-        Child.transform.localRotation = Quaternion.identity;
-        Child.transform.localScale = Vector3.one;
-
+        MakeChildDoParentsThing(Child, caster);
+        Destroy(Child, waitTime);
     }
 
     private void AddVisualFX(string VisualFXName, GameObject caster)
     {
         GameObject Child = Instantiate(InstantiationVFX);
+        MakeChildDoParentsThing(Child, caster);
+        Destroy(Child, waitTime);
+    }
+
+    //TODO: explain the name and code
+    private void MakeChildDoParentsThing(GameObject Child, GameObject caster)
+    {
         Child.transform.parent = caster.transform;
         Child.transform.localPosition = Vector3.zero;
         Child.transform.localRotation = Quaternion.identity;
         Child.transform.localScale = Vector3.one;
+    }
+
+    //TODO: explain code
+    public List<GameObject> GetChildren(GameObject caster)
+    {
+        List<GameObject> children = new List<GameObject>();
+        //children.Add(caster);
+        AddChildren(caster.transform, children);
+        return children;
+    }
+
+    private void AddChildren(Transform parent, List<GameObject> children)
+    {
+        foreach (Transform child in parent)
+        {
+            children.Add(child.gameObject);
+            // Recursively add the children of this child
+            AddChildren(child, children);
+        }
     }
 }
