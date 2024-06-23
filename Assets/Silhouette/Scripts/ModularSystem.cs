@@ -8,8 +8,8 @@ public class ModularSystem : MonoBehaviour
     private Transform[] attachPoints;
     
     // List of all child objects
-    [SerializeField]
-    private List<GameObject> childObjects;
+    [field: SerializeField]
+    public List<GameObject> ChildObjects { get; private set; }
 
     // Sets if parent object is a child only (and thus cannot have children itself)
     [field: SerializeField]
@@ -30,25 +30,31 @@ public class ModularSystem : MonoBehaviour
         transform.position = attachPoint.position; // Set position to that of attach point
     }
 
-    public void AddChild(GameObject other)
+    private void AddChild(GameObject other)
     {
-        // Exit function if parent is child only
-        if (IsChildOnly)
-        {
-            return;
-        }        
-
         // Check number of child objects and attach if possible
-        if (childObjects.Count < attachPoints.Length)
+        if (ChildObjects.Count < attachPoints.Length)
         {
             ModularSystem modularSystem = other.GetComponent<ModularSystem>();
-            modularSystem.AttachParentTo(attachPoints[childObjects.Count]);
-            childObjects.Add(other);
+            modularSystem.AttachParentTo(attachPoints[ChildObjects.Count]);
+            ChildObjects.Add(other);
             Debug.Log($"'{gameObject.name}' attached as a child of '{other.name}'");
         }
         else
         {
             Debug.LogError("ERROR: Max number of children reached");
         }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        // Exit function if parent is child only
+        if (IsChildOnly)
+        {
+            return;
+        }
+
+        // Else, add new child object
+        AddChild(collision.gameObject);
     }
 }

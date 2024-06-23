@@ -10,10 +10,11 @@ GameObject:
   m_Component:
   - component: {fileID: 6992121691503016561}
   - component: {fileID: 6992121691503016566}
-  - component: {fileID: 6992121691503016567}
   - component: {fileID: 6992121691503016564}
   - component: {fileID: 6992121691503016565}
   - component: {fileID: 155039828858645792}
+  - component: {fileID: 6824967043865825986}
+  - component: {fileID: 1629257876169096587}
   m_Layer: 0
   m_Name: Wheel
   m_TagString: Untagged
@@ -72,32 +73,6 @@ MonoBehaviour:
   m_ScreenPosition: {x: 0, y: 0}
   m_IsVisible: 0
   RotationMultiplier: 1
---- !u!114 &6992121691503016567
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6992121691503017354}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 980e2241d71a6b543b1152cf0758f890, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fixedProperties: 1
-  currentProperty: 0
-  properties: 
-  isFood: 0
-  canEatFood: 0
-  isFlammable: 0
-  isFire: 0
-  isWheel: 1
-  isVehicle: 0
-  reset: 0
-  isAlive: 0
-  connected: 1
-  HitboxSize: {x: 5, y: 5}
-  HitboxOffset: {x: 0, y: 0}
 --- !u!212 &6992121691503016564
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -186,3 +161,50 @@ MonoBehaviour:
   attachPoints: []
   childObjects: []
   <IsChildOnly>k__BackingField: 1
+--- !u!61 &6824967043865825986
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6992121691503017354}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 5.12, y: 5.12}
+    newSize: {x: 8.69, y: 1.36}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 5, y: 5}
+  m_EdgeRadius: 0
+--- !u!50 &1629257876169096587
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6992121691503017354}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 0.0001
+  m_LinearDrag: 0
+  m_AngularDrag: 0
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0

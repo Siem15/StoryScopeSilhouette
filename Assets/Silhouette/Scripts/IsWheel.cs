@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class IsWheel : MonoBehaviour
@@ -13,8 +11,8 @@ public class IsWheel : MonoBehaviour
     {
         if (gameObject.GetComponent<Character>() != null)
         {
-            this.gameObject.GetComponent<Character>().WalkSpeed = 0;
-            this.gameObject.GetComponent<Character>().RunSpeed = 0;
+            gameObject.GetComponent<Character>().WalkSpeed = 0;
+            gameObject.GetComponent<Character>().RunSpeed = 0;
         }
     }
 }

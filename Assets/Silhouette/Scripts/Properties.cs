@@ -287,9 +287,9 @@ public class Properties : MonoBehaviour
         }
     }
 
-    void hideBySize()
+    private void HideBySize()
     {
-        this.gameObject.transform.localScale = new Vector3(0.001f, 0.001f, 0.001f); //hide
+        gameObject.transform.localScale = new Vector3(0.001f, 0.001f, 0.001f); //hide
     }
 
     public void CheckProperty()
@@ -330,10 +330,11 @@ public class Properties : MonoBehaviour
         if (character != null)
         {
             character.endMarker = originalendmarker;
-            this.transform.position = character.endMarker.transform.position;
+            transform.position = character.endMarker.transform.position;
             character.WalkSpeed = originalWalkingSpeed;
             character.RunSpeed = originalRunningSpeed;
             character.controlRotation = originalControlRotation;
+
             if (character.endMarker.transform.position.x >= transform.position.x)
             {
                 character.facingRight = true;
@@ -365,13 +366,8 @@ public class Properties : MonoBehaviour
 
             if (hasFire == false)
             {
-                if (EffectsManager != null)
-                {
-                    EffectsManager.GetComponent<EffectsManager>().AddEffect("onFireEffectShader", this.gameObject);
-                }
+                EffectsManager?.GetComponent<EffectsManager>().AddEffect("onFireEffectShader", this.gameObject);
             }
-
-
         }
         // remove all the fire if you are not a fire
         else
@@ -417,15 +413,17 @@ public class Properties : MonoBehaviour
     //Sets the collider to the size of the drawing
     void DrawingColliderUpdate()
     {
-        if (this.gameObject.GetComponent<Scan>() != null)
+        if (gameObject.GetComponent<Scan>() != null)
         {
-           
-            Renderer rend = GetComponent<Renderer>();
+            Renderer renderer = GetComponent<Renderer>();
             BoxCollider2D boxCollider2D = GetComponent<BoxCollider2D>();
-            
-            boxCollider2D.size = rend.material.GetTextureScale("_BaseMap") *1.4f;
-            boxCollider2D.offset = rend.material.GetTextureOffset("_BaseMap");
+
+            boxCollider2D.size = renderer.material.GetTextureScale("_BaseMap") * 1.4f;
+            boxCollider2D.offset = renderer.material.GetTextureOffset("_BaseMap");
         }
-        else return;
+        else 
+        {
+            return;
+        }        
     }
 }
