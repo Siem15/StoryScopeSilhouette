@@ -101,6 +101,7 @@
     <Compile Include="Assets\Dependencies\Aran\TekenPackage\PenManager.cs" />
     <Compile Include="Assets\Dependencies\FiducialFolder\TUIOConnector\OSCBundle.cs" />
     <Compile Include="Assets\Silhouette\Database\JZDatabaseAccess.cs" />
+    <Compile Include="Assets\Silhouette\Scripts\Car.cs" />
     <Compile Include="Assets\Dependencies\FiducialFolder\FiducialExamples\Parameters.cs" />
     <Compile Include="Assets\Silhouette\Scripts\Properties.cs" />
     <Compile Include="Assets\Dependencies\FiducialFolder\TUIOConnector\TuioCursor.cs" />
@@ -135,7 +136,6 @@
     <Compile Include="Assets\Silhouette\Scripts\JZLoadFromExternalV2.cs" />
     <Compile Include="Assets\Silhouette\Scripts\JZReloadScene.cs" />
     <Compile Include="Assets\Silhouette\Sprites\JZSpriteRoot.cs" />
-    <Compile Include="Assets\Silhouette\Scripts\Car.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
