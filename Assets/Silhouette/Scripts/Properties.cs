@@ -88,7 +88,12 @@ public class Properties : MonoBehaviour
         boxCollider.enabled = false;
 
         // Add a Rigidbody2D component if it doesn't already exist
-        Rigidbody2D rigidbody2D = gameObject.GetComponent<Rigidbody2D>() ?? gameObject.AddComponent<Rigidbody2D>();
+        Rigidbody2D rigidbody2D = gameObject.GetComponent<Rigidbody2D>();
+
+        if (rigidbody2D == null)
+        {
+            rigidbody2D = gameObject.AddComponent<Rigidbody2D>();
+        }
 
         // Set the gravity scale of the Rigidbody2D to 0
         rigidbody2D.gravityScale = 0;
