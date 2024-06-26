@@ -21,7 +21,10 @@ public class EffectsManager : MonoBehaviour
     [SerializeField] private GameObject FoodParticleSystem;
 
     //VisualFX
+    [SerializeField] private GameObject RemovalVFX;
     [SerializeField] private GameObject InstantiationVFX;
+
+
 
     //This function adds the specific shader that is called for in the propertyscript
     public void AddEffect(string InteractionName, GameObject caster)
@@ -94,7 +97,7 @@ public class EffectsManager : MonoBehaviour
 
     IEnumerator ResetOldMaterial(Material oldMaterial, Renderer objectRenderer)
     {
-        yield return new WaitForSeconds(waitTime-2f);
+        yield return new WaitForSeconds(waitTime - 2f);
         objectRenderer.material = oldMaterial;
     }
 
@@ -108,8 +111,19 @@ public class EffectsManager : MonoBehaviour
     private void AddVisualFX(string VisualFXName, GameObject caster)
     {
         Vector3 oldPosition = caster.transform.position;
-        GameObject VisualFX = Instantiate(InstantiationVFX, oldPosition, Quaternion.identity);
-        Destroy(VisualFX, waitTime);
+        GameObject VisualFX;
+
+        switch (VisualFXName)
+        {
+            case "Instantiate":
+                VisualFX = Instantiate(InstantiationVFX, oldPosition, Quaternion.identity);
+                Destroy(VisualFX, waitTime);
+                break;
+            case "Remove":
+                VisualFX = Instantiate(RemovalVFX, oldPosition, Quaternion.identity);
+                Destroy(VisualFX, waitTime);
+                break;
+        }
     }
 
     //TODO: explain the name and code
