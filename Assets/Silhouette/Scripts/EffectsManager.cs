@@ -107,9 +107,9 @@ public class EffectsManager : MonoBehaviour
 
     private void AddVisualFX(string VisualFXName, GameObject caster)
     {
-        Vector3 oldPosition = caster.transform.position;
-        GameObject VisualFX = Instantiate(InstantiationVFX, oldPosition, Quaternion.identity);
-        Destroy(VisualFX, waitTime);
+        GameObject Child = Instantiate(InstantiationVFX);
+        MakeChildDoParentsThing(Child, caster);
+        Destroy(Child, waitTime);
     }
 
     //TODO: explain the name and code
