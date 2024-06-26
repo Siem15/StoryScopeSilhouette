@@ -85,7 +85,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - ResetTime: 51.12
+    - ResetTime: 62.98
     - Vector1_a2eac25a0d80414bb34ef817221dab1b: 0
     - Vector1_ad39cce8ea64441a80b9e2ed7b6a4d65: 0
     - _AlphaClip: 0

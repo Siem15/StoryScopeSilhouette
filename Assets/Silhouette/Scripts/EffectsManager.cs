@@ -22,6 +22,7 @@ public class EffectsManager : MonoBehaviour
 
     //VisualFX
     [SerializeField] private GameObject InstantiationVFX;
+    [SerializeField] private GameObject RemovedVFX;
 
     //This function adds the specific shader that is called for in the propertyscript
     public void AddEffect(string InteractionName, GameObject caster)
@@ -38,6 +39,9 @@ public class EffectsManager : MonoBehaviour
                 AddParticleSystem(InteractionName, caster);
                 break;
             case "Removed":
+                AddVisualFX(InteractionName, caster);
+                break;
+            case "Placed":
                 AddVisualFX(InteractionName, caster);
                 break;
         }
@@ -107,9 +111,19 @@ public class EffectsManager : MonoBehaviour
 
     private void AddVisualFX(string VisualFXName, GameObject caster)
     {
-        Vector3 oldPosition = caster.transform.position;
-        GameObject VisualFX = Instantiate(InstantiationVFX, oldPosition, Quaternion.identity);
-        Destroy(VisualFX, waitTime);
+        switch (VisualFXName)
+        {
+            case "Removed":
+                Vector3 oldPosition = caster.transform.position;
+                GameObject VisualFX = Instantiate(RemovedVFX, oldPosition, Quaternion.identity);
+                Destroy(VisualFX, waitTime);
+                break;
+            case "Placed":
+                Vector3 oldPositionn = caster.transform.position;
+                GameObject VisualFXx = Instantiate(InstantiationVFX, oldPositionn, Quaternion.identity);
+                Destroy(VisualFXx, waitTime * 0.2f);
+                break;
+        }     
     }
 
     //TODO: explain the name and code

@@ -158,6 +158,10 @@ public class Properties : MonoBehaviour
                     Debug.Log(gameObject.name + " is alive");
                     GetComponent<BoxCollider2D>().enabled = true;
                     ResetObject();
+                    /*if (EffectsManager != null)
+                    {
+                        EffectsManager.GetComponent<EffectsManager>().AddEffect("Placed", this.gameObject);
+                    }*/
                 }
                 isAlive = true;
             }
