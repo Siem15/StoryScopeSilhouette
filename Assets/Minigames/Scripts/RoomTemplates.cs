@@ -53,10 +53,10 @@ public class RoomTemplates : MonoBehaviour
             {
                 if (i == rooms.Count - 1)
                 {
-                    Instantiate(boss, rooms[i].transform.position, Quaternion.identity);
-                    checkDoor(i);
-                    int keyRoom = Random.Range(0, i - (CurrentRoom + 1));
-                    Instantiate(key, rooms[keyRoom].transform.position, Quaternion.identity);
+                    Instantiate(boss, rooms[i].transform.position, Quaternion.identity); // Add the boss to the last room
+                    checkDoor(i); // Adds a door
+                    int keyRoom = Random.Range(0, i - (CurrentRoom + 1)); // make sure the key does not spawn in the room with the boss or the boor
+                    Instantiate(key, rooms[keyRoom].transform.position, Quaternion.identity); // spawn the key
                     spawnedBoss = true;
                     spawnedDoor = true;
                     spawnedKey = true;
@@ -73,12 +73,14 @@ public class RoomTemplates : MonoBehaviour
     {
         if (Vector3.Distance(rooms[i].transform.position, rooms[i - CurrentRoom].transform.position) > 1.1f)
         {
+            // if the door is not next to the boss try the next room 
             Debug.Log(Vector3.Distance(rooms[i].transform.position, rooms[i - CurrentRoom].transform.position));
             CurrentRoom++;
             checkDoor(i);
         }
         else
         {
+            // spawn the door
             Debug.Log(Vector3.Distance(rooms[i].transform.position, rooms[i - CurrentRoom].transform.position));
             Instantiate(door, rooms[i - CurrentRoom].transform.position, Quaternion.identity);
         }

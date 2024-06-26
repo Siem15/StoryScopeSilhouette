@@ -193,7 +193,7 @@ public class Properties : MonoBehaviour
             //fiducialController.IsPositionMapped = false;
         }
 
-        // if het is atached stop moving
+        // if it is atached stop moving
         if (isAtached && character != null)
         {
             //character.endMarker = null;

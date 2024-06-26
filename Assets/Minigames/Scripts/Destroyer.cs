@@ -18,6 +18,7 @@ public class Destroyer : MonoBehaviour {
 
     void OnTriggerEnter2D(Collider2D other)
     {
+        //check who is longer alive and destroy the newest target
         if (other.CompareTag("Destroyer") && other.GetComponent<Destroyer>().timeAlive < timeAlive)
         {
             Debug.Log(other);

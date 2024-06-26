@@ -30,6 +30,7 @@ public class PropertiesEditor : Editor
     {
         serializedObject.Update();
 
+        // add all the boolians to a dropdown in the inspectopr after start
         if (!fixedProperties.boolValue)
         {
             EditorGUILayout.LabelField("Properties", EditorStyles.boldLabel);
@@ -46,6 +47,7 @@ public class PropertiesEditor : Editor
 
         EditorGUILayout.PropertyField(fixedProperties, new GUIContent("Use Fixed Properties"));
 
+        // show all the booleans if fixedProperties is enabled 
         if (fixedProperties.boolValue)
         {
             EditorGUI.indentLevel++;
