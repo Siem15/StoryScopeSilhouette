@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3940760056597536150}
   - component: {fileID: 6649546070691690314}
   - component: {fileID: 6478805982258414241}
+  - component: {fileID: 699939116}
   m_Layer: 0
   m_Name: Sonic
   m_TagString: Untagged
@@ -86,15 +87,13 @@ MonoBehaviour:
   WalkSpeed: 3
   RunSpeed: 2
   stopRunningUntilThisDist: 1.18
-  groundHeight: 0.25
-  groundOffset: 0.58
+  singleSprite: 0
   controlRotation: 0
   controlPosition: 1
   facingRight: 1
   endMarkerPrefab: {fileID: 441084473105571446, guid: 2f7ed94a83a05a140be209a9a062c607,
     type: 3}
-  animator: {fileID: 0}
-  singleSprite: 0
+  endMarker: {fileID: 0}
 --- !u!114 &6478805982258414241
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -108,6 +107,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   images: []
+--- !u!114 &699939116
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3940760056597536148}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 980e2241d71a6b543b1152cf0758f890, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fixedProperties: 1
+  currentProperty: 0
+  properties: 
+  isFood: 0
+  canEatFood: 0
+  isFlammable: 0
+  isFire: 0
+  isWheel: 1
+  isVehicle: 0
+  reset: 0
+  isAlive: 0
+  connected: 1
+  isAtached: 0
+  HitboxSize: {x: 2, y: 2}
+  HitboxOffset: {x: 0, y: 0}
 --- !u!1 &3942004168530588007
 GameObject:
   m_ObjectHideFlags: 0
@@ -205,7 +231,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   images: []
-  multipleLoaded: []
 --- !u!1 &3942140086389585207
 GameObject:
   m_ObjectHideFlags: 0
@@ -303,7 +328,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   images: []
-  multipleLoaded: []
 --- !u!1 &3942223646108526769
 GameObject:
   m_ObjectHideFlags: 0
@@ -483,7 +507,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   images: []
-  multipleLoaded: []
 --- !u!1 &3942320933461473453
 GameObject:
   m_ObjectHideFlags: 0
@@ -582,7 +605,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   images: []
-  multipleLoaded: []
 --- !u!1 &3942538569825866389
 GameObject:
   m_ObjectHideFlags: 0
@@ -711,7 +733,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   images: []
-  multipleLoaded: []
 --- !u!1 &3942725766896629733
 GameObject:
   m_ObjectHideFlags: 0
@@ -810,7 +831,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   images: []
-  multipleLoaded: []
 --- !u!1 &3942741682795468143
 GameObject:
   m_ObjectHideFlags: 0
@@ -881,7 +901,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4458479609032148903
 Transform:
   m_ObjectHideFlags: 0

@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4726248619259016771}
   - component: {fileID: 4726248619259016770}
   - component: {fileID: 4726248619259016769}
+  - component: {fileID: 859809431}
   m_Layer: 0
   m_Name: BananaPeel
   m_TagString: Untagged
@@ -27,7 +28,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4726248619259016774}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 8.31, y: 1.93, z: 0}
   m_LocalScale: {x: 0.4, y: 0.4, z: 1}
   m_Children: []
@@ -46,7 +47,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ecb9180c6b21554caec21446f888543, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MarkerID: 62
+  MarkerID: 47
   IsPositionMapped: 1
   InvertX: 0
   InvertY: 0
@@ -161,3 +162,30 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spinDuration: 1
+--- !u!114 &859809431
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4726248619259016774}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 980e2241d71a6b543b1152cf0758f890, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fixedProperties: 1
+  currentProperty: 0
+  properties: 
+  isFood: 0
+  canEatFood: 0
+  isFlammable: 0
+  isFire: 0
+  isWheel: 0
+  isVehicle: 0
+  reset: 0
+  isAlive: 0
+  connected: 1
+  isAtached: 0
+  HitboxSize: {x: 0, y: 0}
+  HitboxOffset: {x: 0, y: 0}

@@ -97,7 +97,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   images: []
-  multipleLoaded: []
 --- !u!1 &6084568745509477880
 GameObject:
   m_ObjectHideFlags: 0
@@ -537,7 +536,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   images: []
-  multipleLoaded: []
 --- !u!1 &6085108416245545754
 GameObject:
   m_ObjectHideFlags: 0
@@ -838,7 +836,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   images: []
-  multipleLoaded: []
 --- !u!1 &6085253582116633820
 GameObject:
   m_ObjectHideFlags: 0
@@ -937,7 +934,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   images: []
-  multipleLoaded: []
 --- !u!1 &6085273088015627338
 GameObject:
   m_ObjectHideFlags: 0
@@ -1035,7 +1031,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   images: []
-  multipleLoaded: []
 --- !u!1 &6085316616176717524
 GameObject:
   m_ObjectHideFlags: 0
@@ -1164,7 +1159,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   images: []
-  multipleLoaded: []
 --- !u!1 &6085397411645603040
 GameObject:
   m_ObjectHideFlags: 0
@@ -1263,7 +1257,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   images: []
-  multipleLoaded: []
 --- !u!1 &6085585374160248804
 GameObject:
   m_ObjectHideFlags: 0
@@ -1393,7 +1386,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   images: []
-  multipleLoaded: []
 --- !u!1 &6086532501702101863
 GameObject:
   m_ObjectHideFlags: 0
@@ -1406,6 +1398,7 @@ GameObject:
   - component: {fileID: 6086532501702101861}
   - component: {fileID: 1390443623784238380}
   - component: {fileID: 8443004336243360729}
+  - component: {fileID: 429060576}
   m_Layer: 0
   m_Name: Snail
   m_TagString: Untagged
@@ -1480,15 +1473,13 @@ MonoBehaviour:
   WalkSpeed: 3
   RunSpeed: 2
   stopRunningUntilThisDist: 0
-  groundHeight: 0.25
-  groundOffset: 0
+  singleSprite: 0
   controlRotation: 0
   controlPosition: 1
   facingRight: 1
   endMarkerPrefab: {fileID: 441084473105571446, guid: 2f7ed94a83a05a140be209a9a062c607,
     type: 3}
-  animator: {fileID: 0}
-  singleSprite: 0
+  endMarker: {fileID: 0}
 --- !u!114 &8443004336243360729
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1502,6 +1493,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   images: []
+--- !u!114 &429060576
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6086532501702101863}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 980e2241d71a6b543b1152cf0758f890, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fixedProperties: 0
+  currentProperty: 0
+  properties: 
+  isFood: 0
+  canEatFood: 0
+  isFlammable: 0
+  isFire: 0
+  isWheel: 0
+  isVehicle: 0
+  reset: 0
+  isAlive: 0
+  connected: 1
+  isAtached: 0
+  HitboxSize: {x: 3, y: 2}
+  HitboxOffset: {x: 0, y: 0}
 --- !u!1 &6403660448373414450
 GameObject:
   m_ObjectHideFlags: 0
@@ -1630,7 +1648,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   images: []
-  multipleLoaded: []
 --- !u!1 &8285103527960822178
 GameObject:
   m_ObjectHideFlags: 0
@@ -1728,4 +1745,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   images: []
-  multipleLoaded: []

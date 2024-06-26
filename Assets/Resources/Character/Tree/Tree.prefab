@@ -96,15 +96,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 980e2241d71a6b543b1152cf0758f890, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fixedProperties: 1
+  currentProperty: 0
+  properties: 
   isFood: 0
   canEatFood: 0
-  isFlammable: 0
+  isFlammable: 1
   isFire: 0
   isWheel: 0
   isVehicle: 0
   reset: 0
   isAlive: 0
   connected: 1
+  isAtached: 0
+  HitboxSize: {x: 17, y: 17}
+  HitboxOffset: {x: 0, y: 5}
 --- !u!1 &8209890519685287832
 GameObject:
   m_ObjectHideFlags: 0
@@ -118,7 +124,7 @@ GameObject:
   - component: {fileID: 8122455388585950698}
   - component: {fileID: 7139986305596377249}
   m_Layer: 0
-  m_Name: tree001_root
+  m_Name: Character
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

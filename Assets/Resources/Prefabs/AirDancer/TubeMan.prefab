@@ -759,7 +759,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6440885934395510208
 Transform:
   m_ObjectHideFlags: 0
@@ -1309,6 +1309,7 @@ GameObject:
   - component: {fileID: 6440885934930667633}
   - component: {fileID: 6440885934930667634}
   - component: {fileID: 6440885934930667635}
+  - component: {fileID: 1791600717409808330}
   m_Layer: 0
   m_Name: TubeMan
   m_TagString: Untagged
@@ -1323,7 +1324,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6440885934930667636}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.284, y: 4.13, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children:
@@ -1352,7 +1353,7 @@ MonoBehaviour:
   full: 0
   IsRotationMapped: 0
   UseRotation: 0
-  AutoHideGO: 0
+  AutoHideGO: 1
   DegreesToAction: 0
   hideDelay: 1
   CameraOffset: 10
@@ -1390,6 +1391,33 @@ MonoBehaviour:
   endMarkerPrefab: {fileID: 441084473105571446, guid: 2f7ed94a83a05a140be209a9a062c607,
     type: 3}
   endMarker: {fileID: 0}
+--- !u!114 &1791600717409808330
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6440885934930667636}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 980e2241d71a6b543b1152cf0758f890, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fixedProperties: 1
+  currentProperty: 0
+  properties: 
+  isFood: 0
+  canEatFood: 0
+  isFlammable: 1
+  isFire: 0
+  isWheel: 0
+  isVehicle: 0
+  reset: 0
+  isAlive: 0
+  connected: 1
+  isAtached: 0
+  HitboxSize: {x: 16, y: 17}
+  HitboxOffset: {x: 0, y: 0}
 --- !u!1 &6440885935168355157
 GameObject:
   m_ObjectHideFlags: 0

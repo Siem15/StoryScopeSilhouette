@@ -15,7 +15,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6959140528853514720
 Transform:
   m_ObjectHideFlags: 0
@@ -127,7 +127,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   images: []
-  multipleLoaded: []
 --- !u!1 &5044481405622563335
 GameObject:
   m_ObjectHideFlags: 0
@@ -5070,6 +5069,7 @@ GameObject:
   - component: {fileID: 5044701503758075186}
   - component: {fileID: 5945090523080153459}
   - component: {fileID: 200295728773223138}
+  - component: {fileID: 6185164002581322203}
   m_Layer: 0
   m_Name: Elephant
   m_TagString: Untagged
@@ -5144,15 +5144,13 @@ MonoBehaviour:
   WalkSpeed: 1
   RunSpeed: 4
   stopRunningUntilThisDist: 0.19
-  groundHeight: 0.25
-  groundOffset: 0
+  singleSprite: 0
   controlRotation: 0
   controlPosition: 1
   facingRight: 1
   endMarkerPrefab: {fileID: 441084473105571446, guid: 2f7ed94a83a05a140be209a9a062c607,
     type: 3}
-  animator: {fileID: 0}
-  singleSprite: 0
+  endMarker: {fileID: 0}
 --- !u!114 &200295728773223138
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5166,6 +5164,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   images: []
+--- !u!114 &6185164002581322203
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5044701503758075184}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 980e2241d71a6b543b1152cf0758f890, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fixedProperties: 1
+  currentProperty: 0
+  properties: 
+  isFood: 0
+  canEatFood: 1
+  isFlammable: 0
+  isFire: 0
+  isWheel: 0
+  isVehicle: 0
+  reset: 0
+  isAlive: 0
+  connected: 1
+  isAtached: 0
+  HitboxSize: {x: 0, y: 0}
+  HitboxOffset: {x: 0, y: 0}
 --- !u!1 &5045160411446652093
 GameObject:
   m_ObjectHideFlags: 0
@@ -5294,7 +5319,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   images: []
-  multipleLoaded: []
 --- !u!1 &5045275747721688623
 GameObject:
   m_ObjectHideFlags: 0
@@ -5480,7 +5504,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   images: []
-  multipleLoaded: []
 --- !u!1 &5045383814635459411
 GameObject:
   m_ObjectHideFlags: 0
@@ -5578,7 +5601,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   images: []
-  multipleLoaded: []
 --- !u!1 &5045414020726513219
 GameObject:
   m_ObjectHideFlags: 0
@@ -5707,7 +5729,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   images: []
-  multipleLoaded: []
 --- !u!1 &5045765234053264617
 GameObject:
   m_ObjectHideFlags: 0
@@ -5810,7 +5831,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   images: []
-  multipleLoaded: []
 --- !u!1 &5045768195286947659
 GameObject:
   m_ObjectHideFlags: 0
@@ -5939,7 +5959,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   images: []
-  multipleLoaded: []
 --- !u!1 &5045861392691282643
 GameObject:
   m_ObjectHideFlags: 0
@@ -6038,7 +6057,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   images: []
-  multipleLoaded: []
 --- !u!1 &5045895005267441921
 GameObject:
   m_ObjectHideFlags: 0
@@ -6135,7 +6153,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   images: []
-  multipleLoaded: []
 --- !u!1 &5046003324393903487
 GameObject:
   m_ObjectHideFlags: 0
@@ -6233,7 +6250,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   images: []
-  multipleLoaded: []
 --- !u!1 &5046019322892677389
 GameObject:
   m_ObjectHideFlags: 0
@@ -11179,7 +11195,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   images: []
-  multipleLoaded: []
 --- !u!1 &5046160218318840625
 GameObject:
   m_ObjectHideFlags: 0

@@ -71,7 +71,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 6473cf2376145df47b3957677b24a455, type: 3}
+  m_Sprite: {fileID: 21300000, guid: dd95e0197e416144ab77e50b351fa79a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -95,6 +95,7 @@ GameObject:
   - component: {fileID: 8594291615966793073}
   - component: {fileID: 8594291615966793072}
   - component: {fileID: 8594291615966793087}
+  - component: {fileID: 6377739465003036215}
   m_Layer: 0
   m_Name: mazePlayer
   m_TagString: Player
@@ -138,7 +139,7 @@ MonoBehaviour:
   full: 0
   IsRotationMapped: 0
   UseRotation: 0
-  AutoHideGO: 0
+  AutoHideGO: 1
   DegreesToAction: 0
   hideDelay: 1
   CameraOffset: 10
@@ -213,3 +214,30 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &6377739465003036215
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8594291615966793074}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 980e2241d71a6b543b1152cf0758f890, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fixedProperties: 1
+  currentProperty: 0
+  properties: 
+  isFood: 0
+  canEatFood: 0
+  isFlammable: 0
+  isFire: 0
+  isWheel: 0
+  isVehicle: 0
+  reset: 0
+  isAlive: 0
+  connected: 1
+  isAtached: 0
+  HitboxSize: {x: 0, y: 0}
+  HitboxOffset: {x: 0, y: 0}

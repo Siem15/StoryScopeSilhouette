@@ -43,6 +43,7 @@ GameObject:
   - component: {fileID: 8694457717281634262}
   - component: {fileID: 8474106441421151669}
   - component: {fileID: 5293271845622505074}
+  - component: {fileID: 154943580}
   m_Layer: 0
   m_Name: Rooster
   m_TagString: Untagged
@@ -117,15 +118,13 @@ MonoBehaviour:
   WalkSpeed: 3
   RunSpeed: 2
   stopRunningUntilThisDist: 0.64
-  groundHeight: 0.25
-  groundOffset: 0
+  singleSprite: 0
   controlRotation: 0
   controlPosition: 1
   facingRight: 1
   endMarkerPrefab: {fileID: 441084473105571446, guid: 2f7ed94a83a05a140be209a9a062c607,
     type: 3}
-  animator: {fileID: 0}
-  singleSprite: 0
+  endMarker: {fileID: 0}
 --- !u!114 &5293271845622505074
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -139,6 +138,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   images: []
+--- !u!114 &154943580
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8694457717281634261}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 980e2241d71a6b543b1152cf0758f890, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fixedProperties: 1
+  currentProperty: 0
+  properties: 
+  isFood: 1
+  canEatFood: 1
+  isFlammable: 0
+  isFire: 0
+  isWheel: 0
+  isVehicle: 0
+  reset: 0
+  isAlive: 0
+  connected: 1
+  isAtached: 0
+  HitboxSize: {x: 3, y: 4}
+  HitboxOffset: {x: 0, y: 0}
 --- !u!1 &8695078096473926587
 GameObject:
   m_ObjectHideFlags: 0
@@ -236,7 +262,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   images: []
-  multipleLoaded: []
 --- !u!1 &8695091565848983745
 GameObject:
   m_ObjectHideFlags: 0
@@ -365,7 +390,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   images: []
-  multipleLoaded: []
 --- !u!1 &8695155303994389991
 GameObject:
   m_ObjectHideFlags: 0
@@ -519,7 +543,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   images: []
-  multipleLoaded: []
 --- !u!1 &8695503200327360347
 GameObject:
   m_ObjectHideFlags: 0
@@ -618,7 +641,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   images: []
-  multipleLoaded: []
 --- !u!1 &8695751611099170449
 GameObject:
   m_ObjectHideFlags: 0
@@ -716,7 +738,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   images: []
-  multipleLoaded: []
 --- !u!1 &8695760962549431451
 GameObject:
   m_ObjectHideFlags: 0
@@ -815,7 +836,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   images: []
-  multipleLoaded: []
 --- !u!1 &8695960615061980927
 GameObject:
   m_ObjectHideFlags: 0
@@ -914,7 +934,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   images: []
-  multipleLoaded: []
 --- !u!1 &8696051507309133623
 GameObject:
   m_ObjectHideFlags: 0
@@ -1013,7 +1032,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   images: []
-  multipleLoaded: []
 --- !u!1 &8696078896342870429
 GameObject:
   m_ObjectHideFlags: 0
@@ -1194,7 +1212,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   images: []
-  multipleLoaded: []
 --- !u!1 &8696442274427539529
 GameObject:
   m_ObjectHideFlags: 0
@@ -1292,4 +1309,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   images: []
-  multipleLoaded: []
