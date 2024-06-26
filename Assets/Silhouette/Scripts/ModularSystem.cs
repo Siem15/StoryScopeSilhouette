@@ -25,7 +25,7 @@ public class ModularSystem : MonoBehaviour
     }
     
     public void AttachParentTo(Transform attachPoint) 
-    {        
+    {
         transform.parent = attachPoint.transform; // Assign attach point as parent
         transform.position = attachPoint.position; // Set position to that of attach point
     }
