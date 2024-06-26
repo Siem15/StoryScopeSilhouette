@@ -88,7 +88,12 @@ public class Properties : MonoBehaviour
         boxCollider.enabled = false;
 
         // Add a Rigidbody2D component if it doesn't already exist
-        Rigidbody2D rigidbody2D = gameObject.GetComponent<Rigidbody2D>() ?? gameObject.AddComponent<Rigidbody2D>();
+        Rigidbody2D rigidbody2D = gameObject.GetComponent<Rigidbody2D>();
+
+        if (rigidbody2D == null)
+        {
+            rigidbody2D = gameObject.AddComponent<Rigidbody2D>();
+        }
 
         // Set the gravity scale of the Rigidbody2D to 0
         rigidbody2D.gravityScale = 0;
@@ -109,7 +114,8 @@ public class Properties : MonoBehaviour
             originalControlRotation = character.controlRotation;
         }
 
-        // Make sure he is not a duplicate to prevent accidents
+
+        // maks sure he is not a duplicate to preovent exidents
         if (!isAtached)
         {
             if (!fiducialController.AutoHideGO)
@@ -118,7 +124,6 @@ public class Properties : MonoBehaviour
                 connected = false;
                 Debug.Log($"{gameObject.name} is not connected");
             }
-
             Debug.Log($"{gameObject.name} is connected");
 
             originalFiducialRotation = fiducialController.IsRotationMapped;
@@ -130,20 +135,20 @@ public class Properties : MonoBehaviour
 
     private void Update()
     {
-        // Reset button
+        // resetbuton
         if (reset)
         {
             CheckProperty();
             reset = false;
         }
 
-        // Testing for effects with spase if needed
+        //testing for effects with spase if needede
         if (Input.GetKeyDown(KeyCode.Space))
         {
             //EffectsManager.GetComponent<EffectsManager>().AddEffect("dissolveShader", this.gameObject);
         }
 
-        // Checks if its in a build and resets the object when removed and placed
+        // checkes if its in a build and makes resets the object when removed and plased
         if (connected)
         {
             if (fiducialController.m_IsVisible)
@@ -162,12 +167,10 @@ public class Properties : MonoBehaviour
                 {
                     Debug.Log(gameObject.name + " is not alive");
                     GetComponent<BoxCollider2D>().enabled = false;
-
-                    if (EffectsManager != null && fiducialController.m_IsVisible == true)
+                    if (EffectsManager != null)
                     {
                         EffectsManager.GetComponent<EffectsManager>().AddEffect("Removed", this.gameObject);
                     }
-
                 }
                 isAlive = false;
             }
@@ -188,7 +191,7 @@ public class Properties : MonoBehaviour
             //fiducialController.IsPositionMapped = false;
         }
 
-        // If attached, stop moving
+        // if het is atached stop moving
         if (isAtached && character != null)
         {
             //character.endMarker = null;
@@ -203,21 +206,25 @@ public class Properties : MonoBehaviour
         Debug.Log($"{gameObject.name} trigger enter");
 
         Properties otherObject = collision.GetComponent<Properties>();
+
         Character otherCharacter = collision.GetComponent<Character>();
 
         if (otherObject != null)
         {
-            // Do eating stuff...
+            // do eating stuff
             if (properties[(int)Property.IsFood] && otherObject.properties[(int)Property.CanEatFood])
             {
                 //TODO: spawn edible particle system on place of currently being eaten object
-                EffectsManager?.GetComponent<EffectsManager>().AddEffect("GetsEaten", gameObject);
+                if (EffectsManager != null)
+                {
+                    EffectsManager.GetComponent<EffectsManager>().AddEffect("GetsEaten", this.gameObject);
+                }
                 Debug.Log($"{gameObject.name} eat");
                 transform.localScale *= 0.9f; // Shrink
                 otherObject.transform.localScale *= 1.1f; // Grow
             }
 
-            // Do fire stuff...
+            // do fire stuff
             if (properties[(int)Property.IsFlammable] && otherObject.properties[(int)Property.IsFire])
             {
                 Debug.Log($"{gameObject.name} flame");
@@ -225,41 +232,36 @@ public class Properties : MonoBehaviour
                 if (transform.childCount >= 0)
                 {
                     Invoke("hideBySize", 3f);
-                    EffectsManager.GetComponent<EffectsManager>().AddEffect("dissolveShader", gameObject);
+                    EffectsManager.GetComponent<EffectsManager>().AddEffect("dissolveShader", this.gameObject);
                     transform.GetComponent<BoxCollider2D>().enabled = false;
                     //TODO: add shader siem
                 }
             }
 
-            // Do vehicle and wheel stuff...
+            // do vehicle stuff and wheel stuff
             if (properties[(int)Property.IsWheel] && otherObject.properties[(int)Property.IsVehicle])
             {
 
-                GameObject duplicatedObject = Instantiate(gameObject); // make a copy
+                GameObject duplicatedObject = Instantiate(this.gameObject); // make a coppy
                 duplicatedObject.GetComponent<FiducialController>().IsPositionMapped = false;
 
                 duplicatedObject.GetComponent<Properties>().originalFiducialRotation = originalFiducialRotation;
                 duplicatedObject.GetComponent<Properties>().originalFiducialPos = originalFiducialPos;
 
 
-                if (gameObject.GetComponent<JZSpriteRoot>() != null)
-                {
-                    duplicatedObject.GetComponent<JZSpriteRoot>()
-                        .images = gameObject.GetComponent<JZSpriteRoot>().images; //inport the images vrom the original
-                }
+                if (this.gameObject.GetComponent<JZSpriteRoot>() != null)
+                    duplicatedObject.GetComponent<JZSpriteRoot>().images = this.gameObject.GetComponent<JZSpriteRoot>().images; //inport the images vrom the original
 
                 // destroy stuff we dont need
-                Destroy(gameObject.GetComponent<Properties>());
-                Destroy(gameObject.GetComponent<BoxCollider2D>());
-                Destroy(gameObject.GetComponent<Rigidbody2D>());
-                Destroy(gameObject.GetComponent<FiducialController>());
-
+                Destroy(this.gameObject.GetComponent<Properties>());
+                Destroy(this.gameObject.GetComponent<BoxCollider2D>());
+                Destroy(this.gameObject.GetComponent<Rigidbody2D>());
+                Destroy(this.gameObject.GetComponent<FiducialController>());
                 if (character != null)
-                {
-                    Destroy(gameObject.GetComponent<Character>());
-                }
+                    Destroy(this.gameObject.GetComponent<Character>());
 
-                gameObject.AddComponent<IsWheel>(); // make it spin
+
+                this.gameObject.AddComponent<IsWheel>(); // make it spin
 
                 if (character != null)
                 {
@@ -271,25 +273,26 @@ public class Properties : MonoBehaviour
                     }
                 }
 
-                Vector3 tempPosition = gameObject.transform.position; // Save position
-                gameObject.transform.parent = otherObject.transform; // Make the wheel a child of the vehicle 
+                Vector3 TempPos = this.gameObject.transform.position; // save position
 
-                //this.gameObject.transform.position = tempPosition; // reset position
+                this.gameObject.transform.parent = otherObject.transform; // make the wheel a child of the vehicle 
 
-                int rand = Random.Range(1000, 10000);
-                duplicatedObject.transform.position = new Vector3(rand, rand, rand); // remove the copy from view
+                //this.gameObject.transform.position = TempPos; // reset position
+
+                duplicatedObject.transform.position = new Vector3(Random.Range(1000, 10000), Random.Range(1000, 10000), Random.Range(1000, 10000)); // remove the coppy from view
                 duplicatedObject.GetComponent<Properties>().isAtached = true;
             }
         }
     }
 
-    private void HideBySize()
+    void hideBySize()
     {
-        gameObject.transform.localScale = new Vector3(0.001f, 0.001f, 0.001f); // Hide
+        this.gameObject.transform.localScale = new Vector3(0.001f, 0.001f, 0.001f); //hide
     }
 
     public void CheckProperty()
-    {        
+    {
+
         if (!fixedProperties)
         {
             for (int i = 0; i < properties.Count; i++) // reset the properties
@@ -325,11 +328,10 @@ public class Properties : MonoBehaviour
         if (character != null)
         {
             character.endMarker = originalendmarker;
-            transform.position = character.endMarker.transform.position;
+            this.transform.position = character.endMarker.transform.position;
             character.WalkSpeed = originalWalkingSpeed;
             character.RunSpeed = originalRunningSpeed;
             character.controlRotation = originalControlRotation;
-
             if (character.endMarker.transform.position.x >= transform.position.x)
             {
                 character.facingRight = true;
@@ -350,9 +352,8 @@ public class Properties : MonoBehaviour
             List<GameObject> children = GetChildren();
 
             bool hasFire = false;
-
-             // Add only one fire
-            foreach (GameObject item in children)
+            // add only one fire
+            foreach (var item in children)
             {
                 if (item.name == "Fire")
                 {
@@ -362,10 +363,15 @@ public class Properties : MonoBehaviour
 
             if (hasFire == false)
             {
-                EffectsManager?.GetComponent<EffectsManager>().AddEffect("onFireEffectShader", this.gameObject);
+                if (EffectsManager != null)
+                {
+                    EffectsManager.GetComponent<EffectsManager>().AddEffect("onFireEffectShader", this.gameObject);
+                }
             }
+
+
         }
-        // Remove all the fire if you are not a fire
+        // remove all the fire if you are not a fire
         else
         {
             List<GameObject> children = GetChildren();
@@ -378,7 +384,7 @@ public class Properties : MonoBehaviour
                 }
             }
         }
-        // Remove alle the wheels 
+        // remove alle the wheels 
         if (properties[(int)Property.IsVehicle])
         {
             List<GameObject> children = GetChildren();
@@ -392,8 +398,7 @@ public class Properties : MonoBehaviour
             }
         }
     }
-
-    // Make a list of all the childeren
+    // make a list of all the childeren
     public List<GameObject> GetChildren()
     {
         List<GameObject> children = new List<GameObject>();
@@ -407,20 +412,18 @@ public class Properties : MonoBehaviour
         return children;
     }
 
-    // Sets the collider to the size of the drawing
+    //Sets the collider to the size of the drawing
     void DrawingColliderUpdate()
     {
-        if (gameObject.GetComponent<Scan>() != null)
+        if (this.gameObject.GetComponent<Scan>() != null)
         {
-            Renderer renderer = GetComponent<Renderer>();
+
+            Renderer rend = GetComponent<Renderer>();
             BoxCollider2D boxCollider2D = GetComponent<BoxCollider2D>();
 
-            boxCollider2D.size = renderer.material.GetTextureScale("_BaseMap") * 1.4f;
-            boxCollider2D.offset = renderer.material.GetTextureOffset("_BaseMap");
+            boxCollider2D.size = rend.material.GetTextureScale("_BaseMap") * 1.4f;
+            boxCollider2D.offset = rend.material.GetTextureOffset("_BaseMap");
         }
-        else 
-        {
-            return;
-        }        
+        else return;
     }
 }
